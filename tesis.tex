@@ -1,0 +1,164 @@
+\documentclass[oneside,numbers,english]{ezthesis}
+%% # Opciones disponibles para el documento #
+%%
+%% Las opciones con un (*) son las opciones predeterminadas.
+%%
+%% Modo de compilar:
+%%   draft            - borrador con marcas de fecha y sin im'agenes
+%%   draftmarks       - borrador con marcas de fecha y con im'agenes
+%%   final (*)        - version final de la tesis
+%%
+%% Tama'no de papel:
+%%   letterpaper (*)  - tama'no carta (Am'erica)
+%%   a4paper          - tama'no A4    (Europa)
+%%
+%% Formato de impresi'on:
+%%   oneside          - hojas impresas por un solo lado
+%%   twoside (*)      - hijas impresas por ambos lados
+%%
+%% Tama'no de letra:
+%%   10pt, 11pt, o 12pt (*)
+%%
+%% Espaciado entre renglones:
+%%   singlespace      - espacio sencillo
+%%   onehalfspace (*) - espacio de 1.5
+%%   doublespace      - a doble espacio
+%%
+%% Formato de las referencias bibliogr'aficas:
+%%   numbers          - numeradas, p.e. [1]
+%%   authoryear (*)   - por autor y a'no, p.e. (Newton, 1997)
+%%
+%% Opciones adicionales:
+%%   spanish         - tesis escrita en espa'nol
+%%
+%% Desactivar opciones especiales:
+%%   nobibtoc   - no incluir la bibiolgraf'ia en el 'Indice general
+%%   nofancyhdr - no incluir "fancyhdr" para producir los encabezados
+%%   nocolors   - no incluir "xcolor" para producir ligas con colores
+%%   nographicx - no incluir "graphicx" para insertar gr'aficos
+%%   nonatbib   - no incluir "natbib" para administrar la bibliograf'ia
+
+%% Paquetes adicionales requeridos se pueden agregar tambi'en aqu'i.
+%% Por ejemplo:
+%\usepackage{subfig}
+%\usepackage{multirow}
+\usepackage{graphicx,rotating,booktabs}
+\usepackage{lscape}
+%\usepackage[spanish]{babel}
+\usepackage[spanish,USenglish]{babel} % espanol, ingles
+%\usepackage[utf8]{inputenc} % acentos sin codigo
+%\renewcommand{\chaptername}{chapter} 
+%\renewcommand{\tablename}{Table}
+%\renewcommand{\figurename}{Figure}
+\usepackage{multirow, array} %para mover el ancho de las tablas.
+\renewcommand{\baselinestretch}{2}
+%% # Datos del documento #
+%% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
+%% La letra n con tilde es: \~n.
+%0.15
+\usepackage{vmargin}
+\setpapersize{USletter}
+\setmargins{3.2cm}       % margen izquierdo
+{2.5cm}                        % margen superior
+{15cm}                      % anchura del texto
+{20cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{10pt}                             % altura del pie de página
+{1cm}                           % espacio entre el texto y el pie de página
+
+
+\usepackage{caption}
+\usepackage{subfig}
+
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\usepackage{upgreek} % para poner letras griegas sin cursiva
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+
+%\usepackage{algpseudocode} %Para el apendice.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+%\usepackage{pifont}
+
+\usepackage[verbose]{placeins}
+%\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+
+
+%\usepackage[showframe,paper=a4paper,top=1in,bottom=1in,right=0.5in,left=1.5in]{geometry}% http://ctan.org/pkg/%geometry
+
+%\author{Xochilt Ramirez Garcia}
+%\title{ Sistema de Recomendaci\'on Sensible al Contexto y su Aplicaci\'on al Secuenciado de Objetos }
+%\degree{Doctor en Ciencias en Computaci\'on}
+%\supervisor{Nombre de mi Asesor}
+%\institution{Instituto Tecnol\'ogico de Tijuana}
+%\faculty{Divisi\'on de Estudios de Postgrado e Investigaci\'on }
+%\department{Departamento de Sistemas Computacionales}
+
+%% # M'argenes del documento #
+%% 
+%% Quitar el comentario en la siguiente linea para austar los m'argenes del
+%% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
+
+%\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
+
+%% El siguiente comando agrega ligas activas en el documento para las
+%% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
+%% instrucci'on antes de \begin{document}.
+
+\hyperlinking
+\begin{document}
+
+\pagenumbering{Roman}
+%\include{front-thesis}
+\include{knowledgements}
+\include{abstract}
+
+%% # 'Indices y listas de contenido #
+%% Quitar los comentarios en las lineas siguientes para obtener listas de
+%% figuras y cuadros/tablas.
+%\begin{singlespace}
+\listoffigures
+\listoftables
+\tableofcontents
+%\end{singlespace}
+\clearpage
+%\listoffigures
+%\listoftables
+%% # Cap'itulos #
+%% Por cada cap'itulo hay que crear un nuevo archivo e incluirlo aqu'i.
+%% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
+%% escribir.%\setcounter{page}{6}
+
+\pagenumbering{arabic}
+\include{introduction}
+\include{stateart}
+\include{background}
+\include{method}
+\include{results}
+\include{evaluation}
+\include{conclusions}
+\include{publications}
+\appendix
+\include{appendixa}
+\include{appendixb}
+
+
+
+
+%% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
+%% de la tesis.
+%\include{apendiceB}
+%\include{apendiceC}
+
+%% Incluir la bibliograf'ia. Mirar el archivo "biblio.bib" para m'as detales
+%% y un ejemplo.
+\bibliography{biblio}
+
+\end{document}
+%\include{appendix}

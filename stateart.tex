@@ -1,0 +1,270 @@
+\chapter{State of the art} \label{}
+
+Recommender system is a technology used by many authors for
+personalization of information. The amount of information in Internet
+is rising quickly and the users every time has less capability to
+search the most relevant information among big databases. Many
+recommender  system are used in several domains. 
+The fundamental is the profit that provides in many of
+these domains that sometimes represents the key of success for the
+application.  Some works utilize social information to recommend such
+as Manca et.al.\cite{manca2014mining} where the friend recommender
+system is applied in the social bookmarking domain, its goal was to
+infer the interest of users from content selecting the available
+information of the user behavior and analyzing the resources and the
+tags bookmarked for each user, therefore the recommendations are
+through mining user behavior in a tagging system, analyzing the
+bookmarks tagged of the user and the frecuency for each used tag. 
+J.Yao et.al.\cite{yao2012product} proposes a new product recommendation
+approach for new users based on the implicit relationships between
+search keywords and products. The relationships between keywords and
+products are represented in a graph and relevance of keywords to
+products is derived from attributes of the graph. The relevance
+information is utilized to predict preferences of new users. J.
+Golbeck et.al.\cite{golbeck2006filmtrust} presents FilmTrust, a
+website that integrates Semantic Web-based social networks, augmented
+with trust, to create prediction movie recommendations. Trust takes on
+the role of a recommender system forming the core of an algorithm to
+predict a rating for recommendations of movies. This is an example of
+how the Semantic Web, and Semantic trust networks in particular, can
+be exploited to refine the user experience. \\  
+Traditional recommender techniques has its pros and cons, for
+instance, the ability to handle data sparsity and cold-start problems
+or considerable ramp-up efforts for knowledge acquisition and
+engineering. Establish hybrid systems that combine the strengths of
+algorithms and models to overcome some of the shortcomings and
+problems has become the properly manner to improve the difficults for
+each algorithm.
+An example is presented by L.Castro et.al.\cite{castro2012prototype} 
+a hybrid recommender system for the province of San Juan, Argentina, 
+to recommend tourist packages  based on preferences and interest 
+of each user, artificial intelligence
+techniques are used to filter and customize the information. The
+prototype of recommender system utilizes three techniques to
+recommend: demographic, collaborative and content-based. The goal is
+to recommend tourist packages that matches with the user profile.
+L. Martinez et al.\cite{martinez2009reja} presents REJA, a hybrid
+recommender system that involves collaborative filtering and
+knowledge-based model, that is able to provide recommendations in some
+situation for user; besides it provides georeferenced information
+about the recommended restaurants.
+Balabanovic et.al.\cite{balabanovic1997fab} presents
+Fab, a hybrid recommender system for automatic recognition of
+emergent issues relevant to various groups of users. It also enables
+two scaling problems, pertaining to the rising number of users and
+documents, to be addressed. Claypool et.al.\cite{claypool1999combining} 
+presents P-Tango system that utilizes content-based and collaborative
+filtering techniques, it makes a prediction through the weighted
+average that includes content-based prediction and collaborative
+filtering prediction. The weights of predictions are determined on a
+per-user basis, allowing the system to determine the optimum mixture
+of content-based and collaborative recommendation for each user.
+Pazzani M.\cite{pazzani1999framework} presents Entree as a hybrid
+recommender system that it does not use numeric scores, but rather
+treats the output of each recommender (collaborative, content-based
+and demographic) as a set of votes, which are then combined in a
+consensus scheme. The recommender system includes information such as
+the content of the page, ratings of users and demographic data about
+users. Others works with hybrid recommender systems are ProfBuilder
+\cite{al1999semantic}, PickAFlick\cite{burke1999integrating}  and
+\cite{tran2000hybrid}, where are presented multiple recommendation
+techniques. Usually, recommendation requires ranking of
+items or selection of a single best recommendation, at this point some
+technique must be employed to recommend. \\ 
+Traditional recommender systems such as above mentioned, tend to use
+simple user models. For example, user-based collaborative filtering
+generally models the user as a vector of item ratings. As additional
+observations are made about users’ preferences, the user models are
+extended, and the user preferences is used to generate
+recommendations. This approach, therefore, ignores the notion of any
+specific situation, the fact that users interact with the system
+within a particular context and  that preferences of items might 
+change in another context.  
+Overall, the context is able to make the recommender system be 
+powerful that is adaptable to the changing user's situation.\\
+The context is defined in the domain of the application and the system
+has a context model that provides the information for the recommender
+system. For instance Ricci et.al. \cite{baltrunas2011incarmusic} uses
+the context in music domain using a model-based paradigm, in this
+context-aware recommender system the context was defined as a set of
+independent contextual factors(independent in order to get a
+mathematical model) such as \textit{driving style, road type,
+landscape, sleepiness, traffic conditions, mood weather and natural
+phenomena} to specifies the relevant context for the music
+recommendation. In order to estimate the relevance of selected
+contextual factor, the users were requested to evaluate music tracks
+in different contextual situations for each genre. The prediction
+takes in account this relevance to recommend music tracks prefered by
+the user according the genre and the contexts mentioned.In
+restaurant domain Chung-Hua et al.\cite{chu2013chinese} presents a
+context-aware recommender system for mobiles using a post-filtering
+paradigm, the architecture involves a model client-server that works
+with a request of data in the client side for the server side.
+Subsequently, taking in account the contextual factors to filter the
+properly restaurants to recommend. The context-aware recommender
+system uses such as contextual factors \textit{location and season}, 
+also utilize the user preferences to personalize the recommendations
+in the user context.
+Baltrunas et.al.\cite{baltrunas2011context} presents ReRex for tourism, 
+a context-aware recommender system based in a model-based paradigm, the system
+recommends and provides explanations about the why the places of
+interest(PoI) are recommended. The proposed model computes a
+personalized context dependent rating estimation. Subsequently, in
+order to generates the explanation of recommendation the system uses
+the factor that in the predictive model has the lasgest positive
+effect on the rating prediction for the point of interest. The set of
+contextual factors considered in ReRex are \textit{distance},
+temperature, weather, season, companion, time day, weekday,
+crowdedness, familiarity, mood, budget, travel length, transport and
+travel goal. The main issue in ReRex system is the low user
+satisfaction because of the explanations not able to be understood,
+however the users recognize that the explanation is a very important
+component that it influence the system acceptance. Noguera et. al.
+\cite{noguera2012mobile} presents a context-aware recommender system
+for tourism based in REJA that utilizes the location through a 3D-GIS
+system, the application uses progressive downloading and rendering of
+3D maps over mobiles networks. It is also in charge of tracking the
+user’s location and speed based on GPS and the requesting. The system
+utilizes pre-filtering and post-filtering paradigm. Pre-filtering is
+used to reduce the number of items considered for the recommendation
+according to the user’s location, and  post-filtering is applied to
+re-rank the previous top-N list according to the physical distance
+from the user for each recommended restaurant. The disadvantage in this
+system is the lack of user reviews, because the recommendations are
+based only in the location point without consider the experience of
+other diners concerning the recommended restaurant. 
+Cena et al.\cite{cena2006integrating} presents a tourist guide for
+context in intelligent content adaptation. UbiquiTO system is a
+tourist guide that integrates different forms of context-related
+adaptation: for media device type, for user characteristics and
+preferences, for the physical context of the interaction. UbiquiTO uses
+a rule-based modeling approach to adapt the content of the provided
+recommendation, such as the amount, type of information and features
+associated with each recommendation. 
+Bulander et.al\cite{bulander2005comparison} presents the MoMa-system that
+offers proactive recommendations using a post-filtering approach for
+matching order specifications with offers. When creating an order, the
+client application will automatically fill in the appropriate physical
+context and profile parameters, for example, \textit{location} and \textit{weather},
+then, for example, the facility should not be too far away from the
+current location of the user and beer should not be
+recommended if it is raining. On the other side, advertisers’
+suppliers put offers into the MoMa-system. These offers are also
+formulated according to the catalogue. When the system detects a pair
+of context matching order and offer, the end user is notified, in the
+preferred manner (for example, SMS, email). At this point, the user
+must decide whether to contact the advertiser to accept the offer.
+Finally, Schifanella et al.\cite{schifanella2008mobhinter} develops
+Mob-Hinter, a \textit{context-dependent} distributed model,where a user device
+can directly connect to other mobile devices that are in \textit{physical
+proximity} through ad-hoc connections, hence relying on a very limited
+portion of the users’ community and just on a subset of all available
+data (pre-filtering). The relationships between users are modeled with
+a similarity graph. MobHinter allows a mobile device to identify the
+affinity network neighbors from random ad-hoc communications. The
+collected information is then used to incrementally refine locally
+calculated predictions, with no need of interacting with a remote
+server or accessing the Internet. The Recommendations are computed
+using the availables rating of the user neighbors.
+Abowd et. al. presents Cyberguide project \cite{abowd1997cyberguide},
+which encompassed several tour guide prototypes for different handheld
+platforms. Cyberguide provided tour guide services to mobile users,
+exploiting the contextual knowledge of the user’s current and past
+locations in the recommendation process. The PECITAS system
+\cite{tumas2009personalized} presented by Thumas offers location-aware
+recommendations for personalized point-to-point paths. The paths are
+illustrated by listing the various connections that the user must take
+to reach the destination using public transportation and walking. An
+interesting aspect of PECITAS is that, although an optimal shortest 
+path facility is incorporated, users may be recommended alternative 
+routes that pass through several attractions, given that
+their specified constraints (e.g. latest arrival time) and travel-related 
+preferences (maximum walking time, maximal number of transport
+transfers, sightseeing preferences, etc) are satisfied. Yu and Chang
+presents LARS \cite{yu2009personalized} which supports personalized
+tour planning using a rule-based recommendation process. This system
+packages ‘where to stay’ and ‘where to eat’ features together with
+‘typical’ tourist recommendations for sightseeing and activities. For
+instance, recommended restaurants (selected based on their location,
+menu, prices, customer rating score, etc) are integral part of the
+tour and the time spent for lunch/dinner is taken into account to
+schedule visits to attractions or to plan other activities.
+Savage et. al. presents  "I'm feeling LoCo" system \cite{savage2012m}
+that proposes a ubiquitous location­ based recommendation algorithm
+that focuses on user experience by considering user preferences, time,
+location and similarity measures automatically, having Foursquare as a
+dataset. We also focus on user experience and aim that user input is
+minimal. The information  om the user's social network, form of
+transportation and phone's sensors is inferred to provide
+recommendation of places  om the dataset.
+Reddy et.al\cite{reddy2006lifetrak} presents LifeTrack system that
+incorporates sensor information into song selection. The songs are
+represented in terms of tags that the user assigns in order to link
+the songs to the appropriate contexts in which they should be played.
+User feedback is incorporated to make a song more or less likely to
+play in a given context. Context considered relevant to song selection
+includes location, time of operation, velocity of the user, weather,
+traffic and sound. User locations and velocity are determined by GPS.
+Location information includes tags based on zip code and whether the
+user is inside or outside (inferred by the presence or absence of a
+GPS signal). The times of the day are divided out into configurable
+parts of the day (morning, evening, etc). The velocity is abstracted
+into one of four states: static, walking, running and driving. Use of
+accelerometers are planned to enable indoor velocity information. If
+the user is driving, an RSS feed on traffic information is used to
+typify the state as calm, moderate or chaotic. If the user is not
+driving, a microphone reading is used for the same purpose.
+Additionally, an RSS feed provides a meteorological condition (frigid,
+cold, temperate, warm or hot).\\ For a better comprehension
+of the context, table \ref{tab:stateoftheart}  describes examples of
+contextual factors in different domains of application, specifies the
+contextual factors considered such as  part of the context, the
+methodology for each application and  kind of devices.
+
+\begin{sidewaystable}[]
+  \caption{Comparison of context-aware recommender systems.}
+    \label{tab:stateoftheart}
+  \bigskip
+    \centering\small\setlength\tabcolsep{2pt}
+        \hspace*{-1cm}\begin{tabular}{p{3.5cm} p{6cm} p{4cm} p{3cm} p{3cm} }%{l l l l l}
+           \toprule
+             \textbf{Application} &\textbf{Contextual Factor} &\textbf{Domain} &\textbf{Paradigm} &\textbf{Device}  \\ \hline
+
+           \midrule
+             \textbf{CoMoLE} & \textbf{Time, available time, place, device, level of knowledge, learning style.} & \textbf{E-learning} & \textbf{Pre-filtering} & \textbf{Mobiles, PC, laptop.}   \\ \hline 
+
+             \textbf{Moma-System} & \textbf{Location, time.} & \textbf{E-commerce} & \textbf{Post-filtering} & \textbf{PC, laptop.}  \\ \hline
+
+             \textbf{UbiquITO} & \textbf{Season, time, temperature.} & \textbf{Tourism} & \textbf{Post-filtering} & \textbf{Mobiles} \\ \hline
+
+             \textbf{ReRex} & \textbf{Distance of the point of interest,  temperature, weather, season, weekend, companion, travel goal, transport.} & \textbf{Tourism} & \textbf{Model-based} & \textbf{Mobiles} \\ \hline
+
+             \textbf{LifeTrack} & \textbf{Location, time, day of the week, traifc noise(level), temperature, weather.} & \textbf{Music} & \textbf{ Post-filtering} & \textbf{PC, Mobiles.} \\ \hline
+
+             \textbf{CARS} & \textbf{Location and season.} & \textbf{Restaurants} & \textbf{Post-filtering} & \textbf{PC, laptop.} \\ \hline
+
+             \textbf{InCarMusic} & \textbf{Driving style, road type, landscape, sleepiness, traffic conditions, mood weather and natural phenomena.} & \textbf{Music} & \textbf{Model-based} & \textbf{Mobiles} \\ \hline
+
+            \textbf{REJA} & \textbf{Location.} & \textbf{Restaurants} & \textbf{Pre-filtering and Post-filtering} & \textbf{PC, laptop, mobiles.} \\ \hline
+
+            \textbf{CiberGuide} & \textbf{Location, time, weather.} & \textbf{Tourism} & \textbf{Post-filtering} & \textbf{Mobiles} \\ \hline
+
+            \textbf{PECITAS} & \textbf{Location, routes.} & \textbf{Transport} & \textbf{Post-filtering} & \textbf{Mobiles} \\ \hline
+
+            \textbf{LARS} & \textbf{Tourists’ location and time.} & \textbf{Tourist packages} & \textbf{Post-filtering} & \textbf{Mobiles} \\ \hline
+
+            \textbf{I'm feeling LoCo} & \textbf{Location, transportation.} & \textbf{Tourism} & \textbf{Model-based} & \textbf{Mobiles} \\ \hline
+
+            \textbf{MOPSI} & \textbf{Location} & \textbf{Tourism and transport} & \textbf{Post-filtering} & \textbf{Mobiles} \\ \hline
+
+           \bottomrule
+        \end{tabular}\hspace*{-1cm}
+\end{sidewaystable}
+
+
+
+
+
+
+
+
