@@ -2,82 +2,104 @@
 
 Recommender systems are a technique to provide suggestions of 
 useful items for a certain user. The suggestion relates to various
-decition-making processes, for instance, what items to buy, what music
+decision-making processes, for instance, what items to buy, what music
 to listen to or what on-line news to read. \textit{Item} is the general
 term to denote what product or service  the system recomends for each
 user. A recommender system normally focuses in a kind of item.
+
 Recommender sistems arise to cover the lack of personal experience to
 evaluate the overwhelming number of alternative items that a Web site
-may offer\cite{resnick1997recommender}.
+may offer \cite{resnick1997recommender}.
+
 Recommender systems development initiated from a rather simple
 observation: individuals often rely on recommendations provided by
-others in making routine and daily decisions\cite{mahmood2009improving},
+others in making routine and daily decisions \cite{mahmood2009improving},
 \cite{mcsherry2009differentially}. 
+
 For example people commonly relies on suggestions when selecting a
-book to read; for hire human resources in a company, the department
+book to read; when hiring human resources in a company, the department
 counts on recommendation letters in their recruiting decisions; and
-when selecting a movie to watch, people tend to read and relies on the
+when selecting a movie to watch, people tend to read and rely on 
 movie reviews that a film critic has written.\\
-Recommender systems tries to imitate this human behaviour, to
+
+%%El siguiente parrafo no se entiende:
+Recommender systems try to imitate this human behaviour, to
 recommend a product in daily life is normally the most effective
 manner to achieve in this systems that the user prefers an item in a
-Web site. Over the time, the improvements for recommender systems are
-focused in differents techniques that involves the context in the
-recommendation process.  The importance of contextual information has
-been recognized in different domains and disciplines. In recommender
-systems, context implies the situations around of the user when it is
+Web site.
+
+Over the time, the improvements of recommender systems are
+focused on differents techniques that involve the context in the
+recommendation process. 
+
+The importance of contextual information has
+been recognized in different domains and disciplines. % Agregar referencias 
+In recommender
+systems, context implies the situations around of the user when it is % Creo que hay solo una situacion posible
 interacting with the system and all the information that this
-situation represents.
+situation represents. 
 % definir aqui Context?
-The most formal definition is proposed by Annin K.
-Dey\cite{dey2001understanding}: \textit{``Context is any information
+In this work we use a definition proposed by Annin K.
+Dey \cite{dey2001understanding}: \textit{``Context is any information
 that can be used to characterize the situation of an entity. An entity
 is a person, place or object that is considered relevant to the
 interaction between a user and an application, including the user and
-applications themselves.''} This definition makes it easier to define
-the important context in a specific recommender system.\\ 
-However, some authors make an understandable comparison of different 
-contexts such as Bazire et.al.\cite{bazire2005understanding} that compares 
+applications themselves.''} 
+This definition makes it easier to define
+the important context in a specific recommender system.\\  %% Aclara esto mejor definir el contexto importante?
+% Mejor con un ejemplo?
+
+However, some authors make an understandable comparison of different % A que te refieres con understandable?
+contexts such as Bazire et.al. \cite{bazire2005understanding} that compares 
 different definitions of context in different fields and conclude that is
 complicated makes a unifying definition of context because of the
 nature of the concept in the disciplines. In computer sciences Fischer
-G.\cite{fischer2012context} takes the context such as the interaction
+G. \cite{fischer2012context} defines context as the interaction
 between humans and computers in socio-technical systems that takes
 place in a certain context referring to the physical and social
 situation in which computational devices and environments are
-embedded. Also identifies the important aspects to consider when the
-context is used in its framework: how it is obtained the context, how
-is represented the context and what objectives and purposes has the
-context in a particular application is used. \\
-Context-aware recommender systems are gaining ever more attention
-because of its performance and adaptability for different domains, the
-way to improve personalized recommendations based in contextual
+embedded. % Me gusta esta definicion tambien
+Also identifies the important aspects to consider when the
+context is used in that framework: how it is the contextual data obtained , how
+the context is represented and what objectives and purposes the
+context has when used in a particular application. \\
+
+Context-aware recommender systems are gaining even more attention
+because of their performance and adaptation for different domains, the % a que te refieres con adaptation?
+way to improve personalized recommendations based in contextual 
 factors is an important technique to increase the benefits in many
-domains. Nowadays many companies are incorporating some kind of
-context in their recommendation engines, the application covers fields
-such as E-commerce\cite{schafer1999recommender}, \cite{bulander2005enabling};
-music\cite{ricci2012context},\cite{baltrunas2011incarmusic}; 
-places of interest\cite{baltrunas2012context},
-movies\cite{eyjolfsdottir2010moviegen}; vacation packages\cite{liu2011personalized},
-\cite{liu2014cocktail}; travel guides\cite{savage2012m}; e-learning\cite{ortigosa2010entornos} and restaurants\cite{chu2013chinese}.\\  
+domains. % Da un ejemplo, For instance taking in to account the hour of the day, or the day of the week 
+% when recommending restaurants could filter out restaurants that are currently closed or near closing time.  
+Nowadays many companies are incorporating some kind of
+context in their recommendation engines, application can be found in fields
+such as e-commerce \cite{schafer1999recommender}, \cite{bulander2005enabling};
+music \cite{ricci2012context},\cite{baltrunas2011incarmusic}; 
+places of interest \cite{baltrunas2012context},
+movies\cite{eyjolfsdottir2010moviegen}; vacation packages \cite{liu2011personalized},
+\cite{liu2014cocktail}; travel guides \cite{savage2012m}; e-learning\cite{ortigosa2010entornos} and restaurants\cite{chu2013chinese}.\\  
+
 The majority of these recommender systems are focused on 
 recommending relevant items for users without
-additional contextual information such as time, location,
-companion or place. However, recent systems incorporate the contextual
-information to make recommendations in order to deliver items adjusted
-to the users' current context. For instance, the site Sourcetone
-interactive radio \cite{huq2010automated} when selecting a song for
-the customer takes in consideration the listener's current mood in
-order to provide a better recommendation. \\ The context is used for
-increase important aspects such as user satisfaction, recommendation
-quality, usefulness and more.\\
-This research presents an architecture proposed for a context-aware
-recommender system in the restaurant's domain. The objetive is to
-demonstrate how the level of user satisfaction is increased through
-the context when the system recommends restaurants in a specific
-context. The architecture contains three techniques for this process:
-\begin{enumerate}  
+additional contextual information such as time, location or %location = place
+companionship.  %!! Mas arriba dices que todos esos son 
+% sistemas que incorporan al contexto??
 
+However, recent systems incorporate contextual
+information to make recommendations that deliver items adjusted
+to the users' current context. For instance, the site Sourcetone % Referenca o url?
+interactive radio \cite{huq2010automated} when selecting a song for
+a customer it takes into consideration the listener's current mood in
+order to provide a better recommendation. \\ Contextual information is used to
+increase important characteristics such as user satisfaction, recommendation 
+%aspects? no me gusta mucho esa palabra.  fetaures? characteristic 
+quality, usefulness and more.\\
+In this thesis an architecture and methodology are proposed for designing context-aware
+recommender systems with a case study in the restaurant's domain. The objetive is to
+demonstrate how the level of user satisfaction is increased through
+the harnessing of contextual information for  a specific
+context. The architecture contains three techniques for this process:
+
+\begin{enumerate}  
 \item \textit{Fuzzy Inference System} to recommend such as an expert
 in restaurants, it considers the inputs \textit{ratings average},
 \textit{price of restaurant} and \textit{number of votes} to infer how
