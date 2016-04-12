@@ -95,24 +95,30 @@ factors, such as time, location, and the purchasing purpose, that
 identify the context in which recommendations are provided. An
 assumption for each of these contextual factors can have a structure;
 the time factor, for instance, it can be defined in terms of seconds,
-minutes, hours, days, months, and years. The classification of context
-that is proposed by Adomavicious\cite{adomavicius2011context} is based on the
+minutes, hours, days, months, and years. The classification of context 
+%Segura que es la clasificacion de context?
+%Este parrafo es incorrecto
+%La enumeración no es una clasificación 
+that is proposed by Adomavicious\cite{adomavicius2011context} is based on the 
 following two aspects of contextual factors: 1) what a RS may know
 about these contextual factors and, 2) how contextual factors change
 over time.
 \begin{enumerate}
+
+%% Este parrafo repite habla de la clasificación, no es una clasificación
 \item \textbf{What a recommender system may know about these contextual factors.} 
 A recommender system can have different types of knowledge, which may include 
 the exact list of all the relevant factors, their structure, and their values, 
 about the contextual factors. Depending on what exactly the system knows (that 
 is, what is being observed), it can classify the knowledge of a recommender 
 system about the contextual factors into three categories: 
+	%% Entonces se clasifican en tres:
 	\begin{itemize}
 	\item \textbf{Fully observable}: The contextual factors relevant to the 
 	application, as well as their structure and their values at the time when 
-	recommendations are made, are known explicitly. For example, in case 
-	of recommending a purchase of a certain product, such as a shirt, the 
-	recommender system may know that only the Time, PurchasingPurpose, and 
+	recommendations are made, are known explicitly. For example, when
+	recommending the purchase of a certain product, like a shirt, the 
+	recommender system may know only the \tt{Time}, PurchasingPurpose, and  %% Ponlos como \tt{}
 	ShoppingCompanion factors matter in this application. Further, the 
 	recommender system may know the structure of all these three contextual 
 	factors, such as having categories of weekday, weekend, and holiday for 
@@ -120,7 +126,7 @@ system about the contextual factors into three categories:
 	contextual factors at the recommendation time (for example, when this 
 	purchase is made, with whom, and for whom).
 	\item \textbf{Partially observable}: Only some of the information about 
-	the contextual factors, as described above, is known explicitly. For example, 
+	the contextual factors described above, is explicitly known. For example, 
 	the recommender system may know all the contextual factors, such as Time, 
 	PurchasingPurpose, and ShoppingCompanion, but not their structure. Note that 
 	there can possibly be different levels of “partial observability.” In this 
@@ -150,8 +156,8 @@ contextual factors change over time or not, there are two categories:
 	categories can be added to the PurchasingPurpose contextual factor over time).
 	\end{itemize}
 \end{enumerate} 
-By other hand, Fling\cite{fling2009mobile} considers four types of context that 
-are used by different applications: 
+On the other hand, Fling\cite{fling2009mobile} considers four types of context that 
+can be used by different applications: 
 \begin{itemize} 
 \item \textbf{Physical context}: representing the time, position, and activity 
 of the user, but also the weather, light, and temperature when the 
