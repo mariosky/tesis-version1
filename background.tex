@@ -2,50 +2,58 @@
 
 \chapter{Background}
 
-This chapter explains the basic concepts related this work. The formal
+This chapter present the fundamental concepts related this work. The formal
 definitions referring to fuzzy logic, contexts classification and the
 recommender system techniques used in the proposed method.
 
 \section{Fuzzy Logic}
 
 \textbf{Fuzzy logic} originates on 1965 from the publication “Fuzzy
-Sets”\cite{zadeh1965fuzzy} written by Lofti A. Zadeh in University of
-Berkeley California for the journal Information and control, based on
+Sets”\cite{zadeh1965fuzzy} written by Lofti A. Zadeh from the University of
+Berkeley California for the journal Information and Control, based on
 the work of J. Lukasiewicz\cite{saffiotti1995multivalued} about
 multi-valuated logic. In contrast with traditional logic, that uses
 absolute concepts when it refers to the real world, fuzzy logic
-defines these concepts on variable degrees of belonging, following
-reasoning patterns of those of human thought. \\  
-The central aspect of those systems based on the theory of fuzzy logic
-is that, unlike those based on classical logic, have the ability to
-acceptably reproduce the usual modes of reasoning, considering the
-certainty of a proposition is a matter of degree. More formally we can
+defines these concepts with variable degrees of belonging, following
+the reasoning patterns of human thought. \\  
+
+A distictive property of computational systems based on fuzzy logic theory 
+is that, unlike those based on classical logic, they have the ability to
+acceptably reproduce a more natural form of reasoning, that considers the
+certainty of a proposition as a matter of degree. More formally we can
 say that if the logic is the science of the formal principles and
 policy reasoning, fuzzy or fuzzy logic refers to the formal principles
-of approximate reasoning, considering the precise reasoning (classical
-logic) as a limiting case. Thus, the most attractive features of fuzzy
+of approximate reasoning, considering precise reasoning (classical
+logic) as a restrictive case. Thus, the most convenient features of fuzzy
 logic are its flexibility, tolerance for imprecision, its ability to
-model nonlinear problems and its basis in natural language. Although
-fuzzy logic is known by this name since the christening and Zadeh in
+model nonlinear problems and its roots in natural language. Although
+fuzzy logic is known by this name since the seminal work of Zadeh in
 1965, the idea that lies behind it, and its origins date back to 2500
 years ago. The Greek philosophers, including Aristoteles, believed
 that there were certain degrees of truthfulness and falsehood and
-Platon work with membership degrees.\\
+even Platon worked with membership degrees.\\ %Referencias de esto de Aristo y Platon
 \textbf{Fuzzy logic} has acquired a great reputation for the variety
-of its applications, which range from control of complex industrial
-processes, device design to control household electronics and
-entertainment, as well as diagnostic systems.  Fuzzy logic is
+of its applications, which range from the control of complex industrial
+processes, device design to controlers of household electronics and
+entertainment devices, as well as diagnostic systems.  Fuzzy logic is
 essentially a \textbf{multi-valued logic}\cite{zadeh1965fuzzy}, which
 is an extension of classical logic. The latter imposes on their
 statements only true and false values, however, much of human
 reasoning is not as 'deterministic´. The word fuzzy can be defined as:
-vague, confusing. Fuzzy systems are \textbf {knowledge-based systems}
-or \textbf{based on rules}. The kernel (core) of the fuzzy system
+vague or confusing. 
+%Fuzzy Systems
+Fuzzy systems are \textbf {knowledge-based systems}
+or \textbf{rule-based systems}. The kernel (core) of the fuzzy system
 consists of knowledge bases called \textbf {IF-THEN} fuzzy rules.
-Each fuzzy system is associated with a set of rules with a variety of
-representations, as in Figure \ref{fig:fuzzyset} ¡, which can be
+Each fuzzy system is associated with a set of rules with a variety of %¿Como una variedad de representaciones?
+representations, as in Figure \ref{fig:fuzzyset} i, which can be
 obtained from numerical data or experts familiar with the problem at
-hand. Based on this information, actions are combined with background
+hand. 
+%No se entiende muy bien, hay que explicar lo de funcion de membresía 
+%Variable linguistica y ya después las reglas. 
+% basate en mi articulo de http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.136.3578&rep=rep1&type=pdf 
+% sección 2 
+Based on this information, actions are combined with background
 formatting rules/consequent, and then are added according to the
 theory of approximate reasoning to produce a nonlinear mapping of the
 input space $ U=U_1 xU_2 x…U_n$ the output space V, where $
@@ -70,10 +78,19 @@ engine to traditional numbers.
 \label{fig:fuzzyset} 
 \end{figure*} 
 
-\section{Context definition}
+\section{Context}
+%%
+%% Escribe aquí una intro general de contexto,
+%% antes de ver especificamente al contexto en SR 
+%% Context y Contextual Information son dos términos distintos
+%% Context es el contexto real y de este se extrae información contextual.
+%% A veces los usas como si fuera lo mismo. 
 
-In the classification of context in recommender systems, there are
-previous approaches by assuming the existence of certain contextual
+%% También debes definir Contextual Factors, creo que es 
+%% Información Contextual que puede afectar a la recomendación   
+
+The application of contextual information in recommender systems, there are %
+previous approaches by assuming the existence of certain contextual         % Mejorar
 factors, such as time, location, and the purchasing purpose, that
 identify the context in which recommendations are provided. An
 assumption for each of these contextual factors can have a structure;
