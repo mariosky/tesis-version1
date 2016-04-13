@@ -157,7 +157,7 @@ contextual factors change over time or not, there are two categories:
 	\end{itemize}
 \end{enumerate} 
 On the other hand, Fling\cite{fling2009mobile} considers four types of context that 
-can be used by different applications: 
+can be used by different applications:  %Creo que estos pueden ser factores, no contextos 
 \begin{itemize} 
 \item \textbf{Physical context}: representing the time, position, and activity 
 of the user, but also the weather, light, and temperature when the 
@@ -172,9 +172,11 @@ images, movies, or queries made to the recommender system.
 \item \textbf{Modal context}: representing the current state of mind of the user, 
 the user’s goals, mood, experience, and cognitive capabilities.  
 \end{itemize}
-The contexts classification reachs to a general context definition
+The contexts classification reachs to a general context definition %No se si llamarle clasificacion
 adopted like the most suitable definition proposed by A. K. Dey  and it
 was mentioned in chapter 1.\\ 
+
+%% Esta idea es tuya? Creo que yo no llamaría a esto context más bien algo como context factor  
 Then, an example to explain context is considering a context-aware
 application, an indoor mobile tour guide. Here, the
 entities are the user, the application and the tour sites.  We will
@@ -187,6 +189,7 @@ is traveling with other people, then the sites that they visit may are
 the points of interest for the user. Therefore, the presence of other
 people is context because it can be used to characterize the user’s
 situation. \\ 
+%Falta afinar el siguiente párrafo:
 Previously understanding the context, it is likely to define \textbf
 {context-aware recommender systems}, it is viable to adopt the
 definition of \textbf{A. K. Dey et.al}\cite{dey2001understanding} to
@@ -201,7 +204,7 @@ other author's definitions.
 
 \section{Recommender systems}
 
-\subsection{Collaborative filtering algorithm}
+\subsection{Collaborative Filtering algorithm}
 
 The idea of collaborative recommendation approaches is to exploit
 information about the past behavior or the opinions of an existing
@@ -213,8 +216,8 @@ sales in order to  personalize the information for a particular user,
 then the system helps to  promote another items to grow up the sales
 in the on-line storage. Collaborative filtering  take a matrix of
 given \textit{user-item} ratings as the input to generate a prediction
-for each item  indicating what degree the current user will like or
-dislike  an item, suybsequently the list of \textit{n} recommended
+for each item  indicating to what degree the current user will like or
+dislike  an item, subsequently the list of \textit{n} recommended %ajustar
 items for the user that contains items no reviewed by the user.
 Differents approaches are utilized for collaborative filtering such
 as:  a) user-based nearest neighbor recommendation, b) Item-based
