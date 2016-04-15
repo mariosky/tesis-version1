@@ -1,78 +1,78 @@
 \chapter{Introduction} \label{introduction} 
 
 
-Esta tesis representa un estado del arte de los sistemas de
-recomendación en el área de computación.  A través de un estudio de la
-literatura se ha desarrollado un análisis de los diferentes enfoques
-aplicados a los sistemas de recomendación sensibles al contexto
-actuales, así como sus fortalezas y debilidades.  El estudio del
-estado del arte se realizo con el fin de obtener una solida
-contribución en el ámbito de los sistemas de recomendación sensibles
-al contexto, esto se logró mediante las pruebas realizadas con el
-método propuesto, la recolección de información contextual aplicada en
-el sistema y los experimentos previos que marcaron el camino de la
-investigación.
+% Esta tesis representa un estado del arte de los sistemas de
+% recomendación en el área de computación.  A través de un estudio de la
+% literatura se ha desarrollado un análisis de los diferentes enfoques
+% aplicados a los sistemas de recomendación sensibles al contexto
+% actuales, así como sus fortalezas y debilidades.  El estudio del
+% estado del arte se realizo con el fin de obtener una solida
+% contribución en el ámbito de los sistemas de recomendación sensibles
+% al contexto, esto se logró mediante las pruebas realizadas con el
+% método propuesto, la recolección de información contextual aplicada en
+% el sistema y los experimentos previos que marcaron el camino de la
+% investigación.
 
-\section{Motivación}
+% \section{Motivación}
 
-En su rutina diaria,  las personas tienen la necesidad de tomar
-decisiones frecuentemente, aunque no tengan la experiencia suficiente
-para decidir entre las alternativas posibles. Generalmente, las
-personas confían y toman en consideración las recomendaciones de
-terceros para llevar a cabo decisiones de  interés personal.  Existe
-una gran cantidad de información generada en una sociedad,  entonces,
-la falta de experiencia de las personas hace que cada día sea mas
-trascendente contar con métodos automáticos  de filtrado o selección
-de información relevante para la toma de decisiones. Grandes
-cantidades de información se generan en Internet diariamente y está
-disponible para cualquier usuario, así surge el problema de la
-saturación de información,  a tal grado que los usuarios son incapaces
-de separar la información relevante de la irrelevante.  La necesidad
-de herramientas que ofrezcan soluciones se ha vuelto imprescindible,
-de manera que las  herramientas  que proveen un servicio de
-recomendación proveen la ayuda necesaria para hacer un uso mas
-provechoso de la información disponible. El crecimiento desmesurado de
-información y la falta de experiencia de los usuarios evidencian la
-necesidad de motores de búsquedas automáticos o semiautomáticos que
-ayuden a la toma de decisiones mediante las recomendaciones de
-productos o servicios personalizados.
+% En su rutina diaria,  las personas tienen la necesidad de tomar
+% decisiones frecuentemente, aunque no tengan la experiencia suficiente
+% para decidir entre las alternativas posibles. Generalmente, las
+% personas confían y toman en consideración las recomendaciones de
+% terceros para llevar a cabo decisiones de  interés personal.  Existe
+% una gran cantidad de información generada en una sociedad,  entonces,
+% la falta de experiencia de las personas hace que cada día sea mas
+% trascendente contar con métodos automáticos  de filtrado o selección
+% de información relevante para la toma de decisiones. Grandes
+% cantidades de información se generan en Internet diariamente y está
+% disponible para cualquier usuario, así surge el problema de la
+% saturación de información,  a tal grado que los usuarios son incapaces
+% de separar la información relevante de la irrelevante.  La necesidad
+% de herramientas que ofrezcan soluciones se ha vuelto imprescindible,
+% de manera que las  herramientas  que proveen un servicio de
+% recomendación proveen la ayuda necesaria para hacer un uso mas
+% provechoso de la información disponible. El crecimiento desmesurado de
+% información y la falta de experiencia de los usuarios evidencian la
+% necesidad de motores de búsquedas automáticos o semiautomáticos que
+% ayuden a la toma de decisiones mediante las recomendaciones de
+% productos o servicios personalizados.
 
-\section{Objetivos}
+% \section{Objetivos}
 
-El objetivo es la contribución al estado del arte de los sistemas de
-recomendación sensibles al contexto, proveer conocimiento útil para la
-creación de estos sistemas de recomendación híbridos basados en
-contexto utilizando el método propuesto en un  dominio específico.  Se
-definieron objetivos particulares logrados para el objetivo general: 
-\begin{enumerate}
-\item Hacer una análisis sobre el estado del arte de sistemas de
-recomendación mediante el estudio de la literatura.  
-\item Evaluar los algoritmos que representan alternativas de solución 
-al problema.  
-\item Proponer nuevas técnicas de recomendación basadas en contexto en un
-dominio particular. 
-\item Desarrollar un sistema de recomendación híbrido basado en contexto. 
-\item Realizar experimentos para evaluar el rendimiento del algoritmo 
-propuesto con diferentes conjuntos de datos contextuales con el fin 
-de observar el comportamiento de los algoritmos propuestos. 
-\item Desarrollar un prototipo de sistema de recomendación sensible 
-al contexto en un dominio particular.
-\end{enumerate}
+% El objetivo es la contribución al estado del arte de los sistemas de
+% recomendación sensibles al contexto, proveer conocimiento útil para la
+% creación de estos sistemas de recomendación híbridos basados en
+% contexto utilizando el método propuesto en un  dominio específico.  Se
+% definieron objetivos particulares logrados para el objetivo general: 
+% \begin{enumerate}
+% \item Hacer una análisis sobre el estado del arte de sistemas de
+% recomendación mediante el estudio de la literatura.  
+% \item Evaluar los algoritmos que representan alternativas de solución 
+% al problema.  
+% \item Proponer nuevas técnicas de recomendación basadas en contexto en un
+% dominio particular. 
+% \item Desarrollar un sistema de recomendación híbrido basado en contexto. 
+% \item Realizar experimentos para evaluar el rendimiento del algoritmo 
+% propuesto con diferentes conjuntos de datos contextuales con el fin 
+% de observar el comportamiento de los algoritmos propuestos. 
+% \item Desarrollar un prototipo de sistema de recomendación sensible 
+% al contexto en un dominio particular.
+% \end{enumerate}
 
-\section{Hipotesis}
+% \section{Hipotesis}
 
-La hipótesis científica propuesta en este trabajo de investigación es
-la siguiente:
-H1: Can the algorithms based on contextual information improve the
-limitations of the traditional recommender systems?
-Ho: The algoritms based on contextual information not improve the
-limitations of the traditional recommender systems.\\
-Para validar la hipótesis se hicieron varios experimentos con los tres
-paradigmas de recomendación contextual, los conjuntos de datos
-utilizados fueron MovieLens, TripAdvisor,  FilmTrust  y  Restaurantes
-de Tijuana.  Considerando los objetivos de la tesis, los resultados
-obtenidos permiten afirmar que hay evidencia suficiente para rechazar
-la hipótesis nula.\\
+% La hipótesis científica propuesta en este trabajo de investigación es
+% la siguiente:
+% H1: Can the algorithms based on contextual information improve the
+% limitations of the traditional recommender systems?
+% Ho: The algoritms based on contextual information not improve the
+% limitations of the traditional recommender systems.\\
+% Para validar la hipótesis se hicieron varios experimentos con los tres
+% paradigmas de recomendación contextual, los conjuntos de datos
+% utilizados fueron MovieLens, TripAdvisor,  FilmTrust  y  Restaurantes
+% de Tijuana.  Considerando los objetivos de la tesis, los resultados
+% obtenidos permiten afirmar que hay evidencia suficiente para rechazar
+% la hipótesis nula.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Recommender systems are a technique to provide suggestions of 
