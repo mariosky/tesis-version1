@@ -205,32 +205,35 @@ other author's definitions.
 \section{Recommender systems}
 
 \subsection{Collaborative Filtering algorithm}
-
-The idea of collaborative recommendation approaches is to exploit
-information about the past behavior or the opinions of an existing
-user community for predicting which items the current user of the
+The idea behind collaborative recommendation approaches is to exploit
+information about past behavior or opinions of an exisiting user community 
+for predicting which items certain user of the
 system will most probably like or be interested in
 \cite{anIntroduction}. Recommender systems are useful in several types
-of  applications, however, the big impact is mainly in web sites for
-sales in order to  personalize the information for a particular user,
-then the system helps to  promote another items to grow up the sales
-in the on-line storage. Collaborative filtering  take a matrix of
-given \textit{user-item} ratings as the input to generate a prediction
-for each item  indicating to what degree the current user will like or
-dislike  an item, subsequently the list of \textit{n} recommended %ajustar
-items for the user that contains items no reviewed by the user.
-Differents approaches are utilized for collaborative filtering such
+of  applications, however, their biggest impact has been mainly in ecommerce 
+web sites in order to  personalize the information for a particular user as
+the system can help to promote several items of his or her interest, thus increasing the sales
+of the on-line store. In traditional implementations a Collaborative Filtering (CF)
+algorithm takes as input a given \textit{user-item} matrix of ratings 
+to generate a prediction for each item-user pair indicating to what degree
+the current user will like or
+dislike an item. Subsequently with that information 
+a list of the top \textit{n} recommended 
+items for the user can be generated. The generated list contains 
+only those items that have not been reviewed by the user.
+Differents approaches are utilized for CF such
 as:  a) user-based nearest neighbor recommendation, b) Item-based
 nearest neighbor  recommendation and c) model-based recommendation.\\
-a) \textit{User-based nearest neighbor} is the most used approach because
-of is easy of implementation and efficient results. Only need the
-rating matrix to obtain recommendations for users. The neighborhood
-selection is taking the \textit{K} nearest neighbors into account
-usind the threshold to define  the size of the neighborhood. A reduced
-size of neigborhood can not make predictions, on the  contrary, is the
-neighborhood is large the information for recommendations can not be
-significant.\\ To obtain the similarity value between user and
-neighbors, the Pearson correlations measure is used, takes values from
+a) \textit{User-based nearest neighbor} is approach the is used the most because
+is relatibly easy to implement and offers acceptable results. Another advantage
+is tha only the rating matrix is needed to obtain recommendations. 
+The neighborhood selection consists in taking the \textit{k} 
+nearest neighbors into account usind the threshold to define 
+the size of the neighborhood. A neigborhood of small can not make accurate 
+predictions, and on the other hand if the
+neighborhood is too large the information about the nighbours could not be
+significant.\\ To obtain the similarity value between a user and his 
+neighbors, the Pearson correlations measure is commonly used, taking the values from
 $+1$ (strong positive correlation) to $-1$ (strong negative
 correlation) to define how similar a neighbor is. The similarity
 $sim(a,b)$ of users $a$ and $b$, given the rating matrix $R$ is
