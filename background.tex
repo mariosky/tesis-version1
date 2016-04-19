@@ -2,81 +2,163 @@
 
 \chapter{Background}
 
-This chapter present the fundamental concepts related this work. The formal
-definitions referring to fuzzy logic, contexts classification and the
+This chapter present the fundamental concepts related this work. The
+formal definitions referring to fuzzy systems, contextual factors and
 recommender system techniques used in the proposed method.
+%--------------------------------------------------------------
+%Agregue la seccion de logica difusa del articulo que me mando.
+\section{Production systems and fuzzy models}
 
-\section{Fuzzy Logic}
+\subsection{Traditional Production Systems}
 
-\textbf{Fuzzy logic} originates on 1965 from the publication “Fuzzy
-Sets”\cite{zadeh1965fuzzy} written by Lofti A. Zadeh from the University of
-Berkeley California for the journal Information and Control, based on
-the work of J. Lukasiewicz\cite{saffiotti1995multivalued} about
-multi-valuated logic. In contrast with traditional logic, that uses
-absolute concepts when it refers to the real world, fuzzy logic
-defines these concepts with variable degrees of belonging, following
-the reasoning patterns of human thought. \\  
+Production Systems represent knowledge in form of rules, which specify
+actions that will be executed when certain conditions are met. Experts
+in certain domain identify a set of rules based on their experience to
+resolve different kinds of problems. Also known as rule based systems,
+many implementations consist mainly of these three
+components \cite{brachman1992knowledge} \cite{konar2006computational}:
+\begin{enumerate}   
+\item \textbf{Production Rules (PR)}. A set of
+production rules (also known as IF-THEN rules) having a two part
+structure; the antecedent, conformed by a set of conditions and a
+consequent set of actions. 
+\item \textbf{Working Memory (WM)}.
+Represents the current knowledge or facts that are known to be true so
+far. These facts are tested by the antecedent conditions of the rules
+and the consequent part can change them. 
+\item \textbf{Inference Engine (IE)}. 
+This interpreter matches the conditions in the
+production rules with the data/instantiations found in the WM,
+deriving new consequences.
+\end{enumerate}
+The basic operation of these systems is described as a cycle of 
+three steps \cite{brachman1992knowledge}:
+\begin{enumerate}
+\item \textbf{Recognize}: Find which rules are satisfied by 
+the current WM. The antecedent part of the productions consists 
+of a set of clauses connected by AND operators, when all these 
+clauses have matching data on the WM the production has a chance 
+of firing.
+\item \textbf{Conflict Resolution}: Only one production can be 
+fired at a time, so when two or more rules can be fired concurrently 
+a conflict occurs. Among the production rules found in the first 
+step, choose which rules should fire.
+\item \textbf{Actions}: Change the working memory by performing 
+the actions specified in the consequent part of all the rules 
+selected in the second step. Changes occur by adding or 
+deleting elements of the WM.
+\end{enumerate}
 
-A distictive property of computational systems based on fuzzy logic theory 
-is that, unlike those based on classical logic, they have the ability to
-acceptably reproduce a more natural form of reasoning, that considers the
-certainty of a proposition as a matter of degree. More formally we can
-say that if the logic is the science of the formal principles and
-policy reasoning, fuzzy or fuzzy logic refers to the formal principles
-of approximate reasoning, considering precise reasoning (classical
-logic) as a restrictive case. Thus, the most convenient features of fuzzy
-logic are its flexibility, tolerance for imprecision, its ability to
-model nonlinear problems and its roots in natural language. Although
-fuzzy logic is known by this name since the seminal work of Zadeh in
-1965, the idea that lies behind it, and its origins date back to 2500
-years ago. The Greek philosophers, including Aristoteles, believed
-that there were certain degrees of truthfulness and falsehood and
-even Platon worked with membership degrees.\\ %Referencias de esto de Aristo y Platon
-\textbf{Fuzzy logic} has acquired a great reputation for the variety
-of its applications, which range from the control of complex industrial
-processes, device design to controlers of household electronics and
-entertainment devices, as well as diagnostic systems.  Fuzzy logic is
-essentially a \textbf{multi-valued logic}\cite{zadeh1965fuzzy}, which
-is an extension of classical logic. The latter imposes on their
-statements only true and false values, however, much of human
-reasoning is not as 'deterministic´. The word fuzzy can be defined as:
-vague or confusing. 
-%Fuzzy Systems
-Fuzzy systems are \textbf {knowledge-based systems}
-or \textbf{rule-based systems}. The kernel (core) of the fuzzy system
-consists of knowledge bases called \textbf {IF-THEN} fuzzy rules.
-Each fuzzy system is associated with a set of rules with a variety of %¿Como una variedad de representaciones?
-representations, as in Figure \ref{fig:fuzzyset} i, which can be
-obtained from numerical data or experts familiar with the problem at
-hand. 
-%No se entiende muy bien, hay que explicar lo de funcion de membresía 
-%Variable linguistica y ya después las reglas. 
-% basate en mi articulo de http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.136.3578&rep=rep1&type=pdf 
-% sección 2 
-Based on this information, actions are combined with background
-formatting rules/consequent, and then are added according to the
-theory of approximate reasoning to produce a nonlinear mapping of the
-input space $ U=U_1 xU_2 x…U_n$ the output space V, where $
-F_k^l⊂U_k,k=1,2,…n,$ membership functions are type-1 antecedent, and $
-G^1⊂V $ is the membership function of type-1 consistent. The
-linguistic variables\cite{dubois1980fuzzy} are denoted by input $uk,
-=1,2,…n $, and output linguistic variables are denoted by: $R^l: if
-x_1$ is $F_1^l $ and $x_{2}$ is $F_2^l$ and ... and $x_n$ is $F_n^l$
-then V is $G^1$.\\ A fuzzy system consists of four basic elements
-shown in Figure \ref{fig:fuzzyset}: fuzzifier type-1, the fuzzy rule
-base, inference machine and defuzzifier type-1. The \textbf{fuzzy
-rule} is a collection of rules, which are combined in the inference
-machine to produce a fuzzy output. The fuzzifier maps numeric entries
-to fuzzy sets, which are then used as inputs to the inference engine,
-where the defuzzifier maps the fuzzy sets produced by the inference
-engine to traditional numbers.
-\begin{figure*} \captionsetup{justification=centering,margin=2cm} 
-\centering
-\setlength\fboxsep{0pt} \setlength\fboxrule{0.7pt}
-\fbox{\includegraphics[width=0.75\textwidth]{img/fuzzy1.png}} 
-\caption{Estructure of a fuzzy logic system.}
-\label{fig:fuzzyset} 
-\end{figure*} 
+This cycle continues until no further production rules can be fired.
+This control strategy is data driven because whenever the antecedent
+part is satisfied the rule is recognized, this strategy is also named
+chain-forward. Other strategy is chain-backward in this case the work
+is done from the conclusion to the facts, to chain-backward, goals in
+working memory are match against consequents of the production
+rules.\\  A drawback that has been recognized in these traditional
+productions systems, is that some times rules are not fired in the
+Recognize step because no appropriate match exists in the WM. Partial
+matching of rules is not possible and this can be a limitation in some
+systems because premature termination of the cycle is not desired. An
+approach to handle partial matching is using fuzzy logic
+\cite{konar2006computational}. In the next section a review of the
+extension of production systems with fuzzy logic is preasented.\\
+
+\subsection{Fuzzy Production Rules}
+
+Fuzzy production rules use fuzzy logic sets to characterize the
+variables and terms used in the propositions of the rules. Fuzzy
+production rules or fuzzy \textit{IF-THEN} rules are expressions of
+the form \textit{IF} antecedent \textit{THEN} consequent, where the
+antecedent is a proposition of the form \textit{"x is A"} where
+\textit{x} is a linguistic variable and \textit{A} is a linguistic
+term. The truth value of this proposition is based on the matching
+degree between \textit{x} and \textit{A}. Propositions are connected
+by \textit{AND}, \textit{OR} and \textit{NOT} operators. Some
+implementations of fuzzy rule-based systems also include other kinds
+of data types in their propositions, for example the FLOPS system
+includes fuzzy numbers, hedges, and non fuzzy data types (integers,
+strings and float) \cite{siler2005fuzzy}. Depending on the form of the
+consequent, two main types of fuzzy production systems are
+distinguished \cite{babuvska1996fuzzy}:
+\begin{itemize}  
+\item \textbf{Linguistic fuzzy model}: where both the antecedent 
+and consequent are fuzzy propositions.
+\item \textbf{Takagi-Sugeno fuzzy model}: the antecedent is a fuzzy 
+proposition; the consequent is a crisp function.
+\end{itemize}  
+As before, other non-fuzzy consequents can also be implemented, like
+the execution of commands or the addition of new data.\\
+\textbf{Linguistic Variables (LV)} are variables that can be assigned
+linguistic terms as values, i.e. if we define a linguistic variable
+\textit{SPEED} we can assign it the linguistic terms \textit{SLOW},
+\textit{MEDIUM} or \textit{FAST}. The meaning of these linguistic
+terms is defined by their membership functions (MF). \textit{LV} can
+be defined as a \textit{5-tuple} \textit{LV=}$<v,T,X,g,m>$ where
+\textit{v} is the name of the variable, \textit{T} is the set of
+linguistic terms of \textit{v, X} is the domain (universe) of
+\textit{v,g} is a syntactic rule to generate linguistic terms,
+\textit{m} is a semantic rule that assigns to each term \textit{t} its
+meaning \textit{m(t)}, which is a fuzzy set defined in \textit{X}.
+
+\subsection{Fuzzy Inference Systems}
+
+\textit{Fuzzy Inference Systems} (FISs) also called \textit{Fuzzy
+Models} are fuzzy production systems used for modeling input-output
+relationships. From this input-output view, Babuŝka
+\cite{babuvska1996fuzzy} describes these systems as \textit{"flexible
+mathematical functions which can approximate other functions or just
+data (measurements) with a desired accuracy"}. Fuzzy Productions Rules
+define the relationship between input and output variables. Input
+variables are defined in the antecedent part of the rule and the
+consequent part defines the output variables. These FIS are used
+mainly in control systems, and are basically composed of five
+modules\cite{babuvska1996fuzzy}:
+\begin{enumerate}  
+\item \textbf{Rule Base.} The set of fuzzy production rules.
+\item \textbf{Database.} Where the membership functions are defined.
+\item \textbf{Fuzzy Inference Engine.} This module executes the 
+fuzzy inference operations.
+\item \textbf{Fuzzifier.} This interface transforms the inputs 
+of the systems (numerical data) into linguistic values.
+\item \textbf{Defuzzifier.} This interface transforms the fuzzy 
+results into numerical data.
+\end{enumerate}
+Usually the Rule Base and Data Base modules are collectively 
+called the Knowledge Base module. The steps involved in fuzzy 
+inference in a FIS are \cite{dubois1980fuzzy}:
+\begin{enumerate} 
+\item Compare the input variables with the membership functions 
+in the antecedent, to obtain the membership values of each 
+linguistic term. This step is frequently called fuzzification.
+\item Compose through a specific T-Norm operator (mainly max-min 
+or max-product) the membership values to obtain the degree of 
+support of each rule.
+\item Generate the qualified consequence (fuzzy or numeric) of 
+each rule depending on the degrees of support. These outputs 
+are then aggregated to form a unified output.
+\item Then the output fuzzy set is resolved or defuzzified 
+to a single numeric value.
+\end{enumerate} 
+Three main inference systems can be described:
+\begin{itemize} 
+\item \textbf{Tsakumoto}: The output is the average of the 
+weights of each rule numeric output, induced by the degree of 
+support of each rule, the min-max or min-product with the 
+antecedent and the membership functions of the output. The 
+membership functions used in this method must be 
+non-decrease monotonic. 
+\item \textbf{Mamdani}: The output is calculated by applying 
+the min-max operator to the fuzzy output (each equal to the 
+minimum support degree and the membership function of the rule). 
+Several schemes have been proposed to choose the numeric output 
+based on the fuzzy output; these include the centroid area, 
+area bisection, maximum mean, maximum criteria.
+\item \textbf{Sugeno}: The fuzzy production rules are used. The 
+output of each rule is a linear combination of the input 
+variables plus a constant term, and the output is the average 
+of the support degree of each rule.
+\end{itemize} 
 
 \section{Context}
 %%
