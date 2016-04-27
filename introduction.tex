@@ -1,66 +1,56 @@
 \chapter{Introduction} \label{introduction} 
 
+This thesis represents a state of the art of recommender systems in
+the computing field. Through a study of literature it has done an
+analysis of the different approaches applied to context-aware
+recommender systems, as well as their strengths and weaknesses.  
+The analysis of state of the art was done in order to obtain a solid
+contribution in the field of contextual recommender systems, this was
+achieved through tests, the collection of contextual information used
+in the system and previous experiments that marked the way of
+research.
 
-% Esta tesis representa un estado del arte de los sistemas de
-% recomendación en el área de computación.  A través de un estudio de la
-% literatura se ha desarrollado un análisis de los diferentes enfoques
-% aplicados a los sistemas de recomendación sensibles al contexto
-% actuales, así como sus fortalezas y debilidades.  El estudio del
-% estado del arte se realizo con el fin de obtener una solida
-% contribución en el ámbito de los sistemas de recomendación sensibles
-% al contexto, esto se logró mediante las pruebas realizadas con el
-% método propuesto, la recolección de información contextual aplicada en
-% el sistema y los experimentos previos que marcaron el camino de la
-% investigación.
+\section{Motivation}
 
-% \section{Motivación}
+Often people need take decisions, even although their experience is
+not enought to decide among the possible alternatives. Generally,
+persons trust in recommendations of anyone else, to taking desitions
+according their personal interest. There is a large amount of
+information generated in a society, so, the lack of experience of
+persons highlights the importance of having automatic methods to
+filter relevant information that helps to taking desitions. Every day,
+a lot of information is generated in Internet and it is available for
+users, then the overload information problem arises, in a manner that
+users can't identify the relevant information of the irrelevant. The
+users need tools to facilitate tasks, in a manner that this tools
+provide a recommendation service that helps to use efficiently the
+available information. The overload of information and the lack of
+experience of users promotes the need of automatic search engines
+that contributes to taking desitions through recommendations of
+personalized products or services.
 
-% En su rutina diaria,  las personas tienen la necesidad de tomar
-% decisiones frecuentemente, aunque no tengan la experiencia suficiente
-% para decidir entre las alternativas posibles. Generalmente, las
-% personas confían y toman en consideración las recomendaciones de
-% terceros para llevar a cabo decisiones de  interés personal.  Existe
-% una gran cantidad de información generada en una sociedad,  entonces,
-% la falta de experiencia de las personas hace que cada día sea mas
-% trascendente contar con métodos automáticos  de filtrado o selección
-% de información relevante para la toma de decisiones. Grandes
-% cantidades de información se generan en Internet diariamente y está
-% disponible para cualquier usuario, así surge el problema de la
-% saturación de información,  a tal grado que los usuarios son incapaces
-% de separar la información relevante de la irrelevante.  La necesidad
-% de herramientas que ofrezcan soluciones se ha vuelto imprescindible,
-% de manera que las  herramientas  que proveen un servicio de
-% recomendación proveen la ayuda necesaria para hacer un uso mas
-% provechoso de la información disponible. El crecimiento desmesurado de
-% información y la falta de experiencia de los usuarios evidencian la
-% necesidad de motores de búsquedas automáticos o semiautomáticos que
-% ayuden a la toma de decisiones mediante las recomendaciones de
-% productos o servicios personalizados.
+\section{Aims}
 
-% \section{Objetivos}
-
-% El objetivo es la contribución al estado del arte de los sistemas de
-% recomendación sensibles al contexto, proveer conocimiento útil para la
-% creación de estos sistemas de recomendación híbridos basados en
-% contexto utilizando el método propuesto en un  dominio específico.  Se
-% definieron objetivos particulares logrados para el objetivo general: 
-% \begin{enumerate}
-% \item Hacer una análisis sobre el estado del arte de sistemas de
-% recomendación mediante el estudio de la literatura.  
-% \item Evaluar los algoritmos que representan alternativas de solución 
-% al problema.  
-% \item Proponer nuevas técnicas de recomendación basadas en contexto en un
-% dominio particular. 
-% \item Desarrollar un sistema de recomendación híbrido basado en contexto. 
-% \item Realizar experimentos para evaluar el rendimiento del algoritmo 
-% propuesto con diferentes conjuntos de datos contextuales con el fin 
-% de observar el comportamiento de los algoritmos propuestos. 
-% \item Desarrollar un prototipo de sistema de recomendación sensible 
-% al contexto en un dominio particular.
-% \end{enumerate}
+The aim is the contribution to the state of the art in context-aware
+recommender systems, to provide a \textit{useful knowledge} to utilize hybrid recommender systems, as proposed method in a restaurants domain. The
+particular aims that contributes to achieve this research are
+following: 
+\begin{itemize}  
+\item Elaborate an analysis about state of the art in the field
+of context-aware recommender systems through  the revision of
+literature. 
+\item To evaluate the algorithms that represent alternatives of 
+solution for the problem. 
+\item To propose new recommendation techniques for context applied 
+in a case of study.  
+\item To develop a prototype of hybrid recommender system based 
+in context. 
+\item To evaluate the performance of the proposed method using 
+different datasets in order to observe the system behaviour 
+for each particular case.
+\end{itemize} 
 
 % \section{Hipotesis}
-
 % La hipótesis científica propuesta en este trabajo de investigación es
 % la siguiente:
 % H1: Can the algorithms based on contextual information improve the
@@ -80,8 +70,7 @@ useful items for a certain user. The suggestion relates to various
 decision-making processes, for instance, what items to buy, what music
 to listen to or what on-line news to read. \textit{Item} is the general
 term to denote what product or service the system recommends for each
-user. A recommender system normally focuses in a kind of item\cite{resnick1997recommender}.
-
+user. A recommender system normally focuses in a kind of item \cite{resnick1997recommender}.
 % Recommender systems arise to cover the lack of personal experience to
 % evaluate the overwhelming number of alternative items that a Web site
 % may offer \cite{resnick1997recommender}.
@@ -89,7 +78,6 @@ Recommender systems development initiated from a rather simple
 observation: individuals often rely on recommendations provided by
 others in making routine and daily decisions \cite{mahmood2009improving},
 \cite{mcsherry2009differentially}. 
-
 % For example people commonly relies on suggestions when selecting a
 % book to read; when hiring human resources in a company, the department
 % counts on recommendation letters in their recruiting decisions; and
@@ -99,21 +87,19 @@ others in making routine and daily decisions \cite{mahmood2009improving},
 % si te fijas los tre parrafos anteriores son tres definiciones, como que empiezas
 % el tema tres veces, en lugar de seguir describiendo, despues regresamos a que esta
 % parte quede bien.
-
 %%El siguiente parrafo no se entiende:
 Recommender systems try to imitate this human behaviour, to
 recommend a product in daily life is normally the most effective
 manner to achieve in this systems that the user prefers an item in a
 Web site.
-
 Over the time, the improvements of recommender systems are
 focused on differents techniques that involve the context in the
 recommendation process. 
-
 The importance of contextual information has
 been recognized in different domains and disciplines. % Agregar referencias 
 In recommender
-systems, context implies the situations around of the user when it is % Creo que hay solo una situacion posible
+systems, context implies the situations around of the user when it is 
+% Creo que hay solo una situacion posible
 interacting with the system and all the information that this
 situation represents. 
 % definir aqui Context?
@@ -126,7 +112,6 @@ applications themselves.''}
 This definition makes it easier to define
 the important context in a specific recommender system.\\  %% Aclara esto mejor definir el contexto importante?
 % Mejor con un ejemplo?
-
 However, some authors make an understandable comparison of different % A que te refieres con understandable?
 contexts such as Bazire et.al. \cite{bazire2005understanding} that compares 
 different definitions of context in different fields and conclude that is
@@ -141,7 +126,6 @@ Also identifies the important aspects to consider when the
 context is used in that framework: how it is the contextual data obtained , how
 the context is represented and what objectives and purposes the
 context has when used in a particular application. \\
-
 Context-aware recommender systems are gaining even more attention
 because of their performance and adaptation for different domains, the % a que te refieres con adaptation?
 way to improve personalized recommendations based in contextual 
@@ -155,13 +139,11 @@ music \cite{ricci2012context},\cite{baltrunas2011incarmusic};
 places of interest \cite{baltrunas2012context},
 movies\cite{eyjolfsdottir2010moviegen}; vacation packages \cite{liu2011personalized},
 \cite{liu2014cocktail}; travel guides \cite{savage2012m}; e-learning\cite{ortigosa2010entornos} and restaurants\cite{chu2013chinese}.\\  
-
 The majority of these recommender systems are focused on 
 recommending relevant items for users without
 additional contextual information such as time, location or %location = place
 companionship.  %!! Mas arriba dices que todos esos son 
 % sistemas que incorporan al contexto??
-
 However, recent systems incorporate contextual
 information to make recommendations that deliver items adjusted
 to the users' current context. For instance, the site Sourcetone % Referenca o url?
@@ -175,7 +157,6 @@ In this thesis an architecture and methodology are proposed for designing contex
 recommender systems validated with a case study of a restaurant recommender system. The objetive is to
 demonstrate how the level of user satisfaction is increased through
 the use contextual information. The architecture is an hybrid of three techniques:
-
 \begin{enumerate}  
 \item \textit{Fuzzy Inference System} This a rule based recommender defined by an expert
 in the domain, it considers as linguistic variables for instance for
@@ -197,7 +178,6 @@ tastes that rated restaurants again in a similar way but
 where have not been rated by the current user.
 A Top-N list of restaurants is obtained to recommend for the user. 
 \end{enumerate} 
-
 The results of the three techniques are the list of
 recommendations for the user and then in the next module are adjusted 
 for user in context.
@@ -208,8 +188,9 @@ simultaneously to obtain recommendations, the hybrid method allows the
 recommender system to generate suggestions despite having scarse
 user information. When the system faces the the cold-start
 problem or the over-specialization problem, the hybrid method
-responses properly to show results for the user. These problems 
-are described in a later sction. The expert\'s 
+responses properly to show results for the user. 
+%These problems  are described in a later section. 
+The expert's 
 recommendation contributes to this goal, the rules specified in 
 the Fuzzy Inference System help to infer the most suitable 
 restaurant considering the only the input variables and the knowledge 
@@ -219,11 +200,9 @@ items that are appropiate to the context of the user to produce
 the final recommendation list. The context-aware recommender
 system tries to increase the level of user satisfaction. To meet this
 goal two metrics were utilized to test the system in an on-line test.
-
 % Hablar del uso de pruebas de satisfaccion y usabilidad,
 % se debe justificar en base a esto el por que son
 % aparentemente pocos usuarios.
-
 % Menciona también las pruebas de error de recomendacion
 % Fijate como cambié lo de arquitectura por metodología
 % ya que si te das cuenta este proceso se puede utilizar de manera
@@ -231,11 +210,9 @@ goal two metrics were utilized to test the system in an on-line test.
 % La implementación especifica es la de recommet
 % pero lo mismo puede usarse para Protoboard.
 % Al principio debemos hablar de manera general.
-
 Ten users were selected to interact with the system, subsequently an
 analysis about the system performance and main issues highlited by the
 users was realized. \\
-
 The rest of this thesis is organized as follows: chapter 2 explains
 the state of the art in context aware recommender systems,  
 chapter 3 contains the background of the related topics, 
