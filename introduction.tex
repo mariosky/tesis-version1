@@ -1,14 +1,17 @@
 \chapter{Introduction} \label{introduction} 
 
 This thesis represents a state of the art of recommender systems in
-the computing field. Through a study of literature it has done an
+the computing field. Through a study of literature it was done an
 analysis of the different approaches applied to context-aware
-recommender systems, as well as their strengths and weaknesses.  
-The analysis of state of the art was done in order to obtain a solid
-contribution in the field of contextual recommender systems, this was
-achieved through tests, the collection of contextual information used
-in the system and previous experiments that marked the way of
-research.
+recommender systems, as well as their strengths and weaknesses. The
+purpose of this research is to contribute in the knowledge of the use of
+context in recommender systems and to propose a hybrid method for
+recommendations. Equally important in the method is the fuzzy
+inference system implemented, because this system represents a
+technique for recommendation else. These goals were achieved by means
+of the collection of contextual information used in the system
+through questionnaires and several experiments to validate the
+method.
 
 \section{Motivation}
 
@@ -25,174 +28,141 @@ users can't identify the relevant information of the irrelevant. The
 users need tools to facilitate tasks, in a manner that this tools
 provide a recommendation service that helps to use efficiently the
 available information. The overload of information and the lack of
-experience of users promotes the need of automatic search engines
+experience of users promotes the need of automatic search engines 
 that contributes to taking desitions through recommendations of
 personalized products or services.
 
 \section{Aims}
 
-The aim is the contribution to the state of the art in context-aware
-recommender systems, to provide a \textit{useful knowledge} to utilize hybrid recommender systems, as proposed method in a restaurants domain. The
-particular aims that contributes to achieve this research are
-following: 
+The main contribution is in the state of the art in the field of
+context-aware recommender systems, the goal is to provide a
+\textit{useful knowledge} to utilize context-aware recommender systems
+using a hybrid method that is easily implemented in different domains
+such as e-learning, movies, music, tourism, etc. In this particular
+case, the restaurants domain is used as a case of study to  test the
+propose method.   The particular aims are following:
 \begin{itemize}  
-\item Elaborate an analysis about state of the art in the field
+\item To elaborate an analysis about state of the art in the field
 of context-aware recommender systems through  the revision of
 literature. 
 \item To evaluate the algorithms that represent alternatives of 
 solution for the problem. 
 \item To propose new recommendation techniques for context applied 
 in a case of study.  
-\item To develop a prototype of hybrid recommender system based 
-in context. 
-\item To evaluate the performance of the proposed method using 
+\item To develop a prototype of context-aware recommender system 
+using the method. 
+\item To evaluate the performance of the method using 
 different datasets in order to observe the system behaviour 
 for each particular case.
 \end{itemize} 
 
-% \section{Hipotesis}
-% La hipótesis científica propuesta en este trabajo de investigación es
-% la siguiente:
-% H1: Can the algorithms based on contextual information improve the
-% limitations of the traditional recommender systems?
-% Ho: The algoritms based on contextual information not improve the
-% limitations of the traditional recommender systems.\\
-% Para validar la hipótesis se hicieron varios experimentos con los tres
-% paradigmas de recomendación contextual, los conjuntos de datos
-% utilizados fueron MovieLens, TripAdvisor,  FilmTrust  y  Restaurantes
-% de Tijuana.  Considerando los objetivos de la tesis, los resultados
-% obtenidos permiten afirmar que hay evidencia suficiente para rechazar
-% la hipótesis nula.\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Recommender systems are a technique to provide suggestions of 
-useful items for a certain user. The suggestion relates to various
-decision-making processes, for instance, what items to buy, what music
-to listen to or what on-line news to read. \textit{Item} is the general
+\section{Context-awareness}
+
+Traditional recommender systems provides suggestions of useful
+items for a certain user. The suggestion relates to various 
+decision-making processes, for instance, what items to buy, what music to
+listen to or what on-line news to read. \textit{Item} is the general
 term to denote what product or service the system recommends for each
-user. A recommender system normally focuses in a kind of item \cite{resnick1997recommender}.
-% Recommender systems arise to cover the lack of personal experience to
-% evaluate the overwhelming number of alternative items that a Web site
-% may offer \cite{resnick1997recommender}.
-Recommender systems development initiated from a rather simple
-observation: individuals often rely on recommendations provided by
-others in making routine and daily decisions \cite{mahmood2009improving},
-\cite{mcsherry2009differentially}. 
-% For example people commonly relies on suggestions when selecting a
-% book to read; when hiring human resources in a company, the department
-% counts on recommendation letters in their recruiting decisions; and
-% when selecting a movie to watch, people tend to read and rely on 
-% movie reviews that a film critic has written.\\
-%% Debemos escoger uno o dos parrafos que expliquen lo de recomender systems
-% si te fijas los tre parrafos anteriores son tres definiciones, como que empiezas
-% el tema tres veces, en lugar de seguir describiendo, despues regresamos a que esta
-% parte quede bien.
-%%El siguiente parrafo no se entiende:
-Recommender systems try to imitate this human behaviour, to
-recommend a product in daily life is normally the most effective
-manner to achieve in this systems that the user prefers an item in a
-Web site.
-Over the time, the improvements of recommender systems are
-focused on differents techniques that involve the context in the
-recommendation process. 
-The importance of contextual information has
-been recognized in different domains and disciplines. % Agregar referencias 
-In recommender
-systems, context implies the situations around of the user when it is 
-% Creo que hay solo una situacion posible
-interacting with the system and all the information that this
-situation represents. 
-% definir aqui Context?
-In this work we use a definition proposed by Annin K.
-Dey \cite{dey2001understanding}: \textit{``Context is any information
-that can be used to characterize the situation of an entity. An entity
-is a person, place or object that is considered relevant to the
-interaction between a user and an application, including the user and
-applications themselves.''} 
-This definition makes it easier to define
-the important context in a specific recommender system.\\  %% Aclara esto mejor definir el contexto importante?
-% Mejor con un ejemplo?
-However, some authors make an understandable comparison of different % A que te refieres con understandable?
-contexts such as Bazire et.al. \cite{bazire2005understanding} that compares 
-different definitions of context in different fields and conclude that is
-complicated makes a unifying definition of context because of the
-nature of the concept in the disciplines. In computer sciences Fischer
-G. \cite{fischer2012context} defines context as the interaction
-between humans and computers in socio-technical systems that takes
-place in a certain context referring to the physical and social
-situation in which computational devices and environments are
-embedded. % Me gusta esta definicion tambien
-Also identifies the important aspects to consider when the
-context is used in that framework: how it is the contextual data obtained , how
-the context is represented and what objectives and purposes the
+user. A recommender system normally focuses only in a type of item
+\cite{resnick1997recommender}.
+The improvements of previous recommender systems are focused in the
+\textit{integration of context} in its recommendation process. 
+The importance of contextual information has been recognized 
+in different domains and disciplines.  % Agregar referencias
+The idea of context-aware computing is to provide
+information or services for the user based in the user’s situation
+\cite{dey2001understanding}. In order to do that, the application 
+needs to obtain situational data, process it and make use of it 
+in a way that benefits the user. \\ 
+Context is a concept not easy to define, it is related with 
+several disciplines that propose different definitions.\\  %referecnicas
+Some authors make a comparison of definitions such as Bazire et.al.
+\cite{bazire2005understanding} that compares the context in different
+fields and conclude that is complicated makes a unifying definition of
+context because of the nature of the concept in the disciplines.
+In computer sciences Fischer G.\cite{fischer2012context} defines
+context as the interaction between humans and computers in socio-
+technical systems that takes place in a certain context referring to
+the \textit{physical} and \textit{social situation} in which 
+computational devices and environments are embedded.
+Also identifies the important aspects to consider when the context is
+used in that framework: how it is the contextual data obtained, how
+the context is represented and what goals and purposes the
 context has when used in a particular application. \\
-Context-aware recommender systems are gaining even more attention
-because of their performance and adaptation for different domains, the % a que te refieres con adaptation?
-way to improve personalized recommendations based in contextual 
-factors is an important technique to increase the benefits in many
-domains. % Da un ejemplo, For instance taking in to account the hour of the day, or the day of the week 
-% when recommending restaurants could filter out restaurants that are currently closed or near closing time.  
-Nowadays many companies are incorporating some kind of
-context in their recommendation engines, application can be found in fields
-such as e-commerce \cite{schafer1999recommender}, \cite{bulander2005enabling};
-music \cite{ricci2012context},\cite{baltrunas2011incarmusic}; 
-places of interest \cite{baltrunas2012context},
-movies\cite{eyjolfsdottir2010moviegen}; vacation packages \cite{liu2011personalized},
-\cite{liu2014cocktail}; travel guides \cite{savage2012m}; e-learning\cite{ortigosa2010entornos} and restaurants\cite{chu2013chinese}.\\  
-The majority of these recommender systems are focused on 
-recommending relevant items for users without
-additional contextual information such as time, location or %location = place
-companionship.  %!! Mas arriba dices que todos esos son 
-% sistemas que incorporan al contexto??
-However, recent systems incorporate contextual
-information to make recommendations that deliver items adjusted
-to the users' current context. For instance, the site Sourcetone % Referenca o url?
-interactive radio \cite{huq2010automated} when selecting a song for
-a customer it takes into consideration the listener's current mood in
-order to provide a better recommendation. \\ Contextual information is used to
-increase important characteristics such as user satisfaction, recommendation 
-%aspects? no me gusta mucho esa palabra.  fetaures? characteristic 
-quality, usefulness and more.\\
-In this thesis an architecture and methodology are proposed for designing context-aware
-recommender systems validated with a case study of a restaurant recommender system. The objetive is to
-demonstrate how the level of user satisfaction is increased through
-the use contextual information. The architecture is an hybrid of three techniques:
+The definition most used in the field of recommender systems to
+define context is proposed by Dey\cite{dey2001understanding}:
+\textit{``Context is any information that can be used to characterize
+the situation of an entity. An entity is a person, place or object
+that is considered relevant to the interaction between a user and  an
+application, including the user and applications themselves.''}  This
+definition makes it easier to define the contextual factors in a
+specific application. This definition makes it easier to define the
+contextual factors in a specific application. For instance, in a
+tourist guide application the entities can be companion(friends,
+family, couple), placeof interest, season and weather, these could be
+considered as relevant contextual factors that help the recommender
+system to provide items adjusted the situational data of the user.\\
+\textit{Context-aware recommender systems} are gaining even more
+attention because of their performance and implementation for
+different domains, the  way to improve personalized recommendations
+based in contextual factors is an important technique to increase the
+benefits in  many domains. For instance, taking in to account the
+\textit{hour of the day},  or the \textit{day of the week} when
+recommending restaurants could  filter out restaurants that are
+currently closed or near closing time, when the user receives this
+information in real time, the user has the  way for taking
+alternatives of restaurants that provide services. Nowadays, many
+companies are incorporating some type of context (as time, location or
+companion) in their recommendation engines,  the application can be
+found in fields such as e-commerce\cite{schafer1999recommender},
+\cite{bulander2005enabling}; music\cite{ricci2012context}, 
+\cite{baltrunas2011incarmusic}, \cite{huq2010automated}; 
+places of interest\cite{baltrunas2012context},
+movies\cite{eyjolfsdottir2010moviegen}; vacation
+packages\cite{liu2011personalized}, \cite{liu2014cocktail}; 
+travel guides\cite{savage2012m}; e-learning\cite{ortigosa2010entornos} 
+and restaurants\cite{chu2013chinese}.\\
+Plus, context can be used to improve the user satisfaction  in
+recommender systems, thus the quality and accuracy of predictions  
+is improved too.\\
+In this thesis the proposed method is implemented in a context-aware 
+recommender systems and evaluated in a restaurant domain. The method 
+use three recommendations techniques:
 \begin{enumerate}  
-\item \textit{Fuzzy Inference System} This a rule based recommender defined by an expert
-in the domain, it considers as linguistic variables for instance for
-the restaurant domain: \textit{ratings average:(low,medium,high)} ,
-\textit{price of restaurant:(cheap,average,expensive)} and 
-\textit{number of ratings of item:(few,several,many)} to infer how
-relevant a restaurant is for the user. Generally, this recommendation
-is based on the popularity of each item in the user community.
+\item \textit{Fuzzy Inference System} This a rule based recommender 
+defined by an expert in the domain, it considers as linguistic variables 
+for instance for the restaurant domain: \textit{ratings average:
+(low,medium,high)}, \textit{price of restaurant:(cheap, average, 
+expensive)} and \textit{number of ratings of item:(few,several,many)} 
+to infer how relevant a restaurant is for the user. Generally, 
+this recommendation is based on the popularity of each item in the 
+user community.
 \item \textit{Content-based technique} utilizes the item profiles 
-to compare how \textit{similar} is an item is with respect to another, i.e.  
-restaurants that are \textit{similar} (same cuisine, ambient, price range)  to others 
-that the user has rated favorably. The idea is to find items 
-with similar features. 
-\item \textit{Collaborative filtering
-technique} is based on the user profile to identify user\'s
-preferences and to find neighbors that have the same taste. The
-recommendation consist in the suggestions of other users with similar
-tastes that rated restaurants again in a similar way but
-where have not been rated by the current user.
-A Top-N list of restaurants is obtained to recommend for the user. 
+to compare how \textit{similar} is an item is with respect to 
+another, i.e. restaurants that are \textit{similar} (same cuisine, 
+ambient, price range)  to others that the user has rated favorably. 
+The idea is to find items with similar features. 
+\item \textit{Collaborative filtering technique} is based on the user
+profile to identify user's preferences and to find neighbors that
+have the same taste. The recommendation consist in the suggestions of
+other users with similar tastes that rated restaurants again in a
+similar way but where have not been rated by the current user. A Top-N
+list of restaurants is obtained to recommend for the user.
 \end{enumerate} 
-The results of the three techniques are the list of
-recommendations for the user and then in the next module are adjusted 
+The results of the three techniques are recommendations for the user,
+then the next step are adjusted 
 for user in context.
 This is the last step and is represented as \textit{context filter} in
 the method, then the recommender system obtains a list of
 contextualized recommendations. The proposed methodology works
 simultaneously to obtain recommendations, the hybrid method allows the
-recommender system to generate suggestions despite having scarse
-user information. When the system faces the the cold-start
+recommender system to generate suggestions despite the scarse
+user information. When the system faces up the the cold-start
 problem or the over-specialization problem, the hybrid method
-responses properly to show results for the user. 
-%These problems  are described in a later section. 
-The expert's 
-recommendation contributes to this goal, the rules specified in 
-the Fuzzy Inference System help to infer the most suitable 
+responses properly to show results for the user. These problems  
+are described in a later section. \\
+The expert's recommendation contributes to this goal, the rules 
+specified in the fuzzy inference system help to infer the most suitable 
 restaurant considering the only the input variables and the knowledge 
 represented by the rules.\\
 The context-based filter then makes recommendations based on those
@@ -210,17 +180,30 @@ goal two metrics were utilized to test the system in an on-line test.
 % La implementación especifica es la de recommet
 % pero lo mismo puede usarse para Protoboard.
 % Al principio debemos hablar de manera general.
-Ten users were selected to interact with the system, subsequently an
-analysis about the system performance and main issues highlited by the
-users was realized. \\
-The rest of this thesis is organized as follows: chapter 2 explains
-the state of the art in context aware recommender systems,  
-chapter 3 contains the background of the related topics, 
-chapter 4  describes the proposed context-aware recommender methodology
-describing each one of its components, then in chapter 5 the experimental set up
-and the results are presented, chapter 6 describes
-the evaluation of a case study a restaurant domain and finally, chapter 7
-presents conclusions and a proposal for future work .
+Ten users were selected to interact with the system, subsequently 
+an analysis about the system performance and highlight the issues 
+that users had.\\
+
+\section{Outline}
+
+The rest of this thesis is organized as follows: 
+\begin{itemize}  
+\item Chapter 2 begins since the traditional recommender systems,
+their methods and techniques to improve recommendations, as so the
+problems to face up this systems. Subsequently, the hybrid methods
+used in applications are explained, their strenghts and weaknesses
+for each hibridation and the most proper domain of application.
+Finally, context-aware recommender systems are mentioned, in the same
+way, we speak about the advantages and disadvantages of the use of
+context in recommender systems and the application domains. Some
+examples for each type of systems are mentioned in the chapter.
+%%%falta continuar..........
+\item chapter 3 contains the background of the related topics, 
+\item chapter 4  describes the proposed context-aware recommender methodology describing each one of its components, 
+\item then in chapter 5 the experimental set up and the results are presented, 
+\item chapter 6 describes the evaluation of a case study a restaurant domain and finally, 
+\item chapter 7 presents conclusions and a proposal for future work .
+\end{itemize}  
 
 
 
