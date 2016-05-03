@@ -150,61 +150,94 @@ similar way but where have not been rated by the current user. A Top-N
 list of restaurants is obtained to recommend for the user.
 \end{enumerate} 
 The results of the three techniques are recommendations for the user,
-then the next step are adjusted 
-for user in context.
-This is the last step and is represented as \textit{context filter} in
-the method, then the recommender system obtains a list of
-contextualized recommendations. The proposed methodology works
-simultaneously to obtain recommendations, the hybrid method allows the
-recommender system to generate suggestions despite the scarse
-user information. When the system faces up the the cold-start
-problem or the over-specialization problem, the hybrid method
-responses properly to show results for the user. These problems  
-are described in a later section. \\
-The expert's recommendation contributes to this goal, the rules 
-specified in the fuzzy inference system help to infer the most suitable 
-restaurant considering the only the input variables and the knowledge 
-represented by the rules.\\
-The context-based filter then makes recommendations based on those
-items that are appropiate to the context of the user to produce
-the final recommendation list. The context-aware recommender
-system tries to increase the level of user satisfaction. To meet this
-goal two metrics were utilized to test the system in an on-line test.
+then the next step are adjusted  for user in context. This is the last
+step and is represented as \textit{context filter} in the method, then
+the recommender system obtains a list of contextualized
+recommendations. The proposed methodology works simultaneously to
+obtain recommendations, the hybrid method allows the recommender
+system to generate suggestions despite the scarse user information.
+When the system faces up the the cold-start problem or the over-
+specialization problem, the hybrid method responses properly to show
+results for the user. These problems are described in a later
+section. \\
+The expert's recommendation contributes to this goal, the rules
+specified in the fuzzy inference system help to infer the most
+suitable restaurant considering the only the input variables and the
+knowledge represented by the rules.\\ The context-based filter then
+makes recommendations based on those items that are appropiate to the
+context of the user to produce the final recommendation list.  The
+context-aware recommender system tries to increase the level of user
+satisfaction.
+To meet this goal two metrics were utilized to test the system:
+\textit{task-success} and \textit{time-on-task}. These metrics allow
+to measure the user experience, this offers so much more than just
+simple observation. Usability metrics can help reveal patterns that
+are hard or even impossible to see. Evaluating software with a small
+sample size usually reveals the most obvious usability
+problems\cite{albert2013measuring}.
+Then, as a general rule of thumb, during the early stages of design,
+we need fewer participants to identify the major usability issues. As
+the design gets closer to completion, the tests should include more
+participants to identify the remaining issues. Following this precept,
+ten representative users were selected to test the system,
+subsequently, it was realized an analysis about the system performance
+and issues presented for users.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hablar del uso de pruebas de satisfaccion y usabilidad,
 % se debe justificar en base a esto el por que son
 % aparentemente pocos usuarios.
+%
 % Menciona también las pruebas de error de recomendacion
+% Profe, este comentario se refiere a las pruebas realizadas con los algoritmos, los experimentos?
+%
 % Fijate como cambié lo de arquitectura por metodología
 % ya que si te das cuenta este proceso se puede utilizar de manera
 % generica para otros sistemas de recomendación
 % La implementación especifica es la de recommet
 % pero lo mismo puede usarse para Protoboard.
 % Al principio debemos hablar de manera general.
-Ten users were selected to interact with the system, subsequently 
-an analysis about the system performance and highlight the issues 
-that users had.\\
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Outline}
 
 The rest of this thesis is organized as follows: 
 \begin{itemize}  
-\item Chapter 2 begins since the traditional recommender systems,
-their methods and techniques to improve recommendations, as so the
-problems to face up this systems. Subsequently, the hybrid methods
-used in applications are explained, their strenghts and weaknesses
-for each hibridation and the most proper domain of application.
-Finally, context-aware recommender systems are mentioned, in the same
-way, we speak about the advantages and disadvantages of the use of
-context in recommender systems and the application domains. Some
-examples for each type of systems are mentioned in the chapter.
-%%%falta continuar..........
-\item chapter 3 contains the background of the related topics, 
-\item chapter 4  describes the proposed context-aware recommender methodology describing each one of its components, 
-\item then in chapter 5 the experimental set up and the results are presented, 
-\item chapter 6 describes the evaluation of a case study a restaurant domain and finally, 
-\item chapter 7 presents conclusions and a proposal for future work .
+\item Chapter 2 describes an in-depth study of current background and
+related work is presented to give a general overview of recommender
+systems and their evolution in recent years. This study includes the
+traditional recommender systems, their methods and techniques to
+improve recommendations, as so the problems to face up this systems.
+Subsequently, the hybrid methods used in different applications, their
+strenghts and weaknesses for each hibridation and the domains of
+application. Finally, context-aware recommender systems are mentioned,
+in the same way, we speak about the advantages and disadvantages of
+the use of context in recommender systems.
+\item Chapter 3 describes the fundamental concepts required to
+understand the proposed work.
+\item Chapter 4 presents a model of context-aware recommender system,
+the proposed method  uses a paradigm of post-filtering in a restaurant
+domain. This chapter include the explanation of data models and the
+functionality of its components.
+\item Chapter 5, the general results of different projects involved
+are presented along with the validation of every experimentation. The
+experiments were realized using different datasets and different
+algorithms in order to find an optimal manner to reduce the error
+level. This chapter also details the experiment results from a point
+of view  of scientific results.
+\item Chapter 6, after the development of context-aware recommender
+system for restaurants domain, it was evaluated the impact of context
+in recommendation process. This chapter describes the usability tests
+that were applied on-line to evaluate the satisfaction of users.
+Details of the environment and the characteristics of the tests are
+described, as well as the results of the tests.
+\item Chapter 7, this chapter concludes with a
+summary of its contributions and  its limitations. It discuss final
+conclusions and the proposals for the future work.
 \end{itemize}  
-
+At the end, this thesis includes several appendices describing
+detailed technical aspects of the context-aware recommender system,
+the pseudocode of recommendation algorithms, interfaces of the
+prototype of context-aware recommender system and experiment study
+materials.
 
 
 
