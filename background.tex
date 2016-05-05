@@ -1,10 +1,8 @@
 %% La letra n con tilde es: 'n.
-
 \chapter{Background}
-
-This chapter present the fundamental concepts related this work. The
-formal definitions referring to fuzzy systems, contextual factors and
-recommender system techniques used in the proposed method.
+% This chapter present the fundamental concepts related this work. The
+% formal definitions referring to fuzzy systems, contextual factors and
+% recommender system techniques used in the proposed method.
 %--------------------------------------------------------------
 %Agregue la seccion de logica difusa del articulo que me mando.
 \section{Production systems and fuzzy models}
@@ -48,14 +46,13 @@ the actions specified in the consequent part of all the rules
 selected in the second step. Changes occur by adding or 
 deleting elements of the WM.
 \end{enumerate}
-
 This cycle continues until no further production rules can be fired.
 This control strategy is data driven because whenever the antecedent
 part is satisfied the rule is recognized, this strategy is also named
 chain-forward. Other strategy is chain-backward in this case the work
 is done from the conclusion to the facts, to chain-backward, goals in
 working memory are match against consequents of the production
-rules.\\  A drawback that has been recognized in these traditional
+rules.\\A drawback that has been recognized in these traditional
 productions systems, is that some times rules are not fired in the
 Recognize step because no appropriate match exists in the WM. Partial
 matching of rules is not possible and this can be a limitation in some
@@ -160,8 +157,6 @@ variables plus a constant term, and the output is the average
 of the support degree of each rule.
 \end{itemize} 
 
-
-%%-----------------------------------------------------------
 %%-----------------------------------------------------------
 \section{Context}
 %% Escribe aquí una intro general de contexto,
@@ -171,76 +166,77 @@ of the support degree of each rule.
 %% A veces los usas como si fuera lo mismo. 
 %% También debes definir Contextual Factors, creo que es 
 %% Información Contextual que puede afectar a la recomendación  
-%% parrafo cambiado y agregado al anterior.
-%Segura que es la clasificacion de context?
-%Este parrafo es incorrecto
-The concept of context has been widely studied in several disciplines,
-referring the computer sciences the most properly definition adopted
-is proposed by Dey\cite{dey2001understanding}, however, another
-important aspect is to stablish a meaningful classification that
-covers almost all the features that describe at the contextual factors
-(see section introducion). According Dey, context is any information
-that can be used to characterize the situation of an entities relevant
-to the interaction between a user and the application, in this
-particular case, context entities that are relevants in a
-recommendation process. \\ Due to observing the different uses of
-context, Dourish\cite{dourish2004we} has distinguished between two
-different views of context: the representational view and the
-interactional view. The representational view makes four key
-assumptions: context is a form of information, it is delineable, it is
-stable, and it is independent from the underlying activity. In this
-view, context can be described using a set of observable attributes
-that are known a priori. Furthermore, the structure of these
-contextual attributes does not change over time. The interactional
-view of context, according to Dourish\cite{dourish2004we}, takes a
-different stance on the key assumptions made by the representational
-view. In the interactional view, the scope of contextual features is
-defined dynamically, and it is occasioned rather than static. Rather
-than assuming that context acts as a set of conditions under which an
-activity occurs, this view assumes a cyclical relationship between
-context and activity, where the activity gives rise to context and the
-context influences activity.\\
-% Contextual computing research aims to develop systems incorporating
-% awareness of and the ability to adapt to user context. A dictionary
-% definition of context may state: \textit{"The context of an idea or
-% event is the general situation that relates to it and which helps it
-% to be understood"}[1].\\ 
+To stablish a specific definition that can be used prescriptively in
+the context-aware computing field, is necessary to review how
+researchers define the context in their own work. Schilit and Theimer
+[7] refer to context as location, identities of nearby people and
+objects, and changes to those objects.\\These types of definitions that
+define context by example are difficult to apply when it want to
+determine whether a type of information not listed in the definition
+is context or not, it is not clear how it can use the definition.\\ 
+Schilit et al. claim that the important aspects of context are: where
+you are, who you are with, and what resources are nearby. Pascoe
+defines context to be the subset of physical and conceptual states of
+interest to a particular entity.\\These definitions are too specific,
+context is all about the whole situation relevant to an application
+and its set of users. It is complicated enumerate which aspects of all
+situations are important, as this will change from situation to
+situation.
+Then, for purposes of this thesis, is adopted the definition of context 
+proposed by Dey\cite{dey2001understanding} (see section \ref{context-awareness}). 
+However, another important aspect is to stablish a meaningful 
+classification that covers the characteristics that describe 
+the contextual factors.\\ 
+Dourish\cite{dourish2004we} has distinguished between two different
+views of context: the \textit{representational view} and the
+\textit{interactional view}. The \textit{representational view} makes
+four key assumptions: context is a form of information, it is
+delineable, it is stable, and it is independent from the underlying
+activity. In this view, context can be described using a set of
+observable attributes that are known a priori. Furthermore, the
+structure of these contextual attributes does not change over time.
+The \textit{interactional view}, takes a different stance on the key
+assumptions made by the representational view. In the interactional
+view, the scope of contextual features is defined dynamically, and it
+is occasioned rather than static. Rather than assuming that context
+acts as a set of conditions under which an activity occurs, this view
+assumes a cyclical relationship between context and activity, where
+the activity gives rise to context and the context influences
+activity.\\
 In contextual computing, context should include information to allow
-systems \textit{"understand"} the users and their situation, then the
+systems to use contextual informa about users and their situation, then the
 system providing users the personalised and contextual services. The
 importance of context lies in the  assumption of the influence of
 \textit{contextual factors} that matter for users when they decide
 choose or discard an item.\\ 
-In the real world, the context in a situation is found into the
-environment of the person, everything in the environment characterizes
-the \textit{contextual information}, but it become in a
+In the real world, the context in a situation is involved in the
+environment of the person, everything in the environment is
+\textit{contextual information}, but it become in a
 \textit{contextual factor} when the entity interacts with
 the user and system, so the entity and its domain values are 
 involved in the recommendation process.\\ 
 The domain values of a contextual factor changes over time, in
 the real life the situation occurs when we decide that, for instance,
 we like a kind of clothes and the next day, for a any reason we don't
-like. As for the \textit{time of change} representation, a data model of
-\textit{"time"} should be specified in a manner that the system
-\textit{interprets} the time in a data structure
-(weeks, days, hours, minutes, seconds, etc.). \\
-% In recommender systems, 
-% some approaches suppose the existence of contextual factors, 
-% such as \textit{time}, \textit{location}, and \textit{purchasing 
-% purpose}, that represent the contextual factors in the system.
+like. As for the \textit{"time of change"} representation, a data 
+model of \textit{time} should be specified in a manner that the system
+\textit{interprets} the time in a data structure (for instance weeks, 
+days, hours,  minutes, seconds, etc.). \\
 Assuming the existence of certain contextual factors such as
 \textit{time}, \textit{location} and \textit{purchasing purpose} that
 are identified in the context of recommendations,
-Adomavicious\cite{adomavicius2011context} proposes two important aspects that highligh when separates different kinds of context: \textit{what a recommender system
-may knows about these contextual factors} and, \textit{how contextual
-factors change over time}.\\ \\
+Adomavicious\cite{adomavicius2011context} proposes two important
+aspects that highligh when different kinds of context are defined:
+\textit{what a recommender system may knows about these contextual
+factors} and, \textit{how contextual factors change over time}.\\ \\
+
 \textbf{What a recommender system may know about these contextual factors.}\\
 %% Este parrafo repite habla de la clasificación, no es una clasificación
 A recommender system can have different types of knowledge, which may include 
 the exact list of all the relevant factors, their structure, and their values, 
 about the contextual factors. Depending on what exactly the system knows (that 
-is, what is being observed), Adomavicious categorizes the knowledge of a recommender 
-system about the contextual as following: 
+is, what is being observed), Adomavicious categorizes the knowledge of a 
+recommender system about the context as following: 
 	%% Entonces se clasifican en tres:
 	\begin{itemize}
 	\item \textbf{Fully observable}: The contextual factors relevant to the 
@@ -285,8 +281,8 @@ contextual factors change over time or not, two categories are proposed:
 	added to the \textit{PurchasingPurpose} contextual factor over time.
 	\end{itemize}
 By other hand, Fling\cite{fling2009mobile} considers four types of
-contextual factors that can be used by different applications:  
-%Creo que estos pueden ser factores, no contextos  
+contexts that can be used in different applications:  
+%Podemos modificar lo que dice el autor?
 \begin{itemize}  
 \item \textbf{Physical context}: representing the time, position, and
 activity of the user, but also the weather, light, and temperature
@@ -301,24 +297,26 @@ the type of media that are browsed and personalized. The latter can be
 ordinary text, music, images, movies, or queries made to the
 recommender system.  
 \item \textbf{Modal context}: representing the current state 
-of mind of the user,  the user’s goals, mood, experience, 
+of mind of the user,  the user's goals, mood, experience, 
 and cognitive capabilities. 
 \end{itemize} 
-%The contexts classification reachs to a general context definition 
-%No se si llamarle clasificacion adopted like the most proper definition
-%proposed by A. K. Dey  that it was mentioned in chapter 1.\\  
-%% Esta idea es tuya? 
-%Creo que yo no llamaría a esto context más bien algo como context factor 
-So, after the revision of the literature of context, it is important
+Posterior the revision of the literature of context, it is important
 to mention a formal definition that describes what features it has a
 context-aware system, this definition is proposed by
-Dey\cite{dey2001understanding}: \textit{"a system is context-aware if
-it uses context to provide  relevant information and/or services for
-the user, where relevancy  depends on the users task".}\\ This
+Dey\cite{dey2001understanding}: \textit{``a system is context-aware if
+it uses context to provide relevant information and/or services for
+the user, where relevancy  depends on the users task."}\\ This
 definition is closer  to the reality about behaviour of \textit
-{context-aware recommender system}  when incorporates contextual
+{context-aware recommender system} when incorporates contextual
 information.\\  
-An example to explain context in a context-aware application, for
+Based in this definition, Dey proposes some characteristics 
+that a context-aware application should be support:
+\begin{itemize}  
+\item \textbf{Presentation of information} and services to a user.
+\item \textbf{Automatic execution} of a service for a user.
+\item \textbf{Tagging of context} to information to support later retrieval.
+\end{itemize} 
+An example to explain the context in a context-aware application, for
 instance, it can be an indoor mobile tour guide. Here, the entities
 are the user, the application and the tour sites. We will look at two
 pieces of information (weather and the presence of other people) and
@@ -328,7 +326,7 @@ Therefore, it is not context. The presence of other people, however,
 can be used to characterize the user’s situation. If a user is
 traveling with other people, then the sites that they visit may are
 the points of interest for the user. Therefore, the presence of other
-people is context because it can be used to characterize the user’s
+people is context because it can be used to characterize the user's
 situation.
 
 \section{Recommender systems}
@@ -341,26 +339,26 @@ community  for predicting which items certain user of the system will
 most probably like or be interested in\cite{jannach2010recommender}. 
 Recommender systems are useful in several types of  applications,
 however, their biggest impact has been mainly in ecommerce  web sites
-in order to  personalize the information for a particular user as the
-system can help to promote several items of his or her interest,  thus
+in order to personalize the information for a particular user as the
+system can help to promote several items of his or her interest, thus
 increasing the sales of the on-line store. In traditional
 implementations a collaborative filtering algorithm takes as
-input a given \textit{user-item} matrix of ratings  to generate a
+input a given \textit{user-item} matrix of ratings to generate a
 prediction for each item-user pair indicating to what degree the
 current user will like or dislike an item. Subsequently with that
-information  a list of the top \textit{n} recommended  items for the
-user can be generated. The generated list contains  only those items
+information a list of the top \textit{n} recommended items for the
+user can be generated. The generated list contains only those items
 that have not been reviewed by the user. Differents approaches are
-utilized for CF such as:  a) user-based nearest neighbor
-recommendation, b) Item-based nearest neighbor  recommendation and c)
-model-based recommendation.\\
-a) \textit{User-based nearest neighbor} is approach the is used the
+utilized for collaborative filtering such as: a) user-based nearest 
+neighbor recommendation, b) Item-based nearest neighbor 
+recommendation and c) model-based recommendation.\\
+a) \textbf{User-based nearest neighbor} is approach the is used the
 most because is relatibly easy to implement and offers acceptable
 results. Another advantage is tha only the rating matrix is needed to
-obtain recommendations.  The neighborhood selection consists in taking
+obtain recommendations. The neighborhood selection consists in taking
 the \textit{k}  nearest neighbors into account usind the threshold to
-define  the size of the neighborhood. A neigborhood of small can not
-make accurate  predictions, and on the other hand if the neighborhood
+define the size of the neighborhood. A neigborhood of small can not
+make accurate predictions, and on the other hand if the neighborhood
 is too large the information about the nighbours could not be
 significant.\\ To obtain the similarity value between a user and his
 neighbors, the Pearson correlations measure is commonly used, taking
@@ -385,17 +383,10 @@ by the following equation:
 {\sum_{b \in N} sim(a,b) * (r_{b,p}- \bar{r_b}) 
 \over \sum_{b \in N} sim(a,b)} 
 \end{equation}
-<<<<<<< HEAD
-b) \textit{Item-based nearest neighbor} is the same idea than the
-\textit {user-based}, the difference is that the approach tries to
-find similar items in place of similar users to get information of
-rating matrix. Then, the idea of \textit{item-based} is to compute
-=======
-b) \textit{Item-based nearest neighbor} is the same idea than the \textit
+b) \textbf{Item-based nearest neighbor} is the same idea than the \textit
 {user-based}, the difference is that this approach tries to find
 similar items instead of similar users to make a prediction using the rating
-matrix.  Then, in a \textit{item-based} recommendation is to compute
->>>>>>> origin/master
+matrix. Then, in a \textit{item-based} recommendation is to compute
 predictions using the similarity between items and not the similarity
 between users. To find similar items cosine similarity measure is
 defined, this metric measures the similarity between two
@@ -411,7 +402,7 @@ defined as follows:
 The * symbol is the dot product of vectors. $|a|$ is the Euclidian
 length of the vector, which is defined as the square root of the dot
 product of the vector with itself.\\  
-c) \textit{Model-based approach}, in this technique  the raw data are
+c) \textbf{Model-based approach}, in this technique  the raw data are
 first processed offline, as described for \textit {item-based}
 filtering or some dimensionality reduction techniques. At run time,
 only the learned model is required to make predictions. Although
@@ -459,7 +450,7 @@ free-text description thereof.
 
 \subsection{Hybrid recommender systems} 
 
-Each recommender system technique has its pros and cons – for
+Each recommender system technique has its pros and cons, for
 instance, the ability to handle data sparsity and cold-start problems
 or considerable efforts for knowledge acquisition and engineering. \\
 User models and contextual information, community and product data,
@@ -475,8 +466,8 @@ that combine several algorithms or recommendation components.
 
 Traditionally, the recommendation problem has been viewed as a
 prediction problem in which, given a user profile and a target item,
-the recommender system’s task is to predict that user’s rating or that
-item, reflecting the degree of user’s preference for that item. \\
+the recommender system's task is to predict that user's rating or that
+item, reflecting the degree of user's preference for that item. \\
 Specifically, a recommender system tries to estimate a rating
 function: $R$ : $Users * Items$ $ \leftarrow Ratings$, that maps
 \textit{user-item} pairs to an ordered  set of rating values.\\
@@ -485,16 +476,16 @@ tries to incorporate or utilize additional evidence (beyond
 information about users and items) to estimate user preferences on
 unseen items.\\ When such contextual evidence can be incorporated as
 part of the input to the recommender systems, the rating function can
-be viewed as  \textit{multidimensional}: $R$ : $Users * Items *
+be viewed as \textit{multidimensional}: $R$ : $Users * Items *
 Contexts$ $ \leftarrow Ratings$, where \textbf{contexts} represents a
-set of factors that further delineate the conditions under which the
+\textbf{set of factors} that further delineate the conditions under which the
 \textit{user-item} pair is assigned a particular rating. \\ The
 underlying assumption of this extended model is that user preferences
 for items are not only a function of items themselves, but also a
 function of the context in which items are being
-considered\cite{lim2009assessing}.
+considered\cite{lim2009assessing}. 
 
-\subsection{Paradigms}
+\subsection{Paradigms for using of contextual information}
 
 When recommender system uses the contextual information, it starts
 with the data having the form \textit{U * I * C * R}, where \textit{C}
@@ -503,28 +494,54 @@ contextual recommendations $i_{1}$,$i_{2}$,$i_{3}$...$i_{n}$ for each
 user. However, when the recommendation process does not take into
 account  the contextual information, is posible to apply the
 information about the current (or desired) context \textit{c} in
-various stages of the recommendation process.  Adomavicious defines
-three paradigms to the context-aware recommendation process that is
-based on contextual user preference:
+various stages of the recommendation process.
+Adomavicious\cite{adomavicius2011context} defines three paradigms for
+the context-aware recommendation process that is based on contextual
+user preference:
 \begin{itemize}
-\item  \textbf{Contextual pre-filtering (or contextualization of
-recommendation input).} In this recommendation paradigm, contextual
-information drives data selection or data construction for that
-specific context. In other words, information about the current
-context c is used for selecting or constructing the relevant set of
-data records (i.e., ratings). Then, ratings can be predicted using any
-traditional 2D recommender system  on the selected data.
+\item \textbf{Contextual pre-filtering (or contextualization of
+recommendation input).} The approach uses contextual information to
+select the most relevant 2D (Users x Items) data for generating
+recommendations. One major advantage of this approach is that it
+allows deployment of any of the numerous traditional recommendation
+techniques previously proposed in the literature \cite{adomavicius2005toward}.
+In particular, when using this approach, context
+\textit{c} essentially serves as a query (or a filter) for selecting
+relevant rating data. An example of a contextual data filter for a
+movie recommender system would be: if a person wants to see a movie on
+Saturday, only the Saturday rating data is used to recommend movies.
+Note that this example represents an exact pre-filter because the data
+was filtered using exactly the specified context (figure
+\ref{fig:paradigms}.a).
 \item \textbf{Contextual post-filtering (or contextualization of
-recommendation output).} In this recommendation paradigm, contextual
-information is initially ignored, and the ratings are predicted using
-any traditional 2D recommender system on the entire data. Then, the
-resulting set of recommendations is adjusted (contextualized) for each
-user using the contextual information.
+recommendation output).} In this approach ignores context information
+in the input data when generating recommendations, that is, when
+generating the ranked list of all candidate items from which any
+number of \textit{top-N} recommendations can be made. Instead,  the
+contextual post-filtering approach uses contextual information to
+adjust the obtained recommendation list for each user. The
+recommendation list adjustments can be made by: (1) filtering out
+recommendations that are irrelevant in a given context, or (2)
+adjusting the ranking of recommendations in the list. For example, in
+a movie recommendation application, if a person wants to see a movie
+on a weekend, and on weekends he or she only watches comedies, the
+system can filter out all noncomedies from the recommended list
+(figure \ref{fig:paradigms}.b).
 \item \textbf{Contextual modeling (or contextualization of
-recommendation function).} In this recommendation paradigm, contextual
-information is used directly in the modeling technique as part of
-rating estimation.
+recommendation function).} This approach uses contextual information
+directly in the recommendation function as an explicit predictor of a
+user's rating for an item and, thus, gives rise to truly
+multidimensional recommendation functions representing either
+predictive models (such as decision trees, regressions, and so on) or
+heuristic calculations that incorporate contextual information in
+addition to the user and item data (figure \ref{fig:paradigms}.c).\\
 \end{itemize}
-
-
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.80\textwidth]{img/paradigms.png}}
+\small
+\caption{Paradigms for incorporating context in recommender systems.}
+\label{fig:paradigms}   
+\end{figure*}
 
