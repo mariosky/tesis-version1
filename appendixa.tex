@@ -219,7 +219,11 @@ with each element of itemProfilesAll.
 \begin{algorithm}
 \caption{Matrix factorization}
 \begin{algorithmic}
-\REQUIRE R is a matrix to be factorized, dimension N * M, P an initial matrix of dimension N * K, Q an initial matrix of dimension M * K, K is the number of latent features, steps for the maximum number of steps to perform the optimization,  alpha is the learning rate and  beta  is the regularization parameter.
+\REQUIRE R is a matrix to be factorized, dimension N * M, P an initial
+matrix of dimension N * K, Q an initial matrix of dimension M * K, K
+is the number of latent features, steps for the maximum number of
+steps to perform the optimization,  alpha is the learning rate and
+beta  is the regularization parameter.
 \ENSURE The factorized matrix P and Q.
 \STATE $alpha \leftarrow 0.0001, beta \leftarrow 0.001$ 
 \STATE $QMatrix \leftarrow QMatrix * T $ 
