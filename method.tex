@@ -2,11 +2,11 @@
 
 \section{Data models} 
 
-The data models was implemented in the DBMS with PostgreSQL database.
-All the information in the context-aware recommender system was
-managed in a scheme of a relational database. Technical support about
-instalations of dependencies and the application are explained in
-appendix section.
+The data models was implemented in PostgreSQL database, 
+the information in context-aware recommender system was
+managed in a scheme of a relational database. Technical support 
+about installations of dependencies and the application are 
+mentioned in appendix \ref{apendixc}.
 
 \subsection{Restaurant model} 
 
@@ -60,7 +60,9 @@ such as \textit{users's reviews}, \textit{ratings average}, and
 \caption{User interface of the restaurant model.}
 \label{fig:restaurantmodel}       
 \end{figure*}
+
 \subsubsection{Data model} \label{datamodelsection}   
+
 The data model in postgreSQL is depicted in the figure
 \ref{fig:restaurantmodeldata}, the model contains the restaurant
 entity and its attributes. The restaurant entity is related to
@@ -79,14 +81,14 @@ figure \ref{fig:datamodel}.
 Some related entity corresponds to the proposed catalogues, 
 that are defined as following: 
 \begin{itemize}
+\item \textbf{Price:} \textit{cheap, regular, expensive, too expensive.}
+\item \textbf{Payment:} \textit{credit/debit card, cash.}
+\item \textbf{Alcohol:} \textit{no alcohol, wine-beer.}
+\item \textbf{Smoking area:} \textit{yes, no.}
+\item \textbf{Dresscode:} \textit{casual, informal, formal.}
 \item \textbf{Installations:} \textit{garden, terrace, indoor, outdoor.}
 \item \textbf{Atmosphere:} \textit{relax, familiar, friends, bussines, romantic.}
 \item \textbf{Parking:} \textit{no parking, free parking, valet parking.}
-\item \textbf{Payment:} \textit{credit/debit card, cash.}
-\item \textbf{Smoking area:} \textit{yes, no.}
-\item \textbf{Price:} \textit{cheap, regular, expensive, too expensive.}
-\item \textbf{Dresscode:} \textit{casual, informal, formal.}
-\item \textbf{Alcohol:} \textit{no alcohol, wine-beer.}
 \item \textbf{Cuisine:} \textit{japanese, chinese, italian, argentinean,
 cantonese, mandarin, mongolian, arabic, greek, spanish, brasilian,
 swiss, szechuan, asian, international, steak grill,vegetarian,
@@ -140,14 +142,12 @@ the default model defined in the system and is related to userProfile
 for suplies valuable information. The \textit{Friends entity}
 represents the social aspect into the userProfile, Friends involves
 the users related to the current user taking in account the
-preferences of each other. \\The user profile entity is related with
-3 catalogues: price and cuisine are the same that in restaurant model,
+preferences of each other. \\The user profile entity is related with: 
+price and cuisine are the same that in restaurant model,
 attribute groups corresponds to restaurant model mentioned (section
-\ref{datamodelsection}). A total of 55 attributes(or features) could
+\ref{datamodelsection}). A total of 55 attributes(or characteristics) could
 be contained in user profile, this information is used such as 
-contextual information also. The domain values of the related
-catalogues are following:
-
+contextual information also. The domain values are following:
 \begin{itemize}
 \item \textbf{Price:} cheap, regular, expensive, too expensive.
 \item \textbf{Cuisine:} japanese, chinese, italian, argentinean,
@@ -158,14 +158,13 @@ middle eastern, american/fast food, gourmet, pizza, bar/beer, tapas
 cafe/bar, french, birds, seafood.
 \item  \textbf{Attribute groups:} Installations, atmosphere, 
 parking, payment, smoking area, dresscode, alcohol.
-
 \end{itemize}
-
 \begin{figure*}
 %\captionsetup{justification=centering,margin=2cm}
 \captionsetup{font=footnotesize}
 \centering
-\includegraphics[width=8cm,height=8cm,keepaspectratio]{img/data-usermodel.png}
+\includegraphics[width=8cm,height=8cm,keepaspectratio]
+{img/data-usermodel.png}
 \caption{The data model of user profile.}
 \label{fig:datausermodel}     
 \end{figure*}
@@ -298,7 +297,7 @@ membership functions Gaussian type also. The rules are:
 \label{fig:expertfis}      
 \end{figure*}
 
-\section{Fuzzy Inference System to assing weights} 
+\section{Fuzzy inference system to assing weights} 
 
 The main goal of this Fuzzy Inference System is to define weights for
 each recommendation list. The recommendation technique is based in the
@@ -310,8 +309,8 @@ and outputs to infer each list's weight, its variables are depicted in
 figure \ref{fig:fis-pesos}.  There are 3 membership functions for
 inputs and 3 for outputs. The input variables are:
 \textit{userSimilarity, restaurantSimilarity and Participation} and
-are depicted in figure \ref{fig:fis-inputs}. The (\ref{fig:fis-
-inputs}.a) and(\ref{fig:fis-inputs}.b) are in a range from 0 to 1 to
+are depicted in figure \ref{fig:fis-inputs}. The (\ref{fig:fis-inputs}.a) 
+and(\ref{fig:fis-inputs}.b) are in a range from 0 to 1 to
 define the similarity average among users and restaurants,
 respectively. The figure (\ref{fig:fis-inputs}.c) has a range from 0
 to 15  to represent the ratings of the user(participation). This
@@ -327,8 +326,8 @@ information is stored in the Popularity entity (see figure
 By other side, the output variables are: \textit{Expert,
 RestaurantProfile and Correlation}, these are depicted in figure
 \ref{fig:fis-outputs}. The figure (\ref{fig:fis-outputs}.a) represents
-the weight for expert recommendation list, figure (\ref{fig:fis-
-outputs}.b) represents the weight of the content-based list and figure
+the weight for expert recommendation list, figure (\ref{fig:fis-outputs}.b) 
+represents the weight of the content-based list and figure
 (\ref{fig:fis-outputs}.c) represents the weight of collaborative
 recommendation list, their membership functions are in a range from 0
 to 1 to get the value.
@@ -426,12 +425,11 @@ is minimun then \textbf{expert} is low, \textbf{restaurantProfile}
 is low, \textbf{correlation} is high.}
 \end{enumerate} 
 
-\section{Contextual Recommendation} 
+\section{Contextual recommendation} 
 
 The interface of the system(figure \ref{fig:context}) allows to
 collect contextual information such as type of price, restaurant's
-attributes, type of cuisine and geographical location. The context-
-aware recommender system uses pre-filtering paradigm, then the
+attributes, type of cuisine and geographical location. The context-aware recommender system uses post-filtering paradigm, then the
 contextual information is used for adjust the final recommendations
 list. For example, geographical location is used to get restaurants
 around 2 kilometers of distance, next, the list of nearby restaurants
@@ -487,7 +485,7 @@ ratings matrix, using Pearson correlation calculates the similarity
 among the users, subsequently, a list of neighbors is obtained to use
 their preferences to calculate predictions.\\
 The second part shows the recommendation lists for the user. Later,
-the recommendation lists are reduced when filter context is applied,
+the recommendation lists are reduced when filter of context is applied,
 i.e., the recommendations are adjusted for the user current context.
 Finally, the contextual recommendations list is displayed in the user
 interface (figure \ref{fig:recom}).
