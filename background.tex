@@ -352,10 +352,9 @@ that have not been reviewed by the user. Differents approaches are
 utilized for collaborative filtering such as: a) user-based nearest 
 neighbor recommendation, b) Item-based nearest neighbor 
 recommendation and c) model-based recommendation.\\
-a) \textbf{User-based nearest neighbor} is approach the is used the
-most because is relatibly easy to implement and offers acceptable
-results. Another advantage is tha only the rating matrix is needed to
-obtain recommendations. The neighborhood selection consists in taking
+\textbf{a) User-based nearest neighbor} is approach  that only 
+needs the rating matrix to obtain recommendations. 
+The neighborhood selection consists in taking
 the \textit{k}  nearest neighbors into account usind the threshold to
 define the size of the neighborhood. A neigborhood of small can not
 make accurate predictions, and on the other hand if the neighborhood
@@ -383,7 +382,7 @@ by the following equation:
 {\sum_{b \in N} sim(a,b) * (r_{b,p}- \bar{r_b}) 
 \over \sum_{b \in N} sim(a,b)} 
 \end{equation}
-b) \textbf{Item-based nearest neighbor} is the same idea than the \textit
+\textbf{b) Item-based nearest neighbor} is the same idea than the \textit
 {user-based}, the difference is that this approach tries to find
 similar items instead of similar users to make a prediction using the rating
 matrix. Then, in a \textit{item-based} recommendation is to compute
@@ -392,26 +391,59 @@ between users. To find similar items cosine similarity measure is
 defined, this metric measures the similarity between two
 \textit{n-dimensional} vectors based on the angle between them.
 Therefore, the similarity between two items \textit{a} and \textit{b}
-– viewed as the corresponding rating vectors $a$ and $b$ – is formally
+viewed as the corresponding rating vectors $a$ and $b$, is formally
 defined as follows:
 \begin{equation}\label{eq:cosine}
 \displaystyle sim(\overrightarrow{a},\overrightarrow{b})= 
 {\overrightarrow{a}* \overrightarrow{b} \over
 |\overrightarrow{a}|*|\overrightarrow{b}| }
 \end{equation}
-The * symbol is the dot product of vectors. $|a|$ is the Euclidian
+Where the * symbol is the dot product of vectors and $|a|$ is the Euclidian
 length of the vector, which is defined as the square root of the dot
 product of the vector with itself.\\  
-c) \textbf{Model-based approach}, in this technique  the raw data are
-first processed offline, as described for \textit {item-based}
+\textbf{c) Model-based approach}, in this technique  the raw data are
+first processed off-line, as described for \textit {item-based}
 filtering or some dimensionality reduction techniques. At run time,
 only the learned model is required to make predictions. Although
-\textit{memory-based} approach is theoretically more precise because
+\textit{memory-based approach} is theoretically more precise because
 full data is available for generating recommendations, such systems
 face problems of scalability when databases of tens of millions of
-users and items are used. An example of this approach is matrix
-factorization or latent factors model, normally used to fill a rating
-matrix to calculate predictions taking in account the latent factors.
+users and items are used. An example of this approach is \textit{matrix
+factorization} or \textit{latent factors model}, normally used to fill a rating
+matrix to calculate predictions taking in account the \textit{latent factors}.
+
+\subsubsection{Data sparsity and cold-start problem}
+
+In real-world applications, the ratings matrix tend to be \textit{very
+sparse (sparcity problem)}, as customers typically provide  ratings
+for (or have bought) only a small fraction of the catalog items. In
+general, the challenge in that context is thus to compute good
+predictions when there are relatively few ratings available. One
+straightforward option for dealing with this problem is to exploit
+additional information about the users, such as gender, age,
+education, interests, or other available information that can help to
+classify the user. The set of similar users (neighbors) is thus based
+not only on the analysis of the explicit and implicit ratings, but
+also on information external to the ratings matrix. These hybrid
+systems \cite{pazzani2007content}, however, no longer
+\textit{“purely”} collaborative, and new questions of how to acquire
+the additional information and how to combine the different
+classifiers arise. Still, to reach the critical mass of users needed
+in a collaborative approach, such techniques might be helpful in the
+\textit{ramp-up phase} of a newly installed recommendation service. \\
+The \textit{cold-start problem} can be viewed as a special case of the
+sparsity \cite{huang2004applying}. The questions here are (a)
+\textit{how to make recommendations to new users that have not rated
+any item yet} and (b) \textit{how to deal with items that have not
+been rated or bought yet}. Both problems can be addressed with the
+help of hybrid approaches \cite{adomavicius2005toward}.  To face the
+\textit{new-users problem}, one option could be to ask the user for a
+minimum number of ratings before the service can be used. In this
+situation the system could intelligently ask for ratings for items
+that, from the view point of information theory, carry the most
+information  \cite{rashid2002getting}. A similar strategy of asking
+the user for a gauge set of ratings is used for the Eigentaste
+algorithm presented in  \cite{goldberg2001eigentaste}.
 
 \subsection{Content-based algorithm}
 
@@ -419,18 +451,22 @@ In content-based the recommendation task then consists of determining
 the items that match the user’s preferences best. Although such an
 approach must rely on additional information about items and user
 preferences, it does not require the existence of a large user
-community or a rating history –that is, recommendation lists can be
-generated even if there is only one single user. In practical
+community or a rating history, i.e., recommendation lists can be
+generated even if there is only one single user. \\In practical
 settings, technical descriptions of the features and characteristics
-of an item– such as the genre of a book or the list of actors in a
-movie – are more often available in electronic form, as they are
+of an item (such as the genre of a book or the list of actors in a
+movie) are more often available in electronic form, as they are
 partially already provided by the providers or manufacturers of the
 goods. What remains challenging, however, is the acquisition of
-subjective, qualitative features. In domains of quality and taste, for
+subjective, qualitative features. \\In domains of quality and taste, for
 example, the reasons that someone likes something are not always
 related to certain product characteristics and may be based on a
-subjective impression of the item’s exterior design.   \\
-\textbf{Content representation.} The simplest way to describe catalog
+subjective impression of the item’s exterior design 
+\cite{jannach2010recommender}.   
+
+\subsubsection{Content representation} 
+
+The simplest way to describe catalog
 items is to maintain an explicit list of features for each item (also
 often called attributes, characteristics, or item profiles). For a
 book recommender, one could, for instance, use the genre, the author’s
@@ -438,15 +474,51 @@ name, the publisher, or anything else that describes the item and
 store his information in a relational database system. When the user’s
 preferences are described in terms of his or her interests using
 exactly this set of features, the recommendation task consists of
-matching item characteristics and user preferences.  \\
-\textbf{Vector space model.}  Content-based systems have historically
+matching item characteristics and user preferences 
+\cite{jannach2010recommender}.  
+
+\subsubsection{Vector space model}  
+
+Content-based systems have historically
 been developed to filter and recommend text-based items such as e-mail
 messages or news. The standard approach in CB recommendation is,
 therefore, not to maintain a list of \textit{meta-information
 features}, but to use a list of relevant keywords that appear within
 the document. The main idea, of course, is that such a list can be
 generated automatically from the document content itself or from a
-free-text description thereof.
+free-text description thereof \cite{jannach2010recommender}.
+
+\subsubsection{Overspecialization and cold-start problem}
+
+Learning-based methods quickly tend to propose
+more of the same, that is, such recommenders can propose only items
+that are somehow similar to the ones the current user has already
+(positively) rated. This can lead to the undesirable effect that
+obvious recommendations are made and the system, for instance,
+recommends items that are \textit{too similar to those the user already knows}.
+\\A typical example is a news filtering recommender that proposes a
+newspaper article that covers the same story that the user has already
+seen \textit{in another context}. The system in \cite{billsus1999personal} 
+defines a threshold to filter out not only items that
+are \textit{too different} from the profile but also those that are \textit{too
+similar}. A general goal to face the \textit{overspecialization},
+therefore is to increase the serendipity of the recommendation lists
+that includes “unexpected” items in which the user might be
+interested, because expected items are of little value for the user.\\
+The \textit{cold-start problem}, which we discussed for collaborative
+systems, also exists in a slightly different form for content-based
+recommendation methods. Although content-based techniques do not
+require a large user community, they require at least an initial set
+of ratings from the user, typically a set of explicit “like” and
+“dislike” statements. \\In all described filtering techniques,
+recommendation accuracy improves with the number of ratings;
+significant performance increases for the learning algorithms were
+reported in \cite{pazzani1997learning}  when the number of ratings was
+between twenty and fifty. \\However, in many domains, users might not be
+willing to rate many items before the recommender service can be
+used. In the initial phase, it could be an option to ask the user to
+provide a list of keywords, either by selecting from a list of topics
+or by entering free-text input.
 
 \subsection{Hybrid recommender systems} 
 
@@ -460,14 +532,15 @@ all of these. Consequently, building hybrid systems that combine the
 strengths of different algorithms and models to overcome some of the
 afore mentioned shortcomings and problems has become the target of
 recent research. Hybrid recommender systems are technical approaches
-that combine several algorithms or recommendation components.
+that combine several algorithms or recommendation components
+\cite{jannach2010recommender}.
 
 \subsection{Context-aware recommender systems}
 
 Traditionally, the recommendation problem has been viewed as a
 prediction problem in which, given a user profile and a target item,
 the recommender system's task is to predict that user's rating or that
-item, reflecting the degree of user's preference for that item. \\
+item, reflecting the degree of user's preference for that item \cite{jannach2010recommender}. \\
 Specifically, a recommender system tries to estimate a rating
 function: $R$ : $Users * Items$ $ \leftarrow Ratings$, that maps
 \textit{user-item} pairs to an ordered  set of rating values.\\
@@ -483,7 +556,7 @@ Contexts$ $ \leftarrow Ratings$, where \textbf{contexts} represents a
 underlying assumption of this extended model is that user preferences
 for items are not only a function of items themselves, but also a
 function of the context in which items are being
-considered\cite{lim2009assessing}. 
+considered \cite{lim2009assessing}. 
 
 \subsection{Paradigms for using of contextual information}
 
@@ -495,7 +568,7 @@ user. However, when the recommendation process does not take into
 account  the contextual information, is posible to apply the
 information about the current (or desired) context \textit{c} in
 various stages of the recommendation process.
-Adomavicious\cite{adomavicius2011context} defines three paradigms for
+Adomavicious \cite{adomavicius2011context} defines three paradigms for
 the context-aware recommendation process that is based on contextual
 user preference:
 \begin{itemize}
@@ -541,7 +614,14 @@ addition to the user and item data (figure \ref{fig:paradigms}.c).\\
 \centering
 \fbox{\includegraphics[width=0.80\textwidth]{img/paradigms.png}}
 \small
-\caption{Paradigms for incorporating context in recommender systems.}
+\caption{Paradigms for incorporating context in recommender 
+systems\cite{adomavicius2011context}.}
 \label{fig:paradigms}   
 \end{figure*}
+
+
+
+
+
+
 

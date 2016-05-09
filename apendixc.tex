@@ -1,8 +1,6 @@
 \chapter{Technical support of installation}\label{apendixc}
-
-
-Dependencies of the application:
 \begin{singlespace}
+\textbf{\large{Dependencies of the application}}
 \begin{itemize}
 \item Django framework 1.7. Url: \textit{https://www.djangoproject.com/download/}
 \item Django-registration library. Url: \textit{https://pypi.python.org/pypi/django-registration}
@@ -15,4 +13,55 @@ Dependencies of the application:
 \item Psycopg2 connection to database. Url: \textit{http://initd.org/psycopg/docs/install.html}
 \end{itemize}
 \end{singlespace}
+
+\textbf{\large{Tijuana Restaurants dataset}}
+
+Table \ref{tab:dataset} shows a sample of dataset  where the domain
+of contextual factors  is depicted as numeric values, from column 5 to
+12  are the contextual factors used in the system and each column
+contains the domain values.  The column names are: \textit{payment
+type}, \textit{alcohol type}, \textit{smoking area},
+\textit{atmosphere type}, \textit{dress code}, \textit{installations
+type},\textit{parking type}, and \textit{cuisine type}.
+The complete dataset is available to download in the url: 
+\url{http://www.xochilt.wix.com/ittresearch}.
+
+\begin{table}
+\small
+\captionsetup{font=footnotesize}
+\caption{Sample of Tijuana dataset and contextual factors.}
+\label{tab:dataset} 
+\centering
+\begin{tabular}{lllllllllllll}
+\hline\noalign{\smallskip}
+Id &  Restaurant & Price & Latitude &  Longitude & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12   \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+1   &   Californias &   3   &   32.52837    &   -117.02001  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   20  \\
+2   &   Yogurt Place    &   2   &   32.53404    &   -117.12053  &   1   &   0   &   1   &   2   &   2   &   1   &   1   &   19  \\
+3   &   Los Arcos   &   1   &   32.51582    &   -117.01032  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   24  \\
+4   &   La Casa del Mole &   2   &   32.51995    &   -117.01001  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   20  \\
+5   &   Cafe de la Flor     &   2   &   32.53198    &   -116.94801  &   2   &   0   &   1   &   3   &   2   &   1   &   1   &   16  \\
+6   &   Casa Plascencia &   3   &   32.5137 &   -117.00712  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   22  \\
+7   &   La Lena &   3   &   32.51238    &   -117.00417  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   17  \\
+8   &   La Querencia    &   3   &   32.51678    &   -117.00961  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   22  \\
+9   &   Big Boy &   2   &   32.51957    &   -117.01942  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+10  &   Burger King &   1   &   32.53387    &   -116.95086  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+11  &   Cheripan Otay   &   4   &   32.51987    &   -117.01253  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   4   \\
+12  &   Costco  &   1   &   32.50826    &   -116.96436  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+13  &   Daruma Postal   &   2   &   32.52874    &   -116.98579  &   1   &   0   &   2   &   3   &   1   &   1   &   2   &   1   \\
+14  &   Dominos Pizza   &   1   &   32.53481    &   -116.97108  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   27  \\
+15  &   El Mazateno &   1   &   32.52836    &   -116.99242  &   2   &   0   &   2   &   3   &   1   &   1   &   2   &   24  \\
+16  &   El Porton   &   2   &   32.47732    &   -117.02924  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   20  \\
+17  &   El Rodeo    &   1   &   32.54961    &   -116.90429  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   17  \\
+18  &   Giuseppis Rio   &   4   &   32.53135    &   -116.94833  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   3   \\
+19  &   KFC     &   1   &   32.52821    &   -117.02397  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+20  &   La Torta Plaza  &   1   &   32.53434    &   -117.01821  &   1   &   0   &   2   &   3   &   2   &   1   &   1   &   26  \\
+21  &   Landini Ristorante  &   3  &   32.51483   &   -117.01069  &   2   &   0   &   1   &   4   &   3   &   1   &   1   &   3   \\
+22  &   Carls jr    &   1   &   32.52973    &   -116.9682   &   1   &   1   &   2   &   2   &   2   &   1   &   1   &   26  \\
+23  &   Carnitas Uruapan  &   1   &   32.50907  &   -116.98759  &   2   &   1   &   1   &   3   &   2   &   1   &   1   &   20  \\
+24  &   Fonda Argentina &   3   &   32.51339    &   -117.00743  &   2   &   1   &   1   &   3   &   2   &   1   &   1   &   4   \\
+25  &   La Espadana &   4   &   32.51786    &   -117.00954  &   2   &   1   &   1   &   4   &   3   &   1   &   1   &   20  \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
 

@@ -1,6 +1,7 @@
 \chapter{Introduction} \label{introduction} 
 
 The purpose of this research is to contribute in the knowledge of the
+<<<<<<< HEAD
 use of context in recommender systems and to propose a method
 for recommendations. The method involves recommendation techniques and a fuzzy inference system, both techniques make recommendations.
 The goals were achieved by means of the collection of contextual
@@ -34,6 +35,49 @@ constantly. Mobile and ubiquitous computing\cite{noguera2012mobile}
 \cite{chiou2010adaptive} are proposing a wide variety of applications
 that need recommendation engines using context for meet their
 purposes.
+=======
+use of context in recommender systems and to propose a hybrid method
+for recommendations. Equally important in the method is the fuzzy
+inference system because represents a
+technique of recommendation also. The goals were achieved by means of
+the collection of contextual information used in the system through
+questionnaires and several experiments to validate the method.
+
+\section{Motivation}
+
+Often people need take decisions, even although their experience is
+not enought to decide among the possible alternatives. Generally,
+persons trust in recommendations of anyone else, to taking desitions
+according their personal interest. There is a large amount of
+information generated in a society, so, the lack of experience of
+persons highlights the importance of having automatic methods to
+filter relevant information that helps to taking desitions. \\Every day,
+a lot of information is generated in Internet and it is available for
+users, then the overload information problem arises, in a manner that
+users can't identify the relevant information of the irrelevant. The
+users need tools to facilitate tasks, in a manner that this tools
+provide a recommendation service that helps to use efficiently the
+available information. The overload of information and the lack of
+experience of users promotes the need of automatic search engines
+that contributes to taking desitions through recommendations of
+personalized products or services. \\
+By other hand, in recent years  the mobile computing rocketed its
+importance because of the impact of its use, any application can be
+applied in mobiles and anywhere it can be used, their limitations
+are every time less. For this reason, new technologies for use of
+context in mobile applications arise, intelligent systems can take
+advantage of the benefits that technology facilitates to meet tasks.
+Mobile and ubiquitous
+computing\cite{noguera2012mobile},\cite{chiou2010adaptive} are
+proposing a wide variety of applications that need recommendation
+engines for meet their purposes, even more if one of their purpose 
+is to increase sales.
+Nowadays, It's important to propose new methods to use in the recent
+technology, these methods will cover the needs of users and helps 
+to improve mobile applications  when personalized systems are 
+used to facilitate the user's tasks. The method proposed is used 
+in order to help users to achieve their purposes.
+>>>>>>> origin/master
 
 \section{Context-awareness} \label{context-awareness}
 
@@ -46,8 +90,8 @@ recommender system normally focuses only in a type of item
 \cite{resnick1997recommender}.
 The improvements of previous recommender systems are focused in the
 \textit{integration of context} in its recommendation process. 
-The idea of context-aware computing is to provide
-information or services for the user based in the user’s situation
+The idea of \textit{context-aware computing} is to provide
+information or services for the user based in the user's situation
 \cite{dey2001understanding}. In order to do that, the application 
 needs to obtain situational data, process it and make use of it 
 in a manner that benefits the user. \\ 
@@ -72,17 +116,16 @@ the situation of an entity. An entity is a person, place or object
 that is considered relevant to the interaction between a user and  an
 application, including the user and applications themselves.''}  This
 definition makes it easier to define the contextual factors in a
-specific application. This definition makes it easier to define the
-contextual factors in a specific application. For instance, in a
+specific application. For instance, in a
 tourist guide application the entities can be companion(friends,
-family, couple), placeof interest, season and weather, these could be
+family, couple), place of interest, season and weather, these could be
 considered as relevant contextual factors that help the recommender
 system to provide items adjusted the situational data of the user.\\
 \textit{Context-aware recommender systems} are gaining even more
 attention because of their performance and implementation for
 different domains, the  way to improve personalized recommendations
 based in contextual factors is an important technique to increase the
-benefits in  many domains. For instance, taking in to account the
+benefits in  many domains. For instance, taking in account the
 \textit{hour of the day},  or the \textit{day of the week} when
 recommending restaurants could  filter out restaurants that are
 currently closed or near closing time, when the user receives this
@@ -101,8 +144,8 @@ and restaurants\cite{chu2013chinese}.\\
 Plus, context can be used to improve the user satisfaction  in
 recommender systems, thus the quality and accuracy of predictions  
 is improved too.\\
-In this thesis the proposed method is implemented in a context-aware 
-recommender systems, the method use three recommendations techniques:
+The proposed method is implemented in a context-aware 
+recommender systems and uses three recommendations techniques:
 \begin{enumerate} 
 \item \textit{Fuzzy Inference System} This a rule based recommender
 defined by an expert in the domain, it considers as linguistic
@@ -119,7 +162,7 @@ ambient, price range)  to others that the user has rated favorably.
 The idea is to find items with similar features. 
 \item \textit{Collaborative filtering technique} is based on the user
 profile to identify user's preferences and to find neighbors that
-have the same taste. The recommendation consist in the suggestions of
+have the same tastes. The recommendation consist in the suggestions of
 other users with similar tastes that rated restaurants again in a
 similar way but where have not been rated by the current user. A Top-N
 list of restaurants is obtained to recommend for the user.
@@ -128,7 +171,7 @@ The results of the three techniques are recommendations for the user,
 then the next step are adjusted  for user in context. This is the last
 step and is represented as \textit{context filter} in the method, then
 the recommender system obtains a list of contextualized
-recommendations. The proposed methodology works simultaneously to
+recommendations. \\The proposed method works simultaneously to
 obtain recommendations, the hybrid method allows the recommender
 system to generate suggestions despite the scarse user information.
 When the system faces up the the cold-start problem or the over-
@@ -141,18 +184,18 @@ suitable restaurant considering the only the input variables and the
 knowledge represented by the rules.\\ The context-based filter then
 makes recommendations based on those items that are appropiate to the
 context of the user to produce the final recommendation list. \\
-The context-aware recommender system tries to increase the 
-level of user satisfaction.
+The method tries to increase the  level of user satisfaction.
 To meet this goal two metrics were utilized to test the system:
 \textit{task-success} and \textit{time-on-task}. These metrics allow
 to measure the user experience, this offers so much more than just
-simple observation. Usability metrics can help reveal patterns that
+simple observation. \\Usability metrics can help reveal patterns that
 are hard or even impossible to see. Evaluating software with a small
 sample size usually reveals the most obvious usability
 problems\cite{albert2013measuring}.\\
 Then, as a general rule of thumb, during the early stages of design,
 we need fewer participants to identify the major usability issues. As
 the design gets closer to completion, the tests should include more
+<<<<<<< HEAD
 participants to identify the remaining issues. Following this precept,
 ten representative users were selected to test the system,
 subsequently, it was realized an analysis about the system performance
@@ -160,9 +203,17 @@ and issues presented for users.\\
 The results
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=======
+participants to identify the remaining issues\cite{albert2013measuring}.\\
+Following this precept, ten representative users were selected to test 
+the system, subsequently, it was realized an analysis about the 
+system performance and issues presented in the system.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+>>>>>>> origin/master
 %
 % Menciona también las pruebas de error de recomendacion
-% Profe, este comentario se refiere a las pruebas realizadas con los algoritmos, los experimentos?
+% Profe, este comentario se refiere a las pruebas realizadas con los 
+% algoritmos, los experimentos?
 %
 % Fijate como cambié lo de arquitectura por metodología
 % ya que si te das cuenta este proceso se puede utilizar de manera
@@ -170,6 +221,7 @@ The results
 % La implementación especifica es la de recommet
 % pero lo mismo puede usarse para Protoboard.
 % Al principio debemos hablar de manera general.
+<<<<<<< HEAD
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Aims}
@@ -186,10 +238,24 @@ proposed method, this allows the use of linguistic
 information closer to the real context of the people, i.e., 
 the method uses this technique to analyze the user preferences.
 The particular aims are following:
+=======
+%FALTA HABLAR DE LO DIFUSO....COMO SE IMPLEMENTO...JUSTIFICACION...IMPORTANCIA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aims}
+
+The contribution is to propose a method in the field of
+context-aware systems, in order to provide a
+\textit{useful knowledge} to utilize context in recommender systems
+using a hybrid method that is easily implemented in different domains
+such as e-learning, movies, music, tourism, etc. In this particular
+case, the restaurants domain is used as a case of study to  test the
+propose method. The particular aims are following:
+>>>>>>> origin/master
 \begin{itemize}  
 \item To elaborate an analysis about state of the art in the field
 of context-aware recommender systems through  the revision of
 literature. 
+<<<<<<< HEAD
 \item To select the algorithms that represent alternatives of
 solution for the problem to test their perfomance in different
 domains.
@@ -198,6 +264,14 @@ domains.
 \item To define the fuzzy inference system that serves as recommender technique in the proposed method, as well as the variables and fuzzy rules involved.
 \item To develop a prototype of context-aware recommender system 
 using the proposed method.
+=======
+\item To select the algorithms that represent alternatives of 
+solution for the problem to evaluate their perfomance in different domains.
+\item To propose a hybrid method for context applied in a case of study.  
+The method proposes several techniques for recommendations.
+\item To develop a prototype of context-aware recommender system 
+using the method in a specific domain.
+>>>>>>> origin/master
 \item To evaluate the performance of the method using 
 different datasets in order to observe the system behaviour 
 for each particular case.
@@ -220,29 +294,29 @@ the use of context in recommender systems.
 \item Chapter 3 describes the fundamental concepts required to
 understand the proposed method.
 \item Chapter 4 presents a model of context-aware recommender system,
-the proposed method  uses a paradigm of post-filtering in a restaurant
-domain. This chapter include the explanation of data models and the
-functionality of its components.
+the proposed method  involves the paradigm of post-filtering in a restaurants
+domain. This chapter include the overall explanation of data models and 
+the method functionality, as well as its components for this case of study.
 \item Chapter 5, the general results of different projects involved
 are presented along with the validation of every experimentation. The
 experiments were realized using different datasets and different
 algorithms in order to find an optimal manner to reduce the error
-level. This chapter also details the experiment results from a point
-of view  of scientific results.
+level. This chapter also details the results for each experiment 
+from a point of view of scientific results.
 \item Chapter 6, after the development of context-aware recommender
-system for restaurants domain, it was evaluated the impact of context
+system, it was evaluated the impact of context
 in recommendation process. This chapter describes the usability tests
 that were applied on-line in order to evaluate the satisfaction of
 users. Details of the environment and the characteristics of the tests
-are described, as well as the results of the tests.
+are described, as well as the results of each one.
 \item Chapter 7, this chapter concludes with a
 summary of its contributions and  its limitations. It discuss final
 conclusions and the proposals for the future work.
 \end{itemize}  
 At the end, this thesis includes several appendices describing
 detailed technical aspects of the context-aware recommender system,
-the pseudocode of recommendation algorithms, interfaces of the
-prototype of context-aware recommender system and experiment study
+the pseudocode of algorithms, interfaces of the prototype of 
+context-aware recommender system and experiment study
 materials.
 
 
