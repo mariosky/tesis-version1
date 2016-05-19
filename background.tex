@@ -180,7 +180,6 @@ application designers to choose what context to use in their
 applications. An understanding of how context can be used will help
 application designers to determine what context-aware behaviours to
 use in the applications\cite{dey2001understanding}.\\
-
 To stablish a specific definition of \textit{context} that can be used
 in the \textit{context-aware} computing field, is necessary to
 review how researchers define the context in their own work. Schilit
@@ -249,9 +248,9 @@ factors} and, \textit{how contextual factors change over time}.\\ \\
 factors.}
 A recommender system can have different types of knowledge, which may
 include  the exact list of all the relevant factors, their structure,
-and their values,  about the contextual factors. Depending on what
+and their values, about the contextual factors. Depending on what
 exactly the system knows (that  is, what is being observed),
-Adomavicious categorizes the knowledge of a  recommender system about
+Adomavicious categorizes the knowledge of a recommender system about
 the context as following:
 	\begin{itemize}
 	\item \textbf{Fully observable}: The contextual factors relevant to the 
@@ -426,7 +425,7 @@ users and items are used. An example of this approach is \textit{matrix
 factorization} or \textit{latent factors model}, normally used to fill a rating
 matrix to calculate predictions taking in account the \textit{latent factors}.
 
-\subsubsection{Data sparsity and cold-start problem}
+\subsubsection{Data sparsity and cold-start problem}\label{coldstart}
 
 In real-world applications, the ratings matrix tend to be \textit{very
 sparse}(sparcity problem), as customers typically provide  ratings
@@ -457,7 +456,7 @@ situation the system could intelligently ask for ratings for items
 that, from the view point of information theory, carry the most
 information\cite{rashid2002getting}. A similar strategy of asking
 the user for a gauge set of ratings is used for the Eigentaste
-algorithm presented in  \cite{goldberg2001eigentaste}.
+algorithm presented in \cite{goldberg2001eigentaste}.
 
 \subsection{Content-based algorithm}
 
@@ -502,7 +501,7 @@ the document. The main idea, of course, is that such a list can be
 generated automatically from the document content itself or from a
 free-text description thereof \cite{jannach2010recommender}.
 
-\subsubsection{Overspecialization and cold-start problem}
+\subsubsection{Overspecialization and cold-start problem}\label{overspecialization}
 
 Learning-based methods quickly tend to propose
 more of the same, that is, such recommenders can propose only items
