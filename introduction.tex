@@ -37,6 +37,107 @@ constantly. Mobile and ubiquitous computing\cite{noguera2012mobile}
 that need recommendation engines using context for meet their
 purposes.
 
+\section{Context of use}
+
+Context is an important concept in everyday life. People often provide
+context when writing postcards referring to the weather or holiday
+atmosphere. A knowledge of context can also helps to explain why an
+object was produced.\\  When a product (or system) is developed, it
+will be used within a particular context. It will be used by a user
+population with certain characteristics. The user will have certain
+goals and wish to perform various tasks. The product will also be used
+within a certain range of technical, physical and social or
+organizational environments\cite{maguire2001context} that may affect
+its use.\\   
+We can refer to these environments as the \textit{context of use}(see
+figure \ref{fig:logicalmodel}), this concept has been formally defined
+by ISO standard 9241-11\cite{international1998iso} as \textit{``users,
+tasks and equipment(hardware, software and materials), and the
+physical and social environments in which a product is used"}. 
+In the daily life we often finds products that are difficult to use or
+understand. These types of difficults are \textit{usability problems}
+that arise from  diverse issues that have not been addressed in the
+design of the product's \textit{user-artefact interaction}. The
+\textit{user-artefact interaction} refers the way that the user
+interacts with the product and vice versa, this term has been studied
+in Human Computer Interaction. \\As emerging technologies constantly
+change the way people interact with products and their physical
+environment, recent studies have started looking at \textit{human
+experience} as a source to generate products or systems that
+\textit{engage} the user.\\
+The \textit{user experience}, \textit{context of use} and
+\textit{product usability} have been associated in computer sciences
+field. The \textit{Usability} is became a well-established concept in
+the IT world to represent the user-friendliness of a system. However,
+there was a need to establish the concept more clearly and to
+determine how to measure it. Probably the best known definition of
+usability is by Nielsen\cite{nielsen1994usability}: 
+\textit{``usability is about learnability, efficiency, 
+memorability, errors, and satisfaction".}
+However, the definition of usability from ISO
+9241-11\cite{international1998iso}:\textit{``the extent to which a
+product can be used by specified users to achieve specified  goals
+with effectiveness, efficiency and satisfaction in a  specified
+context of use"}, is becoming the main reference of usability. \\
+Thus, taking in account these definitions we can say that designing for 
+\textit{usability} involves establishing user requirements for a new
+\textit{system} or \textit{product}, developing design solutions,
+prototyping the system and the user interface, and testing it with
+representative users.\\
+In the study of Sato\cite{sato2004context} that brings \textit{context
+issues} into design practice, addressed the concept of
+\textit{context} as a critical component of the design information in
+order to enhance the \textit{human-centred design practice}. After a
+literature's revision for  definitions of \textit{context} in diverse
+fields, Sato explains that there are external and internal conditions
+into the definitions and suggest that it has four characteristics:
+\begin{enumerate}  
+\item Aspects of context are based on the nature of actions and 
+conditions.
+\item Descriptions depends on the focus of the viewpoints.
+\item Contextual changes are triggered from differents elements 
+of the domain. 
+\item Context evolves over the time, some aspects change fast
+and others change slow. 
+\end{enumerate} 
+From this, Sato defined \textit{context} as a \textit{mental model} or a
+\textit{pattern of one's memory} triggered by \textit{elements in the
+situation}, where situation is a collective condition at the scene of
+interaction composed of relations among \textit{variables of
+conditions}. Sato employed this concept to describe the
+\textit{influence of contexts} in \textit{people's interactions} and
+\textit{system performance} and vice versa.\\
+In this thesis we present the \textit{logical model} that explains how
+the relation is among the concepts of \textit{context},
+\textit{contextual information} and \textit{contextual factors}. The
+figure \ref{fig:logicalmodel} represents in graphic mode the relations
+between the concepts. The goal is to facilitate the use and
+implementation of context in recommender systems for any application.\\
+In the first box, different situations of the user represents the
+context, the user can changes from situation to situation in a little
+time or a long time, this situational information in the real world
+provides the knowledge that the system needs to determine the context
+that will be used. Next, the user context suplies specif information
+founded in his environment(for instance, place and orientation,
+preferences, date and time, etc.) and that represents the information
+that affects the recommendation process.  The system could represents
+the information in fuzzy variables or crisp variables depending of its
+domain values. Later, contextual factors are implemented as data
+structures that define the domain proposed for each one. The number of
+possible values varies for each application and is in this point where
+the designers taking-decistions about what is the properly structure
+that it'll be implemented(figure \ref{fig:logicalmodel}). 
+%\begin{landscape}
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\includegraphics[width=1.0\textwidth]{img/context-scheme.png} 
+\small
+\caption{Logical data model of context for an application.}
+\label{fig:logicalmodel}   
+\end{figure*}
+%\end{landscape}
+
 \section{Context-awareness} \label{context-awareness}
 
 Traditional recommender systems provides suggestions of useful items
@@ -58,27 +159,27 @@ several disciplines that propose different definitions. For example,
 the authors Bazire et.al.\cite{bazire2005understanding} compare the
 context in different fields and conclude that is complicated makes a
 unifying definition of context because of the nature of the concept in
-the disciplines. In computer sciences Fischer
-G.\cite{fischer2012context} defines context as the interaction between
-humans and computers in socio-technical systems that takes place in a
-certain context referring to the \textit{physical} and \textit{social
-situation} in which computational devices and environments are
-embedded. Also identifies the important aspects to consider when the
-context is used: how it is the contextual data
-obtained, how the context is represented and what goals and purposes
-the context has when is used in a particular application. \\
-The definition most used in the field of recommender systems to
+the disciplines. In computer sciences Fischer\cite{fischer2012context}
+defines context as \textit{``the interaction between humans and
+computers in socio-technical systems that takes place in a certain
+context referring to the physical and social situation in which
+computational devices and environments are embedded"}. Also identifies
+the important aspects to consider when the context is used: how it is
+the contextual data obtained, how the context is represented and what
+goals and purposes the context has when is used in a particular
+application. \\
+Probably the definition most used in the field of recommender systems to 
 define \textit{context} is proposed by Dey\cite{dey2001understanding}:
 \textit{``Context is any information that can be used to characterize
 the situation of an entity. An entity is a person, place or object
 that is considered relevant to the interaction between a user and  an
 application, including the user and applications themselves.''}  This
 definition makes it easier to define the contextual factors in a
-specific application. For instance, in a
-tourist guide application the entities can be companion(friends,
-family, couple), place of interest, season and weather, these could be
-considered as relevant contextual factors that help the recommender
-system to provide items adjusted the situational data of the user.\\
+specific application. For instance, in a tourist guide application the
+entities can be companion(friends, family, couple), place of interest,
+season and weather, these could be considered as relevant contextual
+factors that help the recommender system to provide items adjusted the
+situational data of the user.\\
 \textit{Context-aware recommender systems} are gaining even more
 attention because of their performance and implementation for
 different domains, the  way to improve personalized recommendations
@@ -92,13 +193,13 @@ alternatives of restaurants that provide services. Nowadays, many
 companies are incorporating some type of context (as time, location or
 companion) in their recommendation engines, the application can be
 found in fields such as e-commerce\cite{schafer1999recommender}
-\cite{bulander2005enabling}, music\cite{ricci2012context} 
-\cite{baltrunas2011incarmusic} \cite{huq2010automated},
-places of interest\cite{baltrunas2012context},
+\cite{bulander2005enabling}, music\cite{ricci2012context}
+\cite{baltrunas2011incarmusic} \cite{huq2010automated}, places of
+interest\cite{baltrunas2012context},
 movies\cite{eyjolfsdottir2010moviegen}, vacation
-packages\cite{liu2011personalized} \cite{liu2014cocktail}, 
-travel guides\cite{savage2012m}, e-learning\cite{ortigosa2010entornos} 
-and restaurants\cite{chu2013chinese}.\\
+packages\cite{liu2011personalized} \cite{liu2014cocktail},  travel
+guides\cite{savage2012m}, e-learning\cite{ortigosa2010entornos}  and
+restaurants\cite{chu2013chinese}.\\
 Plus, context can be used to improve the user satisfaction  in
 recommender systems, thus the quality and accuracy of predictions  
 is improved too. \\
@@ -133,18 +234,19 @@ In the method, each technique works simultaneously to obtain
 recommendations, the hybrid method allows to generate suggestions even
 without user information, i.e., using content-based technique or the
 fuzzy inference system, so the system faces the cold-start or the
-overspecialization problem using these thechniques. These problems are
-described in a later section. \\
+overspecialization problem using these thechniques, these problems are
+described in section \ref{coldstart} and 
+\ref{overspecialization}, respectively.\\
 To test the performance were made several experiments that validate
 the method, the algorithms were tested using contextual datasets and
 the number of contextual factors used varies according the information
-provided in the dataset. The goals of the experiments was to observe
+provided in the dataset. The goals of the experiments were to observe
 the context role in the performance of the algorithms, what contextual
 factors matter for users in a specific situation, how recommendations
 are improved using context and, the accuracy in recommendations.
 Chapter \ref{results} shows the results, discussion about results is
 explained in each section.\\
-Another important metric is the \textit{user satisfaction},  two
+Another important metric is the \textit{user satisfaction}, two
 metrics were used to measure it: \textit{task-success} and \textit
 {time-on-task}. These metrics allow to measure the user experience,
 this offers so much more than just simple observation.\\ Usability
@@ -162,6 +264,7 @@ performance and issues presented in the user interaction. The chapter
 \ref{evaluation} explains the process to evaluate the system and the
 results obtained.
 %%HECHO.
+
 \section{Aims}
 
 The contribution is to propose a method of context-aware
@@ -170,7 +273,7 @@ another aim is to provide a \textit{useful knowledge} to utilize
 context-aware recommender systems using a hybrid method that is easily
 implemented in different domains such as e-learning, movies, music,
 tourism, etc. In this particular case, the restaurants domain is used
-as a case of study to test the method. \\
+as a case of study to test the method.\\
 Another important contribution is the use of fuzzy rules in the
 proposed method, this allows the use of linguistic information closer
 to the real context of the people, i.e., the method uses this
@@ -181,30 +284,31 @@ price to get recommendations adjusted for the tag selected.\\ In order
 to support the achievement of contributions, the particular aims of
 this thesis are following:
 \begin{itemize}  
-\item To elaborate an analysis about state of the art in the field
+\item Elaborate an analysis about state of the art in the field
 of context-aware recommender systems through  the revision of
 literature. 
-\item To select the algorithms that represent alternatives of
+\item Select the algorithms that represent alternatives of
 solution for the problem in order to test their perfomance in different
 domains.
 \item Realize experiments with the proposed algorithms.
 \item Based in previous experiments and results, to propose a hybrid
 method and apply it in a case of study.
-\item To define the fuzzy inference system that serves as recommender
+\item Define the fuzzy inference system that serves as recommender
 technique in the proposed method, as well as the variables and fuzzy
 rules involved.
-\item To develop a prototype of context-aware recommender system 
+\item Develop a prototype of context-aware recommender system 
 using the proposed method.
 \item To select the algorithms that represent alternatives of
 solution for the problem to evaluate their perfomance in different
 domains.
-\item To evaluate the performance of the algorithms using 
+\item Evaluate the performance of the algorithms using 
 different datasets in order to observe the system behaviour 
 for each particular case.
-\item To propose a hybrid method for context applied in a case of
+\item Propose a hybrid method for context applied in a case of
 study.
-\item To develop a prototype of context-aware recommender system 
+\item Develop a prototype of context-aware recommender system 
 using the method in a specific domain.
+\item Evaluate the proposed method using usability metrics.
 \end{itemize} 
 
 \section{Outline}
@@ -245,6 +349,7 @@ each one.
 summary of its contributions and  its limitations. It discuss final
 conclusions and the proposals for the future work.
 \end{itemize}  
+
 At the end, this thesis includes several appendices describing
 detailed technical aspects of the context-aware recommender system
 \textit{(appendix \ref{appendixc})}, the pseudocode of algorithms
