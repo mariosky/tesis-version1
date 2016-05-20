@@ -37,7 +37,7 @@ constantly. Mobile and ubiquitous computing\cite{noguera2012mobile}
 that need recommendation engines using context for meet their
 purposes.
 
-\section{Context of use}
+\section{Context of use}\label{contextofuse}
 
 Context is an important concept in everyday life. People often provide
 context when writing postcards referring to the weather or holiday
@@ -113,30 +113,29 @@ the relation is among the concepts of \textit{context},
 figure \ref{fig:logicalmodel} represents in graphic mode the relations
 between the concepts. The goal is to facilitate the use and
 implementation of context in recommender systems for any application.\\
-In the first box, different situations of the user represents the
-context, the user can changes from situation to situation in a little
-time or a long time, this situational information in the real world
-provides the knowledge that the system needs to determine the context
-that will be used. Next, the user context suplies specif information
-founded in his environment(for instance, place and orientation,
-preferences, date and time, etc.) and that represents the information
-that affects the recommendation process.  The system could represents
-the information in fuzzy variables or crisp variables depending of its
-domain values. Later, contextual factors are implemented as data
+In the figure \ref{fig:logicalmodel}, the first box shows different
+situations of the user (contexts), the user can changes from situation
+to situation in a little time or a long time, this situational or
+contextual information in the real world provides the knowledge that
+the system needs to determine the context that will be used.  Next the
+user context provides specific information found in his environment,
+this we called \textit{``contextual factors"}(for instance, place and
+orientation, preferences, date and time, etc.) and represents the
+information that affects the recommendation process. The information
+could be represents in fuzzy variables or crisp variables depending of
+its domain values. Later, contextual factors are implemented as data
 structures that define the domain proposed for each one. The number of
 possible values varies for each application and is in this point where
-the designers taking-decistions about what is the properly structure
-that it'll be implemented(figure \ref{fig:logicalmodel}). 
-%\begin{landscape}
+the designers take desitions about the properly data structure  that
+it'll be implemented.
+%\begin{landscape} 
 \begin{figure*}
-\captionsetup{font=footnotesize}
-\centering
-\includegraphics[width=1.0\textwidth]{img/context-scheme.png} 
+\captionsetup{font=footnotesize} \centering
+\includegraphics[width=1.0\textwidth]{img/context-scheme.png}  
 \small
 \caption{Logical data model of context for an application.}
-\label{fig:logicalmodel}   
-\end{figure*}
-%\end{landscape}
+\label{fig:logicalmodel}    
+\end{figure*} %\end{landscape}
 
 \section{Context-awareness} \label{context-awareness}
 
@@ -267,19 +266,18 @@ results obtained.
 
 \section{Aims}
 
-The contribution is to propose a method of context-aware
-recommender systems using different techniques of recommendation,
-another aim is to provide a \textit{useful knowledge} to utilize
-context-aware recommender systems using a hybrid method that is easily
-implemented in different domains such as e-learning, movies, music,
-tourism, etc. In this particular case, the restaurants domain is used
-as a case of study to test the method.\\
+The contribution is to propose a method for context-aware recommender
+systems using different techniques of recommendation, another aim is
+to provide a \textit{useful knowledge} to utilize a hybrid method that
+is easily implemented in different domains such as e-learning, movies,
+music, tourism, etc. In this particular case, the restaurants domain
+is used as a case of study to test the method.\\
 Another important contribution is the use of fuzzy rules in the
 proposed method, this allows the use of linguistic information closer
 to the real context of the people, i.e., the method uses this
 technique to analyze the user preferences and get recommendations
 based in that information. For instance, the system provides a list of
-range of prices, this allows the user to select an specific range of
+range of prices, this allows the user to select a specific range of
 price to get recommendations adjusted for the tag selected.\\ In order
 to support the achievement of contributions, the particular aims of
 this thesis are following:
