@@ -156,16 +156,15 @@ output of each rule is a linear combination of the input
 variables plus a constant term, and the output is the average 
 of the support degree of each rule.
 \end{itemize} 
-
 %%-----------------------------------------------------------
 \section{Context}
 
-Persons transmit ideas to each other and reacting appropriately. This
+People transmit ideas to each other and reacting appropriately. This
 is due to factors as: the richness of the language shared, the common
 understanding of how the world works, and an implicit understanding of
-situations in daily life. When persons talk, are able to use implicit
+situations in daily life. When people talk, are able to use implicit
 situational information(contextual information), to increase the
-conversational bandwidth. Unfortunately, this ability to transmit
+conversational bandwidth. \\Unfortunately, this ability to transmit
 ideas does not transfer well to persons interacting with computers. In
 traditional interactive computing, users have an poor mechanism for
 providing input to computers. Consequently, computers are not
@@ -175,33 +174,35 @@ we increase the richness of communication in human-computer interaction
 and make it possible to produce useful computational 
 services.\\
 In order to use context effectively, we must understand what context
-is and how it can be used. An understanding of context will enable
-application designers to choose what context to use in their
-applications. An understanding of how context can be used will help
-application designers to determine what context-aware behaviours to
-use in the applications\cite{dey2001understanding}.\\
+is and how it can be used. An understanding of \textit{how context can
+be used} will help application designers to determine what 
+context-aware behaviours to use in the
+applications\cite{dey2001understanding}.\\
 To stablish a specific definition of \textit{context} that can be used
-in the \textit{context-aware} computing field, is necessary to
-review how researchers define the context in their own work. Schilit
-and Theimer\cite{abowd1999towards} refer to context as \textit{location},
-identities of nearby people and objects, and changes to those
-objects.\\These types of definitions that define context by example
+in the \textit{context-aware} computing field, is necessary to review
+how researchers define the context in their own work. Schilit and
+Theimer\cite{abowd1999towards} refer to context as \textit{location},
+\textit{identities of nearby people and objects}, and \textit{changes
+to those objects}.\\
+These types of definitions that define context by example
 are difficult to apply when it want to determine whether a type of
 information not listed in the definition is context or not, it is not
-clear how it can use the definition.\\  
+clear how it can use the definition.\\ 
 Schilit et al.\cite{schilit1994context} affirm that the important
-aspects of context are: where you are, who you are with, and what
-resources are nearby. Pascoe defines context to be the subset of
-physical and conceptual states of interest to a particular
-entity.\\These definitions are too specific, context is all about the
+aspects of context are: \textit{where you are}, \textit{who you are
+with}, and \textit{what resources are nearby}.
+Pascoe\cite{pascoe1998adding} defines context to be the
+\textit{``subset of physical and  conceptual states of interest to a
+particular entity"}.\\
+These definitions are too specific, context is all about the
 whole situation relevant to an application and its set of users. It is
 complicated enumerate which aspects of all situations are important,
-as this will change from situation to situation.  For this reason and
+as this will change from situation to situation. For this reason and
 for purposes of this thesis, is adopted the definition of context
 proposed by Dey\cite{dey2001understanding} (see section 
 \ref{context-awareness}). \\However, another important aspect 
 is to stablish a meaningful classification that covers the 
-characteristics that describe the contextual factor.
+characteristics that describe the contextual factor.\\
 Dourish\cite{dourish2004we} has distinguished between two different
 views of context: the \textit{representational view} and the
 \textit{interactional view}. The \textit{representational view} makes
@@ -225,7 +226,7 @@ context lies in the  assumption of the influence of \textit{contextual
 factors} that matter for users when they decide choose or discard an
 item.\\
 In the real world, the context in a situation is involved in the
-\textit{environment} of the person, the \textit{entities} belong at
+\textit{environment} of the people, the \textit{entities} belong at
 the \textit{situational information}, but an entity  becomes in a
 \textit{contextual factor} when its information \textit{affects} the
 recommendation process, therefore, the entity and its values of 
@@ -322,7 +323,7 @@ the user, where relevancy  depends on the users task."}\\ This
 definition is closer  to the reality about behaviour of \textit
 {context-aware recommender system} when incorporates contextual
 information.\\  
-Based in this definition, A.K. Dey proposes some characteristics 
+Based in this definition, Dey proposes some characteristics 
 that a context-aware application should be support:
 \begin{itemize}  
 \item \textbf{Presentation of information} and services to a user.
@@ -413,7 +414,8 @@ defined as follows:
 \end{equation}
 Where the * symbol is the dot product of vectors and $|a|$ is the Euclidian
 length of the vector, which is defined as the square root of the dot
-product of the vector with itself.\\  
+product of the vector with itself.\\
+
 \textbf{c) Model-based approach}, in this technique  the raw data are
 first processed off-line, as described for \textit {item-based}
 filtering or some dimensionality reduction techniques. At run time,
@@ -421,9 +423,10 @@ only the learned model is required to make predictions. Although
 \textit{memory-based approach} is theoretically more precise because
 full data is available for generating recommendations, such systems
 face problems of scalability when databases of tens of millions of
-users and items are used. An example of this approach is \textit{matrix
-factorization} or \textit{latent factors model}, normally used to fill a rating
-matrix to calculate predictions taking in account the \textit{latent factors}.
+users and items are used. An example of this approach is
+\textit{matrix factorization} or \textit{latent factors model},
+normally used to fill a rating matrix to calculate predictions taking
+in account the \textit{latent factors}.
 
 \subsubsection{Data sparsity and cold-start problem}\label{coldstart}
 
@@ -501,7 +504,8 @@ the document. The main idea, of course, is that such a list can be
 generated automatically from the document content itself or from a
 free-text description thereof \cite{jannach2010recommender}.
 
-\subsubsection{Overspecialization and cold-start problem}\label{overspecialization}
+\subsubsection{Overspecialization and cold-start problem}
+\label{overspecialization}
 
 Learning-based methods quickly tend to propose
 more of the same, that is, such recommenders can propose only items
@@ -556,7 +560,7 @@ the recommender system's task is to predict that user's rating or that
 item, reflecting the degree of user's preference for that 
 item\cite{jannach2010recommender}. \\
 Specifically, a recommender system tries to estimate a rating
-function: $R$ : $Users * Items$ $ \leftarrow Ratings$, that maps
+function: $R$ : $Users * Items$ $ \rightarrow Ratings$, that maps
 \textit{user-item} pairs to an ordered  set of rating values.\\
 In contrast to the traditional model, context-aware recommender system
 tries to incorporate or utilize additional evidence (beyond
@@ -564,13 +568,28 @@ information about users and items) to estimate user preferences on
 unseen items.\\ When such contextual evidence can be incorporated as
 part of the input to the recommender systems, the rating function can
 be viewed as \textit{multidimensional}: $R$ : $Users * Items *
-Contexts$ $ \leftarrow Ratings$, where \textbf{contexts} represents a
+Contexts$ $ \rightarrow Ratings$, where \textbf{contexts} represents a
 \textbf{set of factors} that further delineate the conditions under which the
 \textit{user-item} pair is assigned a particular rating. \\ The
 underlying assumption of this extended model is that user preferences
 for items are not only a function of items themselves, but also a
 function of the context in which items are being
-considered\cite{lim2009assessing}. 
+considered\cite{lim2009assessing}. \\
+A multidimensional model of data warehousing\cite{kimball2011data} is
+used to depics the context dimensions, in figure
+\ref{fig:multidimension} the time dimension belongs to the \textbf{set of 
+contextual factors} and, is described as a \textbf{set of
+attributes}, for instance it may consist of
+attributes as \textit{morning}, \textit{evening},  \textit{nigth},
+etc., such as it was mentioned in section  \ref{contextofuse}. 
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\includegraphics[width=0.40\textwidth]{img/multidimension.png}
+\small
+\caption{Multidimensional model of context.}
+\label{fig:multidimension}   
+\end{figure*}
 
 \subsection{Paradigms for using of contextual information}
 
