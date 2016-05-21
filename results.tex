@@ -40,7 +40,7 @@ the behavior of users that interact with a recommendation system. In
 doing so, we assume that the user behavior when the data was collected
 will be similar enough to the user behavior when the recommender
 system is deployed, so that we can make reliable decisions based on
-the simulation. \\ Off-line experiments are attractive because they
+the simulation.  Off-line experiments are attractive because they
 require no interaction with real users, and thus it allows to compare
 a wide range of candidate algorithms at a low cost. \\ The downside is
 that it can answer a very narrow set of questions, typically questions
@@ -85,9 +85,9 @@ In order to validate the proposed approach, data about restaurant
 preferences of users in different contexts was collected. The study
 subjects were students enrolled in a computer engineer major, a
 master’s program and professors of the Tijuana Institute of
-Technology. A total of \textbf{50 users} answered a questionnaire; the
+Technology. A total of \textit{50 users} answered a questionnaire; the
 questions were about their preferences for nearby restaurants and the
-technology used by them. The \textit{questionnaire} consisted of \textbf{8
+technology used by them. The \textit{questionnaire} consisted of \textit{8
 questions} and they rate restaurants from a list of 40 restaurants.
 Each restaurant chosen was rated 6 times one per context considered, a
 matrix rating with \textit{1,422 ratings} were collected. The
@@ -125,16 +125,16 @@ recommender systems of Tijuana?} & \small{1.Yes 2.No} \\ \hline
 \end{tabular}
 \end{table}
 The user's answers from question 1 to question 6 are represented in
-the figure \ref{fig:cakeschart}. \textbf{Figure \ref{fig:cakeschart}a}
+the figure \ref{fig:cakeschart}. \textit{Figure \ref{fig:cakeschart}a}
 represents the percentage of surveyed students and teachers;
-\textbf{figure \ref{fig:cakeschart}b}  the percentage of the element
+\textit{figure \ref{fig:cakeschart}b}  the percentage of the element
 that users consider the most important to visit a restaurant;
-\textbf{figure \ref{fig:cakeschart}c} represents the preferences of
+\textit{figure \ref{fig:cakeschart}c} represents the preferences of
 devices when are using Internet for restaurant recommendations;
-\textbf{figure \ref{fig:cakeschart}d} represents the percentage of
-operating system that often used, \textbf{figure
+\textit{figure \ref{fig:cakeschart}d} represents the percentage of
+operating system that often used, \textit{figure
 \ref{fig:cakeschart}e} shows the percentage of users that use the
-Internet to search restaurants in Tijuana; and \textbf{figure
+Internet to search restaurants in Tijuana; and \textit{figure
 \ref{fig:cakeschart}f}, shows the percentage of users that would like
 using a restaurant recommender system of Tijuana.
 \begin{figure*}
@@ -157,7 +157,7 @@ restaurant was also the most voted in the different contexts.
 \centering
 \setlength\fboxsep{0pt}
 %\setlength\fboxrule{0.7pt}
-\includegraphics[width=0.5\textwidth]{img/bars.png}
+\includegraphics[width=0.55\textwidth]{img/bars.png}
 \caption{The chart shows the users preferences for questions 7 and 8.}
 \label{fig:barschart}     
 \end{figure*}
@@ -173,7 +173,6 @@ correspond to combinations of contextual factors shown in table
 \caption{Contextual factors considered in the questionnaire.}
 \label{tab:contextstijuana} 
 \centering
-\small
 \begin{tabular}{p{2.5cm} p{7cm} }
 \hline\noalign{\smallskip}
 Contextual Factor & Context \\
@@ -196,7 +195,7 @@ of the recommendations in this domain.
 \subsection{MovieLens collection} 
 
 GroupLens Research has collected and made available rating data sets
-from the MovieLens  web site (http://movielens.org). \\   The data sets
+from the MovieLens  web site (http://movielens.org). \\The data sets
 were collected over various periods of time,  depending on the size of
 the set.
 \begin{itemize} 
@@ -210,7 +209,7 @@ tag applications applied to 10,000 movies by 72,000 users.
 Released 1/2009. \\Downloaded from
 \textit{http://grouplens.org/datasets/movielens/10m/}. 
 \end{itemize}
-The method proposed for MovieLens uses post-filtering 
+The proposed method for MovieLens uses post-filtering 
 and time segmentation.
 Time in recommender systems is used  as a contextual factor in the
 research reviewed \cite{baltrunas2009context},
@@ -223,17 +222,17 @@ information to the current user context. In
 \cite{koren2010collaborative} a tracking model of user behavior over
 the life-time of data is proposed, in order to exploit the relevant
 components of all  data instances, while discarding only what is
-modeled as being irrelevant.\\  In \cite{baltrunas2009context} it is
+modeled as being irrelevant.\\In \cite{baltrunas2009context} it is
 shown that the time division is beneficial and its performance depends
 on the items selection method and influence of contextual variables in
 item ratings. In \cite{baltrunas2009towards} the user profile is
 segmented into micro-profiles corresponding to a particular context,
 each context represents a time span in which recommendations for users
-are derived.\\  This experiment implements fuzzy logic on time
+are derived.\\This experiment implements fuzzy logic on time
 segmentation, in order to improve user satisfaction by providing
 recommendations based to context and recents user preferences without
 discarding tastes in the past, as they include important information
-for the recommender system proposed. \\ The first phase is division of
+for the recommender system proposed. \\The first phase is division of
 three time segments based on the current context of the user is
 performed such as in is depicted in figure \ref{fig:context-ml}.
 \begin{figure*}
@@ -246,9 +245,9 @@ performed such as in is depicted in figure \ref{fig:context-ml}.
 context.}
 \label{fig:context-ml}     
 \end{figure*}
-In recommender system, the first step is get the current user context
-(user-application interaction), from this information three contexts
-(figure \ref{fig:context-ml})  will be obtained that representing a
+In recommender system, the first step is to obtain the user context, 
+from this information three contexts
+(figure \ref{fig:context-ml}) will be obtained that representing a
 time segment of three months each one, in total the algorithm
 considers all the ratings users did during nine months prior the
 current context. Subsequently, ratings are classified by contexts and
@@ -266,13 +265,13 @@ similarity between users can provide valuable information as long as
 user participation is enough (less than 10 ratings). The next step is
 to obtain recommendations list (Top-N), three contextual lists are the
 outputs of collaborative filtering algorithm and contain items with
-user's predictions for each context.\\  Popularity's prediction
+user's predictions for each context.\\Popularity's prediction
 considers other variables: 1) user’s participation in respect of an
 item in the context and, 2) the rating's average that users have given
-for item in the same context. \\   A Fuzzy Inference System (FIS) uses
+for item in the same context. \\A Fuzzy Inference System (FIS) uses
 these parameters to assign a weight within a scale from 1 to 5
 (prediction value). These recommendations are used when the ratings
-matrix is sparse, a popularity prediction is done. \\ Finally, the
+matrix is sparse, a popularity prediction is done. \\Finally, the
 system gets the recommendations list for each user in different
 contexts. The recommendation process for pre-filtering approach
  is depicted in figure \ref{fig:archi-ml}.
@@ -321,9 +320,9 @@ Context & \# Preditions & MAE &    \\
 \subsection{TripAdvisor collection} 
 
 The dataset used to evaluate the algorithm was TripAdvisor in two
-versions downloaded \cite{linkzeng}, this datasets was used in
-\cite{zheng2014context}, \cite{zheng2012differential} to  evaluate the
-performance of context-aware recommender systems. \\  The first
+versions downloaded\cite{linkzeng}, this datasets was used in
+\cite{zheng2014context} and \cite{zheng2012differential} to  evaluate the
+performance of context-aware recommender systems. \\The first
 dataset contains 4669 contextual ratings, 1202 users and 1890 hotels;
 the second dataset contains 14175 contextual ratings, 2731 users and
 2269 hotels. Data were collected of reviews online in tripadvisor.com.
@@ -418,10 +417,10 @@ items. The schema of architecture for context-aware recommender system
 is depicted in figure \ref{fig:architecture}.
 \begin{figure*}
 \captionsetup{font=footnotesize}
-\captionsetup{justification=centering,margin=2cm}
+%\captionsetup{justification=centering,margin=2cm}
 \centering
-\fbox{\includegraphics[width=0.70\textwidth]{img/archit-ta.png}}
-\caption{Recommender system method}
+\includegraphics[width=0.70\textwidth]{img/archit-ta.png}
+\caption{Recommender system method.}
 \label{fig:architecture}   
 \end{figure*}
 Two experiments were performed using TripAdvisor dataset, table
