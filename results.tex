@@ -1,16 +1,63 @@
 \chapter{Experiments and Results} \label{results}
 
+\section{Experimental settings} 
 
-In this chapter are explained the experiments performed in order to
-validate the proposed method, each experiment was tested in different
-context domain.
+This chapter describes the experiments that were used in order
+to compare several recommender techniques. In all experimental 
+scenarios, it is important to follow a few basic guidelines in
+general experimental studies\cite{adomavicius2011context}:
+\begin{itemize} 
+\item \textbf{Hypothesis:} before running the experiment we must form
+an \textit{hypothesis}. It is important to be concise and restrictive
+about this hypothesis, and design an experiment that tests the
+hypothesis. For example, an hypothesis can be that algorithm
+\textbf{A} better predicts user ratings than algorithm \textbf{B}. In
+that case, the experiment should test the prediction accuracy, and not
+other factors.
+\item \textbf{Controlling variables:} when comparing a few candidate
+algorithms on a certain hypothesis, it is important that all
+\textit{variables} that are not tested will stay fixed. For example,
+suppose that we wish to compare the prediction accuracy of movie
+ratings of algorithm \textbf{A} and algorithm \textbf{B}, that both
+use different collaborative filtering models.
+\item \textbf{Generalization power:} when drawing conclusions from
+experiments, we may desire that our conclusions generalize beyond the
+immediate context of the experiments. When choosing an algorithm for a
+real application, we may want our conclusions to hold on the deployed
+system, and generalize beyond our experimental data set. Similarly,
+when developing new algorithms, we want our conclusions to hold beyond
+the scope of the specific application or data set that we experimented
+with. It is important to understand the properties of the various data
+sets that are used. Generally speaking, \textit{the more diverse the
+data used, the more it can generalize the results}.
+\end{itemize} 
 
-\section{Tijuana Restaurants dataset} 
+\subsection{Off-line experiments} 
 
-The context-aware recommender system  
+An off-line experiment is performed by using a pre-collected dataset
+of users choosing or ratings. Using this data set tries to simulate
+the behavior of users that interact with a recommendation system. In
+doing so, we assume that the user behavior when the data was collected
+will be similar enough to the user behavior when the recommender
+system is deployed, so that we can make reliable decisions based on
+the simulation. \\ Off-line experiments are attractive because they
+require no interaction with real users, and thus it allows to compare
+a wide range of candidate algorithms at a low cost. \\ The downside is
+that it can answer a very narrow set of questions, typically questions
+about the prediction of an algorithm. The goal of the offline
+experiments is to filter out inappropriate  approaches, leaving a
+relatively small set of alternatives algorithms for subsequently to be
+tested for the more costly user studies or online 
+experiments\cite{adomavicius2011context}.
+
+\section{Datasets} 
+
+\subsection{Tijuana Restaurants} 
+
+The method
 uses collaborative filtering to find restaurants for the
 user\cite{ramirez2013restaurant}. The ratings of user profiles are
-used to determine the similarity among users using Pearson correlation. \\   
+used to determine the similarity among users using Pearson correlation.\\   
 The similarity between the user and  neighbors is used to calculate a
 weighted average of ratings for each particular item;  the top-N
 ratings are used as a list of recommended restaurants for the active
@@ -30,11 +77,10 @@ recommendations; the process is depicted in figure
 \centering
 \captionsetup{font=footnotesize}
 \setlength\fboxsep{0pt}
-\fbox{\includegraphics[width=0.60\textwidth]{img/posfil.png}}
-\caption{The Post-Filtering architecture for Tijuana restaurants.}
+\includegraphics[width=0.50\textwidth]{img/posfil.png}
+\caption{The post-filtering approach for Tijuana restaurants.}
 \label{fig:postfiltering}     
 \end{figure*}
-
 In order to validate the proposed approach, data about restaurant
 preferences of users in different contexts was collected. The study
 subjects were students enrolled in a computer engineer major, a
@@ -78,7 +124,6 @@ recommender systems of Tijuana?} & \small{1.Yes 2.No} \\ \hline
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-
 The user's answers from question 1 to question 6 are represented in
 the figure \ref{fig:cakeschart}. \textbf{Figure \ref{fig:cakeschart}a}
 represents the percentage of surveyed students and teachers;
@@ -96,8 +141,8 @@ using a restaurant recommender system of Tijuana.
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
 \setlength\fboxsep{0pt}
-\includegraphics[width=0.9\textwidth]{img/cakes.png}
-\caption{The chart shows the users preferences for questions from 1 to 6.}
+\includegraphics[width=0.8\textwidth]{img/cakes.png}
+\caption{The chart cakes show the users preferences for questions from 1 to 6.}
 \label{fig:cakeschart}     
 \end{figure*}
 For questions 7 and 8 only the top-ten restaurants are shown,
@@ -148,24 +193,24 @@ dataset the performance of the method proposed is limited. By other
 hand, having only one contextual factor does not improve the accuracy
 of the recommendations in this domain.
 
-\section{MovieLens dataset} 
+\subsection{MovieLens collection} 
 
 GroupLens Research has collected and made available rating data sets
 from the MovieLens  web site (http://movielens.org). \\   The data sets
 were collected over various periods of time,  depending on the size of
 the set.
 \begin{itemize} 
-\item \textbf{MovieLens 1M Dataset}: Stable
-benchmark dataset, 1 million ratings from 6000 users on 4000 movies.
+\item \textbf{MovieLens 1M}: Stable benchmark dataset, 
+1 million ratings from 6000 users on 4000 movies.
 Released 2/2003.\\ Downloaded from
 \textit{http://grouplens.org/datasets/movielens/1m/}. 
-\item \textbf{MovieLens
-10M Dataset}: Stable benchmark dataset, 10 million ratings and 100,000
-tag applications applied to 10,000 movies by 72,000 users. Released
-1/2009. \\Downloaded from
+\item \textbf{MovieLens 10M}: Stable benchmark dataset, 
+10 million ratings and 100,000
+tag applications applied to 10,000 movies by 72,000 users. 
+Released 1/2009. \\Downloaded from
 \textit{http://grouplens.org/datasets/movielens/10m/}. 
 \end{itemize}
-The recommender system proposed for MovieLens uses post-filtering 
+The method proposed for MovieLens uses post-filtering 
 and time segmentation.
 Time in recommender systems is used  as a contextual factor in the
 research reviewed \cite{baltrunas2009context},
@@ -177,7 +222,7 @@ directly proportional to the distance from initiating the historical
 information to the current user context. In
 \cite{koren2010collaborative} a tracking model of user behavior over
 the life-time of data is proposed, in order to exploit the relevant
-components of all  data instances , while discarding only what is
+components of all  data instances, while discarding only what is
 modeled as being irrelevant.\\  In \cite{baltrunas2009context} it is
 shown that the time division is beneficial and its performance depends
 on the items selection method and influence of contextual variables in
@@ -188,7 +233,7 @@ are derived.\\  This experiment implements fuzzy logic on time
 segmentation, in order to improve user satisfaction by providing
 recommendations based to context and recents user preferences without
 discarding tastes in the past, as they include important information
-for the recommender system proposed. The first phase is division of
+for the recommender system proposed. \\ The first phase is division of
 three time segments based on the current context of the user is
 performed such as in is depicted in figure \ref{fig:context-ml}.
 \begin{figure*}
@@ -196,12 +241,11 @@ performed such as in is depicted in figure \ref{fig:context-ml}.
 \centering
 \setlength\fboxsep{0pt}
 %\setlength\fboxrule{0.7pt}
-\fbox{\includegraphics[width=0.60\textwidth]{img/context-ml.png}}
+\fbox{\includegraphics[width=0.50\textwidth]{img/context-ml.png}}
 \caption{Time segmentation of contexts based on current user
 context.}
 \label{fig:context-ml}     
 \end{figure*}
-
 In recommender system, the first step is get the current user context
 (user-application interaction), from this information three contexts
 (figure \ref{fig:context-ml})  will be obtained that representing a
@@ -209,7 +253,7 @@ time segment of three months each one, in total the algorithm
 considers all the ratings users did during nine months prior the
 current context. Subsequently, ratings are classified by contexts and
 reused as contextual rating matrix being, a ratings matrix for each
-context. \\ The size of matrix depends of users’ participation during
+context. \\The size of matrix depends of users' participation during
 the last nine months. One of the aims is to identify the user behavior
 through recent information, in order to, for instance, know whether
 the user changes ratings constantly; whether usually assign high, low
@@ -230,21 +274,20 @@ these parameters to assign a weight within a scale from 1 to 5
 (prediction value). These recommendations are used when the ratings
 matrix is sparse, a popularity prediction is done. \\ Finally, the
 system gets the recommendations list for each user in different
-contexts. The recommendation process of pre-filtering is depicted in
-figure \ref{fig:archi-ml}.
+contexts. The recommendation process for pre-filtering approach
+ is depicted in figure \ref{fig:archi-ml}.
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
 \setlength\fboxsep{0pt}
 %\setlength\fboxrule{0.7pt}
-\fbox{\includegraphics[width=0.60\textwidth]{img/archi-ml.png}}
-\caption{Pre-filtering process for context-aware recommender
-system.}
+\includegraphics[width=0.50\textwidth]{img/archi-ml.png}
+\caption{Pre-filtering approach used for Movielens dataset.}
 \label{fig:archi-ml}     
 \end{figure*}
 The dataset used to test the algorithm was MovieLens(100000 ratings)
 with 943 users and 1,682 movies. The ratings were collected in a
-period  of 2 years. MovieLens is not a contextual dataset, however,
+period  of 2 years. \\MovieLens is not a contextual dataset, however,
 the  timestamp was used to determine the rating time, i.e., in this
 way it  was noted the day to know whether the rating time was in
 weekday or  weekend. In this terms, the context was used. Then, the
@@ -252,7 +295,7 @@ time for each  context was divided in 3 months each one, this span
 covers 9 months  before the user's current context. \\ The neighbors
 in each context are  considered to recommend movies in that context
 only.  An average of  predictions are considered for add a movie to
-the top-N list of contextualized recommendations.The result in
+the top-N list of contextualized recommendations. \\ The result in
 table \ref{tab:contexts} shows the error in three contexts. The
 error increase in context 3, in this  context the ratings matrix is a
 little bit sparse;  the error is  justifiable because user has less
@@ -275,11 +318,7 @@ Context & \# Preditions & MAE &    \\
 \end{tabular}
 \end{table}
 
-
-%%-------------------------------------------------------------------
-%%--EXPERIMENTO DE TRIPADVISOR---------------------------------------
-
-\section{Tripadvisor dataset} 
+\subsection{TripAdvisor collection} 
 
 The dataset used to evaluate the algorithm was TripAdvisor in two
 versions downloaded \cite{linkzeng}, this datasets was used in
@@ -292,16 +331,16 @@ There is only one context: type of trip (family, friends, bussines,
 romantic and relax).\\ 
 The proposed method consists of three algorithms to recommend: Fuzzy
 Inference System, collaborative filtering and content-based. Each one
-uses rating matrix to get recommendations.\\    The context-aware
-recommender system uses the post-filtering
+uses rating matrix to get recommendations.\\    
+The context-aware recommender system uses the post-filtering
 paradigm\cite{adomavicius2011context} for adjust recommendations in
 context. The recommendation by popularity is through the Fuzzy
 Inference System depicted in figure \ref{fig:fis}, the Fuzzy Inference
 System contains the variables that are involved in the process to
 recommend in a human interaction, this process is the same that the
-recommender system does. \\   The output represents how matter each item
-into the users community, i.e. if it was a popular item for users. \\  The
-FIS has Gaussians membership functions and are depicted in figure
+recommender system does. \\The output represents how matter each item
+into the users community, i.e. if it was a popular item for users. \\
+The FIS has Gaussians membership functions and are depicted in figure
 \ref{fig:mffis}.
 \begin{figure}[ht!]
    \captionsetup{font=footnotesize}
@@ -323,14 +362,18 @@ FIS has Gaussians membership functions and are depicted in figure
    b) UserParticipation, and an output: c) Recommendation.}
    \label{fig:mffis} 
 \end{figure}
-The Fuzzy Inference System uses fuzzy rules to infer the inputs and 
-output (a numeric value) that represents the weight of the recommendation. 
+The fuzzy inference system uses fuzzy rules to infer the inputs and 
+output(a crisp value) that represents the weight of the recommendation. 
 The rules are following: 
 \begin{enumerate}
-\item \textit{If \textbf{RatingAverage} is low and \textbf{UserParticipation} is insufficient then \textbf{recommendation} is low.}
-\item \textit{If \textbf{RatingAverage} is low and \textbf{UserParticipation} is sufficient then \textbf{recommendation} is high.}
-\item \textit{If \textbf{RatingAverage} is high and \textbf{UserParticipation} is insufficient then \textbf{recommendation} is low.}
-\item \textit{If \textbf{RatingAverage} is high and \textbf{UserParticipation} is sufficient then \textbf{recommendation} is high.}
+\item \textit{If \textbf{RatingAverage} is low and 
+\textbf{UserParticipation} is insufficient then \textbf{recommendation} is low.}
+\item \textit{If \textbf{RatingAverage} is low and 
+\textbf{UserParticipation} is sufficient then \textbf{recommendation} is high.}
+\item \textit{If \textbf{RatingAverage} is high and 
+\textbf{UserParticipation} is insufficient then \textbf{recommendation} is low.}
+\item \textit{If \textbf{RatingAverage} is high and 
+\textbf{UserParticipation} is sufficient then \textbf{recommendation} is high.}
 \end{enumerate}
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
@@ -370,7 +413,6 @@ contextual recommendations. \\   Context-aware
 recommender system identifies contextual data of the user profile (see
 table \ref{tab:2}), and compares recommended items to filter those
 items that are adjusted to the user context. 
-
 The context filtering is the last step before to get the recommended
 items. The schema of architecture for context-aware recommender system
 is depicted in figure \ref{fig:architecture}.
@@ -379,7 +421,7 @@ is depicted in figure \ref{fig:architecture}.
 \captionsetup{justification=centering,margin=2cm}
 \centering
 \fbox{\includegraphics[width=0.70\textwidth]{img/archit-ta.png}}
-\caption{Recommender system architecture}
+\caption{Recommender system method}
 \label{fig:architecture}   
 \end{figure*}
 Two experiments were performed using TripAdvisor dataset, table
@@ -426,7 +468,6 @@ TripAdvisor v2 & FC + Post-filtering  & 0.504  \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-
 The fundament of content-based is the cosine similarity; this means
 that if similarity value among items is high, the recommendations will
 improve the degree of user satisfaction. This is observed when
@@ -447,7 +488,6 @@ TripAdvisor v2 & 0.508  & 8  \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-
 FIS can provides a list of popular items for each dataset,
 recommendations through averages are obtained, and recommendations are
 conditioned to show it when the collaborative filtering and content-
@@ -458,31 +498,29 @@ proposed involves the paradigm of post-filtering for contextual
 recommendations. The structure of the datasets facilitated the
 evaluation of recommendations although the rating matrix has been
 scarce in both cases. Anyway, information of items and users was used
-to test the system and a good performance of the system was done.\\   With
-respect the performance, post-filtering allows select relevant
+to test the system and a good performance of the system was done.\\   
+With respect the performance, post-filtering allows select relevant
 items that are adjusted into the context, indeed, post-filtering and
 implementation of different recommendation techniques the system has
 suitable performance and the datasets help the processes performed.
 
-\section{Datasets in matrix factorization}
+%\subsection{Matrix factorization}
 
-\subsubsection{Filmtrust dataset} 
+\subsection{Filmtrust and InCarMusic} 
 
 FilmTrust is a small dataset crawled from the entire FilmTrust website
 in June, 2011. Filmtrust contains a ratings matrix of 35498 ratings,
 1504  users and 2071 movies. The dataset has a density of 1.14\% and
 was used in \cite{guo2013novel} using the trust level such as
-context. The web page is \textit{http://www.librec.net/datasets.html}.
-
-\subsubsection{InCarMusic dataset}
-
+context. The web page is \textit{http://www.librec.net/datasets.html}.\\ 
+%\subsubsection{InCarMusic dataset}
 InCarMusic dataset\cite{baltrunas2011incarmusic} has 8 
 contextual factors and the possible values for contextual conditions 
-are explained in table \ref{tab:incarmusic}.
+are explained in table \ref{tab:incarmusic}.\\ 
 Music tracks were ten different genres. There is not unified music
 genre taxonomy, for this reason the recommender system uses the genres
 defined in \cite{tzanetakis2002musical}: classical, country, disco, 
-hip hop,  jazz, rock, blues, reggae, pop and metal, 50 music tracks 
+hip hop, jazz, rock, blues, reggae, pop and metal, 50 music tracks 
 and 42 users in dataset.
 \begin{table}
 \centering
@@ -506,34 +544,33 @@ Natural phenomena 	& day time, morning, night, afternoon. \\
 \end{tabular}
 \end{table}
 
-\subsection{Results} 
+\subsubsection{Results} 
 
-For experiments with matrix factorization technique the Graphlab
-toolbox was used. Both mentioned datasets and Movielens (1 millon and
-10 millions) were used to test the algoritmh. The test involves K
-factors that are increasing for 50 iterations. previously, was done a
-test to identify what number of iterations are enough to get a good
-result with no overload of process in the algorithm. Results are
-depicted in the chart \ref{fig:fm-test}  where the axis (x, y)
-represent the K value and the error value, respectively. The
-observations deal to small differences among the datasets, in a range
-of 0.80-0.90, and the high variability is in MovieLens dataset 10
-millions. The big dataset implies more unstable behaviour, while in a
-small dataset (Filmtrust) the error is less variable. A comparison
-among MovieLens 1 million and 10 millions shows that there's not a
-significant difference.
-
-\begin{figure*}
-\captionsetup{font=footnotesize}
-\centering
-\fbox{\includegraphics[width=0.70\textwidth]{img/fm-test.png}}
-\caption{RMSE results of matrix factorization test.}
-\label{fig:fm-test}   
-\end{figure*}
-By other side,  other datasets were used to test matrix factorization under the same parameters to calculate the RMSE for each one. Table \ref{tab:mf-set}
-presents the total of ratings of each dataset, the cosine similarity,
-it means how similar are the items into the dataset, and the RMSE
-error obtained in the test with matrix factorization technique. 
+For experiments with matrix factorization technique the \textit{Graphlab
+toolbox} was used. FilmTrust, InCarMusic and Movielens (1 millon and
+10 millions) were used to test the algoritmh. The test involves \textit{K
+factors} that are increasing for \textit{50 iterations}.\\ Previously, was 
+done a test to identify what number of iterations are enough to get a good
+result with no overload of process in the algorithm. \\ Results are
+depicted in the chart \ref{fig:fm-test} where the \textit{axis (x, y)}
+represent the \textit{K value} and the \textit{error value}, respectively. 
+The observations deal to small differences among the datasets, in a range
+of \textit{0.80-0.90}, and the high variability is in \textit{MovieLens} 10
+millions. Thus, the large dataset implies more unstable 
+behaviour, while in a small dataset(Filmtrust) the error is less variable.
+A comparison among MovieLens 1 million and 10 millions shows that 
+there's not a significant difference.\\  
+By other side, another datasets were used to test matrix factorization
+under the same parameters to calculate the RMSE for each one.  Table
+\ref{tab:mf-set} presents the total of ratings of each dataset, the
+cosine similarity that means how similar are the items into the
+dataset, and the RMSE error obtained in the test with matrix
+factorization technique. \\The datasets contain less ratings than
+the presented in the chart \ref{fig:fm-test}, according the table
+\ref{tab:mf-set} is not possible to affirm that matrix factorization
+has a better performance with small datasets, because TripAdvisor and
+InCarMusic datasets obtain a similar error in the same range that the large
+datasets.
 \begin{table}
 \centering
 \small
@@ -553,10 +590,11 @@ Movielens    &     100000   &   0.94    &  0.42 \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-The datasets contain less ratings than the presented in the chart
-\ref{tab:mf-set}, according the table \ref{tab:mf-set} is not possible
-to assum that matrix factorization has a better performance with small
-datasets, because TripAdvisor and InCarMusic datasets obtain an error
-in the same range that the large datasets of the previuos chart.
 
-
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.60\textwidth]{img/fm-test.png}}
+\caption{RMSE results of matrix factorization test.}
+\label{fig:fm-test}   
+\end{figure*}
