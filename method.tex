@@ -78,7 +78,7 @@ figure \ref{fig:datamodel}.
 \caption{The data model of restaurant.}
 \label{fig:restaurantmodeldata}     
 \end{figure*}
-Some related entity corresponds to the proposed catalogues, 
+Some related entity corresponds to the proposed contextual factors, 
 that are defined as following: 
 \begin{itemize}
 \item \textbf{Price:} \textit{cheap, regular, expensive, too expensive.}
@@ -213,11 +213,11 @@ with the conventional logic that only uses concrete and accurately
 information \cite{zedeh1989knowledge}.\\  In this work, fuzzy logic is
 used to model fuzzy variables that highligh in the popularity of a
 restaurant. The context-aware recommender system has implemented a
-Fuzzy Inference System that represents the expert recommendation. \\   The
-expert Fuzzy Inference System generates recommendations when the
+fuzzy inference system that represents the expert recommendation. \\   
+The expert(fuzzy inference system) generates recommendations when the
 recommendation techniques (collaborative filtering, content-based) are
-not getting results because of the cold start problem.\\   The Fuzzy
-Inference System proposed has 3 \textbf{input variables} (such as in
+not getting results because of the cold start problem.\\   The fuzzy
+inference system proposed has 3 \textbf{input variables} (such as in
 previous work realized\cite{garcia2009hybrid}): 1)\textit{rating} is
 an average of ratings that has a particular restaurant inside the user
 community; the domain of variable is 0 to 5 and contains 2 membership
@@ -231,7 +231,7 @@ participation of the user, if the user has rated few items (less than
 10) is not sufficient to make accurate predictions(figure
 \ref{fig:mf:c}), the domain of variable is 0 to 10 and contains 2
 membership functions labeled as \textit{insufficient} and
-\textit{sufficient}. \\   The \textbf{output variable} is
+\textit{sufficient}. \\ The \textbf{output variable} is
 \textit{recommendation}, represents a weight for each restaurant
 proposed by the expert considering the inputs mentioned above, the
 domain of variable is 0 to 5 and contains 3 membership functions
@@ -264,14 +264,14 @@ labeled as \textit{low}, \textit{medium} and \textit{high} (figure
    \label{fig:mfexpert} 
 \end{figure}
 
-The proposed Fuzzy Inference System(figure \ref{fig:expertfis})
+The proposed fuzzy inference system(figure \ref{fig:expertfis})
 represents the users experience and their knowledge about restaurants.
-This factors are considered important  for users that visiting a
+This factors are considered important for users that visiting a
 restaurant. This information is recovered of user profile and
 restaurant profile; and the system uses this information to get
-weights that influence in the final recommendations. The Fuzzy
-Inference System uses 5 inference rules that involve the variables of
-inputs and output.The input variables determine the recommendation
+weights that influence in the final recommendations. The fuzzy
+inference system uses 5 inference rules that involve the variables of
+inputs and output. The input variables determine the recommendation
 activation; each input variable contains labels as \textit{low} and
 \textit{high} that also correspond to memberships functions of
 Gaussian type. For the output variable \textit{recommendation} the
@@ -299,12 +299,12 @@ membership functions Gaussian type also. The rules are:
 
 \section{Fuzzy inference system to assing weights} 
 
-The main goal of this Fuzzy Inference System is to define weights for
+The main goal of this fuzzy inference system is to define weights for
 each recommendation list. The recommendation technique is based in the
 amount of available information stored, so each technique utilizes
 this information to provide a list of restaurants as well as a weight
-for each one, therefore, these is used for  recommendations if its
-weight is upper the threshold.  The Fuzzy Inference System has inputs
+for each one, therefore, these are used for  recommendations if its
+weight is upper the threshold.  The fuzzy inference system has inputs
 and outputs to infer each list's weight, its variables are depicted in
 figure \ref{fig:fis-pesos}.  There are 3 membership functions for
 inputs and 3 for outputs. The input variables are:
@@ -424,6 +424,23 @@ is low, \textbf{correlation} is high.}
 is minimun then \textbf{expert} is low, \textbf{restaurantProfile} 
 is low, \textbf{correlation} is high.}
 \end{enumerate} 
+At the end, a \textit{weighted average} allows to get predictions for
+each restaurant in the list of recommendations. In this way, for
+instance if the \textbf{expert} has a weight of \textbf{0.5}, the
+\textbf{restaurantProfile} is \textbf{0.8} and the
+\textbf{correlation} is \textbf{0.6}, the system uses these weights to
+calculate the final prediction for a particular restaurant using the
+formula of the weighted average:
+\begin{equation}\label{eq:prediction}
+\displaystyle prediction_{i} = {(0.5 * 4.0) + ( 0.8 * 5) + (0.6 * 4.5)
+\over (0.5 + 0.8 + 0.6)}
+\end{equation}
+The prediction corresponds the final value of recommendation for the
+item, and is used to include it or exclude it of the list of
+recommendation if is not over the threshold. So, for this case, the
+prediction is \textbf{4.57}, it means that this restaurant will be in the
+recommendation list of the user, subsequently, the recommendations
+list will be contextualized.
 
 \section{Contextual recommendation} 
 
@@ -476,6 +493,14 @@ obtained throught Google maps services.
 The scheme of proposed method is depicted in the figure
 \ref{fig:archit}. In the first part, the three techniques of
 recommendations are suplied by the rating matrix. 
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering 
+%\fbox{\includegraphics[width=10cm,height=10cm,keepaspectratio]{img/archit.png}}
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{img/archit.png}
+\caption{Scheme of the proposed method.}
+\label{fig:archit}  
+\end{figure*}
 Ratings matrix makes that \textbf{fuzzy inference system} can obtain
 the inputs values to calculate the output value. \textbf{Content-based} 
 utilizes the rating matrix and user profiles to compare the
@@ -489,14 +514,7 @@ the recommendation lists are reduced when filter of context is applied,
 i.e., the recommendations are adjusted for the user current context.
 Finally, the contextual recommendations list is displayed in the user
 interface (figure \ref{fig:recom}).
-\begin{figure*}
-\captionsetup{font=footnotesize}
-\centering 
-%\fbox{\includegraphics[width=10cm,height=10cm,keepaspectratio]{img/archit.png}}
-\includegraphics[width=10cm,height=10cm,keepaspectratio]{img/archit.png}
-\caption{Scheme of the proposed method.}
-\label{fig:archit}  
-\end{figure*}
+
 
 
 
