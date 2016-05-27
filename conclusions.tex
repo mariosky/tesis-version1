@@ -1,36 +1,80 @@
 \chapter{Conclusions and future work} \label{conclusions}
 
-We observed the users behaviour to identify the most frecuently difficults and
-doubts about tasks. We did a brief interview with users after the test in order
-to understand their  feelings or mood, their ideas about the experience, and
-overall, their opinion about the context-aware recommender system.  The
-conclusions are based in user's comments, then the main errors in the system
-interface are summarized in three points:
+In the past, computer software was designed with little regard for the
+user, so the user had to somehow adapt to the system. This approach to
+system design is not at all appropriate today, the system must adapt
+to the user. This is why design principles\cite{gong2004guidelines} 
+are so important. The principles represent high-level concepts 
+applied to the systems for the better design of user interfaces. 
+We took this principles as a guideline to design the first prototype, 
+however  when the system is in a pilot test, we hope find the 
+common problems that the users face normally.
+So, it was observed the user behaviour in the test, in order to identify
+the most frecuently difficults and doubts about proposed tasks.\\ 
+Later, it was done a brief interview with the users in order to 
+understand their feelings or mood, their
+experience, and overall, their opinion about the system prototype.  
+The conclusions are based in user's comments, then the common errors 
+in the system interface are summarized in three points:
 \begin{enumerate}  
-\item  Incomplete information for user, i.e., the system doesn't had enough and clear information to be a friendly interface, and therefore the user couldn't do easily a task.
-\item Fails in design, because of unordered elements in the screen, in other words, the elements are not in the correct site into the screen to be easily identified per users.
-\item Fails in the language and confusion, because of the english language is not the native language of the users.
+\item  Incomplete information for user, i.e., the system doesn't had
+enough and clear information to be a friendly interface, and
+therefore the user couldn't do easily a task.
+\item Fails in design, because of unordered elements in the screen, 
+in other words, the elements are not in the correct site into the 
+screen to be easily identified per users.
+\item Fails in the language and confusion, because of the english 
+language is not the native language of the users.
 \end{enumerate}
-
-The three points mentioned are related to the null values in data table (see
-Table \ref{tab:datausers}), some users didn't the task because they were
-confused, so they decided to omit the task. The null values weren't took in
-account when the median was calculated (see Table \ref{tab:ic}).\\  The USE
-questionnaire was useful to identify the weaknesses in the context-aware
-recommender system.  The percent is upper of the acceptable (80\%), the results
-allow to say that the system has a good performance. \\ For the future work we
-proposed to improve the problems found in the user interface, so the proposals
-are the following:
-
-\begin{enumerate}  
-\item  Redesign the user interface could helps to be more friendly for users. Due to the issues, the redesign involves: 
+The three points mentioned represent the null values in data
+table (see Table \ref{tab:datausers}), some users don't perform the task
+because they were confused, so they decided to omit the task. The null
+values weren't took in account when the median was calculated to obtain the
+confidence interval(see figure \ref{fig:ci95}).\\  
+By other hand, the USE questionnaire was useful to identify the
+weaknesses in the system prototype. The percent in the factors is in
+acceptable level (80\%), it allows to say that the system has a good
+performance in the first test, but an increment in the number of users
+to perform the next possible test could get more real information.\\
+For the future work we proposed to improve the problems found 
+in the user interface, so the proposals are the following:
+\begin{enumerate} 
+\item  Redesign the user interface could helps to be more friendly for
+users. The redesign involves:
   \begin{enumerate}  
-  \item Analyze the amount of information enough for a easy understanding, i.e., how much information the user needs seeing without overload it.
-  \item Modify the tasks descriptions in the most simple way to avoid confusion.
-  \item Add more language functionalities for to facilitate the tasks for users.
+  \item Analyze the amount of information enough for a easy understanding, 
+  i.e., how much information the user needs seeing without overload it.
+  \item Modify the tasks descriptions in the most simple way to avoid 
+  confusion.
+  \item Add more language functionalities for to facilitate the tasks 
+  for users.
   \end{enumerate}
-\item  To apply the usability test again with the changes in the interface in order to observe the level of improves and to compare the results. 
-\item  Apply an statistical test to analize the results.
-\item  Add collaborative filtering based on model (matrix factorization technique) within the context-aware recommender system in order to improve the level of user satisfaction in the context. 
-\item  Add any contextual factors (such as companion, time of day, budget, etc.) in order to include more context information that could be relevant in the recommendations.
+\item To apply the usability test again with the changes in the interface 
+in order to observe the level of improves and to compare the results. 
+\item Apply an statistical test to analize the results.
+\item Add collaborative filtering based on model (matrix
+factorization technique) in the system prototype in order to improve 
+the level of user satisfaction in the context.
+\item Add any contextual factors(such as companion, time of day, 
+budget, etc.) in order to include more context information that contributes
+to improve the recommendations.
 \end{enumerate}
+The proposed method was used in the system prototype in order to
+validate its performance, the case of study shows acceptable results
+but we consider that the method could be efficient in others domains.
+The challenge is to apply the method in a e-learning environment
+because the context involves more precise factors (for instance the
+level of noise, the level of light, the level of knowledge, the location 
+of the users, etc.) and the recommendation process considers more 
+conditions(or fuzzy rules) to make a recommendations, as well as the information 
+of the user profile that contains more characteristics of the user
+preferences(as goals, level, learning style, activities, homework,
+score, average, etc.) The base of this future work is the Protoboard
+system\cite{garcia2007simple} that is a e-learning platform
+for students of Tijuana Institute of Technology.
+
+
+
+
+
+
