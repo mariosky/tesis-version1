@@ -16,8 +16,8 @@ the relevant properties\cite{adomavicius2011context}.\\
 In this thesis it performs the \textbf{on-line experiments}, 
 this is maybe the most trustworthy experiment because is when 
 the system is  used with \textbf{real users}, typically 
-\textbf{unaware} of the experiment. In
-this type of experiment it is possible to collect only certain types
+\textbf{unaware} of the experiment. In this type of experiment 
+it is possible to collect only certain types
 of data but this experimental design is closest to reality.
 
 \section{Metrics}
@@ -64,8 +64,8 @@ behaviour for each task. \\ In the figure \ref{fig:tsuccess} the axis
 of success},  respectively. The chart shows that only
 three tasks weren't accomplished successfully, the task 5, 6 and 7. \\ 
 The issue in task 5 was that users can not found easily the reviews
-section in the screen because the reviews are in the restaurant’s
-profile and not in the Home section. 
+section in the screen because the reviews are in the restaurant's
+profile and not in the \textit{Home page}. 
 \begin{figure*}
 \centering
 \captionsetup{font=footnotesize}
@@ -74,12 +74,12 @@ profile and not in the Home section.
 \label{fig:tsuccess}   
 \end{figure*}
 The issue in task 7 is related of
-task 5 because the user couldn’t find the manner to add a review, the
+task 5 because the user couldn't find the manner to add a review, the
 user needs to click the restaurant profile to add the review. The task
 6 correspond to the favorites restaurants section that it is in the
 main screen, but the issue is that the user was confused to choose
 ``wishlist container" (see appendix \ref{appendixd}) instead 
-``favorites restaurants", both were showed in the main screen. \\ 
+``favorites restaurants", both were showed in the \textit{Home page}.\\ 
 Overall, these results mean a redisign in the
 prototype system to facilitate the performance of the tasks 
 and create a more friendly interface.\\ 
@@ -133,39 +133,24 @@ interval. In this way, it is observed the time variability within the
 same task and also helps visualize the difference among the tasks to
 determine whether exists a statistically significant difference
 between these. 
-\begin{table}
+\begin{figure*}
 \centering
-\small
 \captionsetup{font=footnotesize}
-\caption{Confidence interval per task with a confidence level of 95\%. }
-\label{tab:ic}    
-\begin{tabular}{lllll}
-\hline\noalign{\smallskip}
-Task  & Median & CI 95\% & Upper bound & Lower bound  \\
-\noalign{\smallskip}\hline\noalign{\smallskip}
-1 &    20         & 5.96  & 25.96 & 14.04  \\
-2 &    11.5      & 0.81  & 12.31  & 10.69   \\
-3 &    69.5      &  25.57   &  95.07  &  43.93   \\
-4 &    15        & 16.34  &  31.34  &  -1.34   \\
-5 &    15.5     &  14.84  &  30.34  &  0.66  \\
-6 &     27.5    &   11.57  &  39.07  &  15.93    \\
-7 &     16       &  5.19  & 21.19  &  10.81   \\
-8 &     8         &   5.80  &  13.80  & 2.20 \\
-9 &     7         & 9.43  &  16.43  &  -2.43  \\
-10 &   15       &   2.44  &  17.44   &  12.56   \\
-11 &   19       &  3.00  &  22.00  &  16.00   \\
-12 &   14.5    &  5.51  &  20.01  &  8.99   \\
-13 &   12.5    &  3.89  &  16.39  &  8.61    \\
-\noalign{\smallskip}\hline
-\end{tabular}
-\end{table}
-Table \ref{tab:ic}, shows the results of 
-the confidence interval. The median was used to calculate the 
-confidence interval, upper bound and lower bound.\\
-In the next step the USE \textit{(Usefulnes, Satisfaction, and Ease of
-Use)} questionnaire \cite{morris2001experience} was applied in order
-to get the user's feedback and comments for to know about the
-difficults in the test.  
+\fbox{\includegraphics[scale=0.7]{img/ci95.png}} %[width=0.7\textwidth]
+\caption{Confidence interval per task with a confidence level of 95\%.}
+\label{fig:ci95}   
+\end{figure*}
+Figure \ref{fig:ci95}, shows the confidence interval for each task.
+The median was used to calculate the  lower bound and upper bound of
+the confidence interval. In  order to have more precision in the
+confidence interval, it used the median instead the mean, the median
+corresponds the red numbers of the chart. Figure \ref{fig:ci95} also 
+shows that task 2 and 3 show large confidence interval because of  
+the delay of users to accomplish these task. \\ 
+In the next step the USE \textit{(Usefulnes}, \textit{Satisfaction}, and 
+\textit{Ease of Use)} questionnaire \cite{morris2001experience} 
+was applied in order to get the user's feedback and comments 
+for to know about the difficults in the test.  
 \begin{figure*}
 \centering
 \small
@@ -175,21 +160,48 @@ difficults in the test.
 evaluated.}}
 \label{fig:radial}   
 \end{figure*}
-The \textit{USE questionnaire} consists of 30 rating scales divided
-into 4 categories: \textit{Usefulness}, \textit{Satisfaction},
-\textit{Ease of Use}, and \textit{Ease of Learning}. Each is a
-positive statement to which the user rates level of agreement on a
-Likert scale. The USE questionnaire(see appendix \ref{appendixb})
-allows to get values for \textit{Usefulness}, \textit{Satisfaction},
-\textit{Ease of Use}, and \textit{Ease of Learning}, the visualizing
-the results is in the figure \ref{fig:radial}, where the four axis of the
-radar chart represent the values of percent which users rated
-positively this factors with respect to their interaction with the
-system prototype.  The values are \textit{Usability 83\%},
-\textit{Satisfaction 84\%}, \textit{Easy of use  92\%}, and
-\textit{Easy of Learning 81\%}, it means that the test was success, 
-subsequently, as future work  a second test will be make 
-to compare the improves.
+Finally, it applied a questionnaire that measure the satisfaction
+level of users, this questionnaire serves to evaluate the experience
+that they had in the system interaction. The \textit{USE
+questionnaire}(see appendix \ref{appendixb}) consists of 30 rating
+scales divided into 4 categories: \textit{Usefulness},
+\textit{Satisfaction}, \textit{Ease of Use}, and \textit{Ease of
+Learning}. Each is a positive statement to which the user rates level
+of agreement on a Likert scale. The USE questionnaire allows to get
+values for \textit{Usefulness}, \textit{Satisfaction}, \textit{Ease of
+Use}, and \textit{Ease of Learning}. The visualizing of the results is in
+the figure \ref{fig:radial}, where the four axis of the chart
+represent the values of percent which users rated positively this
+factors with respect to their experience with the system prototype.
+The values are \textit{Usability 83\%}, \textit{Satisfaction 84\%},
+\textit{Easy of use  92\%}, and \textit{Easy of Learning 81\%}, it
+means that the test was success, subsequently, as future work  a
+second test will be make to compare the improves.
 
 
-
+% \begin{table}
+% \centering
+% \small
+% \captionsetup{font=footnotesize}
+% \caption{Confidence interval per task with a confidence level of 95\%.}
+% \label{tab:ic}    
+% \begin{tabular}{lllll}
+% \hline\noalign{\smallskip}
+% Task  & Median & CI 95\% & Lower bound & Upper bound  \\
+% \noalign{\smallskip}\hline\noalign{\smallskip}
+% 1 &    20      &  6.88    &  14.12   &  27.88  \\
+% 2 &    11.5    &  28.20   & -16.70   &  39.70  \\
+% 3 &    69.5    &  27.44   &  42.06   &  96.94  \\
+% 4 &    15      &  18.31   &  -3.31   &  33.31  \\
+% 5 &    15.5    &  16.27   &  -5.77   &  26.77   \\
+% 6 &    27.5    &  11.59   &  6.91    &  30.09  \\
+% 7 &    16      &  5.89    &  9.61    &  21.39  \\
+% 8 &    8       &  6.24    &  1.76    &  14.24   \\
+% 9 &    7       &  9.97    &  -2.97   &  16.97  \\
+% 10 &   15      &  2.82    &  12.18   &  17.82  \\
+% 11 &   19      &  3.46    &  15.54   &  22.46  \\
+% 12 &   14.5    &  6.02    &  8.48    &  20.52   \\
+% 13 &   12.5    &  4.23    &  8.27    &  16.73   \\
+% \noalign{\smallskip}\hline
+% \end{tabular}
+% \end{table}
