@@ -3,9 +3,10 @@
 \section{Experimental settings} 
 
 This chapter describes the experiments that were used in order
-to compare several recommender techniques. In all experimental 
-scenarios, it is important to follow a few basic guidelines in
-general experimental studies\cite{adomavicius2011context}:
+to compare the recommender techniques. 
+In all experimental scenarios, it is important to follow a 
+few basic guidelines in general experimental 
+studies\cite{adomavicius2011context}:
 \begin{itemize} 
 \item \textbf{Hypothesis:} before running the experiment we must form
 an \textit{hypothesis}. It is important to be concise and restrictive
@@ -36,8 +37,8 @@ data used, the more it can generalize the results}.
 
 An off-line experiment is performed by using a pre-collected dataset
 of users choosing or ratings. Using this data set tries to simulate
-the behavior of users that interact with a recommendation system. In
-doing so, we assume that the user behavior when the data was collected
+the behavior of users that interact with a recommender system. In
+doing so, it assume that the user behavior when the data was collected
 will be similar enough to the user behavior when the recommender
 system is deployed, so that we can make reliable decisions based on
 the simulation.  Off-line experiments are attractive because they
@@ -54,25 +55,25 @@ experiments\cite{adomavicius2011context}.
 
 \subsection{Tijuana Restaurants} 
 
-The method
-uses collaborative filtering to find restaurants for the
+The method uses collaborative filtering to find restaurants for the
 user\cite{ramirez2013restaurant}. The ratings of user profiles are
-used to determine the similarity among users using Pearson correlation.\\   
-The similarity between the user and  neighbors is used to calculate a
-weighted average of ratings for each particular item;  the top-N
-ratings are used as a list of recommended restaurants for the active
-user. The output of the collaborative filtering algorithm (top-N list)
-is supplied to the next step of the post-filtering process. \\   The
-restaurants are adjusted to the context in the next step in order to
-make ranking of restaurants in the current context. Post- filtering is
-based on the average of ratings in a specific context, so prediction
-is made with: 1) the average post-filtering a restaurant has in the
-current context (that is the mean of user ratings) and 2) the rating
-predicted by the collaborative filtering algorithm. The top-N list
-contains the restaurants with highest predictions, so each restaurant
-is adjusted for the user’s context and listed in contextual
-recommendations; the process is depicted in figure
-\ref{fig:postfiltering}.
+used to determine the similarity among users using Pearson
+correlation.\\ The similarity between the user and  neighbors is
+used to calculate a weighted average of ratings for each particular
+item;  the top-N ratings are used as a list of recommended restaurants
+for the active user. The output of the collaborative filtering
+algorithm (top-N list) is supplied to the next step of the 
+post-filtering process. \\The restaurants are adjusted to the context in
+the next step in order to make ranking of restaurants in the current
+context. Post-filtering is based on the average of ratings in a
+specific context, so prediction is made with: 1) the average post-
+filtering a restaurant has in the current context (that is the mean of
+user ratings) and 2) the rating predicted by the collaborative
+filtering algorithm. The top-N list contains the restaurants with
+highest predictions, so each restaurant is adjusted for the user’s
+context and listed in contextual recommendations; the process is
+depicted in figure \ref{fig:postfiltering}.
+
 \begin{figure*}
 \centering
 \captionsetup{font=footnotesize}
@@ -511,7 +512,7 @@ FilmTrust is a small dataset crawled from the entire FilmTrust website
 in June, 2011. Filmtrust contains a ratings matrix of 35498 ratings,
 1504  users and 2071 movies. The dataset has a density of 1.14\% and
 was used in \cite{guo2013novel} using the trust level such as
-context. The web page is \textit{http://www.librec.net/datasets.html}.\\ 
+context. The web page is \url{http://www.librec.net/datasets.html}.\\ 
 %\subsubsection{InCarMusic dataset}
 InCarMusic dataset\cite{baltrunas2011incarmusic} has 8 
 contextual factors and the possible values for contextual conditions 
