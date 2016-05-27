@@ -400,16 +400,18 @@ score, context-aware recommender system proposed has a scale from 1 to
 \small
 \begin{tabular}{lll}
 \hline
-\multicolumn{3}{c}{User profile} \\ \hline
-Item1 & Rating1 & Context1 \\ 
-Item2 & Rating2 & Context2 \\ 
-Item3 & Rating3 & Context3 \\ \hline
+\multicolumn{3}{c}{\textbf{User profile}} \\ \hline
+Item & Rating & Context \\ \hline
+La Casa del Mole & 5.0 & Midweek \\ 
+Daruma           & 4.0 & Weekend \\ 
+Daruma           & 5.0 & Midweek \\ 
+Carl's Jr.       & 3.0 & Weekend \\ \hline
 \end{tabular}
 \end{table}
 In the next step the outputs of every recommender algorithm is
 represented by a list of recommended items. Subsequently applies the
 context filter and context-aware recommender system gets the final
-contextual recommendations. \\   Context-aware
+contextual recommendations. \\ Context-aware
 recommender system identifies contextual data of the user profile (see
 table \ref{tab:2}), and compares recommended items to filter those
 items that are adjusted to the user context. 
@@ -505,7 +507,6 @@ implementation of different recommendation techniques the system has
 suitable performance and the datasets help the processes performed.
 
 %\subsection{Matrix factorization}
-
 \subsection{Filmtrust and InCarMusic} 
 
 FilmTrust is a small dataset crawled from the entire FilmTrust website
@@ -561,7 +562,7 @@ behaviour, while in a small dataset(Filmtrust) the error is less variable.
 A comparison among MovieLens 1 million and 10 millions shows that 
 there's not a significant difference. 
 By other side, another datasets were used to test matrix factorization
-under the same parameters to calculate the RMSE for each one.  \\Table
+under the same parameters to calculate the RMSE for each one.\\ Table
 \ref{tab:mf-set} presents the total of ratings of each dataset, the
 cosine similarity that means how similar are the items into the
 dataset, and the RMSE error obtained in the test with matrix
