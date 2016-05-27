@@ -1,19 +1,27 @@
 \chapter{Technical support of installation}\label{appendixc}
-\begin{singlespace}
+%\begin{singlespace}
 \textbf{\large{Dependencies of the application}}
 \begin{itemize}
-\item Django framework 1.7. Url: \textit{https://www.djangoproject.com/download/}
-\item Django-registration library. Url: \textit{https://pypi.python.org/pypi/django-registration}
-\item Django-countries library. Url: \textit{https://pypi.python.org/pypi/django-countries}
-\item Django-geoposition library. Url: \textit{https://pypi.python.org/pypi/django-geoposition}
-\item Python-dateutil library. Url: \textit{https://pypi.python.org/pypi/python-dateutil/2.4.1}
-\item Pyproj library. Url: \textit{https://pypi.python.org/pypi/pyproj?}
-\item Numpy library. Url: \textit{https://pypi.python.org/pypi/numpy}
-\item PostgreSQL database. Url: \textit{http://www.postgresql.org/}
-\item Psycopg2 connection to database. Url: \textit{http://initd.org/psycopg/docs/install.html}
+\item Django framework 1.7. Url: \\
+\url{https://www.djangoproject.com/download/}
+\item Django-registration library. \\
+Url: \url{https://pypi.python.org/pypi/django-registration}
+\item Django-countries library. \\
+Url: \url{https://pypi.python.org/pypi/django-countries}
+\item Django-geoposition library. \\
+Url: \url{https://pypi.python.org/pypi/django-geoposition}
+\item Python-dateutil library. \\
+Url: \url{https://pypi.python.org/pypi/python-dateutil/2.4.1}
+\item Pyproj library. \\
+Url: \url{https://pypi.python.org/pypi/pyproj?}
+\item Numpy library. \\
+Url: \url{https://pypi.python.org/pypi/numpy}
+\item PostgreSQL database. 
+\\Url: \url{http://www.postgresql.org/}
+\item Psycopg2 connection to database. \\
+Url: \url{http://initd.org/psycopg/docs/install.html}
 \end{itemize}
-\end{singlespace}
-
+%\end{singlespace}
 \textbf{\large{Tijuana Restaurants dataset}}
 
 Table \ref{tab:dataset} shows a sample of dataset  where the domain
@@ -24,14 +32,13 @@ type}, \textit{alcohol type}, \textit{smoking area},
 \textit{atmosphere type}, \textit{dress code}, \textit{installations
 type},\textit{parking type}, and \textit{cuisine type}.
 The complete dataset is available to download in the url: 
-\url{http://www.xochilt.wix.com/ittresearch}.
-
+\url{http://www.xochilt.wix.com/ittresearch}.\\ 
 \begin{table}
 \small
 \captionsetup{font=footnotesize}
 \caption{Sample of Tijuana dataset and contextual factors.}
 \label{tab:dataset} 
-\centering
+%\centering
 \begin{tabular}{lllllllllllll}
 \hline\noalign{\smallskip}
 Id &  Restaurant & Price & Latitude &  Longitude & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12   \\
@@ -64,4 +71,6 @@ Id &  Restaurant & Price & Latitude &  Longitude & 5 & 6 & 7 & 8 & 9 & 10 & 11 &
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-
+The system prototype was programmed in Python language, 
+the codes are available to download in the follow url:
+\url{https://github.com/xochilt/recomet}.
