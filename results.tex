@@ -411,7 +411,7 @@ Carl's Jr.       & 3.0 & Weekend \\ \hline
 In the next step the outputs of every recommender algorithm is
 represented by a list of recommended items. Subsequently applies the
 context filter and context-aware recommender system gets the final
-contextual recommendations. \\ Context-aware
+contextual recommendations. Context-aware
 recommender system identifies contextual data of the user profile (see
 table \ref{tab:2}), and compares recommended items to filter those
 items that are adjusted to the user context. 
@@ -422,8 +422,8 @@ is depicted in figure \ref{fig:architecture}.
 \captionsetup{font=footnotesize}
 %\captionsetup{justification=centering,margin=2cm}
 \centering
-\includegraphics[width=0.70\textwidth]{img/archit-ta.png}
-\caption{Recommender system method.}
+\includegraphics[width=0.80\textwidth]{img/archit-ta.png}
+\caption{Recommender system methodology.}
 \label{fig:architecture}   
 \end{figure*}
 Two experiments were performed using TripAdvisor dataset, table
@@ -472,7 +472,7 @@ TripAdvisor v2 & FC + Post-filtering  & 0.504  \\
 \end{table}
 The cosine similarity plays an important role in content-based because
 if similarity value among items is high, the recommendations will
-improve the degree of user satisfaction. This is observed when
+improve the degree of user satisfaction. \\ This is observed when
 calculating the similarity average in each dataset as shown in table
 \ref{tab:5}.
 \begin{table}
@@ -493,7 +493,7 @@ TripAdvisor v2 & 0.508  & 8  \\
 FIS can provides a list of popular items for each dataset,
 recommendations through averages are obtained, and recommendations are
 conditioned to show it when the collaborative filtering and content-
-based are not delivering recommendations because of data scarcity.
+based are not delivering recommendations because of data scarcity.\\ 
 However, the majority of popular items of dataset were rated in contexts: romantic, family and bussines, that means that the dataset has
 biases.\\  In this experiment  the context-aware recommender system
 proposed involves the paradigm of post-filtering for contextual
@@ -511,18 +511,13 @@ suitable performance and the datasets help the processes performed.
 
 FilmTrust is a small dataset crawled from the entire FilmTrust website
 in June, 2011. Filmtrust contains a ratings matrix of 35498 ratings,
-1504  users and 2071 movies. The dataset has a density of 1.14\% and
+1504  users and 2071 movies. \\ The dataset has a density of 1.14\% and
 was used in \cite{guo2013novel} using the trust level such as
 context. The web page is \url{http://www.librec.net/datasets.html}.\\ 
 %\subsubsection{InCarMusic dataset}
 InCarMusic dataset\cite{baltrunas2011incarmusic} has 8 
 contextual factors and the possible values for contextual conditions 
 are explained in table \ref{tab:incarmusic}.\\ 
-Music tracks were ten different genres. There is not unified music
-genre taxonomy, for this reason the recommender system uses the genres
-defined in \cite{tzanetakis2002musical}: classical, country, disco, 
-hip hop, jazz, rock, blues, reggae, pop and metal, 50 music tracks 
-and 42 users in dataset.
 \begin{table}
 \centering
 \small
@@ -544,6 +539,11 @@ Natural phenomena 	& day time, morning, night, afternoon. \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+Music tracks were ten different genres. There is not unified music
+genre taxonomy, for this reason the recommender system uses the genres
+defined in \cite{tzanetakis2002musical}: classical, country, disco, 
+hip hop, jazz, rock, blues, reggae, pop and metal, 50 music tracks 
+and 42 users in dataset.
 
 \subsubsection{Results} 
 
@@ -560,18 +560,14 @@ of \textit{0.80-0.90}, and the high variability is in \textit{MovieLens} 10
 millions. Thus, the large dataset implies more unstable 
 behaviour, while in a small dataset(Filmtrust) the error is less variable.
 A comparison among MovieLens 1 million and 10 millions shows that 
-there's not a significant difference. 
+there's not a significant difference. \\ 
 By other side, another datasets were used to test matrix factorization
 under the same parameters to calculate the RMSE for each one.\\ Table
 \ref{tab:mf-set} presents the total of ratings of each dataset, the
 cosine similarity that means how similar are the items into the
 dataset, and the RMSE error obtained in the test with matrix
 factorization technique, the datasets contain less number of ratings than
-the presented in the chart \ref{fig:fm-test}. \\ Making a comparison 
-and according the table \ref{tab:mf-set} is not possible 
-to affirm that matrix factorization has a better performance 
-with small datasets, because TripAdvisor and InCarMusic datasets 
-obtain a similar error in the same range that the large datasets.
+the presented in the chart \ref{fig:fm-test}. 
 \begin{table}
 \centering
 \small
@@ -591,11 +587,18 @@ Movielens    &     100000   &   0.94    &  0.42 \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-
 \begin{figure*}
 \captionsetup{font=footnotesize}
 \centering
-\fbox{\includegraphics[width=0.60\textwidth]{img/fm-test.png}}
-\caption{RMSE results of matrix factorization test.}
+\fbox{\includegraphics[width=0.70\textwidth]{img/fm-test.png}}
+\caption{RMSE results of matrix factorization.}
 \label{fig:fm-test}   
 \end{figure*}
+Making a comparison 
+and according the table \ref{tab:mf-set} is not possible 
+to affirm that matrix factorization has a better performance 
+with small datasets, because TripAdvisor and InCarMusic datasets 
+obtain a similar error in the same range that the large datasets.
+
+
+
