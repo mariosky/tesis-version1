@@ -242,10 +242,10 @@ similar way but where have not been rated by the current user. A Top-N
 list of restaurants is obtained to recommend for the user.
 \end{enumerate} 
 The results of the three techniques are a list of recommendations for
-the user, later, these recommendations are adjusted in context. This
-is the last step and is represented as \textit{context filter} in the
-method, then the recommender system obtains a list of contextualized
-recommendations. \\
+the user, later, these recommendations are adjusted for the current context. This
+is the last step and is represented as a \textit{context filter} in the
+method, as a result a list of contextualized
+recommendations is obtained. \\
 In the method, each technique works simultaneously to obtain
 recommendations, the hybrid method allows to generate suggestions even
 without user information, i.e., using content-based technique or the
@@ -253,22 +253,25 @@ fuzzy inference system, so the system faces the cold-start or the
 overspecialization problem using these thechniques, these problems are
 described in section \ref{coldstart} and 
 \ref{overspecialization}, respectively.\\
-To test the performance were made several experiments that validate
-the method, the algorithms were tested using contextual datasets and
-the number of contextual factors used varies according the information
-provided in the dataset. The goals of the experiments were to observe
-the context role in the performance of the algorithms, what contextual
-factors matter for users in a specific situation, how recommendations
+To evaluate the performance of the proposed recommender several experiments
+were maded, the algorithms were tested using contextual datasets and
+the number of contextual factors used varied according to the information
+provided by the dataset. The goal of the experiments were to observe
+the role of contextual data  in the performance of the algorithms and to 
+have a better understanding of what contextual
+factors are more important for users in a specific situation, how recommendations
 are improved using context and, the accuracy in recommendations.
-Chapter \ref{results} shows the results, discussion about results is
+
+Chapter \ref{results} shows the results while discussion about results are
 explained in each section.\\
-Another important metric is the \textit{user satisfaction}, two
-metrics were used to measure it: \textit{task-success} and \textit
-{time-on-task}. These metrics allow to measure the user experience,
-this offers so much more than just simple observation.\\ Usability
+As a user-cenetered system another important aspect 
+to consider and measure is the \textit{user satisfaction}, for this two
+metrics were used: \textit{task-success} and \textit
+{time-on-task}. These usability metrics allow designers to measure the user experience.
+\\ Usability
 metrics can help reveal patterns that are hard or even impossible to
-see. Evaluating software with a small sample size usually reveals the
-most obvious usability problems\cite{albert2013measuring}.\\ Then, as
+see. Evaluating software applications with a small sample size (between 5 and 8 tests)
+usually reveals the most obvious usability problems\cite{albert2013measuring}.\\ Then, as
 a general rule of thumb, during the early stages of design, it needs
 fewer participants to identify the major usability issues. As the
 design gets closer to completion, the tests should include more
@@ -297,32 +300,21 @@ based in that information. For instance, the system provides a list of
 range of prices, this allows the user to select a specific range of
 price to get recommendations adjusted for the tag selected.\\ In order
 to support the achievement of contributions, the particular aims of
-this thesis are following:
+this thesis are the following:
 \begin{itemize}  
-\item Elaborate an analysis about state of the art in the field
-of context-aware recommender systems through  the revision of
+\item Elaborate an analysis about the state of the art in the field
+of context-aware recommender systems through  the revision of the relevant
 literature. 
-\item Select the algorithms that represent alternatives of
-solution for the problem in order to test their perfomance in different
-domains.
-\item Realize experiments with the proposed algorithms.
-\item Based in previous experiments and results, to propose a hybrid
+\item Selection of algorithms that representative of the alternatives for
+this problem domain in order to compare their perfomance.
+\item Design and cunduct several experiments with the proposed algorithms.
+\item Based on the previous experiments and results, propose a hybrid
 method and apply it in a case of study.
 \item Define the fuzzy inference system that serves as recommender
 technique in the proposed method, as well as the variables and fuzzy
 rules involved.
-\item Develop a prototype of context-aware recommender system 
+\item Develop a prototype of a context-aware recommender system 
 using the proposed method.
-\item To select the algorithms that represent alternatives of
-solution for the problem to evaluate their perfomance in different
-domains.
-\item Evaluate the performance of the algorithms using 
-different datasets in order to observe the system behaviour 
-for each particular case.
-\item Propose a hybrid method for context applied in a case of
-study.
-\item Develop a prototype of context-aware recommender system 
-using the method in a specific domain.
 \item Evaluate the proposed method using usability metrics.
 \end{itemize} 
 
@@ -331,21 +323,21 @@ using the method in a specific domain.
 The rest of this thesis is organized as follows: 
 \begin{itemize}  
 \item \textbf{Chapter \ref{stateoftheart}} describes an in-depth study
-of current background and related work is presented to give a general
+and background of current and related work, presenting a general
 overview of recommender systems and their evolution in recent years.
-This study includes the traditional recommender systems, their methods
-and techniques to improve recommendations, as so the problems to face
-up this systems. Subsequently, the hybrid methods used in different
-applications, their strenghts and weaknesses for each hibridation and
+This study includes traditional recommender systems, their methods
+and techniques to improve recommendations, aswall as the challenges 
+of these systems. Subsequently, hybrid methods used in different
+applications, their limitations and advantages for each hibridation and
 the domains of application. Finally, context-aware recommender systems
-are mentioned, in the same way, we speak about the advantages and
+are disscussed, in the same way,  with an analysis of the advantages and
 disadvantages of the use of context in recommender systems.
 \item \textbf{Chapter \ref{background}} describes the fundamental
-concepts required to understand the proposed method.
+concepts that form the basis of the proposed method.
 \item \textbf{Chapter \ref{method}} presents a model of context-aware
-recommender system, the proposed method  involves the paradigm of
-post-filtering in a restaurants domain. This chapter include the
-overall explanation of data models and  the method functionality, as
+recommender system, the proposed method involves the paradigm of
+post-filtering in a restaurants domain. This chapter includes the
+overall explanation of data models and  the functionality, as
 well as its components for this case of study.
 \item \textbf{Chapter \ref{results}}, the general results of different
 projects involved are presented along with the validation of every
@@ -354,15 +346,15 @@ datasets and different algorithms in order to find an optimal manner
 to reduce the error level. This chapter also details the results for
 each experiment from a point of view of scientific results.
 \item \textbf{Chapter \ref{evaluation}}, after the development of
-context-aware recommender system, it was evaluated the impact of
-context in recommendation process. This chapter describes the
+context-aware recommender system, the impact of
+context in recommendation process was evaluated. This chapter describes the
 usability tests that were applied on-line in order to evaluate the
 satisfaction of users. Details of the environment and the
 characteristics of the tests are described, as well as the results of
 each one.
 \item \textbf{Chapter \ref{conclusions}}, this chapter concludes with a
-summary of its contributions and  its limitations. It discuss final
-conclusions and the proposals for the future work.
+summary of its contributions and limitations. Final
+conclusions are drawn and also proposals for future work are presented.
 \end{itemize}  
 
 At the end, this thesis includes several appendices describing
