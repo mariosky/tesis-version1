@@ -94,6 +94,7 @@ Thus, taking in account these definitions we can say that designing for
 \textit{system} or \textit{product}, developing design solutions,
 prototyping the system and the user interface, and testing it with
 representative users.\\
+
 In the study of Sato\cite{sato2004context} that brings \textit{context
 issues} into design practice, addressed the concept of
 \textit{context} as a critical component of the design information in
@@ -117,27 +118,29 @@ interaction composed of relations among \textit{variables of
 conditions}. Sato employed this concept to describe the
 \textit{influence of contexts} in \textit{people's interactions} and
 \textit{system performance} and vice versa.\\
-In this thesis we present the \textit{logical model} that explains how
-the relation is among the concepts of \textit{context},
-\textit{contextual information} and \textit{contextual factors}. The
-figure \ref{fig:logicalmodel} represents in graphic mode the relations
-between the concepts. The goal is to facilitate the use and
-implementation of context in recommender systems for any application.\\
+
+In this thesis we present first a \textit{logical model} that explains 
+the relationship between \textit{context},
+\textit{contextual information} and \textit{contextual factors}. Figure \ref{fig:logicalmodel} 
+gives a graphical representation of these relations. 
+The goal is to facilitate the use and
+implementation of fuzzy context in recommender systems for different domains.\\
 In the figure \ref{fig:logicalmodel}, the first box shows different
-situations of the user (contexts), the user can changes from situation
+real life situations of the user (contexts), the user can changes from situation
 to situation in a little time or a long time, this situational or
-contextual information in the real world provides the knowledge that
-the system needs to determine the context that will be used.  Next the
-user context provides specific information found in his environment,
-this we called \textit{``contextual factors"}(for instance, place and
+contextual information in the real world provides the abstract knowledge that
+the system will use to determine the \textit{``contextual information"} that will be used. 
+From the real world specific data will be extracted by different means as
+sensors, user interaction or even manual input. In this work 
+we call this data \textit{``contextual factors"}(for instance, place and
 orientation, preferences, date and time, etc.) and represents the
 information that affects the recommendation process. The information
-could be represents in fuzzy variables or crisp variables depending of
+could be represented as fuzzy variables or crisp variables depending of
 its domain values. Later, contextual factors are implemented as data
 structures that define the domain proposed for each one. The number of
 possible values varies for each application and is in this point where
-the designers take desitions about the properly data structure  that
-it'll be implemented.
+the designers take decisions about the properly data structure  that
+it will be implemented.
 %\begin{landscape} 
 \begin{figure*}
 \captionsetup{font=footnotesize} \centering
@@ -154,31 +157,32 @@ for a certain user. The suggestion relates to various decision-making
 processes, for instance, what items to buy, what music to listen to or
 what on-line news to read. \textit{Item} is the general term to denote
 what product or service the system recommends for each user. A
-recommender system normally focuses only in a type of item
+recommender system normally focuses only on a single type of item
 \cite{resnick1997recommender}.
-The improvements of previous recommender systems are focused in the
-\textit{integration of context} in its recommendation process. 
-The idea of \textit{context-aware computing} is to provide
+The improvement efforts for previous recommender systems have been mainly
+focused on the
+\textit{integration of context} in the recommendation process. 
+The idea behind \textit{context-aware computing} is to provide
 information or services for the user based in the user's situation
 \cite{dey2001understanding}. In order to do that, the application 
 needs to obtain situational data, process it and make use of it 
 in a manner that benefits the user. \\ 
-\textit{Context} is a concept not easy to define, it is related with
+\textit{Context} is a concept that is not easy to define, as it is related with
 several disciplines that propose different definitions. For example,
 the authors Bazire et.al.\cite{bazire2005understanding} compare the
-context in different fields and conclude that is complicated makes a
+notion of context in different fields and conclude that is complicated to make a
 unifying definition of context because of the nature of the concept in
-the disciplines. In computer science Fischer\cite{fischer2012context}
+many disciplines. In computer science Fischer\cite{fischer2012context}
 defines context as \textit{``the interaction between humans and
 computers in socio-technical systems that takes place in a certain
 context referring to the physical and social situation in which
-computational devices and environments are embedded"}. Also identifies
+computational devices and environments are embedded"}. Fischer also identifies
 the important aspects to consider when the context is used: how it is
 the contextual data obtained, how the context is represented and what
 goals and purposes the context has when is used in a particular
 application. \\
 Probably the definition most used in the field of recommender systems to 
-define \textit{Context} is proposed by Dey\cite{dey2001understanding}:
+define \textit{context} is proposed by Dey\cite{dey2001understanding}:
 \textit{``Context is any information that can be used to characterize
 the situation of an entity. An entity is a person, place or object
 that is considered relevant to the interaction between a user and  an
@@ -213,10 +217,12 @@ Plus, context can be used to improve the user satisfaction  in
 recommender systems, thus the quality and accuracy of predictions  
 is improved too. \\
 
-The proposed method uses three recommendations techniques:
+The method proposed in this thesis uses three recommendations techniques,
+applied as a Case Study in a restarant domian:
 \begin{enumerate} 
-\item \textit{Fuzzy Inference System}, this a rule based recommender
-defined by an expert in the domain, it considers the following
+\item \textit{Expert's Fuzzy Inference System}, this is a rule based recommender
+defined by an expert in the domain, in the case of a restaurant recommender
+it considers the following
 variables: \textit{ratings average: low,medium and high},
 \textit{price of restaurant: cheap, average and expensive}, and
 \textit{number of ratings of item: few, several and many}, these
