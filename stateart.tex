@@ -1,13 +1,25 @@
 \chapter{State of the art} \label{stateoftheart}
 
-Recommender system is a technology used by many authors for
-personalization of information. The amount of information in Internet
-is rising quickly and the users every time has less capability to
-search the most relevant information among big databases. Many
-recommender  system are used in several domains. 
-The fundamental is the profit that provides in many of
-these domains that sometimes represents the key of success for the
-application.  Some works utilize social information to recommend such
+%Propongo una Sección de RS tradicionales y
+%otra de Context Aware
+
+
+In this section the state of the art in 
+context aware recommender systems is presented. 
+As a technology recommender systems have beem applied 
+in many domains, and sometimes they represent the  key
+technology for the success of web and mobile applications.
+
+%Debemos presentar el SoA con cierto orden, ya sea como una linea
+%del tiempo, empezando de los primeros trabajos a los más recientes
+%o organizarlo por dominios, tecnologías etc. Voy a 
+%clasificar los diferentes trabajos y después los organizamos
+% 
+
+
+%Tipo de información: Social, Aplicación Social 
+%Tags
+Some works utilize social information to recommend such
 as Manca et.al.\cite{manca2014mining} where the friend recommender
 system is applied in the social bookmarking domain, its goal was to
 infer the interest of users from content selecting the available
@@ -15,11 +27,14 @@ information of the user behavior and analyzing the resources and the
 tags bookmarked for each user, therefore the recommendations are
 through mining user behavior in a tagging system, analyzing the
 bookmarks tagged of the user and the frecuency for each used tag. 
+%Keywords
 J.Yao et.al.\cite{yao2012product} proposes a new product recommendation
 approach for new users based on the implicit relationships between
 search keywords and products. The relationships between keywords and
 products are represented in a graph and relevance of keywords to
-products is derived from attributes of the graph. The relevance
+products is derived from attributes of the graph.
+%Semantic
+The relevance
 information is utilized to predict preferences of new users. J.
 Golbeck et.al.\cite{golbeck2006filmtrust} presents FilmTrust, a
 website that integrates Semantic Web-based social networks, augmented
@@ -28,6 +43,9 @@ the role of a recommender system forming the core of an algorithm to
 predict a rating for recommendations of movies. This is an example of
 how the Semantic Web, and Semantic trust networks in particular, can
 be exploited to refine the user experience. \\  
+%Eso de pros y cons me lo han criticado, me pedían algo más específico
+%Este párrafo está bien por que se organiza por problema que atacan las
+%propuestas
 Traditional recommender techniques has its pros and cons, for
 instance, the ability to handle data sparsity and cold-start problems
 or considerable ramp-up efforts for knowledge acquisition and
@@ -35,6 +53,7 @@ engineering. Establish hybrid systems that combine the strengths of
 algorithms and models to overcome some of the shortcomings and
 problems has become the properly manner to improve the difficults for
 each algorithm.
+%Turistas
 An example is presented by L.Castro et.al.\cite{castro2012prototype} 
 a hybrid recommender system for the province of San Juan, Argentina, 
 to recommend tourist packages  based on preferences and interest 
@@ -43,11 +62,13 @@ techniques are used to filter and customize the information. The
 prototype of recommender system utilizes three techniques to
 recommend: demographic, collaborative and content-based. The goal is
 to recommend tourist packages that matches with the user profile.
+%Restaurantes
 L. Martinez et al.\cite{martinez2009reja} presents REJA, a hybrid
 recommender system that involves collaborative filtering and
 knowledge-based model, that is able to provide recommendations in some
 situation for user; besides it provides georeferenced information
 about the recommended restaurants.
+%De los primeros
 Balabanovic et.al.\cite{balabanovic1997fab} presents
 Fab, a hybrid recommender system for automatic recognition of
 emergent issues relevant to various groups of users. It also enables
@@ -65,7 +86,9 @@ treats the output of each recommender (collaborative, content-based
 and demographic) as a set of votes, which are then combined in a
 consensus scheme. The recommender system includes information such as
 the content of the page, ratings of users and demographic data about
-users. Others works with hybrid recommender systems are ProfBuilder
+users. 
+%Hibridos
+Others works with hybrid recommender systems are ProfBuilder
 \cite{al1999semantic}, PickAFlick\cite{burke1999integrating}  and
 \cite{tran2000hybrid}, where are presented multiple recommendation
 techniques. Usually, recommendation requires ranking of
