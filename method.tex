@@ -1,23 +1,43 @@
 \chapter{Proposed method}\label{method}
 
+%%
+%% Falta una introducción al capítulo
+%%
+
+
+%%
+%% Introducción al método
+%%
+
 \section{Data models} 
 
-The data models was implemented in PostgreSQL database, 
-the information in context-aware recommender system was
-managed in a scheme of a relational database. Technical support 
-about installations of dependencies and the application are 
-mentioned in appendix \ref{appendixc}.
+%%
+%% Esta parte no es del método
+%% Es de la implementación del caso de estudio
 
-\subsection{Restaurant model} 
+%The data models was implemented in PostgreSQL database, 
+%the information in context-aware recommender system was
+%managed in a scheme of a relational database. Technical support 
+%about installations of dependencies and the application are 
+%mentioned in appendix \ref{appendixc}.
 
-An effective on-line recommender system must be based upon an
-understanding of consumer  preferences and successfully mapping
-potential products into the consumer's
+\subsection{Data Model}
+The first step of the method is to define a Data Model, 
+defining an abstraction of the context. An effective on-line 
+recommender system must be based upon an
+understanding of consumer\'s  preferences and successfully mapping
+potential products into these
 preferences\cite{adomavicius2011context}. Pan and
 Fesenmaier\cite{pan2006online} argued that this can be achieved
 through the understanding of how consumers describe in their own
-language a product, a place, and the experience when they are
-consuming the product or visiting the place.\\ Traditionally, choosing
+language a product, a place, and the overall experience when they are
+consuming the product or visiting the place. It is observed that 
+the language of the consumer is often imprecise, with attributes 
+values expressed in fuzzy terms. 
+
+
+\subsection{Restaurant model} 
+\\ Traditionally, choosing
 a restaurant has been considered as rational behavior where a number
 of attributes contribute to the overall usefulness of a restaurant.
 For example: food type, service quality, atmosphere of the restaurant,
