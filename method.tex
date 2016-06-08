@@ -11,15 +11,6 @@
 
 \section{Data models} 
 
-%%
-%% Esta parte no es del método
-%% Es de la implementación del caso de estudio
-
-%The data models was implemented in PostgreSQL database, 
-%the information in context-aware recommender system was
-%managed in a scheme of a relational database. Technical support 
-%about installations of dependencies and the application are 
-%mentioned in appendix \ref{appendixc}.
 
 \subsection{Data Model}
 The first step of the method is to define a Data Model, 
@@ -32,30 +23,35 @@ Fesenmaier\cite{pan2006online} argued that this can be achieved
 through the understanding of how consumers describe in their own
 language a product, a place, and the overall experience when they are
 consuming the product or visiting the place. It is observed that 
-the language of the consumer is often imprecise, with attributes 
-values expressed in fuzzy terms. 
+the language of the consumers is often imprecise, with values of attributes 
+values often expressed in fuzzy terms. In order to create the data model
+the designer must first consider those atributes that customers
+take into consideration when choosing an item. Then situational 
+and contextual factors must also be considered. 
 
 
-\subsection{Restaurant model} 
+\subsection{Restaurant model}
+As an exemple a case study will be used, a 
+Restaurant context-aware recommender system.  
 \\ Traditionally, choosing
 a restaurant has been considered as rational behavior where a number
 of attributes contribute to the overall usefulness of a restaurant.
 For example: food type, service quality, atmosphere of the restaurant,
 and availability of information about a restaurant, plays an important
-role at different stages in consumer's desitions
+role at different stages in consumer's desition
 making\cite{auty1992consumer}. While food quality and food type have
 been perceived as the most important variables for consumers'
 restaurant selection, situational and contextual factors have been
-found to be important also. Due to this in
+found to be important also. Due to this 
 Kivela\cite{jack1997restaurant} identifies four types of restaurants:
 1) \textit{fine dining/gourmet}, 2) \textit{theme/atmosphere}, 3)
-\textit{family/popular}, and 4) \textit{convenience/fast-food}; and
-Auty\cite{auty1992consumer} identifies four types of dining out
-occasions: 1) \textit{namely celebration}, 2) \textit{social
+\textit{family/popular}, and 4) \textit{convenience/fast-food}; on
+the other hande Auty\cite{auty1992consumer} identifies four types of dining out
+occasions: 1) \textit{celebration}, 2) \textit{social
 occasion}, 3) \textit{convenience/quick meal}, and 4) \textit{business
-meal}.\\ Taking in account the context, the restaurant model proposed
-for context-aware recommender system was definded with 55 attributes
-about the restaurants features. An exploration about contents of
+meal}.\\ Taking in to account the context, the model proposed
+was definded with 55 attributes
+about restaurants. An exploration about contents of
 models of others works were compared to define the suitable
 information into the model. Therefore, the restaurant model is a
 binary vector with the following contextual attributes: 1)
@@ -63,11 +59,11 @@ binary vector with the following contextual attributes: 1)
 type}, 4) \textit{smoking area}, 5) \textit{dress code}, 6)
 \textit{parking type}, 7) \textit{installations type}, 8)
 \textit{atmosphere type}, and 9) \textit{cuisine type}. An example of
-restaurant model in the context-aware recommender system is depicted
+a restaurant model is depicted
 in figure \ref{fig:restaurantmodel} with some domain values of the
 context represented by a binary vector where \textit{1} means that the
 restaurant has the property that corresponds to the position value.
-Additionally, the restaurant model contains contextual information
+Additionally, the restaurant model contains other information
 such as \textit{users's reviews}, \textit{ratings average}, and
 \textit{geographycal location.}\\
 \begin{figure*}
@@ -81,7 +77,13 @@ such as \textit{users's reviews}, \textit{ratings average}, and
 \label{fig:restaurantmodel}       
 \end{figure*}
 
-\subsubsection{Data model} \label{datamodelsection}   
+\subsubsection{Contextual Factors Data model} \label{datamodelsection}   
+
+The data model was implemented in a PostgreSQL database system, 
+while the information in th context-aware recommender system was
+managed in a schema of a relational database. Technical support 
+about installations of dependencies and the application are 
+described in appendix \ref{appendixc}.
 
 The data model in postgreSQL is depicted in the figure
 \ref{fig:restaurantmodeldata}, the model contains the restaurant
@@ -98,8 +100,8 @@ figure \ref{fig:datamodel}.
 \caption{The data model of restaurant.}
 \label{fig:restaurantmodeldata}     
 \end{figure*}
-Some related entity corresponds to the proposed contextual factors, 
-that are defined as following: 
+Some related entities corresponding to the proposed contextual factors, 
+are defined as follows: 
 \begin{itemize}
 \item \textbf{Price:} \textit{cheap, regular, expensive, too expensive.}
 \item \textbf{Payment:} \textit{credit/debit card, cash.}
@@ -107,7 +109,7 @@ that are defined as following:
 \item \textbf{Smoking area:} \textit{yes, no.}
 \item \textbf{Dresscode:} \textit{casual, informal, formal.}
 \item \textbf{Installations:} \textit{garden, terrace, indoor, outdoor.}
-\item \textbf{Atmosphere:} \textit{relax, familiar, friends, bussines, romantic.}
+\item \textbf{Atmosphere:} \textit{relaxed, familiar, friends, bussines, romantic.}
 \item \textbf{Parking:} \textit{no parking, free parking, valet parking.}
 \item \textbf{Cuisine:} \textit{japanese, chinese, italian, argentinean,
 cantonese, mandarin, mongolian, arabic, greek, spanish, brasilian,
@@ -120,9 +122,9 @@ The cuisines were defined according the food variety of restaurants in
 Tijuana, there are 30 types of cuisines defined in the system. \\
 The smoking area is an attribute with boolean value, it
 defines if a restaurant has a smoking area in its installation.
+A fuzzy contextual factor found in this case study is the \textbf{Price}.
 
 \subsection{User model} 
-
 The user's profile is derived from the ratings matrix. Let $U=[u_1,u_2,...u_n]$
 the set of all users and $ I=[i_1,i_2,$...$i_n] $ the set of all items, if $R$
 represent the ratings matrix,  an element  $R_{u,i}$ represents a user’s rating
@@ -143,16 +145,17 @@ the intensity of the user interest for  the item.\\
 \caption{Example of user interface for user profile.}
 \label{fig:user-profile}      
 \end{figure*}
-In context-aware recommender system, user profile has contextual
+
+In context-aware recommender systems, user profiles have contextual
 information such as: 1) price range, 2) current location, 3) cuisine
 types, 4) attributes or features of restaurants that the user want, 5)
-the reviews posted, and 6) the favorite restaurants list. The user
-profile is stored in database and it is available for queries request,
+the reviews posted, and 6) a list of  favorite restaurants. The user
+profile is stored in database and it is available for queries upon request,
 and it can be changed by users many times in a session. The
-information used to recommendations is the last one register stored.
+information used to make recommendations is the most recent.
 The user interface is represented in figure \ref{fig:user-profile}.
 
-\subsubsection{Data model} 
+\subsubsection{User Data Model Implementation} 
 
 The user's data model in postgreSQL is represented in the figure
 \ref{fig:datausermodel}, the model involves the entities:
@@ -190,13 +193,13 @@ parking, payment, smoking area, dresscode, alcohol.
 \end{figure*}
 
 \subsection{Relational data model} 
+%Reviews son información contextual?
 
 A complete database relational scheme is represented in the figure
 \ref{fig:datamodel}. This model involves the whole database for
 context-aware recommender system, as well as the entities and
-relations among them. \\The context is modeled as a relational database,
-each user context is a new register into data table to store user
-contexts.\\Contextual information is also stored in the entities:
+relations among them. \\Contextual information is also stored in the following
+entities:
 \textit{Reviews, CurrentLocation, DistancePoi and Ratings.} For
 instance, \textit{Reviews entity} describes the user’s opinion about
 visited restaurants, this information contributes to have additional
