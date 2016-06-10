@@ -9,9 +9,63 @@
 %% Introducción al método
 %%
 
+
+%% Explica un poco más el método en general.
+%% La imagen de la introducción traela a esta sección
+The method proposed in this thesis uses three recommendations techniques,
+applied as a Case Study in a restarant domian:
+\begin{enumerate} 
+\item \textit{Expert's Fuzzy Inference System}, this is a rule based recommender
+defined by an expert in the domain, in the case of a restaurant recommender
+it considers the following
+variables: \textit{ratings average: low,medium and high},
+\textit{price of restaurant: cheap, average and expensive}, and
+\textit{number of ratings of item: few, several and many}, these
+variables are used to infer how relevant a restaurant is for the user.
+This recommendation is based on the popularity of each item in the
+user community.
+\item \textit{Content-based technique} utilizes the item profiles 
+to compare how \textit{similar} is an item with respect to 
+another, i.e. restaurants that are \textit{similar} (same cuisine, 
+ambient, price range) to others that the user has rated high. 
+The idea is to find items with similar features. 
+\item \textit{Collaborative filtering technique} is based on the user
+profile to identify user's preferences and to find neighbors that
+have the same tastes. The recommendation consist in the suggestions of
+other users with similar tastes that rated restaurants again in a
+similar way but where have not been rated by the current user. A Top-N
+list of restaurants is obtained to recommend for the user.
+\end{enumerate} 
+The results of the three techniques are a list of recommendations for
+the user, later, these recommendations are adjusted for the current context. This
+is the last step and is represented as a \textit{context filter} in the
+method, as a result a list of contextualized
+recommendations is obtained. \\
+In the method, each technique works simultaneously to obtain
+recommendations, the hybrid method allows to generate suggestions even
+without user information, i.e., using content-based technique or the
+fuzzy inference system, so the system faces the cold-start or the
+overspecialization problem using these thechniques, these problems are
+described in section \ref{coldstart} and 
+\ref{overspecialization}, respectively.\\
+To evaluate the performance of the proposed recommender several experiments
+were maded, the algorithms were tested using contextual datasets and
+the number of contextual factors used varied according to the information
+provided by the dataset. The goal of the experiments were to observe
+the role of contextual data  in the performance of the algorithms and to 
+have a better understanding of what contextual
+factors are more important for users in a specific situation, how recommendations
+are improved using context and, the accuracy in recommendations.
+
+
+
+
+%Una vez explicado el método habla del método y después da el
+%ejemplo del restaurante.
+% Después de leer la sección el lector debe saber la propuesta y como se puede aplicar.
+
+
 \section{Data models} 
-
-
 \subsection{Data Model}
 The first step of the method is to define a Data Model, 
 defining an abstraction of the context. An effective on-line 
