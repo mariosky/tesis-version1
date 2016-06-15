@@ -12,8 +12,9 @@
 
 %% Explica un poco más el método en general.
 %% La imagen de la introducción traela a esta sección
-The method proposed in this thesis uses three recommendations techniques,
-applied as a Case Study in a restarant domian:
+The method proposed in this thesis uses three recommendations techniques.
+In order to explain the method, a Case Study in a restarant domian will be used.
+The techniques are the following:
 \begin{enumerate} 
 \item \textit{Expert's Fuzzy Inference System}, this is a rule based recommender
 defined by an expert in the domain, in the case of a restaurant recommender
@@ -49,9 +50,9 @@ overspecialization problem using these thechniques, these problems are
 described in section \ref{coldstart} and 
 \ref{overspecialization}, respectively.\\
 To evaluate the performance of the proposed recommender several experiments
-were maded, the algorithms were tested using contextual datasets and
+were conducted, the algorithms were tested using contextual datasets and
 the number of contextual factors used varied according to the information
-provided by the dataset. The goal of the experiments were to observe
+provided by each of the datasets. The goal of the experiments were to observe
 the role of contextual data  in the performance of the algorithms and to 
 have a better understanding of what contextual
 factors are more important for users in a specific situation, how recommendations
@@ -374,9 +375,9 @@ membership functions Gaussian type also. The rules are:
 \label{fig:expertfis}      
 \end{figure*}
 
-\section{Fuzzy inference system to assing weights} 
+\section{Fuzzy Weighted Average} 
 
-The main goal of this fuzzy inference system is to define weights for
+The main goal of this fuzzy inference system is to assign weights for
 each recommendation list. The recommendation technique is based in the
 amount of available information stored, so each technique utilizes
 this information to provide a list of restaurants as well as a weight
@@ -518,6 +519,9 @@ recommendation if is not over the threshold. So, for this case, the
 prediction is \textbf{4.57}, it means that this restaurant will be in the
 recommendation list of the user, subsequently, the recommendations
 list will be contextualized.
+%%
+%% Poner la ecuación con variables? 
+
 
 \section{Contextual recommendation} 
 
@@ -580,14 +584,17 @@ recommendations are suplied by the rating matrix.
 \end{figure*}
 Ratings matrix makes that \textbf{fuzzy inference system} can obtain
 the inputs values to calculate the output value. \textbf{Content-based} 
-utilizes the rating matrix and user profiles to compare the
-similarity among the restaurants through cosine similarity measure.
-\textbf{Collaborative filtering} is based in user profiles content in
-ratings matrix, using Pearson correlation calculates the similarity
-among the users, subsequently, a list of neighbors is obtained to use
-their preferences to calculate predictions.\\
+uses the rating matrix and user profiles to compare the
+% user profiles? is not Restaurant profiles
+
+% Explica un poco más donde está el Fuzzy Average?
+similarity among restaurants through a cosine similarity measure.
+\textbf{Collaborative filtering} is based on user profiles contained in
+the ratings matrix, using a Pearson correlation to calculate the similarity
+among users, subsequently, a list of neighbors is obtained to use
+their preferences to calculate the predictions.\\
 The second part shows the recommendation lists for the user. Later,
-the recommendation lists are reduced when filter of context is applied,
+the recommendation lists are reduced when the context filter is applied,
 i.e., the recommendations are adjusted for the user current context.
 Finally, the contextual recommendations list is displayed in the user
 interface (figure \ref{fig:recom}).
