@@ -270,10 +270,10 @@ cafe/bar, french, birds, seafood.
 parking, payment, smoking area, dresscode, alcohol.
 \end{itemize}
 
-
 \subsection{Relational data model} 
 %Reviews son información contextual?
-
+% @es imformacion que podria ser usada para saber mas sobre las 
+% preferencias de los usuarios, esto a futuro.  Puedo aclarar eso.
 A complete database relational scheme is represented in the figure
 \ref{fig:datamodel}. This model involves the whole database for
 context-aware recommender system, as well as the entities and
@@ -286,7 +286,7 @@ relations among them. \\Contextual information is also stored in the following
 entities:
 >>>>>>> origin/master
 \textit{Reviews, CurrentLocation, DistancePoi and Ratings.} For
-instance, \textit{Reviews entity} describes the user’s opinion about
+instance, \textit{Reviews entity} describes the user's opinion about
 visited restaurants, this information contributes to have additional
 information about recent preferences of diners.\\
 \textit{CurrentLocation entity} stores the geographical position of
@@ -554,7 +554,8 @@ recommendation list of the user, subsequently, the recommendations
 list will be contextualized.
 %%
 %% Poner la ecuación con variables? 
-
+% @No importa que quede muy extensa? o con abreviaturas y explicando 
+%previamente el significado de las variables estaria bien?
 
 \section{Contextual recommendation} 
 
@@ -621,7 +622,6 @@ the inputs values to calculate the output value.
 \caption{Scheme of the proposed method.}
 \label{fig:archit}  
 \end{figure*}
-<<<<<<< HEAD
 \textbf{Content-based} 
 utilizes the rating matrix and user profiles to compare the
 similarity among the restaurants through cosine similarity measure.
@@ -629,19 +629,16 @@ similarity among the restaurants through cosine similarity measure.
 ratings matrix, using Pearson correlation calculates the similarity
 among the users, subsequently, a list of neighbors is obtained to use
 their preferences to calculate predictions.\\
-=======
 Ratings matrix makes that \textbf{fuzzy inference system} can obtain
 the inputs values to calculate the output value. \textbf{Content-based} 
-uses the rating matrix and user profiles to compare the
+uses the rating matrix and restaurant profiles to compare the
 % user profiles? is not Restaurant profiles
-
 % Explica un poco más donde está el Fuzzy Average?
 similarity among restaurants through a cosine similarity measure.
 \textbf{Collaborative filtering} is based on user profiles contained in
 the ratings matrix, using a Pearson correlation to calculate the similarity
 among users, subsequently, a list of neighbors is obtained to use
 their preferences to calculate the predictions.\\
->>>>>>> origin/master
 The second part shows the recommendation lists for the user. Later,
 the recommendation lists are reduced when the context filter is applied,
 i.e., the recommendations are adjusted for the user current context.
