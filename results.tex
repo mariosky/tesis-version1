@@ -3,11 +3,23 @@
 \section{Experimental settings} 
 
 This chapter describes the experiments that were used in order
-to compare the recommender techniques. 
-In all experimental scenarios, it is important to follow a 
-few basic guidelines in general experimental 
-studies\cite{adomavicius2011context}:
+to compare several recommender techniques. 
+%% No debemos ser didácticos sobre lo que se tiene que hacer, 
+%% en tu tesis usas este conocimiento, pero no lo debes explicar.
+%% Cambialo a algo que no explique, por ejemplo:
+%%
+%In all experimental scenarios, it is important to follow a 
+%few basic guidelines in general experimental 
+%studies\cite{adomavicius2011context}:
+In this particular experimental scenario, the basic guidelines 
+proposed in Adomavicius \cite{adomavicius2011context} are followed,  
+and they are briefly explained next. 
+
+
 \begin{itemize} 
+%%
+%% 
+%%
 \item \textbf{Hypothesis:} before running the experiment we must form
 an \textit{hypothesis}. It is important to be concise and restrictive
 about this hypothesis, and design an experiment that tests the
@@ -51,10 +63,17 @@ relatively small set of alternatives algorithms for subsequently to be
 tested for the more costly user studies or online 
 experiments\cite{adomavicius2011context}.
 
+%% Haz un puente, dices que vaz a hacer ciertos experimentos
+%% menciona aquí que lo que sigue es el setup de tus parte experimental.
+%% Menciona brevemente los experimentos o datrasets, Restaurants, MovieLens,
+%% Filmtrust and InCarMusic, TripAdvisor
+
+%% Datasets?? esto está en la sección pasada
 \section{Datasets} 
 
 \subsection{Tijuana Restaurants} 
-
+%% Esto creo que ya se había dicho,
+%% o debe ir en Method
 The method uses collaborative filtering to find restaurants for the
 user\cite{ramirez2013restaurant}. The ratings of user profiles are
 used to determine the similarity among users using Pearson
@@ -82,17 +101,23 @@ depicted in figure \ref{fig:postfiltering}.
 \caption{The post-filtering approach for Tijuana restaurants.}
 \label{fig:postfiltering}     
 \end{figure*}
-In order to validate the proposed approach, data about restaurant
+%% Bien, empieza aquí:
+%Algo como
+%In order to validate the proposed approach described in section XXX, data about restaurant
+In order to validate the proposed approach , data about restaurant
 preferences of users in different contexts was collected. The study
-subjects were students enrolled in a computer engineer major, a
+subjects were students  with a major in engineering,  
 master’s program and professors of the Tijuana Institute of
 Technology. A total of \textit{50 users} answered a questionnaire; the
 questions were about their preferences for nearby restaurants and the
-technology used by them. The \textit{questionnaire} consisted of \textit{8
-questions} and they rate restaurants from a list of 40 restaurants.
-Each restaurant chosen was rated 6 times one per context considered, a
-matrix rating with \textit{1,422 ratings} were collected. The
-questions are shown in the table \ref{tab:questions}.
+technology most often used by them. The \textit{questionnaire} consisted of \textit{8
+questions} and also they were asked to rate any number of restaurants from a list of 40 restaurants.
+Each of the restaurants chosen, was rated 6 times one per proposed context, a
+matrix rating with \textit{1,422 ratings} was collected. The
+questions are shown in table \ref{tab:questions}. The reason for allowing
+users to chose what restaurants to rate it to give them the same liberty
+they have when visiting a web or mobile application. 
+
 \begin{table}
 \small
 \captionsetup{font=footnotesize}
@@ -151,7 +176,7 @@ without/with the contextual situation. In figure \ref{fig:barschart}a,
 the favorite restaurant is \textbf{Daruma}(178 votes),  whereas in
 figure \ref{fig:barschart}b, \textbf{Daruma} does not appear in the
 top-ten. When considering the context \textit{midweek}, the favorite
-restaurant was \textbf{Carls Jr.}, which appears in both graphs; this
+restaurant was \textbf{Carl\'s Jr.}, which appears in both graphs; this
 restaurant was also the most voted in the different contexts.
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
@@ -184,17 +209,25 @@ Contextual Factor & Context \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+% este es otro dataset?
+% creo que es el mismo, corrige o borra el párrafo que sigue
+% ya sabemos que fué explícito y fueron 50 usuarios
 The dataset was explicitly collected from \textbf{50 users} whom
 answered questionnaire (see table \ref{tab:questions}). A total of 172
-predictions was made for different users and the error
-\textbf{MAE=0.5859} when the context \textbf{midweek} for current user
+predictions was made for different users and the mean absolute error
+\textbf{MAE=0.5859} when the context \textbf{midweek} for the current user
 was considered. The observation for this result is that using a small
-dataset the performance of the method proposed is limited. By other
+dataset the performance of the method proposed is limited. On the other
 hand, having only one contextual factor does not improve the accuracy
 of the recommendations in this domain.
+% Arriba ¿Por qué solo consideras esa prediccióm la de midweek?
+% ¿ Por qué no otos casos o una tabla?
+% ¿Cual es la hipotesis, variables etc.?
 
+
+%%Explica que vas a hacer, no empieces por los datos, antes dí que vas a hacer
+%%Que vas a utilizar y ya despué entras en el detalle de Movie Lens. 
 \subsection{MovieLens collection} 
-
 GroupLens Research has collected and made available rating data sets
 from the MovieLens web site (\url{http://movielens.org}). \\The data sets
 were collected over various periods of time,  depending on the size of

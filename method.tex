@@ -1,5 +1,6 @@
 \chapter{Proposed method}\label{method}
 
+<<<<<<< HEAD
 This chapter presents the proposed method, the recommender system uses
 user's context to infer the predictions of items.  First, the data
 models are defined in order to explain what characteristics (or
@@ -11,41 +12,115 @@ component in the method, as well as its functionality and how is
 connected with another components of the method.
 
 \section{Data models} 
+=======
+%%
+%% Falta una introducción al capítulo
+%%
 
-The data models was implemented in PostgreSQL database, 
-the information in context-aware recommender system was
-managed in a scheme of a relational database. Technical support 
-about installations of dependencies and the application are 
-mentioned in appendix \ref{appendixc}.
 
-\subsection{Restaurant model} 
+%%
+%% Introducción al método
+%%
 
-An effective on-line recommender system must be based upon an
-understanding of consumer  preferences and successfully mapping
-potential products into the consumer's
+
+%% Explica un poco más el método en general.
+%% La imagen de la introducción traela a esta sección
+The method proposed in this thesis uses three recommendations techniques.
+In order to explain the method, a Case Study in a restarant domian will be used.
+The techniques are the following:
+\begin{enumerate} 
+\item \textit{Expert's Fuzzy Inference System}, this is a rule based recommender
+defined by an expert in the domain, in the case of a restaurant recommender
+it considers the following
+variables: \textit{ratings average: low,medium and high},
+\textit{price of restaurant: cheap, average and expensive}, and
+\textit{number of ratings of item: few, several and many}, these
+variables are used to infer how relevant a restaurant is for the user.
+This recommendation is based on the popularity of each item in the
+user community.
+\item \textit{Content-based technique} utilizes the item profiles 
+to compare how \textit{similar} is an item with respect to 
+another, i.e. restaurants that are \textit{similar} (same cuisine, 
+ambient, price range) to others that the user has rated high. 
+The idea is to find items with similar features. 
+\item \textit{Collaborative filtering technique} is based on the user
+profile to identify user's preferences and to find neighbors that
+have the same tastes. The recommendation consist in the suggestions of
+other users with similar tastes that rated restaurants again in a
+similar way but where have not been rated by the current user. A Top-N
+list of restaurants is obtained to recommend for the user.
+\end{enumerate} 
+The results of the three techniques are a list of recommendations for
+the user, later, these recommendations are adjusted for the current context. This
+is the last step and is represented as a \textit{context filter} in the
+method, as a result a list of contextualized
+recommendations is obtained. \\
+In the method, each technique works simultaneously to obtain
+recommendations, the hybrid method allows to generate suggestions even
+without user information, i.e., using content-based technique or the
+fuzzy inference system, so the system faces the cold-start or the
+overspecialization problem using these thechniques, these problems are
+described in section \ref{coldstart} and 
+\ref{overspecialization}, respectively.\\
+To evaluate the performance of the proposed recommender several experiments
+were conducted, the algorithms were tested using contextual datasets and
+the number of contextual factors used varied according to the information
+provided by each of the datasets. The goal of the experiments were to observe
+the role of contextual data  in the performance of the algorithms and to 
+have a better understanding of what contextual
+factors are more important for users in a specific situation, how recommendations
+are improved using context and, the accuracy in recommendations.
+
+
+>>>>>>> origin/master
+
+
+%Una vez explicado el método habla del método y después da el
+%ejemplo del restaurante.
+% Después de leer la sección el lector debe saber la propuesta y como se puede aplicar.
+
+
+\section{Data models} 
+\subsection{Data Model}
+The first step of the method is to define a Data Model, 
+defining an abstraction of the context. An effective on-line 
+recommender system must be based upon an
+understanding of consumer\'s  preferences and successfully mapping
+potential products into these
 preferences\cite{adomavicius2011context}. Pan and
 Fesenmaier\cite{pan2006online} argued that this can be achieved
 through the understanding of how consumers describe in their own
-language a product, a place, and the experience when they are
-consuming the product or visiting the place.\\ Traditionally, choosing
+language a product, a place, and the overall experience when they are
+consuming the product or visiting the place. It is observed that 
+the language of the consumers is often imprecise, with values of attributes 
+values often expressed in fuzzy terms. In order to create the data model
+the designer must first consider those atributes that customers
+take into consideration when choosing an item. Then situational 
+and contextual factors must also be considered. 
+
+
+\subsection{Restaurant model}
+As an exemple a case study will be used, a 
+Restaurant context-aware recommender system.  
+\\ Traditionally, choosing
 a restaurant has been considered as rational behavior where a number
 of attributes contribute to the overall usefulness of a restaurant.
 For example: food type, service quality, atmosphere of the restaurant,
 and availability of information about a restaurant, plays an important
-role at different stages in consumer's desitions
+role at different stages in consumer's desition
 making\cite{auty1992consumer}. While food quality and food type have
 been perceived as the most important variables for consumers'
 restaurant selection, situational and contextual factors have been
-found to be important also. Due to this in
+found to be important also. Due to this 
 Kivela\cite{jack1997restaurant} identifies four types of restaurants:
 1) \textit{fine dining/gourmet}, 2) \textit{theme/atmosphere}, 3)
-\textit{family/popular}, and 4) \textit{convenience/fast-food}; and
-Auty\cite{auty1992consumer} identifies four types of dining out
-occasions: 1) \textit{namely celebration}, 2) \textit{social
+\textit{family/popular}, and 4) \textit{convenience/fast-food}; on
+the other hande Auty\cite{auty1992consumer} identifies four types of dining out
+occasions: 1) \textit{celebration}, 2) \textit{social
 occasion}, 3) \textit{convenience/quick meal}, and 4) \textit{business
-meal}.\\ Taking in account the context, the restaurant model proposed
-for context-aware recommender system was definded with 55 attributes
-about the restaurants features. An exploration about contents of
+meal}.\\ Taking in to account the context, the model proposed
+was definded with 55 attributes
+about restaurants. An exploration about contents of
 models of others works were compared to define the suitable
 information into the model. Therefore, the restaurant model is a
 binary vector with the following contextual attributes: 1)
@@ -53,11 +128,11 @@ binary vector with the following contextual attributes: 1)
 type}, 4) \textit{smoking area}, 5) \textit{dress code}, 6)
 \textit{parking type}, 7) \textit{installations type}, 8)
 \textit{atmosphere type}, and 9) \textit{cuisine type}. An example of
-restaurant model in the context-aware recommender system is depicted
+a restaurant model is depicted
 in figure \ref{fig:restaurantmodel} with some domain values of the
 context represented by a binary vector where \textit{1} means that the
 restaurant has the property that corresponds to the position value.
-Additionally, the restaurant model contains contextual information
+Additionally, the restaurant model contains other information
 such as \textit{users's reviews}, \textit{ratings average}, and
 \textit{geographycal location.}\\
 \begin{figure*}
@@ -71,7 +146,17 @@ such as \textit{users's reviews}, \textit{ratings average}, and
 \label{fig:restaurantmodel}       
 \end{figure*}
 
+<<<<<<< HEAD
 \subsubsection{Restuarant data model} \label{datamodelsection}   
+=======
+\subsubsection{Contextual Factors Data model} \label{datamodelsection}   
+
+The data model was implemented in a PostgreSQL database system, 
+while the information in th context-aware recommender system was
+managed in a schema of a relational database. Technical support 
+about installations of dependencies and the application are 
+described in appendix \ref{appendixc}.
+>>>>>>> origin/master
 
 The data model in postgreSQL is depicted in the figure
 \ref{fig:restaurantmodeldata}, the model contains the restaurant
@@ -88,8 +173,8 @@ figure \ref{fig:datamodel}.
 \caption{The restaurant data model.}
 \label{fig:restaurantmodeldata}     
 \end{figure*}
-Some related entity corresponds to the proposed contextual factors, 
-that are defined as following: 
+Some related entities corresponding to the proposed contextual factors, 
+are defined as follows: 
 \begin{itemize}
 \item \textbf{Price:} \textit{cheap, regular, expensive, too expensive.}
 \item \textbf{Payment:} \textit{credit/debit card, cash.}
@@ -97,7 +182,7 @@ that are defined as following:
 \item \textbf{Smoking area:} \textit{yes, no.}
 \item \textbf{Dresscode:} \textit{casual, informal, formal.}
 \item \textbf{Installations:} \textit{garden, terrace, indoor, outdoor.}
-\item \textbf{Atmosphere:} \textit{relax, familiar, friends, bussines, romantic.}
+\item \textbf{Atmosphere:} \textit{relaxed, familiar, friends, bussines, romantic.}
 \item \textbf{Parking:} \textit{no parking, free parking, valet parking.}
 \item \textbf{Cuisine:} \textit{japanese, chinese, italian, argentinean,
 cantonese, mandarin, mongolian, arabic, greek, spanish, brasilian,
@@ -110,9 +195,9 @@ The cuisines were defined according the food variety of restaurants in
 Tijuana, there are 30 types of cuisines defined in the system. \\
 The smoking area is an attribute with boolean value, it
 defines if a restaurant has a smoking area in its installation.
+A fuzzy contextual factor found in this case study is the \textbf{Price}.
 
 \subsection{User model} 
-
 The user's profile is derived from the ratings matrix. Let $U=[u_1,u_2,...u_n]$
 the set of all users and $ I=[i_1,i_2,$...$i_n] $ the set of all items, if $R$
 represent the ratings matrix,  an element  $R_{u,i}$ represents a user’s rating
@@ -133,16 +218,21 @@ the intensity of the user interest for  the item.\\
 \caption{Example of user interface for user profile.}
 \label{fig:user-profile}      
 \end{figure*}
-In context-aware recommender system, user profile has contextual
+
+In context-aware recommender systems, user profiles have contextual
 information such as: 1) price range, 2) current location, 3) cuisine
 types, 4) attributes or features of restaurants that the user want, 5)
-the reviews posted, and 6) the favorite restaurants list. The user
-profile is stored in database and it is available for queries request,
+the reviews posted, and 6) a list of  favorite restaurants. The user
+profile is stored in database and it is available for queries upon request,
 and it can be changed by users many times in a session. The
-information used to recommendations is the last one register stored.
+information used to make recommendations is the most recent.
 The user interface is represented in figure \ref{fig:user-profile}.
 
+<<<<<<< HEAD
 \subsubsection{User data model} 
+=======
+\subsubsection{User Data Model Implementation} 
+>>>>>>> origin/master
 
 The user's data model in postgreSQL is represented in the figure
 \ref{fig:datausermodel}, the model involves the entities:
@@ -182,13 +272,19 @@ parking, payment, smoking area, dresscode, alcohol.
 
 
 \subsection{Relational data model} 
+%Reviews son información contextual?
 
 A complete database relational scheme is represented in the figure
 \ref{fig:datamodel}. This model involves the whole database for
 context-aware recommender system, as well as the entities and
+<<<<<<< HEAD
 relations among them. \\The context is modeled as a relational
 database, each user context is a new register into data table to store
 user contexts.\\Contextual information is also stored in the entities:
+=======
+relations among them. \\Contextual information is also stored in the following
+entities:
+>>>>>>> origin/master
 \textit{Reviews, CurrentLocation, DistancePoi and Ratings.} For
 instance, \textit{Reviews entity} describes the user’s opinion about
 visited restaurants, this information contributes to have additional
@@ -312,9 +408,9 @@ membership functions Gaussian type also. The rules are:
 \label{fig:expertfis}      
 \end{figure*}
 
-\section{Fuzzy inference system to assing weights} 
+\section{Fuzzy Weighted Average} 
 
-The main goal of this fuzzy inference system is to define weights for
+The main goal of this fuzzy inference system is to assign weights for
 each recommendation list. The recommendation technique is based in the
 amount of available information stored, so each technique utilizes
 this information to provide a list of restaurants as well as a weight
@@ -456,6 +552,9 @@ recommendation if is not over the threshold. So, for this case, the
 prediction is \textbf{4.57}, it means that this restaurant will be in the
 recommendation list of the user, subsequently, the recommendations
 list will be contextualized.
+%%
+%% Poner la ecuación con variables? 
+
 
 \section{Contextual recommendation} 
 
@@ -522,6 +621,7 @@ the inputs values to calculate the output value.
 \caption{Scheme of the proposed method.}
 \label{fig:archit}  
 \end{figure*}
+<<<<<<< HEAD
 \textbf{Content-based} 
 utilizes the rating matrix and user profiles to compare the
 similarity among the restaurants through cosine similarity measure.
@@ -529,8 +629,21 @@ similarity among the restaurants through cosine similarity measure.
 ratings matrix, using Pearson correlation calculates the similarity
 among the users, subsequently, a list of neighbors is obtained to use
 their preferences to calculate predictions.\\
+=======
+Ratings matrix makes that \textbf{fuzzy inference system} can obtain
+the inputs values to calculate the output value. \textbf{Content-based} 
+uses the rating matrix and user profiles to compare the
+% user profiles? is not Restaurant profiles
+
+% Explica un poco más donde está el Fuzzy Average?
+similarity among restaurants through a cosine similarity measure.
+\textbf{Collaborative filtering} is based on user profiles contained in
+the ratings matrix, using a Pearson correlation to calculate the similarity
+among users, subsequently, a list of neighbors is obtained to use
+their preferences to calculate the predictions.\\
+>>>>>>> origin/master
 The second part shows the recommendation lists for the user. Later,
-the recommendation lists are reduced when filter of context is applied,
+the recommendation lists are reduced when the context filter is applied,
 i.e., the recommendations are adjusted for the user current context.
 Finally, the contextual recommendations list is displayed in the user
 interface (figure \ref{fig:recom}).
