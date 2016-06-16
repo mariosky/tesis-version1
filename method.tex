@@ -1,5 +1,15 @@
 \chapter{Proposed method}\label{method}
 
+This chapter presents the proposed method, the recommender system uses
+user's context to infer the predictions of items.  First, the data
+models are defined in order to explain what characteristics (or
+information) was used from each model. \\Overall, the post-filtering
+approach is applied in order to cover the user's needs in a wider
+range of satisfaction and, it is based in the information that users
+provide to the recommender system. This chapter describes each
+component in the method, as well as its functionality and how is
+connected with another components of the method.
+
 \section{Data models} 
 
 The data models was implemented in PostgreSQL database, 
@@ -55,13 +65,13 @@ such as \textit{users's reviews}, \textit{ratings average}, and
 \centering
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{0.7pt}
-\fbox{\includegraphics[width=10cm,height=10cm,keepaspectratio]
+\fbox{\includegraphics[width=10cm,height=9cm,keepaspectratio]
 {img/restaurant-model.png}}
 \caption{User interface of the restaurant model.}
 \label{fig:restaurantmodel}       
 \end{figure*}
 
-\subsubsection{Data model} \label{datamodelsection}   
+\subsubsection{Restuarant data model} \label{datamodelsection}   
 
 The data model in postgreSQL is depicted in the figure
 \ref{fig:restaurantmodeldata}, the model contains the restaurant
@@ -74,8 +84,8 @@ figure \ref{fig:datamodel}.
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
-\includegraphics[width=10cm,height=10cm,keepaspectratio]{img/data-resmodel.png}
-\caption{The data model of restaurant.}
+\includegraphics[width=8cm,height=8cm,keepaspectratio]{img/data-resmodel.png}
+\caption{The restaurant data model.}
 \label{fig:restaurantmodeldata}     
 \end{figure*}
 Some related entity corresponds to the proposed contextual factors, 
@@ -118,7 +128,7 @@ the intensity of the user interest for  the item.\\
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
 \setlength\fboxsep{0pt}
-\fbox{\includegraphics[width=10cm,height=10cm,keepaspectratio]
+\fbox{\includegraphics[width=10cm,height=9cm,keepaspectratio]
 {img/user-profile.png}}
 \caption{Example of user interface for user profile.}
 \label{fig:user-profile}      
@@ -132,21 +142,31 @@ and it can be changed by users many times in a session. The
 information used to recommendations is the last one register stored.
 The user interface is represented in figure \ref{fig:user-profile}.
 
-\subsubsection{Data model} 
+\subsubsection{User data model} 
 
 The user's data model in postgreSQL is represented in the figure
 \ref{fig:datausermodel}, the model involves the entities:
 \textit{User, UserProfile, and Friends.} \textit{UserProfile entity}
 provides the contextual information of user, \textit{User entity} is
 the default model defined in the system and is related to userProfile
-for suplies valuable information. The \textit{Friends entity}
+for suplies valuable information. 
+\begin{figure*}
+%\captionsetup{justification=centering,margin=2cm}
+\captionsetup{font=footnotesize}
+\centering
+\includegraphics[width=8cm,height=8cm,keepaspectratio]
+{img/data-usermodel.png}
+\caption{The user data model.}
+\label{fig:datausermodel}     
+\end{figure*}
+The \textit{Friends entity}
 represents the social aspect into the userProfile, Friends involves
 the users related to the current user taking in account the
 preferences of each other. \\The user profile entity is related with: 
 price and cuisine are the same that in restaurant model,
 attribute groups corresponds to restaurant model mentioned (section
-\ref{datamodelsection}). A total of 55 attributes(or characteristics) could
-be contained in user profile, this information is used such as 
+\ref{datamodelsection}). A total of 55 attributes(or characteristics) 
+could be contained in user profile, this information is used such as 
 contextual information also. The domain values are following:
 \begin{itemize}
 \item \textbf{Price:} cheap, regular, expensive, too expensive.
@@ -159,38 +179,33 @@ cafe/bar, french, birds, seafood.
 \item  \textbf{Attribute groups:} Installations, atmosphere, 
 parking, payment, smoking area, dresscode, alcohol.
 \end{itemize}
-\begin{figure*}
-%\captionsetup{justification=centering,margin=2cm}
-\captionsetup{font=footnotesize}
-\centering
-\includegraphics[width=8cm,height=8cm,keepaspectratio]
-{img/data-usermodel.png}
-\caption{The data model of user profile.}
-\label{fig:datausermodel}     
-\end{figure*}
+
 
 \subsection{Relational data model} 
 
 A complete database relational scheme is represented in the figure
 \ref{fig:datamodel}. This model involves the whole database for
 context-aware recommender system, as well as the entities and
-relations among them. \\The context is modeled as a relational database,
-each user context is a new register into data table to store user
-contexts.\\Contextual information is also stored in the entities:
+relations among them. \\The context is modeled as a relational
+database, each user context is a new register into data table to store
+user contexts.\\Contextual information is also stored in the entities:
 \textit{Reviews, CurrentLocation, DistancePoi and Ratings.} For
 instance, \textit{Reviews entity} describes the user’s opinion about
 visited restaurants, this information contributes to have additional
-information about recent preferences of diners.\\   
+information about recent preferences of diners.\\
 \textit{CurrentLocation entity} stores the geographical position of
 user to get a \textit{"nearby recommendation"}, the system locates
-restaurants around 2 kilometers from the user position. The position
-is changed frequently, in this manner, it allows the adaptation for
-each particular situation. \textit{Distance Poi entity} stores the
+restaurants around 2 kilometers from the user position, for instance
+the system can takes a user position as \textit{latitude:32.529865}
+and \textit{longitude: -116.986605}, this information is stored to
+calculate distances from this point. The geographical position is
+changed frequently, in this manner, it allows the adaptation for each
+particular situation of user. \textit{Distance Poi entity} stores the
 distances (kilometers) between the user and restaurants, this
-information is used to calculate \textit{"nearby recommendation"}, 
-each recommended restaurant ought be over the threshold defined.\\   
-Finally, \textit{Rating entity} represents the user preferences 
-in a vector of scores, ratings could be increased in time and 
+information is used to calculate \textit{"nearby recommendation"},
+each recommended restaurant ought be over the threshold defined.\\
+Finally, \textit{Rating entity} represents the user preferences  
+in a vector of ratings that could be increased in time and  
 the user's preferences patterns could be changed in time also.
 \begin{landscape} 
 \begin{figure}[!h] 
@@ -446,21 +461,12 @@ list will be contextualized.
 
 The interface of the system(figure \ref{fig:context}) allows to
 collect contextual information such as type of price, restaurant's
-attributes, type of cuisine and geographical location. The context-aware recommender system uses post-filtering paradigm, then the
-contextual information is used for adjust the final recommendations
-list. For example, geographical location is used to get restaurants
+attributes, type of cuisine and geographical location. \\ 
+The context-aware recommender system uses post-filtering paradigm, 
+then the contextual information is used for adjust the final 
+recommendations list. For example, geographical location is used to get restaurants
 around 2 kilometers of distance, next, the list of nearby restaurants
-is displayed for the user. If context-aware recommender system
-considers another attributes as type of price and type of cuisine
-preferred by the user, the system gets restaurants matched in the
-context especified by the user in this time. In the attributes box,
-the user can chose any preference about what things are importants to
-select a restaurant. The features are collected from the dataset of
-Tijuana restaurants. In the cuisine box, the user choosen his/her
-favorite cuisine, it can be one or more cuisines such as in attributes 
-also.\\  
-The context changes constantly, indeed, the users migh change 
-it many times such as them wish.
+is displayed for the user.\\  
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
@@ -468,6 +474,25 @@ it many times such as them wish.
 \caption{System interface to collect contextual information.}
 \label{fig:context}   
 \end{figure*}
+If context-aware recommender system
+considers another attributes as type of price and type of cuisine
+preferred by the user, the system gets restaurants matched in the
+context especified by the user in this time. 
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.60\textwidth]{img/recom.png}}
+\caption{System inferface of recommendations for the user.}
+\label{fig:recom}    
+\end{figure*}
+In the attributes box,
+the user can chose any preference about what things are importants to
+select a restaurant. The features are collected from the dataset of
+Tijuana restaurants. In the cuisine box, the user choosen his/her
+favorite cuisine, it can be one or more cuisines such as in attributes 
+also. 
+The context changes constantly, indeed, the users migh change 
+it many times such as them wish.\\ 
 After the post-filtering, the system displays the  recommended
 restaurants according the information provides by the user. The
 context-aware recommender system contains four techniques to display
@@ -480,19 +505,15 @@ location of the user and the available restaurants in the area.  The
 threshold is 2 kilometers around the user position to determine what
 restaurants will be recommended. The geographical position is
 obtained throught Google maps services.
-\begin{figure*}
-\captionsetup{font=footnotesize}
-\centering
-\fbox{\includegraphics[width=0.60\textwidth]{img/recom.png}}
-\caption{System inferface of recommendations for the user.}
-\label{fig:recom}    
-\end{figure*}
+
 
 \section{Methodology} 
 
 The scheme of proposed method is depicted in the figure
 \ref{fig:archit}. In the first part, the three techniques of
-recommendations are suplied by the rating matrix. 
+recommendations are suplied by the rating matrix. \\
+Ratings matrix makes that \textbf{fuzzy inference system} can obtain
+the inputs values to calculate the output value. 
 \begin{figure*}
 \captionsetup{font=footnotesize}
 \centering 
@@ -501,8 +522,7 @@ recommendations are suplied by the rating matrix.
 \caption{Scheme of the proposed method.}
 \label{fig:archit}  
 \end{figure*}
-Ratings matrix makes that \textbf{fuzzy inference system} can obtain
-the inputs values to calculate the output value. \textbf{Content-based} 
+\textbf{Content-based} 
 utilizes the rating matrix and user profiles to compare the
 similarity among the restaurants through cosine similarity measure.
 \textbf{Collaborative filtering} is based in user profiles content in
