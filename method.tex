@@ -1,13 +1,91 @@
 \chapter{Proposed method}\label{method}
 
-This chapter presents the proposed method in detail.
-Data models are defined in order to explain the characteristics (or
-information) used from each model. \\Overall, the post-filtering
-approach is applied in order to cover the user's needs in a wide
-range of satisfaction and, it is based in the information that users
-provide in their profile. The chapter describes each
-component in the method, as well as its functionality and interaction
-with another components of the method.
+The proposed method is based  in a previous architecture presented in
+\cite{profe} used in an \textit{e-learning plataform}(Protoboard) where the context 
+involves characteristics referring the student enviroment as well as their
+knowledge about any course.  After that, another recommender system
+called \textbf{Recomet} \cite{recomet}  implements the method using
+only traditional recommender systems, i.e., it does not use the context
+in recommendation process  to suggest items for users.  The propose
+method is based in the \textbf{post-filtering}, this paradigm
+contextualize the recommendations list (see figure
+\ref{fig:paradigms}), previously three recommendations techniques 
+working simultaneously to provide the recommendations list. Once user 
+defines the current context,  post-filtering approach adjusts the 
+recommendations for user context, this process is called
+``contextualization".
+Each recommendation tecnique uses the ratings matrix to obtain 
+predictions of items, considering variables as popularity and similarity  
+among users and items, in this section each technique used and 
+components of the method are explained in detail.\\ 
+In the data models are defined the characteristics that contains 
+each model, some characteristics are involved in the context and
+were used in the contextualization also.\\ 
+Overall, the post-filtering paradigm tries to cover the 
+user's needs in a wide range of satisfaction and, it is based in user 
+profile' information. The chapter describes  each component of the 
+method, as well as its functionality and  interaction with 
+another components.
+%\section{Data models} 
+%%
+%% Introducción al método
+%%
+%% Explica un poco más el método en general.
+%% La imagen de la introducción traela a esta sección
+In order to explain the method, a case of study in a restaurant  
+domain will be used. Then, an brief description of recommendation 
+techniques are explained:
+\begin{enumerate} 
+\item \textbf{Expert's fuzzy inference system}, this is a rule based
+recommender, these rules are defined by an expert in the domain.
+The fuzzy inference system has the following input variables: 
+\textit{ratings average}:  \textit{low,medium and high}, \textit{price of
+restaurant}:  \textit{cheap, average and expensive}, and \textit{number of
+ratings of item}:  \textit{few, several and many}, these variables represent
+fuzzy values and are used to infer how relevant a restaurant is for the 
+user. This recommendation is based on the popularity of each 
+item in the user community.
+\item \textbf{Content-based technique} utilizes the item profiles 
+to compare how \textit{similar} is an item with respect to 
+another, i.e. restaurants that are \textit{similar} (same cuisine, 
+atmosphere, price range, etc.) to others that the user rated high. 
+The idea is to find items with similar features to the items that the 
+user prefers or it has high rating in the user profile.
+\item textbf{Collaborative filtering technique} is based in the user's
+preferences  to find neighbors that have similars tastes and
+preferences. Similarity among users is calculated using Pearson
+Correlation, a threshold upon of 0.8 is used to determine the size of
+the neighbour. Then, recommendation process considers the opinions of
+other users that rated restaurants with a similar rating, but only
+recommends when the item have not been rated by the current user. A
+threshold of 3.5 (in rating scale) determines the items that will be
+added in the Top-N list that will be shows for the user.
+\end{enumerate} 
+As it was previously mentioned, the result of the each technique is a 
+recommendations list for the user, later, these recommendations are 
+adjusted for the current context through \textit{post-filtering paradigm}. This
+is the last step and is represented as a \textit{context filter} in the
+method, as a result a list of contextualized
+recommendations is obtained. \\
+In the method, each technique works simultaneously to obtain
+recommendations, the hybrid method allows to generate suggestions even
+without user information, i.e., using content-based technique or the
+fuzzy inference system, so the system faces the cold-start or the
+overspecialization problem using these thechniques, these problems are
+described in section \ref{coldstart} and 
+\ref{overspecialization}, respectively.\\
+To evaluate the performance of the proposed recommender several experiments
+were conducted, the algorithms were tested using contextual datasets and
+the number of contextual factors used varied according to the information
+provided by each of the datasets. The goal of the experiments were to observe
+the role of contextual data  in the performance of the algorithms and to 
+have a better understanding of what contextual
+factors are more important for users in a specific situation, how recommendations
+are improved using context and, the accuracy in recommendations.
+%Una vez explicado el método habla del método y después da el
+%ejemplo del restaurante.
+% Después de leer la sección el lector debe saber la propuesta y como se puede aplicar.
+%\section{Data models} 
 
 \section{Logical model} 
 
@@ -41,74 +119,6 @@ that it will be implemented.
 \label{fig:logicalmodel}    
 \end{figure*} %\end{landscape}
 
-\section{Data models} 
-%%
-%% Introducción al método
-%%
-%% Explica un poco más el método en general.
-%% La imagen de la introducción traela a esta sección
-
-The method is based  in a previous architecture presented in \cite{profe}
-used in a e-learning domain where the context involves characteristics
-referring the student enviroment as well as their knowledge about any
-topic.  After that, another recommender system  called
-\textbf{Recomet} \cite{recomet}  implements the method using only traditional
-recommender systems,  i.e., does not apply the use of context to
-suggest recommendations for users.  The propose method is based in the
-post-filtering approach, this paradigm  contextualize the
-recommendations list (see figure \ref{fig:paradigms}), previously three
-recommendations techniques working simultaneously to provides the
-recommendations list. Once in a time user defines the current context
-the  post-filtering adjust the recommendations for that user context,
-this process  is called ``contextualization".
-
-In order to explain the method, a case of study in a restaurant domain will be used.
-The recommendation techniques are the following:
-\begin{enumerate} 
-\item \textit{Expert's Fuzzy Inference System}, this is a rule based recommender
-defined by an expert in the domain, in the case of a restaurant recommender
-it considers the following variables: \textit{ratings average: low,medium and high},
-\textit{price of restaurant: cheap, average and expensive}, and
-\textit{number of ratings of item: few, several and many}, these
-variables are used to infer how relevant a restaurant is for the user.
-This recommendation is based on the popularity of each item in the
-user community.
-\item \textit{Content-based technique} utilizes the item profiles 
-to compare how \textit{similar} is an item with respect to 
-another, i.e. restaurants that are \textit{similar} (same cuisine, 
-ambient, price range) to others that the user has rated high. 
-The idea is to find items with similar features. 
-\item \textit{Collaborative filtering technique} is based on the user
-profile to identify user's preferences and to find neighbors that
-have the same tastes. The recommendation consist in the suggestions of
-other users with similar tastes that rated restaurants again in a
-similar way but where have not been rated by the current user. A Top-N
-list of restaurants is obtained to recommend for the user.
-\end{enumerate} 
-The results of the three techniques are a list of recommendations for
-the user, later, these recommendations are adjusted for the current context. This
-is the last step and is represented as a \textit{context filter} in the
-method, as a result a list of contextualized
-recommendations is obtained. \\
-In the method, each technique works simultaneously to obtain
-recommendations, the hybrid method allows to generate suggestions even
-without user information, i.e., using content-based technique or the
-fuzzy inference system, so the system faces the cold-start or the
-overspecialization problem using these thechniques, these problems are
-described in section \ref{coldstart} and 
-\ref{overspecialization}, respectively.\\
-To evaluate the performance of the proposed recommender several experiments
-were conducted, the algorithms were tested using contextual datasets and
-the number of contextual factors used varied according to the information
-provided by each of the datasets. The goal of the experiments were to observe
-the role of contextual data  in the performance of the algorithms and to 
-have a better understanding of what contextual
-factors are more important for users in a specific situation, how recommendations
-are improved using context and, the accuracy in recommendations.
-%Una vez explicado el método habla del método y después da el
-%ejemplo del restaurante.
-% Después de leer la sección el lector debe saber la propuesta y como se puede aplicar.
-%\section{Data models} 
 \subsection{Data Model}
 
 The first step of the method is to define a Data Model, 
