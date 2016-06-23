@@ -1,38 +1,73 @@
 \chapter{Proposed method}\label{method}
 
-<<<<<<< HEAD
-This chapter presents the proposed method, the recommender system uses
-user's context to infer the predictions of items.  First, the data
-models are defined in order to explain what characteristics (or
-information) was used from each model. \\Overall, the post-filtering
-approach is applied in order to cover the user's needs in a wider
+This chapter presents the proposed method in detail.
+Data models are defined in order to explain the characteristics (or
+information) used from each model. \\Overall, the post-filtering
+approach is applied in order to cover the user's needs in a wide
 range of satisfaction and, it is based in the information that users
-provide to the recommender system. This chapter describes each
-component in the method, as well as its functionality and how is
-connected with another components of the method.
+provide in their profile. The chapter describes each
+component in the method, as well as its functionality and interaction
+with another components of the method.
+
+\section{Logical model} 
+
+The \textit{logical model} explains the relationship between \textit{context},
+\textit{contextual information} and \textit{contextual factors}. 
+Figure \ref{fig:logicalmodel} gives a graphical representation of these relations. 
+The goal is to facilitate the use and implementation of fuzzy context 
+in recommender systems for different domains.\\
+In the figure \ref{fig:logicalmodel}, the first box shows different
+real life situations of the user (contexts), the user can changes from situation
+to situation in a little time or a long time, this situational or
+contextual information in the real world provides the abstract knowledge that
+the system will use to determine the \textit{``contextual information"} that will be used. 
+From the real world specific data will be extracted by different means as
+sensors, user interaction or even manual input. In this work 
+we call this data \textit{``contextual factors"}(for instance, place and
+orientation, preferences, date and time, etc.) and represents the
+information that affects the recommendation process. The information
+could be represented as fuzzy variables or crisp variables depending of
+its domain values. Later, contextual factors are implemented as data
+structures that define the domain proposed for each one. The number of
+possible values varies for each application and  in this point 
+the designers take decisions about the properly data structure  
+that it will be implemented.
+%\begin{landscape} 
+\begin{figure*}
+\captionsetup{font=footnotesize} \centering
+\includegraphics[width=1.0\textwidth]{img/context-scheme.png}  
+\small
+\caption{Logical data model of context for an application.}
+\label{fig:logicalmodel}    
+\end{figure*} %\end{landscape}
 
 \section{Data models} 
-=======
-%%
-%% Falta una introducción al capítulo
-%%
-
-
 %%
 %% Introducción al método
 %%
-
-
 %% Explica un poco más el método en general.
 %% La imagen de la introducción traela a esta sección
-The method proposed in this thesis uses three recommendations techniques.
-In order to explain the method, a Case Study in a restarant domian will be used.
-The techniques are the following:
+
+The method is based  in a previous architecture presented in \cite{profe}
+used in a e-learning domain where the context involves characteristics
+referring the student enviroment as well as their knowledge about any
+topic.  After that, another recommender system  called
+\textbf{Recomet} \cite{recomet}  implements the method using only traditional
+recommender systems,  i.e., does not apply the use of context to
+suggest recommendations for users.  The propose method is based in the
+post-filtering approach, this paradigm  contextualize the
+recommendations list (see figure \ref{fig:paradigms}), previously three
+recommendations techniques working simultaneously to provides the
+recommendations list. Once in a time user defines the current context
+the  post-filtering adjust the recommendations for that user context,
+this process  is called ``contextualization".
+
+In order to explain the method, a case of study in a restaurant domain will be used.
+The recommendation techniques are the following:
 \begin{enumerate} 
 \item \textit{Expert's Fuzzy Inference System}, this is a rule based recommender
 defined by an expert in the domain, in the case of a restaurant recommender
-it considers the following
-variables: \textit{ratings average: low,medium and high},
+it considers the following variables: \textit{ratings average: low,medium and high},
 \textit{price of restaurant: cheap, average and expensive}, and
 \textit{number of ratings of item: few, several and many}, these
 variables are used to infer how relevant a restaurant is for the user.
@@ -70,38 +105,29 @@ the role of contextual data  in the performance of the algorithms and to
 have a better understanding of what contextual
 factors are more important for users in a specific situation, how recommendations
 are improved using context and, the accuracy in recommendations.
-
-
->>>>>>> origin/master
-
-
 %Una vez explicado el método habla del método y después da el
 %ejemplo del restaurante.
 % Después de leer la sección el lector debe saber la propuesta y como se puede aplicar.
-
-
-\section{Data models} 
+%\section{Data models} 
 \subsection{Data Model}
+
 The first step of the method is to define a Data Model, 
 defining an abstraction of the context. An effective on-line 
 recommender system must be based upon an
-understanding of consumer\'s  preferences and successfully mapping
+understanding of consumer's  preferences and successfully mapping
 potential products into these
 preferences\cite{adomavicius2011context}. Pan and
 Fesenmaier\cite{pan2006online} argued that this can be achieved
 through the understanding of how consumers describe in their own
 language a product, a place, and the overall experience when they are
 consuming the product or visiting the place. It is observed that 
-the language of the consumers is often imprecise, with values of attributes 
-values often expressed in fuzzy terms. In order to create the data model
-the designer must first consider those atributes that customers
-take into consideration when choosing an item. Then situational 
-and contextual factors must also be considered. 
-
+the language of the consumers is often imprecise, with 
+attributes values often expressed in fuzzy terms. 
 
 \subsection{Restaurant model}
-As an exemple a case study will be used, a 
-Restaurant context-aware recommender system.  
+
+As an example a case study will be used a  Restaurant 
+context-aware recommender system.  
 \\ Traditionally, choosing
 a restaurant has been considered as rational behavior where a number
 of attributes contribute to the overall usefulness of a restaurant.
@@ -115,10 +141,10 @@ found to be important also. Due to this
 Kivela\cite{jack1997restaurant} identifies four types of restaurants:
 1) \textit{fine dining/gourmet}, 2) \textit{theme/atmosphere}, 3)
 \textit{family/popular}, and 4) \textit{convenience/fast-food}; on
-the other hande Auty\cite{auty1992consumer} identifies four types of dining out
+the other hand Auty\cite{auty1992consumer} identifies four types of dining out
 occasions: 1) \textit{celebration}, 2) \textit{social
 occasion}, 3) \textit{convenience/quick meal}, and 4) \textit{business
-meal}.\\ Taking in to account the context, the model proposed
+meal}.\\ Taking in account the context, the model proposed
 was definded with 55 attributes
 about restaurants. An exploration about contents of
 models of others works were compared to define the suitable
@@ -146,9 +172,6 @@ such as \textit{users's reviews}, \textit{ratings average}, and
 \label{fig:restaurantmodel}       
 \end{figure*}
 
-<<<<<<< HEAD
-\subsubsection{Restuarant data model} \label{datamodelsection}   
-=======
 \subsubsection{Contextual Factors Data model} \label{datamodelsection}   
 
 The data model was implemented in a PostgreSQL database system, 
@@ -156,9 +179,7 @@ while the information in th context-aware recommender system was
 managed in a schema of a relational database. Technical support 
 about installations of dependencies and the application are 
 described in appendix \ref{appendixc}.
->>>>>>> origin/master
-
-The data model in postgreSQL is depicted in the figure
+The data model is depicted in the figure
 \ref{fig:restaurantmodeldata}, the model contains the restaurant
 entity and its attributes. The restaurant entity is related to
 \textit{Item entity} in a \textit{``one-to-one"} relation that at the
@@ -228,11 +249,7 @@ and it can be changed by users many times in a session. The
 information used to make recommendations is the most recent.
 The user interface is represented in figure \ref{fig:user-profile}.
 
-<<<<<<< HEAD
-\subsubsection{User data model} 
-=======
 \subsubsection{User Data Model Implementation} 
->>>>>>> origin/master
 
 The user's data model in postgreSQL is represented in the figure
 \ref{fig:datausermodel}, the model involves the entities:
@@ -277,14 +294,8 @@ parking, payment, smoking area, dresscode, alcohol.
 A complete database relational scheme is represented in the figure
 \ref{fig:datamodel}. This model involves the whole database for
 context-aware recommender system, as well as the entities and
-<<<<<<< HEAD
-relations among them. \\The context is modeled as a relational
-database, each user context is a new register into data table to store
-user contexts.\\Contextual information is also stored in the entities:
-=======
-relations among them. \\Contextual information is also stored in the following
-entities:
->>>>>>> origin/master
+relations among them. \\
+Contextual information is also stored in the following entities:
 \textit{Reviews, CurrentLocation, DistancePoi and Ratings.} For
 instance, \textit{Reviews entity} describes the user's opinion about
 visited restaurants, this information contributes to have additional
@@ -606,8 +617,7 @@ threshold is 2 kilometers around the user position to determine what
 restaurants will be recommended. The geographical position is
 obtained throught Google maps services.
 
-
-\section{Methodology} 
+\section{Method} 
 
 The scheme of proposed method is depicted in the figure
 \ref{fig:archit}. In the first part, the three techniques of
