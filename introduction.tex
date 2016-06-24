@@ -94,7 +94,6 @@ Thus, taking in account these definitions we can say that designing for
 \textit{system} or \textit{product}, developing design solutions,
 prototyping the system and the user interface, and testing it with
 representative users.\\
-
 In the study of Sato\cite{sato2004context} that brings \textit{context
 issues} into design practice, addressed the concept of
 \textit{context} as a critical component of the design information in
@@ -117,14 +116,15 @@ situation}, where situation is a collective condition at the scene of
 interaction composed of relations among \textit{variables of
 conditions}. Sato employed this concept to describe the
 \textit{influence of contexts} in \textit{people's interactions} and
-\textit{system performance} and vice versa.\\
+\textit{system performance} and vice versa.
 
-In this thesis we present first a \textit{logical model} that explains 
-the relationship between \textit{context},
-\textit{contextual information} and \textit{contextual factors}. Figure \ref{fig:logicalmodel} 
-gives a graphical representation of these relations. 
-The goal is to facilitate the use and
-implementation of fuzzy context in recommender systems for different domains.\\
+\subsection{Logical model of context} 
+
+The \textit{logical model} explains the relationship between \textit{context},
+\textit{contextual information} and \textit{contextual factors}. 
+Figure \ref{fig:logicalmodel} gives a graphical representation of these relations. 
+The goal is to facilitate the use and implementation of fuzzy context 
+in recommender systems for different domains.\\
 In the figure \ref{fig:logicalmodel}, the first box shows different
 real life situations of the user (contexts), the user can changes from situation
 to situation in a little time or a long time, this situational or
@@ -138,15 +138,15 @@ information that affects the recommendation process. The information
 could be represented as fuzzy variables or crisp variables depending of
 its domain values. Later, contextual factors are implemented as data
 structures that define the domain proposed for each one. The number of
-possible values varies for each application and is in this point where
-the designers take decisions about the properly data structure  that
-it will be implemented.
+possible values varies for each application and  in this point 
+the designers take decisions about the properly data structure  
+that it will be implemented.
 %\begin{landscape} 
 \begin{figure*}
 \captionsetup{font=footnotesize} \centering
 \includegraphics[width=1.0\textwidth]{img/context-scheme.png}  
 \small
-\caption{Logical data model of context for an application.}
+\caption{Logical data model of context.}
 \label{fig:logicalmodel}    
 \end{figure*} %\end{landscape}
 
