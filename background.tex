@@ -163,9 +163,8 @@ variables plus a constant term, and the output is the average
 of the support degree of each rule.
 \end{itemize} 
 %%-----------------------------------------------------------
-
-
 \section{Context}
+
 People transmit ideas to each in a complex way. This
 is due to many factors such as: the richness of the language shared, the common
 understanding of how the world works, and an implicit understanding of
@@ -414,27 +413,25 @@ viewed as the corresponding rating vectors $a$ and $b$, is formally
 defined as follows:
 \begin{equation}\label{eq:cosine}
 \displaystyle sim(\overrightarrow{a},\overrightarrow{b})= 
-{\overrightarrow{a}* \overrightarrow{b} \over
-|\overrightarrow{a}|*|\overrightarrow{b}| }
+{\overrightarrow{a} \cdot \overrightarrow{b} \over
+|\overrightarrow{a}| \cdot |\overrightarrow{b}| }
 \end{equation}
-Where the * symbol is the dot product of vectors and $|a|$ is the Euclidian
-length of the vector, which is defined as the square root of the dot
+Where the $\cdot$  symbol is the dot product of vectors and $|a|$ is the Euclidian length of the vector, which is defined as the square root of the dot
 product of the vector with itself.\\
-%% Puedes buscar en Latex el dot product para no usar asterisco
-
 \textbf{c) Model-based approach}, in this technique the raw data is
-first processed off-line, as described for \textit {item-based}
+first processed off-line, as described for \textit{item-based}
 filtering or also using some dimensionality reduction technique. At run time,
 only the learned model is required to make predictions. Although a
 \textit{memory-based approach} is theoretically more precise because
 the full data is available for generating recommendations, such systems
-face problems of scalability when for instance a database of tens of millions of
-users and items are used. An example of this approach is
+face problems of scalability when for instance a database of tens of 
+millions of users and items are used. An example of this approach is
 \textit{matrix factorization} or \textit{latent factors model},
 normally used to fill a rating matrix to calculate predictions taking
 in account the \textit{latent factors}.
 
 \subsubsection{Data sparsity and cold-start problem}\label{coldstart}
+
 In real-world applications, the ratings matrix tend to be \textit{very
 sparse}(sparcity problem), as customers typically provide  ratings
 for (or have bought) only a small fraction of the catalog items. In
@@ -512,21 +509,21 @@ free-text description thereof \cite{jannach2010recommender}.
 \subsubsection{Overspecialization and cold-start problem}
 \label{overspecialization}
 
-Learning-based methods quickly tend to propose
-more of the same, that is, such recommenders can propose only items
-that are somehow similar to the ones the current user has already
-(positively) rated. This can lead to the undesirable effect that
-obvious recommendations are made and the system, for instance,
-recommends items that are \textit{too similar to those the user already knows}.
-\\A typical example is a news filtering recommender that proposes a
-newspaper article that covers the same story that the user has already
-seen \textit{in another context}. The system in \cite{billsus1999personal} 
-defines a threshold to filter out not only items that
-are \textit{too different} from the profile but also those that are \textit{too
-similar}. A general goal is to avoid the \textit{overspecialization},
-therefore increasing the serendipity of the recommendation lists
-that now includes “unexpected” items in which the user might be
-interested, because sometimes expected items are of little value for the user.\\
+Learning-based methods quickly tend to propose more of the same, that
+is, such recommenders can propose only items that are somehow similar
+to the ones the current user has already (positively) rated. This can
+lead to the undesirable effect that obvious recommendations are made
+and the system, for instance, recommends items that are too similar to
+those the user already knows.\\ A typical example is a news filtering
+recommender that proposes a newspaper article that covers the same
+story that the user has already seen \textit{in another context}. The
+system in \cite{billsus1999personal}  defines a threshold to filter
+out not only items that are \textit{too different} from the profile
+but also those that are \textit{too similar}. A general goal is to
+avoid the \textit{overspecialization}, therefore increasing the
+serendipity of the recommendation lists that now includes “unexpected”
+items in which the user might be interested, because sometimes
+expected items are of little value for the user.\\
 The \textit{cold-start problem}, which we discussed for collaborative
 systems, also exists in a slightly different form for content-based
 recommendation methods. Although CB techniques do not
@@ -535,11 +532,11 @@ of ratings from the user. \\In all described filtering techniques,
 recommendation accuracy improves along with the number of ratings;
 significant performance increases for the learning algorithms were
 reported in \cite{pazzani1997learning}  when the number of ratings was
-between twenty and fifty. \\However, in many domains, users might not be
-willing (or is not feasible) to rate that many items before the recommender service can be
-used. In the initial phase, it could be an option to ask the user to
-provide a list of keywords, either by selecting from a list of topics
-or by entering a free-text input.
+between twenty and fifty. \\ However, in many domains, users might not be
+willing (or is not feasible) to rate that many items before the recommender 
+service can be used. In the initial phase, it could be an option to ask 
+the user to provide a list of keywords, either by selecting from a 
+list of topics or by entering a free-text input.
 
 \subsection{Hybrid recommender systems} 
 
@@ -579,7 +576,8 @@ underlying assumption of this extended model is that user preferences
 for items are not only a function of items themselves, but also a
 function of the context in which items are being
 considered\cite{lim2009assessing}. \\
-A multidimensional model as those found in data warehousing systems\cite{kimball2011data} is
+A multidimensional model as those found in data warehousing 
+systems\cite{kimball2011data} is
 used to depict the context dimensions, in figure
 \ref{fig:multidimension} the time dimension belongs to the \textbf{set of 
 contextual factors} and, is described as a \textbf{set of
@@ -605,16 +603,26 @@ user. However, when the recommendation process does not take into
 account  contextual information, is posible to apply the
 information about the current (or desired) context \textit{c} in
 various stages of the recommendation process.
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.80\textwidth]{img/paradigms.png}}
+\small
+\caption{Paradigms for incorporating context in recommender 
+systems\cite{adomavicius2011context}.}
+\label{fig:paradigms}   
+\end{figure*}
 Adomavicious\cite{adomavicius2011context} defines three paradigms for
 the context-aware recommendation process that is based on contextual
-user preference:
+user preference, the figure \ref{fig:paradigms} is a graphic representation of paradigms and Adomavicious describes them as follows:
 \begin{itemize}
 \item \textbf{Contextual pre-filtering (or contextualization of
 recommendation input).} The approach uses contextual information to
-select the most relevant 2D (Users x Items) data for generating
-recommendations. One major advantage of this approach is that it
+select the most relevant 2D data \textit{(Users} x \textit{Items)} for generating
+recommendations. The major advantage of this approach is that it
 allows deployment of any of the numerous traditional recommendation
-techniques previously proposed in the literature\cite{adomavicius2005toward}.
+techniques previously proposed in the 
+literature\cite{adomavicius2005toward}.
 In particular, when using this approach, context
 \textit{c} essentially serves as a query (or a filter) for selecting
 relevant rating data. An example of a contextual data filter for a
@@ -646,15 +654,7 @@ predictive models (such as decision trees, regression, and so on) or
 heuristic approaches that incorporate contextual information in
 addition to the user and item data (figure \ref{fig:paradigms}.c).\\
 \end{itemize}
-\begin{figure*}
-\captionsetup{font=footnotesize}
-\centering
-\fbox{\includegraphics[width=0.80\textwidth]{img/paradigms.png}}
-\small
-\caption{Paradigms for incorporating context in recommender 
-systems\cite{adomavicius2011context}.}
-\label{fig:paradigms}   
-\end{figure*}
+
 
 
 
