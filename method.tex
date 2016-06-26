@@ -1,21 +1,21 @@
 \chapter{Proposed method}\label{method}
 
 The proposed method is based  in a previous architecture presented in
-\cite{profe} used in an \textit{e-learning plataform}(Protoboard)
+\cite{garcia2009hybrid} used in an \textit{e-learning plataform(Protoboard)}
 where the context  involves characteristics referring the student
 enviroment as well as their knowledge about any course.  After that,
-another recommender system called \textbf{Recomet} \cite{recomet}
+another recommender system called \textit{Recomet}\cite{ramirez2013restaurant}
 implements the method using only traditional recommender systems,
 i.e., it does not use the context in recommendation process  to
 suggest items for users.  
-In chapter \ref{fig:stateart} we talk about some uses of pre-filtering and 
+Chapter \ref{stateoftheart}  talks about some uses of pre-filtering and 
 post-filtering paradigms, each one is used in the properly domain 
 and taking in account the system goals (see table \ref{tab:stateoftheart}).  
-The propose method is based in the \textbf{post-filtering}, 
+The propose method is based in the \textit{post-filtering}, 
 this paradigm contextualizes the recommendations list
 (see figure \ref{fig:paradigms}), previously three recommendations
 techniques  working simultaneously to provide the recommendations
-list. Once user  defines the current context,  post-filtering approach
+list. Once user defines the current context,  post-filtering approach
 adjusts the  recommendations for user context, this process is called
 ``contextualization". 
 Each recommendation tecnique uses the ratings
@@ -73,8 +73,10 @@ problems using these thechniques, these problems were previously
 described in section \ref{coldstart} and \ref{overspecialization},
 respectively.\\ 
 For the case of study, the proposed method was tested in restaurants
-domain for Tijuana city, a context-aware recommender system was developed 
-in order to verify its performance with real users interacting with the system and
+domain for Tijuana city, a context-aware recommender system 
+was developed 
+in order to verify its performance with real users interacting with 
+the system and
 test  its functionality.  The application was developed using
 technologies as \textit{Django Framework}, \textit{Python language}, 
 \textit{Bootstrap 3.0},
@@ -148,7 +150,7 @@ Additionally, the restaurant model contains other information such as
 \caption{User interface of the restaurant model.}
 \label{fig:restaurantmodel}       
 \end{figure*}
-
+%%%%%%%%%%%%
 \subsubsection{Contextual Factors Data Model} \label{datamodelsection}   
 
 The data model was implemented in a PostgreSQL database model, 
@@ -566,9 +568,9 @@ collect contextual information such as type of price, restaurant's
 attributes, type of cuisine and geographical location. \\ 
 The context-aware recommender system uses post-filtering paradigm, 
 then the contextual information is used for adjust the final 
-recommendations list. For example, geographical location is used to get restaurants
-around 2 kilometers of distance, next, the list of nearby restaurants
-is displayed for the user.\\  
+recommendations list. For example, geographical location is used 
+to get restaurants around 2 kilometers of distance, next, 
+the list of nearby restaurants is displayed for the user.\\  
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
@@ -606,8 +608,8 @@ location of the user and the available restaurants in the area.  The
 threshold is 2 kilometers around the user position to determine what
 restaurants will be recommended. The geographical position is
 obtained through Google maps services.
-
-\section{Method} 
+%%%%%%%%%%%%%%
+\section{Method scheme} 
 
 The scheme of proposed method is depicted in the figure
 \ref{fig:archit}. In the first part, the three techniques of
@@ -636,5 +638,5 @@ Later, the recommendation lists are reduced when the context filter is
 applied, i.e., the contextualization process is applied to get
 recommendations adjusted in the user context. 
 Finally, the contextual recommendations list is displayed in the 
-user interface as is showed in the figure \ref{fig:recom}.
+user interface (see figure \ref{fig:recom}).
 
