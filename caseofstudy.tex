@@ -48,21 +48,17 @@ experiments is to filter out inappropriate  approaches, leaving a
 relatively small set of alternatives algorithms for subsequently to be
 tested for the more costly user studies or on-line 
 experiments\cite{adomavicius2011context}.\\ 
-The next section shows a comprehensive description of the 
+
+The next sections show a comprehensive description of the 
 experimental setup for experiments, as well as results obtained 
-in the experiments.
-Each method was tested using contextual datasets in the domain. 
-Results are showed in order to  compare the performance of the 
-algorithms in the method. 
+in the experiments. Each method was tested using contextual 
+datasets in the domain.  This chapter ends with the entire 
+description of the functionality of the prototype used to 
+validate the method utilized in the experiments.
 %% Haz un puente, dices que vaz a hacer ciertos experimentos
 %% menciona aquí que lo que sigue es el setup de tus parte experimental.
-%% Menciona brevemente los experimentos o datrasets, Restaurants, MovieLens,
-%% Filmtrust and InCarMusic, TripAdvisor
-%\section{Experiments} 
-%% Esto creo que ya se había dicho,
-%% o debe ir en Method
-\section{Restaurants recommendations} 
-
+\section{Restaurants recommendations} \label{restaurants}.
+%%%%%%%
 Previous the implementation of context-aware recommender system  
 some experiments were done to test the behaviour of algorithms 
 and the performance in the proposed method. 
@@ -71,8 +67,10 @@ recommendations is improved using the context in the
 recommendation process}. To validate the hypothesis the next test  
 was realized. \\
 A first experiment\cite{ramirez2013restaurant}  presents a  
-contextual recommender system using the post-filtering approach,  
-collaborative filtering is used to find relevant  restaurants for users.  
+contextual recommender system using the post-filtering approach and 
+collaborative filtering technique in a restaurant domain. 
+Collaborative filtering works to get a Top-N list utilized to adjust it in 
+the context. 
 Later, the Top-N list is obtained and the restaurants are adjusted to 
 make ranking of restaurants  in the current context. Post-filtering is
 based on the average  of ratings in a specific context, so prediction
@@ -91,11 +89,9 @@ contextual recommendations; the process is depicted in figure
 \caption{The post-filtering approach for Tijuana restaurants.}
 \label{fig:postfiltering}     
 \end{figure*}
-%% Bien, empieza aquí:
-%Algo como
-%In order to validate the proposed approach described in section XXX, data about restaurant
-The evaluation of the proposed approach is using data 
-about restaurant preferences of users in different contexts. 
+%%%%%%%%%%%%
+In order to validate the proposed approach,  data  about 
+restaurant preferences of users in different contexts was used.
 The study subjects were students  with a major in engineering,  
 master's program and professors of the Tijuana Institute of
 Technology. A total of \textit{50 users} answered a questionnaire; the
@@ -205,7 +201,7 @@ The observation for this result is that using a small
 dataset the performance of the method proposed is limited, the cold-start 
 problem affects the accuracy because of the data scarcity.
 
-\section{Hotels recommendations} 
+\section{Hotels recommendations} \label{hotels}
 
 A second experiment using TripAdvisor dataset was used. 
 For this case, the proposed method consists of three algorithms 
@@ -271,7 +267,7 @@ The rules are following:
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{0.7pt}
 \includegraphics[width=0.75\textwidth]{img/fis.png}
-\caption{Fuzzy Inference System.}
+\caption{Fuzzy inference system.}
 \label{fig:fis}   
 \end{figure*}
 Content-based uses cosine similarity to compare the binary
@@ -298,16 +294,15 @@ Daruma           & 5.0 & Midweek \\
 Carl's Jr.       & 3.0 & Weekend \\ \hline
 \end{tabular}
 \end{table}
-In the next step the outputs of every recommender algorithm is
-represented by a list of recommended items. Subsequently applies the
-context filter and context-aware recommender system gets the final
-contextual recommendations. Context-aware
-recommender system identifies contextual data of the user profile (see
-table \ref{tab:2}), and compares recommended items to filter those
-items that are adjusted to the user context. 
-The context filtering is the last step before to get the recommended
-items. The schema of architecture for context-aware recommender system
-is depicted in figure \ref{fig:architecture}.
+Next, the outputs of every recommender technique is represented by a
+list of recommended items. Subsequently applies the context filter and
+context-aware recommender system gets the final contextual
+recommendations. Context-aware recommender system identifies
+contextual data of the user profile (see table \ref{tab:2}), and
+compares recommended items to filter those items that are adjusted to
+the user context.  The context filtering is the last step before to
+get the recommended items. The schema of architecture for context-
+aware recommender system is depicted in figure \ref{fig:architecture}.
 \begin{figure*}
 \captionsetup{font=footnotesize}
 %\captionsetup{justification=centering,margin=2cm}
@@ -316,7 +311,7 @@ is depicted in figure \ref{fig:architecture}.
 \caption{Recommender system methodology.}
 \label{fig:architecture}   
 \end{figure*}
-Two experiments were performed using TripAdvisor dataset, table
+Two tests were performed using TripAdvisor dataset, table
 \ref{tab:3} describes the data sets and the scarcity percentage of the
 specified data. Scarcity of 99\% mean that there are problems to
 recommend items because the information is not enought to get 
@@ -379,28 +374,282 @@ TripAdvisor v2 & 0.508  & 8  \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-FIS can provides a list of popular items for each dataset,
-recommendations through averages are obtained, and recommendations are
+Fuzzy inference system can provides a list of popular items for each dataset,
+recommendations through averages obtained, and recommendations are
 conditioned to show it when the collaborative filtering and content-
 based are not delivering recommendations because of data scarcity.\\ 
 However, the majority of popular items of dataset were rated in contexts: 
 \textit{romantic, family and bussines}, that means that the dataset has
-biases.\\  In this experiment  the context-aware recommender system
-proposed involves post-filtering for contextual
-recommendations. The structure of the datasets facilitated the
-evaluation of recommendations although the rating matrix has been
-scarce in both cases. Anyway, information of items and users was used
-to test the system and a good performance of the system was done.\\   
-With respect the performance, post-filtering allows to select relevant
-items that are adjusted into the context, indeed, post-filtering and
-implementation of different recommendation techniques the system has
-suitable performance and the datasets help the processes performed.
+biases that affects the results.
 
-\section{Context-aware recommender system application} 
 
-For the development of the recommender system was used python
-language.  Django Framework and other dependencies were used in order
-to complete the system functionality.
+\section{Context-aware recommender system prototype} 
+
+This section presents a context-aware recommender system prototype.
+The backend have been explained in chapter \ref{method},  in sections
+\ref{restaurants} and \ref{hotels} talk about experiments realized
+using the recommendation techniques proposed. \\ To develop the prototype
+was used python language, technologies as Django Framework 1.7,
+JavaScript, JQuery, Ajax, HTML5, Bootstrap 3.0  and PotsgreSQL for database.
+Some dependencies and libraries were used also, it can review links of
+downloads in appendix \ref{appendixc}.
+
+\subsection{User Interfaces}
+
+The system starts in a landing page, the user should do \textit{Sign in} or
+\textit{Sign up} to create a new user to enter the home page. 
+Landing page contains the \textit{Best restaurants} rated and 
+\textit{Featured top list restaurants}
+proposed by users, such as shows it the figure \ref{fig:landing}, 
+the restaurants are updated while users add ratings, 
+if the tendency is changed, the section displays the change 
+in the tendency. The aim is to provide
+information for old and new users,the prototype tries to keep updated
+the current preferences of users constantly.
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/landingpage.png}}
+\caption{Landing page interface.}
+\label{fig:landing}   
+\end{figure*}
+%%%%%%%%%%
+\subsubsection{Home Page interface}
+%%%%%%%%%%
+\textit{Home Page} (figure \ref{fig:home-page}), shows the main 
+menu, tags of user preferences,
+all filters to start the search of restaurants an the popular
+restaurants in the user community. Users can start exploring filters
+to find restaurants under their own criteria, each restaurant has a
+profile with complete information about the characteristics and
+opinions of other users. When users click the restaurant picture the
+system redirects to the profile, for instance figure \ref{fig:rest-profile2}  
+shows the profile of Daruma restaurant, in this figure is showed the general
+information of the restaurant, reviews or personal opinions of users
+that visited the restaurant, details about ratings, the chart of
+ratings and the user location using Google maps services. It is also
+added the button to \textit{add wishlist}, this element will be explained in a
+posterior section.
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/homepage.png}}
+\caption{Home page interface.}
+\label{fig:home-page}   
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/rest-profile.png}}
+\caption{Restaurant profile interface.}
+\label{fig:rest-profile2}   
+\end{figure*}
+%%%%%%%%%%%%
+\subsubsection{My Recommendations interface}
+%%%%%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/expert-recs.png}}
+\caption{Expert recommendations interface.}
+\label{fig:expert-recs}   
+\end{figure*}
+In recommendations interface users have the options to get  
+recommendations such as was described in chapter \ref{method}, four 
+recommendation techniques works to suggest restuarants for 
+users. Here, users can choose the prefered option to get 
+information in the screen.\\ 
+
+For instance, figure \ref{fig:expert-recs} shows that the expert can 
+not to recommend
+whether users don’t have participations, because of expert's
+recommendation is based in fuzzy rules that involves the popularity of
+items (input variable), if the information is sparse the prototype can
+not get results and only shows an alert message. On the contrary case,
+it shows a list of popular restaurants.\\ 
+%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/base-content.png}}
+\caption{Content-based recommendations interface.}
+\label{fig:base-content}   
+\end{figure*}
+%%%%%%%%%%%%%%%
+\textit{Content-based recommendation} finds the similar restaurants to the
+favorites of the user. In fact, makes a comparison of all restaurants
+and gets the more similars to display in the screen. 
+Figure \ref{fig:base-content}  
+ shows the results of the search, large amount of restaurants are showed
+because of the similarity among restaurants, this is the most
+efficiently way to get recommendations when the system has not enough
+information about user preferences and it the users community is
+small. It is not functional whether the user has not at less one vote
+with high rating (5 stars).\\ 
+%%%%%%%%%%%%%%%
+\textit{Collaborative filtering recommendation} is depicted in the 
+figure \ref{fig:cf-recs}
+this technique is based in users' opinions, if the system has not
+information of users, or whether the user community is small, 
+cold-start problem highlights in results. 
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/cf-recs.png}}
+\caption{Collaborative filtering recommendations interface.}
+\label{fig:cf-recs}   
+\end{figure*}
+As in expert  recommendations if the users participations 
+is low or null, the results of recommendations will be empty 
+and the alert message appears in the
+screen, else, the restaurants suggested will be displayed 
+in the screen.\\
+%%%%%%%%%
+\textit{Nearby recommendations} (figure \ref{fig:nearby-recs}) 
+provides recommendations when the
+user previously specifies a geographical position. The distance to
+considers restaurants from the current position to two kilometers
+around. Then, recommendations are dis- played in the screen if the
+location is provided in the context, else, an alert message  notifies
+the lack of user current location.
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/nearby-recs.png}}
+\caption{Nearby recommendations interface.}
+\label{fig:nearby-recs}   
+\end{figure*}
+%%%%%%%%%%%%%%
+\subsubsection{My Profile interface}
+%%%%%%%%
+
+My Profile interface shows all the information of the user divided in
+three sections: my preferences, my reviews and my favorite restaurants
+as shows the figure \ref{fig:myprofile}. The preferences represent the basic
+information and tastes of user, it contains the tastes and preferences
+of the user, some factors as price, position, cuisine and attributes
+of restaurants could be changing continuosly, it depends how the user
+want manage its information. The prototype uses this information every
+time that a request of recommendation is done.\\
+My reviews section shows all the reviews that the user typed, each
+review is stored in database and the user cannot delete it. The stars
+represent the level of satisfaction of the user when he/she visits the
+restaurant, each review highlights the good and the bad things that
+the user perceives in the visit. This information is valuable but,
+unfortunatly this prototype not uses it to infer possible tastes and
+preferences and subsequently, recommendations. This process might be a
+functionality integrated in the future.\\
+My favorite restaurants section, displays restaurants rated with five
+stars. It means that are the more important options of the user to
+visit in this moment and in the future. These restaurants are related
+to the content-based recommendation because are the restaurants with
+high rating of this particular user.
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/myprofile.png}}
+\caption{My Profile interface.}
+\label{fig:myprofile}   
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+\subsubsection{My Context interface}
+%%%%%%%%
+My Context interface is divided in two sections: contextual 
+information and current location as in the figure \ref{fig:mycontext}.
+%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/mycontext.png}}
+\caption{My Context interface.}
+\label{fig:mycontext}   
+\end{figure*}
+ %%%%%%%%%%%%%%%%%%%
+Contextual information represents the user preferences, for instance
+the price range that wants for a specific ocasion, the attributes are
+the characteristics of restaurants, so it selects as many as the user
+prefers, the limit is the number of characteristics displayed. \\ 
+The same is for cuisines, a total of 30 type of cuisines were proposed
+considering the list of restaurants in the prototype, it can select as
+many as the user want.  All this information is stored and displayed
+in home page also in order to help the user to remember which is the
+information that the prototype is using to display recommendations.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Current location section shows the Google map to display the 
+ current location, previously the user ought to confirm that wants 
+ to share the current location. When user click in the 
+ \textit{Save My Location button}, the content in the box of latitude 
+ and longitude will be stored in the database(alert message 
+ confirms the action) and the status will be modified when 
+ user location changes, then, all the locations stored in 
+ database become user's historical information.
+%%%%%%%%%%%%%%%%%%%
+\subsubsection{My Wishlist interface}
+%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/mywishlist.png}}
+\caption{My Wishlist interface.}
+\label{fig:mywishlist}   
+\end{figure*}
+%%%%%%%%%%%%%%%%%%
+My Wishlist interface contains the restaurants that are 
+considered by the user as future options to vist (figure \ref{fig:mywishlist}) 
+or simply to have available information for a particular 
+ocasion. The wishlist allows the manipulation of restaurants, 
+it means, user can add or delete restaurants as many as 
+he/she wants.The wishlist could be empty or full of 
+restaurants, this information does not affect any functionality 
+of the prototype. \\
+Making a comparison with others platforms (for instance 
+Amazone), this information allows the user to have the own 
+\textit{personalized store}, in terms of products sales, the wishlist 
+should be the future products to buy. In a similar way, 
+this prototype tries to infer the future tastes of the user 
+or what restaurants could visit the user in a close future. \\
+To facilitates the addition of restaurants the \textit{Add my wishlist} 
+button was added in every restaurant of the home 
+page (see figure \ref{fig:wishlist-home}) and in restaurants 
+profiles (see figure \ref{fig:rest-profile2}).
+%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/wishlist-home.png}}
+\caption{Functionality of wishlist button in Home page.}
+\label{fig:wishlist-home}   
+\end{figure*}
+\subsubsection{Community interface}
+%%%%%%%%
+Community interface contains the reviews of all the users (figure
+\ref{fig:community}) in order to display information that may helps 
+another users to select any restaurant to visit. In the real life, the 
+persons recommend some or another restaurant in the common 
+language, remarking the why the restaurant is good or bad according 
+their perception. Community section has the same goal, in fact, 
+some reviews could be useful for the other users, this opinion may 
+express it through the \textit{Helpful button}.
+%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\captionsetup{font=footnotesize}
+\centering
+\fbox{\includegraphics[width=0.70\textwidth]{img/community.png}}
+\caption{Community interface.}
+\label{fig:community}   
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%
+
+These are the functionalities in the prototype, in order to validate
+the performance, an on-line experiment was realized, the metrics 
+of usability applied were Time-taks and Taks-success (mentioned 
+in chapter  \ref{introduction}). In the next chapter are 
+explained the tests  and the results obtained.
+
+
 
 
 
