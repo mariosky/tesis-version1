@@ -68,7 +68,10 @@ experiments\cite{adomavicius2011context}.
 %% Menciona brevemente los experimentos o datrasets, Restaurants, MovieLens,
 %% Filmtrust and InCarMusic, TripAdvisor
 
-%% Datasets?? esto está en la sección pasada
+%% Datasets?? esto ya está en la sección pasada
+%% Ok, menciona que para poder hacer los experimentos los 
+%% siguientes datasets fueron utilizados, pero justifica cada uno.
+
 \section{Datasets} 
 
 \subsection{Tijuana Restaurants} 
@@ -103,8 +106,14 @@ depicted in figure \ref{fig:postfiltering}.
 \end{figure*}
 %% Bien, empieza aquí:
 %Algo como
-%In order to validate the proposed approach described in section XXX, data about restaurant
-In order to validate the proposed approach , data about restaurant
+%In order to validate  the proposed approach described in section XXX,
+% Pero es muy general, ¿Qué es lo que vamos a validar?
+% El desempñeo del algoritmo?
+% La usabilidad del sistema?
+% Comparar con contexto vs sin Contexto?
+% Creo que es: Para validar el algoritmo de recomendación contextual
+% en el dominio de los restaurantes
+In order to validate the proposed approach, data about restaurant
 preferences of users in different contexts was collected. The study
 subjects were students  with a major in engineering,  
 master’s program and professors of the Tijuana Institute of
@@ -115,13 +124,16 @@ questions} and also they were asked to rate any number of restaurants from a lis
 Each of the restaurants chosen, was rated 6 times one per proposed context, a
 matrix rating with \textit{1,422 ratings} was collected. The
 questions are shown in table \ref{tab:questions}. The reason for allowing
-users to chose what restaurants to rate it to give them the same liberty
-they have when visiting a web or mobile application. 
+users to chose what restaurants to rate was to give them the same liberty
+they would when they visit a web or mobile application, in this case 
+users are asked to rate only their favorite restaurants.
 
+%Justificar el cuestionario
+%Also a questionnaire was applied to participants in order to
 \begin{table}
 \small
 \captionsetup{font=footnotesize}
-\caption{Questionnaire applied to collect contextual dataset.}
+\caption{Questionnaire applied to participants.}
 \label{tab:questions} 
 \centering
 \small
@@ -130,26 +142,27 @@ they have when visiting a web or mobile application.
 Question & Answers \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 \small{1.What is your occupation?} & \small{1. Student 2.Employee} \\ \hline  
-\small{2.According your priority, order by importance the features 
-you consider when you choose to visit a restaurant.} & 
-\small{1.Installation/decoration 2.Prices 3.Service 4.Dishes
-5.Atmosphere 6.Location} \\ \hline  
-\small{3.What are the devices that you used
-utilizes?} & \small{1.Smartphone 2.Tablet 3.Laptop 4.PC} \\ \hline   
-\small{4.What Operating System do you used?} & 
+\small{2.According to your priorities, order by importance the features 
+you consider most when choosing a restaurant. } & 
+\small{1.Installation/decoration 2.Prices 3.Service 4.Dishes 
+5.Atmosphere 6.Location}  \\ \hline 
+\small{3.What are the devices that you have?}
+& \small{1.Smartphone 2.Tablet 3.Laptop 4.PC} \\ \hline   
+\small{4.What Operating System do you use?} & 
 \small{1.Android 2.Windows 3.iOS 4.Symbian 5.Blackberry 6.Other}
 \\ \hline  
-\small{5.Did you use an application to search restaurants in Tijuana?} &
+\small{5.If you do, What application to search restaurants in Tijuana do you use?} &
 \small{1.Yes 2.No 3.Which one?} \\ \hline   
 \small{6.Would you like to use an application of
 recommender systems of Tijuana?} & \small{1.Yes 2.No} \\ \hline  
-\small{7.Please, rates your favorites restaurants(without context).} & 
+\small{7.Please, rate your favorites restaurants(without context).} & 
 \small{Restaurant list} \\ \hline
-\small{8.Please, rates your favorites restaurants in contextual situations.} & 
+\small{8.Please, rate your favorites restaurants in each contextual situation.} & 
 \small{Restaurant list} \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+
 The user's answers from question 1 to question 6 are represented in
 the figure \ref{fig:cakeschart}. \textit{Figure \ref{fig:cakeschart}a}
 represents the percentage of surveyed students and teachers;
@@ -168,11 +181,11 @@ using a restaurant recommender system of Tijuana.
 \centering
 \setlength\fboxsep{0pt}
 \includegraphics[width=0.8\textwidth]{img/cakes.png}
-\caption{The chart cakes show the users preferences for questions from 1 to 6.}
+\caption{The chart shows user\'s preferences for questions 1 to 6.}
 \label{fig:cakeschart}     
 \end{figure*}
 For questions 7 and 8 only the top-ten restaurants are shown,
-without/with the contextual situation. In figure \ref{fig:barschart}a,
+without/with the contextual situation. In figure \ref{fig:barschart}a ,
 the favorite restaurant is \textbf{Daruma}(178 votes),  whereas in
 figure \ref{fig:barschart}b, \textbf{Daruma} does not appear in the
 top-ten. When considering the context \textit{midweek}, the favorite
@@ -209,18 +222,23 @@ Contextual Factor & Context \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+
+%%Que haces con este dataset?
+%%Alguna conclusion?
+
+
 % este es otro dataset?
 % creo que es el mismo, corrige o borra el párrafo que sigue
 % ya sabemos que fué explícito y fueron 50 usuarios
-The dataset was explicitly collected from \textbf{50 users} whom
-answered questionnaire (see table \ref{tab:questions}). A total of 172
+The dataset was explicitly collected from \textbf{50 users} who
+answered the questionnaire (see table \ref{tab:questions}). A total of 172
 predictions was made for different users and the mean absolute error
 \textbf{MAE=0.5859} when the context \textbf{midweek} for the current user
 was considered. The observation for this result is that using a small
 dataset the performance of the method proposed is limited. On the other
 hand, having only one contextual factor does not improve the accuracy
 of the recommendations in this domain.
-% Arriba ¿Por qué solo consideras esa prediccióm la de midweek?
+% Arriba ¿Por qué solo consideras esa predicción la de midweek?
 % ¿ Por qué no otos casos o una tabla?
 % ¿Cual es la hipotesis, variables etc.?
 
@@ -243,9 +261,13 @@ tag applications applied to 10,000 movies by 72,000 users.
 Released 1/2009. \\Downloaded from
 \url{http://grouplens.org/datasets/movielens/10m/}. 
 \end{itemize}
+
+%%
+%% Justifica antes que vas a probar, para que, después hablas del data set y los resultados.
+
 The proposed method for MovieLens uses post-filtering 
 and time segmentation.
-Time in recommender systems is used  as a contextual factor in the
+Time in recommender systems is used as a contextual factor in the
 research reviewed \cite{baltrunas2009context},
 \cite{baltrunas2009towards}, \cite{koren2010collaborative}, and
 \cite{he2009time}, results vary according the techniques that were
