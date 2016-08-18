@@ -107,29 +107,30 @@ context is defined in the domain of the application and the system has
 a context model that provides the information for the recommender
 system. Some  examples of this types of system are explained
 next. \\
-Abowd et. al.\cite{abowd1997cyberguide} presents the
-Cyberguide project, which encompassed several tour 
+Abowd et. al.\cite{abowd1997cyberguide} proposed the
+Cyberguide project, which encompass several tour 
 guide prototypes for different handheld platforms. 
 Cyberguide provided tour guide services to mobile users,
-exploiting the \textit{contextual knowledge} of the current users and 
-\textit{past locations} in the recommendation process. 
-Cena et al.\cite{cena2006integrating} presents a tourist guide for
-context in \textit{intelligent content adaptation}. UbiquiTO system is a
+leveraging in the recommendation process both 
+\textit{contextual knowledge} about current users and their 
+\textit{locations} they have benn in the past. 
+Cena et al.\cite{cena2006integrating} presents a tourist guide for particular 
+contexts in \textit{intelligent content adaptation}. The UbiquiTO system is a
 tourist guide that integrates different forms of context-related
-adaptation: for \textit{media device type}, for \textit{user characteristics and
-preferences}, for the \textit{physical context of the interaction}. UbiquiTO uses
+adaptation for: \textit{media device type}, \textit{user characteristics and
+preferences}, and the \textit{physical context of the interaction}. UbiquiTO uses
 a \textit{rule-based modeling approach} to adapt the content of the provided
 recommendation, such as the \textit{amount}, \textit{type of information} and 
 \textit{features associated} with each recommendation. 
 Bulander et.al\cite{bulander2005comparison} presents the MoMa-system 
 that offers \textit{proactive recommendations} using a \textit{post-filtering} 
 approach for matching order specifications with offers. 
-When creating an order, the client application will automatically fill in the 
+When creating an order, the client application will automatically fill in both the 
 appropriate \textit{physical context} and \textit{profile parameters}, for example, 
-\textit{location} and \textit{weather}, then, for example, the facility should not be 
-too far away from the current location of the user and beer should not be
-recommended if it is raining. On the other side, advertisers'
-suppliers put offers into the MoMa-system. These offers are also
+for a certain \textit{location} and \textit{weather}, a facility should not be selected
+if is too far away from the user's current location and a cold beer should not be
+recommended if it is raining. Another feature is related with 
+advertisement and offers from suppliers presented in the MoMa-system. These offers are also
 formulated according to the catalogue. When the system detects a pair
 of context matching order and offer, the end user is notified, in the
 preferred manner (for example, SMS, email). At this point, the user
@@ -147,9 +148,9 @@ is then used to incrementally refine locally
 calculated predictions, with no need of interacting with a remote
 server or accessing the Internet. Recommendations are computed
 using the \textit{available ratings} of the user neighbors.
-The PECITAS system \cite{tumas2009personalized} presented by Thumas 
+The PECITAS system \cite{tumas2009personalized}, presented by Thumas, 
 offers \textit{location-aware recommendations} for personalized 
-\textit{point-to-point  paths}. The paths are illustrated by listing 
+\textit{point-to-point paths}. The paths are illustrated by listing 
 the various connections that the user must take to reach the 
 destination using public transportation and walking. An
 interesting aspect of PECITAS is that, although an optimal shortest 
@@ -158,31 +159,31 @@ routes that pass through several attractions, given that
 their specified constraints (e.g. latest arrival time) and travel-related 
 preferences (maximum walking time, maximal number of transport
 transfers, sightseeing preferences, etc) are satisfied. 
-Yu and Chang presents LARS \cite{yu2009personalized} 
+Yu and Chang present LARS \cite{yu2009personalized} 
 which supports personalized tour planning using a \textit{rule-based} 
 recommendation process. This system
 packages \textit{``where to stay"} and \textit{``where to eat"} 
-features together with \textit{typical} tourist recommendations 
+features together with typical tourist recommendations 
 for sightseeing and activities. For
 instance, recommended restaurants (selected based on their 
 \textit{location}, \textit{menu},  \textit{prices}, \textit{customer rating score}, 
 etc.) are integral part of the tour and the time spent for 
 lunch/dinner is taken into account to schedule visits to 
 attractions or to plan other activities.
-Savage et. al. presents  ``I'm feeling LoCo" system \cite{savage2012m}
+Savage et. al. presents the ``I'm feeling LoCo" system \cite{savage2012m}
 that proposes a \textit{ubiquitous location­} based recommender algorithm
 that focuses in the \textit{user experience} considering 
 \textit{user preferences}, \textit{time}, \textit{location} and 
-\textit{similarity measures} automatically, using Foursquare
+\textit{similarity measures} automatically, using the Foursquare
 dataset. The information of the \textit{user's social network},
 \textit{transportation} and \textit{phone's sensors} is inferred to provide
-recommendation of places.
-Reddy et.al\cite{reddy2006lifetrak} presents the LifeTrack system that
-incorporates sensor information in the song selection. The songs are
-represented in terms of tags that the user assigns in order to link
-the songs to the \textit{appropriate contexts} in which they should be played.
-\textit{User feedback} is incorporated to make a song more or less likely to
-play in a given context. Context considered relevant to song selection
+a recommendation of places.
+Reddy et.al\cite{reddy2006lifetrak} presents the LifeTrack system which 
+incorporates sensor information for selecting tracks in a music recomender system.
+The songs are represented by tags of terms, that the user assigns in order to link
+songs with the \textit{appropriate contexts} in which they should be played.
+\textit{User feedback} is incorporated to make a song more or less likely to be
+played in a given context. Contextual data considered as relevant to song selection
 includes \textit{location}, \textit{time of operation}, \textit{velocity of the user}, 
 \textit{weather}, \textit{traffic} and \textit{sound}. \textit{User locations} and 
 \textit{velocity} are determined through GPS.
@@ -192,67 +193,67 @@ GPS signal). The \textit{times of the day} are divided out into configurable
 parts of the day (\textit{morning, evening, etc}). The \textit{velocity} is 
 abstracted into one of four states: \textit{static, walking, running and driving}.  
 Use of accelerometers are planned to enable \textit{indoor velocity}
- information. If the user is driving, an RSS feed on traffic information 
- is used to typify the state as \textit{calm, moderate or chaotic}. If the user is not
+information. If the user is driving, an RSS feed on traffic information 
+is used to typify the state as \textit{calm, moderate or chaotic}. If the user is not
 driving, a microphone reading is used for the same purpose.
 Additionally, an RSS feed provides a \textit{meteorological condition} (frigid,
 cold, temperate, warm or hot).
 Ricci et.al. \cite{baltrunas2011incarmusic} uses
-the context in music domain using a model-based paradigm, in this
-context-aware recommender system the context was defined as a set of
-independent contextual factors(independent in order to get a
+context in a music domain, using a model-based paradigm, in this
+context-aware recommender system context was defined as a set of
+independent contextual factors (independent in order to get a
 mathematical model) such as \textit{driving style, road type,
 landscape, sleepiness, traffic conditions, mood weather and natural
 phenomena} to specifies the relevant context for the music
 recommendation. In order to estimate the relevance of selected
-contextual factor, the users were requested to evaluate music tracks
+contextual factors, users were requested to evaluate music tracks
 in different contextual situations for each genre. The prediction
-takes in account this \textit{relevance} to recommend music tracks 
+takes in to account this \textit{relevance} to recommend music tracks 
 prefered by the user according the \textit{genre} and contexts mentioned.
-In restaurant domain Chung-Hua et al.\cite{chu2013chinese} presents a
+In the domain of restaurants Chung-Hua et al.\cite{chu2013chinese} proposed a
 context-aware recommender system for mobiles using a post-filtering
-paradigm, the architecture involves a model client-server that works
-with a request of data in the client side for the server side.
+paradigm, the architecture involves a  client-server model that works
+with a request of data from the client side to the server.
 Subsequently, taking in account the contextual factors to filter the
-properly restaurants to recommend. The context-aware recommender
-system uses such as contextual factors \textit{location and season}, 
-also utilize the \textit{user preferences} to personalize the recommendations
-in the user context.
+appropiate restaurants to recommend. That context-aware recommender
+system uses contextual factors such as \textit{location and season}, and
+also uses \textit{user preferences} to personalize the recommendations
+to a particular context.
 Baltrunas et.al.\cite{baltrunas2011context} presents ReRex for tourism, 
-a context-aware recommender system based in a 
+a context-aware recommender system, based on a 
 \textit{model-based paradigm}, the system recommends and provides 
-explanations about the why the  places of interest(PoI) are recommended. 
-The proposed model computes a
-personalized context dependent rating estimation. Subsequently, in
-order to generates the explanation of recommendation the system uses
-the factor that in the predictive model has the lasgest positive
-effect on the rating prediction for the point of interest. The set of
-contextual factors considered in ReRex are \textit{distance},
+explanations about why certain Places of Interest(PoI) were recommended. 
+The proposed model computes a 
+personalized context-dependent rating estimation. Subsequently, in
+order to generate the explanation, the system uses
+the factor that in the predictive model has the largest positive
+effect on the rating prediction. The set of
+contextual factors considered in ReRex are: \textit{distance},
 \textit{temperature}, \textit{weather}, \textit{season}, \textit{companion}, 
 \textit{time day}, \textit{weekday}, \textit{crowdedness}, \textit{familiarity}, 
 \textit{mood}, \textit{budget}, \textit{travel length}, \textit{transport} and
 \textit{travel goal}. The main issue in ReRex system is the \textit{low user
-satisfaction} because of the explanations not able to be understood,
-however the users recognize that the explanation is a very important
-component that it influence the system acceptance. 
+satisfaction} because the explanations are diffucult to understand,
+however, users recognize that the explanation is a very important
+component, that influences the system's acceptance. 
 Finally, Noguera et. al. \cite{noguera2012mobile} presents a context-aware
 recommender system for tourism based in REJA that utilizes the 
 \textit{location} through a 3D-GIS system, the application uses 
 \textit{progressive downloading} and \textit{rendering of
-3D maps} over mobiles networks. It is also in charge of tracking the
-\textit{user's location} and \textit{speed} based on GPS and the requesting. 
-The system utilizes \textit{pre-filtering} and \textit{post-filtering} paradigm. 
+3D maps} over mobile networks. It is also in charge of tracking the
+\textit{user's location} and \textit{speed} based on GPS technology. 
+The system utilizes \textit{pre-filtering} and \textit{post-filtering} paradigms. 
 Pre-filtering is used to reduce the number of items considered for the
 recommendation according to the user's location, and  post-filtering
 is applied to re-rank the previous top-N list according to the
 physical distance from the user for each recommended restaurant. The
 disadvantage in this system is the \textit{lack of user reviews},
 because the recommendations are based only in the \textit{location
-point} without consider the experience of other diners concerning the
+point} without considering the experience of other diners concerning the
 recommended restaurant.\\ To sum up the contextual recommender 
 systems mentioned, table \ref{tab:stateoftheart} describes the main 
 contextual factors, the domain of application, the method used for each 
-application and type of devices.
+application, and type of devices.
 \begin{sidewaystable}[]
   \caption{Comparison of context-aware recommender systems.}
   \label{tab:stateoftheart}
