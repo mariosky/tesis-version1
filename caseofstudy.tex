@@ -34,10 +34,10 @@ data used, the more it can generalize the results}.
 \subsection{Off-line experiments} 
 
 An off-line experiment is performed using a pre-collected dataset
-of users choosing or ratings. Using this dataset tries to simulate
-the behavior of users that interact with a recommender system. In
-doing so, it assume that the user behavior when the data was collected
-will be similar enough to the user behavior when the recommender
+of users' selections or ratings. By using this dataset we try to simulate
+the behavior of users that will interact with the recommender system. In
+doing so, it is assumed that the user behavior when the data was collected
+will be similar enough to the users' behavior when the recommender
 system is deployed, so that we can make reliable decisions based on
 the simulation.  Off-line experiments are attractive because they
 \textit{require no interaction with real users}, and thus it allows to compare
@@ -55,18 +55,16 @@ in the experiments. Each method was tested using contextual
 datasets in the domain.  This chapter ends with the entire 
 description of the functionality of the prototype used to 
 validate the method utilized in the experiments.
-%% Haz un puente, dices que vaz a hacer ciertos experimentos
-%% menciona aquí que lo que sigue es el setup de tus parte experimental.
+
 \section{Restaurants recommendations} \label{restaurants}.
-%%%%%%%
-Previous the implementation of context-aware recommender system  
-some experiments were done to test the behaviour of algorithms 
-and the performance in the proposed method. 
+In earlier implementations of the context-aware recommender system  
+several experiments were cundunted to test the behaviour of algorithms 
+and the performance in the proposed methods. 
 For the experiment the proposed hypothesis is \textit{The accuracy of 
-recommendations is improved using the context in the 
+recommendations is improved using context factors in the 
 recommendation process}. To validate the hypothesis the next test  
 was realized. \\
-A first experiment\cite{ramirez2013restaurant}  presents a  
+A first experiment described in \cite{ramirez2013restaurant} and presents a  
 contextual recommender system using the post-filtering approach and 
 collaborative filtering technique in a restaurant domain. 
 Collaborative filtering works to get a Top-N list utilized to adjust it in 
@@ -92,8 +90,8 @@ contextual recommendations; the process is depicted in figure
 %%%%%%%%%%%%
 In order to validate the proposed approach,  data  about 
 restaurant preferences of users in different contexts was used.
-The study subjects were students  with a major in engineering,  
-master's program and professors of the Tijuana Institute of
+The study subjects were students  with a major in engineering and  
+a graduate program and faculty of the Tijuana Institute of
 Technology. A total of \textit{50 users} answered a questionnaire; the
 questions were about their preferences for nearby restaurants and the
 technology most often used by them. The \textit{questionnaire} consisted 
@@ -115,14 +113,14 @@ that they have when visiting a web or mobile application.
 \hline\noalign{\smallskip}
 Question & Answers \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-\small{1.What is your occupation?} & \small{1. Student 2.Employee} \\ \hline  
-\small{2.According your priority, order by importance the features 
+\small{1.What is your occupation?} & \small{1. Student 2.Faculty} \\ \hline  
+\small{2.According to your priority, order by importance the features 
 you consider when you choose to visit a restaurant.} & 
 \small{1.Installation/decoration 2.Prices 3.Service 4.Dishes
 5.Atmosphere 6.Location} \\ \hline  
-\small{3.What are the devices that you used
-utilizes?} & \small{1.Smartphone 2.Tablet 3.Laptop 4.PC} \\ \hline   
-\small{4.What Operating System do you used?} & 
+\small{3.What devices do you use} &
+\small{1.Smartphone 2.Tablet 3.Laptop 4.PC} \\ \hline   
+\small{4.What Operating System do you use?} & 
 \small{1.Android 2.Windows 3.iOS 4.Symbian 5.Blackberry 6.Other}
 \\ \hline  
 \small{5.Did you use an application to search restaurants in Tijuana?} &
@@ -136,7 +134,7 @@ recommender systems of Tijuana?} & \small{1.Yes 2.No} \\ \hline
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
-The user's answers from question 1 to question 6 are represented in
+The users' answers from question 1 to question 6 are represented in
 the figure \ref{fig:cakeschart}. \textit{Figure \ref{fig:cakeschart}a}
 represents the percentage of surveyed students and teachers;
 \textit{figure \ref{fig:cakeschart}b}  the percentage of the element
@@ -203,8 +201,8 @@ problem affects the accuracy because of the data scarcity.
 
 \section{Hotels recommendations} \label{hotels}
 
-A second experiment using TripAdvisor dataset was used. 
-For this case, the proposed method consists of three algorithms 
+A second experiment using TripAdvisor's dataset was cunducted. 
+For this case, the proposed method consisted of three algorithms 
 to recommend:  \textit{fuzzy inference system}, \textit{collaborative 
 filtering} and \textit{content-based}. Each one uses the ratings 
 matrix to get recommendations.\\    
@@ -384,7 +382,6 @@ biases that affects the results.
 
 
 \section{Context-aware recommender system prototype} 
-
 This section presents a context-aware recommender system prototype.
 The backend have been explained in chapter \ref{method},  in sections
 \ref{restaurants} and \ref{hotels} talk about experiments realized
@@ -417,9 +414,9 @@ the current preferences of users constantly.
 \subsubsection{Home Page interface}
 %%%%%%%%%%
 \textit{Home Page} (figure \ref{fig:home-page}), shows the main 
-menu, tags of user preferences,
-all filters to start the search of restaurants an the popular
-restaurants in the user community. Users can start exploring filters
+menu, tags for user preferences,
+all filters to start the search of restaurants and the most popular
+restaurants in the community. Users can start exploring filters
 to find restaurants under their own criteria, each restaurant has a
 profile with complete information about the characteristics and
 opinions of other users. When users click the restaurant picture the
@@ -481,7 +478,7 @@ it shows a list of popular restaurants.\\
 favorites of the user. In fact, makes a comparison of all restaurants
 and gets the more similars to display in the screen. 
 Figure \ref{fig:base-content}  
- shows the results of the search, large amount of restaurants are showed
+shows the results of the search, large amount of restaurants are showed
 because of the similarity among restaurants, this is the most
 efficiently way to get recommendations when the system has not enough
 information about user preferences and it the users community is
@@ -526,13 +523,13 @@ the lack of user current location.
 
 My Profile interface shows all the information of the user divided in
 three sections: my preferences, my reviews and my favorite restaurants
-as shows the figure \ref{fig:myprofile}. The preferences represent the basic
-information and tastes of user, it contains the tastes and preferences
+as shown in figure \ref{fig:myprofile}. The preferences represent the basic
+information and tastes of a user, it contains the tastes and preferences
 of the user, some factors as price, position, cuisine and attributes
 of restaurants could be changing continuosly, it depends how the user
 want manage its information. The prototype uses this information every
 time that a request of recommendation is done.\\
-My reviews section shows all the reviews that the user typed, each
+The My reviews section shows all the reviews that the user typed, each
 review is stored in database and the user cannot delete it. The stars
 represent the level of satisfaction of the user when he/she visits the
 restaurant, each review highlights the good and the bad things that
@@ -625,12 +622,12 @@ profiles (see figure \ref{fig:rest-profile2}).
 \end{figure*}
 \subsubsection{Community interface}
 %%%%%%%%
-Community interface contains the reviews of all the users (figure
+The Community interface contains the reviews of all the users (figure
 \ref{fig:community}) in order to display information that may helps 
 another users to select any restaurant to visit. In the real life, the 
 persons recommend some or another restaurant in the common 
 language, remarking the why the restaurant is good or bad according 
-their perception. Community section has the same goal, in fact, 
+their perception. The Community section has the same goal, in fact, 
 some reviews could be useful for the other users, this opinion may 
 express it through the \textit{Helpful button}.
 %%%%%%%%%%%%%%%%%%%
