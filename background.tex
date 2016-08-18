@@ -1,9 +1,9 @@
 %% La letra n con tilde es: 'n.
 \chapter{Background}\label{background}
 
-In this chapter the fundamental concepts related this work are presented:
+In this chapter, the fundamental concepts related to this work are presented:
 Formal definitions referring to fuzzy systems, contextual factors and
-recommender system techniques used by the proposed method.
+recommender system techniques. 
 
 \section{Production systems and fuzzy models}
 
@@ -12,11 +12,11 @@ fuzzy inference systems, in this section formal definitions of
 these models of knowledge representation are presented.  
 
 \subsection{Traditional Production Systems}
-Production Systems represent knowledge in form of rules, which specify
+Production Systems represent knowledge in the form of rules, which specify
 actions that will be executed when certain conditions are met. In these 
-systems Experts in a certain domain identify a set of rules based 
-on their experience to
-resolve different kinds of problems. Also known as rule based systems,
+systems experts in a certain domain identify a set of rules based 
+on their experience to 
+resolve different kinds of problems. Also known as Rule-Based Systems,
 many implementations consist of mainly these three
 components \cite{brachman1992knowledge} \cite{konar2006computational}:
 \begin{enumerate}   
@@ -68,7 +68,7 @@ extension of production systems with fuzzy logic is presented.\\
 \subsection{Fuzzy Production Rules}
 
 Fuzzy production rules use fuzzy logic sets to characterize the
-variables and terms used in the propositions of the rules. Fuzzy
+variables and terms used in propositions. Fuzzy
 production rules or fuzzy \textit{IF-THEN} rules are expressions of
 the form \textit{IF} antecedent \textit{THEN} consequent, where the
 antecedent is a proposition of the form \textit{"x is A"} where
@@ -162,7 +162,6 @@ of the support degree of each rule.
 \end{itemize} 
 %%-----------------------------------------------------------
 \section{Context}
-
 People transmit ideas to each in a complex way. This
 is due to many factors such as: the richness of the language shared, the common
 understanding of how the world works, and an implicit understanding of
@@ -171,7 +170,7 @@ situational information (contextual information), to increase the
 conversational bandwidth. \\Unfortunately, this ability to transmit
 ideas does not transfer well to persons interacting with computers. In
 traditional interactive computing, users have poor mechanisms for
-providing input to computers. Consequently, computers are not
+providing inputs. Consequently, computers are not
 currently enabled to take full advantage of the context of the 
 human-computer dialogue. By improving the computer's access to context, 
 we increase the richness of communication in a human-computer interaction
@@ -199,13 +198,13 @@ Pascoe\cite{pascoe1998adding} defines context to be the
 particular entity"}.\\
 These definitions are too general, context is all about the
 whole situation relevant to an application and its set of users. It is
-complicated enumerate which aspects of all situations are important,
+complicated to enumerate which aspects of all situations are important,
 as this will change from situation to situation. For this reason and
 for the purpose of this thesis, the definition of context
 proposed by Dey\cite{dey2001understanding} has been adopted (see section 
 \ref{context-awareness}). \\However, another important aspect 
 is to stablish a meaningful classification that covers the 
-characteristics that describe the contextual factor.\\
+characteristics that describe the contextual factors.\\
 Dourish\cite{dourish2004we} has distinguished between two different
 views of context: the \textit{representational view} and the
 \textit{interactional view}. The \textit{representational view} makes
@@ -228,9 +227,9 @@ to provide users personalised and contextual services. The importance of
 context lies in the  assumption of the influence of \textit{contextual
 factors} that matter for users when they decide, choose or discard an
 item.\\
-In the real world, the context in a situation is involved in the
+In the real world, the context of a situation is involved in the
 \textit{environment} of the people, the \textit{entities} belong at
-the \textit{situational information}, but an entity  becomes in a
+the \textit{situational information}, but an entity becomes in a
 \textit{contextual factor} when its information \textit{affects} the
 recommendation process, therefore, the entity and its values of 
 domain will be involved in the process such as a contextual factor.\\
@@ -249,9 +248,10 @@ aspects that highligh when different kinds of context are defined:
 \textit{what a recommender system may know about these contextual
 factors} and, \textit{how contextual factors change over time}.\\ \\
 
-A recommender system can have different types of knowledge, which may
-include  the exact list of all the relevant factors, their structure,
-and their values, about the contextual factors. Depending on what
+A recommender system can have different types of knowledge 
+about the contextual factors, which may
+include the exact list of all the relevant factors, their structure,
+and their values. Depending on what
 exactly the system knows (that  is, what is being observed),
 Adomavicious categorizes the knowledge of a recommender system about
 the context as the following:
