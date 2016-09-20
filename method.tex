@@ -1,6 +1,7 @@
 \chapter{Proposed method}\label{method}
 
 The proposed method is based  in a previous architecture presented in
+<<<<<<< HEAD
   \cite{garcia2009hybrid} used in an \textit{e-learning plataform (Protoboard)}
 where the context  involves characteristics referring the student
 enviroment as well as their performance in previous learning activities.  \\ 
@@ -19,6 +20,27 @@ Once a user defines the current context, the post-filtering approach
 adjusts the  recommendations for user's context, this process is called
 ``contextualization". \\ 
 Each recommendation tecnique uses the collaborative filtering rating-matrix 
+=======
+\cite{garcia2009hybrid} used in an \textit{e-learning plataform(Protoboard)}
+where the context  involves characteristics referring the student
+enviroment as well as their performance in previous learning activities.  
+After that,
+another recommender system called \textit{Recomet}\cite{ramirez2013restaurant}
+implements the same method using only traditional recommender systems,
+i.e., it does not use the context in recommendation process  to
+suggest items to users.  
+Chapter \ref{stateoftheart} describes some the applications of both pre-filtering and 
+post-filtering paradigms, each one is used in the appropiate domain 
+and taking in account the system goals (see table \ref{tab:stateoftheart}).  
+The propose method follows a \textit{post-filtering} approach, to contextualize
+the recommendations list
+(see figure \ref{fig:paradigms}) previously generated using a hybrid
+of three recommendation techniques, working simultaneously.
+Once a user defines the current context, the post-filtering approach
+adjusts the  recommendations for user's context, this process is called
+``contextualization". 
+Each recommendation tecnique uses the CF rating-matrix 
+>>>>>>> origin/master
 to obtain  predictions of items, considering variables such as
 popularity and similarity among users and items. In this section
 each technique used and components of the method are explained in
@@ -27,6 +49,10 @@ post-filtering paradigm tries to cover the  user's needs in a wide range of
 situations and it is based on the user's profile information. The
 chapter describes  each component of the  method, as well as its
 functionality and thier interaction with  another components.\\ 
+<<<<<<< HEAD
+=======
+%% La imagen de la introducción traela a esta sección 
+>>>>>>> origin/master
 In order to explain the method, a case of study in a
 restaurant   domain will be used. Then, an brief description of
 recommendation  techniques are also explained: 
@@ -42,7 +68,11 @@ these variables represent fuzzy values and are used to infer how
 relevant a restaurant is for the  user. This recommendation is based
 on the popularity of each  item in the user community. For other
 domains, fuzzy variables must be identified by a domian expert and
+<<<<<<< HEAD
 expressed as a fuzzy inference system.
+=======
+expressed as a FIS.
+>>>>>>> origin/master
 \item \textbf{Content-based technique} 
 utilizes the item profiles (descriptions) to compare how
 \textit{similar} is an item with respect to  another, i.e. restaurants
@@ -69,6 +99,7 @@ method allows to generate suggestions even without  ratings of user,
 it means that using content-based technique or the fuzzy inference system, 
 the system faces the cold-start and overspecialization
 problems using these thechniques, these problems were previously
+<<<<<<< HEAD
 described in section  \ref{coldstart} and  
 section  \ref{overspecialization}, respectively.\\ 
 For the case of study, the proposed method was tested in the 
@@ -80,6 +111,20 @@ technologies as \textit{Django Framework}, \textit{Python language},
 \textit{Bootstrap 3.0}, \textit{JavaScript}, \textit{JQuery} and  
 \textit{PostgreSQL database}. The complete description of the 
 system will be show in a posterior section.\\ 
+=======
+described in section \ref{coldstart} and \ref{overspecialization},
+respectively.\\ 
+For the case of study, the proposed method was tested in the restaurants
+domain for the city of Tijuana, a context-aware recommender system 
+was developed 
+in order to verify its performance with real users interacting with 
+the system and to
+test  its functionality.  The application was developed using
+technologies as \textit{Django Framework}, \textit{Python language}, 
+\textit{Bootstrap 3.0},
+\textit{JavaScript}, \textit{JQuery} and  \textit{PostgreSQL database}. 
+The complete description of the system will be show in a posterior section.\\ 
+>>>>>>> origin/master
 To evaluate the performance of the proposed method in
 the case of study several experiments were conducted, the algorithms
 were tested using  contextual datasets and the number of contextual
@@ -95,8 +140,13 @@ and, how improves the accuracy in recommendations.
 The data model defines an abstraction of the context. An effective on-
 line  recommender system must be based upon an understanding of
 consumer's  preferences and successfully mapping potential products
+<<<<<<< HEAD
 into these preferences  \cite{adomavicius2011context}. \\ Pan and
 Fesenmaier  \cite{pan2006online} argued that this can be achieved
+=======
+into these preferences\cite{adomavicius2011context}. Pan and
+Fesenmaier\cite{pan2006online} argued that this can be achieved
+>>>>>>> origin/master
 through the understanding of  how consumers describe in their own
 language a \textit{product}, \textit{a place}, and the overall
 \textit{experience}  when they are consuming the product or visiting
@@ -118,6 +168,7 @@ While food quality and food type have
 been perceived as the most important variables for consumers'
 restaurant selection, situational and contextual factors have been
 found to be important also. Due to this
+<<<<<<< HEAD
 Kivela  \cite{jack1997restaurant} identifies four types of restaurants:
 1) \textit{fine dining/gourmet}, 2) \textit{theme/atmosphere}, 3)
 \textit{family/popular}, and 4) \textit{convenience/fast-food}; on the
@@ -126,14 +177,29 @@ out occasions: 1) \textit{celebration}, 2) \textit{social occasion},
 3) \textit{convenience/quick meal}, and 4) \textit{business meal}.\\
 Taking in account the context, the model proposed was definded with 55
 attributes about restaurants. \\ An exploration about contents of models
+=======
+Kivela\cite{jack1997restaurant} identifies four types of restaurants:
+1) \textit{fine dining/gourmet}, 2) \textit{theme/atmosphere}, 3)
+\textit{family/popular}, and 4) \textit{convenience/fast-food}; on the
+other hand Auty\cite{auty1992consumer} identifies four types of dining
+out occasions: 1) \textit{celebration}, 2) \textit{social occasion},
+3) \textit{convenience/quick meal}, and 4) \textit{business meal}.\\
+Taking in account the context, the model proposed was definded with 55
+attributes about restaurants. An exploration about contents of models
+>>>>>>> origin/master
 of others works were compared to define the suitable information into
 the model. Therefore, the restaurant model is a binary vector with the
 following contextual attributes: 1) \textit{price range}, 2)
 \textit{payment type}, 3) \textit{alcohol type}, 
 4) \textit{smoking area}, 5) \textit{dress code}, 6) \textit{parking type}, 7)
 \textit{installations type}, 8) \textit{atmosphere type}, and 9)
+<<<<<<< HEAD
 \textit{cuisine type}. \\ An example of a restaurant model is depicted in
 Figure  \ref{fig:restaurantmodel} with some domain values of the
+=======
+\textit{cuisine type}. An example of a restaurant model is depicted in
+figure \ref{fig:restaurantmodel} with some domain values of the
+>>>>>>> origin/master
 context represented by a binary vector where \textit{1} means that the
 restaurant has the property that corresponds to the position value.
 Additionally, the restaurant model contains other information such as
@@ -149,7 +215,10 @@ Additionally, the restaurant model contains other information such as
 \caption{User interface of the restaurant model.}
 \label{fig:restaurantmodel}       
 \end{figure*}
+%%%%%%%%%%%%
+\subsubsection{Contextual Factors Data Model} \label{datamodelsection}   
 
+<<<<<<< HEAD
 \subsubsection{Contextual Factors Data Model} \label{datamodelsection}   
 
 The data model was physically implemented in a PostgreSQL database model, 
@@ -160,6 +229,16 @@ described in appendix  \ref{appendixa}.
 The restaurant data model is depicted in the 
 Figure  \ref{fig:restaurantmodeldata}, the model contains the restaurant
 entity and its attributes. \\ The restaurant entity is related to
+=======
+The data model was physically implemented in a PostgreSQL database model, 
+then the information in the context-aware recommender system was
+managed in a schema of a relational database. Technical support 
+about installations of dependencies and the open source application are 
+described in appendix \ref{appendixc}.
+The restaurant data model is depicted in the figure
+\ref{fig:restaurantmodeldata}, the model contains the restaurant
+entity and its attributes. The restaurant entity is related to
+>>>>>>> origin/master
 \textit{Item entity} in a \textit{``one-to-one"} relation that at the
 same time is related to the \textit{RecommenderRule entity} which
 specifies some restrictions for item recommendations. A large view of
@@ -172,7 +251,11 @@ Figure  \ref{fig:datamodel}.
 \caption{The restaurant data model.}
 \label{fig:restaurantmodeldata}     
 \end{figure*}
+<<<<<<< HEAD
 \\ The entities related correspond to the proposed contextual factors, 
+=======
+The entities related correspond to the proposed contextual factors, 
+>>>>>>> origin/master
 are defined as follows: 
 \begin{itemize}
 \item \textbf{Price:} \textit{cheap, regular, expensive, too expensive.}
@@ -203,15 +286,27 @@ The user's profile is derived from the ratings matrix. Let
 $U=[u_1,u_2,...u_n]$ the set of all users and $ I=[i_1,i_2,$...$i_n] $
 the set of all items, if $R$ represent the ratings matrix,  an element
 $R_{u,i}$ represents a user’s rating $u \in U$  in a item $i \in I$.
+<<<<<<< HEAD
 The unknown ratings are denoted as $\neq $. \\ The matrix $R$ can be
 decomposed into rows vectors, the row vector is denoted as $
 \overrightarrow{r_u} $=$[R_{u,1}$...$R_{u,|I|}]$ for every $u \in U$.
 \\ Therefore, each row vector represents the ratings of a particular user
+=======
+The unknown ratings are denoted as $\neq $. The matrix $R$ can be
+decomposed into rows vectors, the row vector is denoted as $
+\overrightarrow{r_u} $=$[R_{u,1}$...$R_{u,|I|}]$ for every $u \in U$.
+Therefore, each row vector represents the ratings of a particular user
+>>>>>>> origin/master
 over the items. Also denote a set of items rated by a certain user u
 is denoted as $ I_u = i \in I | \forall  i: R_{u,i} \neq \emptyset $.
 This set of items rated represents the user preferences where for each
 domain element $R_{u,i} \in [1-5]$ represents the intensity of the
+<<<<<<< HEAD
 user interest for  the item.
+=======
+user interest for  the item.\\
+
+>>>>>>> origin/master
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
@@ -224,8 +319,13 @@ user interest for  the item.
 
 \subsubsection{User Data Model Implementation} 
 
+<<<<<<< HEAD
 The user data model in postgreSQL is represented in the 
 Figure  \ref{fig:datausermodel}, the model involves the entities:
+=======
+The user data model in postgreSQL is represented in the figure
+\ref{fig:datausermodel}, the model involves the entities:
+>>>>>>> origin/master
 \textit{User, UserProfile, and Friends.} \textit{UserProfile entity}
 provides the contextual information of user, \textit{User entity} is
 the default model defined in the system and is related to userProfile
@@ -233,12 +333,21 @@ for suplies valuable information. \\
 In the application, user profile has contextual
 information such as: 1) price range, 2) current location, 3) cuisine
 types, 4) attributes or characteristics of restaurants that the user want, 
+<<<<<<< HEAD
 5) list of  favorite restaurants.  \\ 
 The user profile is stored in database and it is available for 
 queries upon request, and it can be changed by users many times 
 in a session. \\ The information used to make recommendations 
 is the most recent. The user interface is represented in 
 Figure  \ref{fig:user-profile}.
+=======
+5) list of  favorite restaurants.  
+The user profile is stored in database and it is available for 
+queries upon request, and it can be changed by users many times 
+in a session. The information used to make recommendations 
+is the most recent. The user interface is represented in 
+figure \ref{fig:user-profile}.
+>>>>>>> origin/master
 \begin{figure*}
 %\captionsetup{justification=centering,margin=2cm}
 \captionsetup{font=footnotesize}
@@ -253,10 +362,17 @@ represents the social aspect in the \textit{userProfile}, \textit{Friends} invol
 the users related to the current user taking in account the
 preferences of each other. \\The user profile entity is related with: 
 price and cuisine are the same that in restaurant model,
+<<<<<<< HEAD
 attribute groups corresponds to restaurant model mentioned 
 (section  \ref{datamodelsection}). A total of \textit{55 attributes}
 (or characteristics)  could be contained in \textit{userProfile}. 
 The domain values for price,  cuisine and attribute groups are following:
+=======
+attribute groups corresponds to restaurant model mentioned (section
+\ref{datamodelsection}). A total of \textit{55 attributes}(or characteristics) 
+could be contained in \textit{userProfile}. The domain values for price, 
+cuisine and attribute groups are following:
+>>>>>>> origin/master
 \begin{itemize}
 \item \textbf{Price:} cheap, regular, expensive, too expensive.
 \item \textbf{Cuisine:} japanese, chinese, italian, argentinean,
@@ -271,12 +387,21 @@ parking, payment, smoking area, dresscode, alcohol.
 
 \subsection{Relational data model} 
 
+<<<<<<< HEAD
 A complete database relational scheme is represented in the 
 Figure  \ref{fig:datamodel}. This model involves the whole relational 
 database for context-aware recommender system, as well as 
 the entities and relations among them. \\
 Contextual information is also stored in the following entities:
 \textit{CurrentLocation, DistancePoi and Ratings.} \\ 
+=======
+A complete database relational scheme is represented in the figure
+\ref{fig:datamodel}. This model involves the whole relational database for
+context-aware recommender system, as well as the entities and
+relations among them. \\
+Contextual information is also stored in the following entities:
+\textit{CurrentLocation, DistancePoi and Ratings.} 
+>>>>>>> origin/master
 In the case of \textit{Reviews entity}  only describes the user's 
 opinion about visited restaurants, this information contributes to 
 have additional information about recent preferences of diners, 
@@ -288,11 +413,19 @@ the system can takes a user position as \textit{latitude:32.529865}
 and \textit{longitude: -116.986605}, this information is stored to
 calculate distances from this point. \\ The geographical position is
 changed frequently, in this manner, it allows the adaptation for each
+<<<<<<< HEAD
 particular user situation. \\ \textit{Distance PoI entity} stores the
 distances (kilometers) between the user and restaurants, this
 information is used to calculate a \textit{"nearby recommendation"},
 where each recommended restaurant must not be over the threshold defined, 
 then in this case, the system considers only nearby items, into two kilometers 
+=======
+particular user situation. \textit{Distance PoI entity} stores the
+distances (kilometers) between the user and restaurants, this
+information is used to calculate a \textit{"nearby recommendation"},
+where each recommended restaurant must not be over the threshold defined, 
+so in this case, the system considers only items nearby, with in to 2 kilometers 
+>>>>>>> origin/master
 around the user position.\\
 Finally, \textit{Rating entity} represents the user's preferences  
 in a vector of ratings that could be increased in time and  
@@ -318,12 +451,20 @@ with the conventional logic that only uses concrete and accurately
 information  \cite{zedeh1989knowledge}.\\  In this work, fuzzy logic is
 used to model fuzzy variables that highligh in the popularity of a
 restaurant.\\   
+<<<<<<< HEAD
 The Expert module (fuzzy inference system) generates 
 recommendations  when the other
 recommendation techniques (collaborative filtering, content-based) are
 not returning results because of the cold start problem.\\   The fuzzy
 inference system proposed has three \textbf{input variables} (as 
 in the previous work  \cite{garcia2009hybrid}): 1) \textit{rating} is
+=======
+The Expert module (FIS) generates recommendations when the other
+recommendation techniques (collaborative filtering, content-based) are
+not returning results because of the cold start problem.\\   The fuzzy
+inference system proposed has 3 \textbf{input variables} (as 
+in the previous work \cite{garcia2009hybrid}): 1)\textit{rating} is
+>>>>>>> origin/master
 an average of ratings that has a particular restaurant inside the user
 community; the domain of variable is from 0 to 5 and contains two membership
 functions labeled as \textit{low} and \textit{high}(Figure  \ref{fig:mf:a}), 
@@ -367,7 +508,11 @@ labeled as \textit{low}, \textit{medium} and \textit{high} (Figure  \ref{fig:mf:
    \label{fig:mfexpert} 
 \end{figure}
 
+<<<<<<< HEAD
 The proposed fuzzy inference system (Figure  \ref{fig:expertfis})
+=======
+The proposed fuzzy inference system(figure \ref{fig:expertfis})
+>>>>>>> origin/master
 represents the users' experience and their knowledge about restaurants.
 This factors are considered important for users that visiting a
 restaurant. This information is recovered of user profile and
@@ -403,7 +548,11 @@ membership functions Gaussian type also. The rules are:
 \section{Fuzzy Weighted Average} 
 
 The main goal of this fuzzy inference system is to assign weights for
+<<<<<<< HEAD
 each recommendation list.\\ The recommendation technique is based in the
+=======
+each recommendation list. The recommendation technique is based in the
+>>>>>>> origin/master
 amount of available information stored, because each technique uses
 this information to provide a list of restaurants as well as a weight
 for each one, therefore, these are used for  recommendations if its
@@ -426,12 +575,21 @@ Figure  \ref{fig:datamodel}).
 \caption{Fuzzy Inference System to assign weights.}
 \label{fig:fis-pesos}       
 \end{figure*}
+<<<<<<< HEAD
 On the other side, the output variables are: 
 \textit{Expert}, \textit{RestaurantProfile} and \textit{Correlation}, these are depicted in 
 Figure  \ref{fig:fis-outputs}. \\The Figure  \ref{fig:fis-outputs}.a  represents
 the weight for expert recommendation list, Figure  \ref{fig:fis-outputs}.b 
 represents the weight of the content-based list and 
 Figure  \ref{fig:fis-outputs}.c  represents the weight of collaborative
+=======
+On the other side, the output variables are: \textit{Expert,
+RestaurantProfile and Correlation}, these are depicted in figure
+\ref{fig:fis-outputs}. The figure (\ref{fig:fis-outputs}.a) represents
+the weight for expert recommendation list, figure (\ref{fig:fis-outputs}.b) 
+represents the weight of the content-based list and figure
+(\ref{fig:fis-outputs}.c) represents the weight of collaborative
+>>>>>>> origin/master
 recommendation list, their membership functions are in a range from 0
 to 1 to get the value.
 \begin{figure}[ht!]
@@ -533,7 +691,11 @@ instance if the \textbf{expert} has a weight of \textbf{0.5}, the
 \textbf{restaurantProfile} is \textbf{0.8} and the
 \textbf{correlation} is \textbf{0.6}, the system uses these weights to
 calculate the final prediction for a particular restaurant using the
+<<<<<<< HEAD
 formula of the weighted average (Equation  \ref{eq:wa}):
+=======
+formula of the weighted average (equation \ref{eq:wa}):
+>>>>>>> origin/master
 \begin{equation}\label{eq:wa}
 \displaystyle \bar{x} = {\sum_{i=1}^{n} x_{i} w_{i}
 \over \sum_{i=1}^{n} w_{i} } = 
@@ -545,7 +707,11 @@ predictions and the set \textit{W = \{ $w_{1}, w_{2}, w_{3},...,w_{n}$ \} }
 represents the weights 
 given for the fuzzy inference system for each recommendation technique. 
 Then, applying the formula, the system can process it in the follow manner  
+<<<<<<< HEAD
 (Equation  \ref{eq:prediction}):
+=======
+(equation \ref{eq:prediction}):
+>>>>>>> origin/master
 \begin{equation}\label{eq:prediction}
 \displaystyle \bar{x}  = {(0.5 * 4.0) + ( 0.8 * 5) + (0.6 * 4.5)
 \over (0.5 + 0.8 + 0.6)}
@@ -559,6 +725,7 @@ list will be contextualized.
 
 \section{Contextual recommendation} 
 
+<<<<<<< HEAD
 The interface of the system (Figure  \ref{fig:context}) allows the collection 
 of contextual information, such as type of price, restaurant's
 attributes, type of cuisine, and geographical location. 
@@ -566,6 +733,15 @@ The context-aware recommender system uses post-filtering paradigm,
 then the contextual information is used as a filter for the final 
 recommendations list. For example, geographical location is used 
 to get restaurants around two kilometers of distance, next, 
+=======
+The interface of the system (figure \ref{fig:context}) allows the collection 
+of contextual information, such as type of price, restaurant's
+attributes, type of cuisine, and geographical location. \\ 
+The context-aware recommender system uses post-filtering paradigm, 
+then the contextual information is used as a filter for the final 
+recommendations list. For example, geographical location is used 
+to get restaurants around 2 kilometers of distance, next, 
+>>>>>>> origin/master
 the list of nearby restaurants is displayed for the user.\\  
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
@@ -582,12 +758,21 @@ context especified by the user at this time.
 \captionsetup{font=footnotesize}
 \centering
 \fbox{\includegraphics[width=0.70\textwidth]{img/recom.png}}
+<<<<<<< HEAD
 \caption{System interface of recommendations for the user.}
 \label{fig:recom}    
 \end{figure*}
 In the attributes box, the user can choose any preference about what
 things are importants to select a restaurant. The features are
 collected from the dataset of Tijuana restaurants. \\In the cuisine box,
+=======
+\caption{System inferface of recommendations for the user.}
+\label{fig:recom}    
+\end{figure*}
+In the attributes box, the user can chose any preference about what
+things are importants to select a restaurant. The features are
+collected from the dataset of Tijuana restaurants. In the cuisine box,
+>>>>>>> origin/master
 the user choosen his/her favorite cuisine, it can be one or more
 cuisines such as in attributes  also.
 The context changes constantly, indeed, the users migh change 
@@ -604,6 +789,7 @@ location of the user and the available restaurants in the area.  The
 threshold is two kilometers around the user position to determine what
 restaurants will be recommended. The geographical position is
 obtained through the Google Maps API.
+<<<<<<< HEAD
 
 \section{Method scheme} 
 
@@ -614,6 +800,18 @@ recommendations are suplied by the rating matrix: \\
 values  through rating matrix taking users ratings, so it can infer 
 the output value.
 2) \textbf{Content-based} uses the high ratings in the user profile and item
+=======
+%%%%%%%%%%%%%%
+\section{Method scheme} 
+
+The general scheme of the proposed method is depicted in the figure
+\ref{fig:archit}. In the first part, the three techniques of
+recommendations are suplied by the rating matrix. \\ The \textbf{fuzzy
+inference system} of the expert  obtains the input values  through
+rating matrix taking users ratings, so it can infer the output value.
+
+\textbf{Content-based} uses the high ratings in the user profile and item
+>>>>>>> origin/master
 profiles to calculate similarity between them and do that using Cosine
 similarity measure.
 \begin{figure*}
@@ -623,17 +821,31 @@ similarity measure.
 \caption{Scheme of the proposed method.}
 \label{fig:archit}  
 \end{figure*}
+<<<<<<< HEAD
 3) \textbf{Collaborative filtering} is based in user profiles content in
 ratings matrix, it calculates the similarity among  users using
 Pearson correlation, subsequently,  a list of neighbors is obtained to
+=======
+\textbf{Collaborative filtering} is based in user profiles content in
+ratings matrix, it calculates the similarity among  users using
+Pearson Correlation, subsequently,  a list of neighbors is obtained to
+>>>>>>> origin/master
 use their preferences to calculate predictions.\\
 The second part shows three lists obtained, the fuzzy inference system
 is used to assign weights for each one in order to determine the
 prediction, these weights are important to calculate a
+<<<<<<< HEAD
 prediction because is obtained through the weighted average.\\
+=======
+prediction because is obtained through the weighted average.
+>>>>>>> origin/master
 Later, the recommendation lists are reduced when the context filter is
 applied, i.e., the contextualization process is applied to get
 recommendations adjusted in the user context. 
 Finally, the contextual recommendations list is displayed in the 
+<<<<<<< HEAD
 user interface (see Figure  \ref{fig:recom}).
+=======
+user interface (see figure \ref{fig:recom}).
+>>>>>>> origin/master
 
