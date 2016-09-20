@@ -1,18 +1,11 @@
-%% La letra n con tilde es: 'n.
 \chapter{Background}\label{background}
 
-<<<<<<< HEAD
 In this chapter, the fundamental concepts related to this work are 
 presented,  the formal definitions referring to the fuzzy logic, fuzzy 
 systems and linguistic terms are explained, the concept of context 
 and its classification, and contextual factors,  as well as the concepts
  of recommender system techniques and their main problems 
- are explained too.
-=======
-In this chapter, the fundamental concepts related to this work are presented:
-Formal definitions referring to fuzzy systems, contextual factors and
-recommender system techniques. 
->>>>>>> origin/master
+ are explained.
 
 \section{Production systems and fuzzy models}
 
@@ -21,7 +14,6 @@ logic and fuzzy inference systems, in this section formal definitions
 of these models of knowledge representation are presented.  
 
 \subsection{Traditional Production Systems}
-<<<<<<< HEAD
 Production Systems represent knowledge in the form of rules, which 
 specify actions that will be executed when certain conditions are met. 
 In these systems experts in a certain domain identify a set of rules 
@@ -29,15 +21,6 @@ based on their experience to  resolve different kinds of problems.
 Also known as Rule-Based Systems, many implementations consist 
 of mainly these three components  
 \cite{brachman1992knowledge}  \cite{konar2006computational}:
-=======
-Production Systems represent knowledge in the form of rules, which specify
-actions that will be executed when certain conditions are met. In these 
-systems experts in a certain domain identify a set of rules based 
-on their experience to 
-resolve different kinds of problems. Also known as Rule-Based Systems,
-many implementations consist of mainly these three
-components \cite{brachman1992knowledge} \cite{konar2006computational}:
->>>>>>> origin/master
 \begin{enumerate}   
 \item \textbf{Production Rules (PR)}. A set of
 production rules (also known as \textit{IF-THEN} rules) having a two part
@@ -179,11 +162,7 @@ output of each rule is a linear combination of the input
 variables plus a constant term, and the output is the average 
 of the support degree of each rule.
 \end{itemize} 
-<<<<<<< HEAD
 
-=======
-%%-----------------------------------------------------------
->>>>>>> origin/master
 \section{Context}
 
 People transmit ideas to each in a complex way. This
@@ -229,11 +208,7 @@ proposed by Dey  \cite{dey2001understanding} has been adopted (see section
  \ref{context-awareness}). \\However, another important aspect 
 is to stablish a meaningful classification that covers the 
 characteristics that describe the contextual factors.\\
-<<<<<<< HEAD
 Dourish \cite{dourish2004we} has distinguished between two different
-=======
-Dourish\cite{dourish2004we} has distinguished between two different
->>>>>>> origin/master
 views of context: the \textit{representational view} and the
 \textit{interactional view}. The \textit{representational view} makes
 four key assumptions: context is a \textit{form of information}, it is
@@ -264,8 +239,8 @@ domain will be involved in the process such as a contextual factor.\\
 The domain values of a contextual factor change over time, in
 real life the situation occurs when we decide that, for instance,
 we like a kind of clothes and the next day, for a any reason we don't
-like it anymore. As for the representation of the \textit{"change of time"} , a data 
-model of \textit{time} should be specified in a way that the system
+like it anymore. As for the representation of the \textit{"change of time"}, 
+a data model of \textit{time} should be specified in a way that the system
 \textit{interprets} time as a data structure (for instance weeks, 
 days, hours, minutes, seconds, etc.). \\
 Assuming the existence of certain contextual factors such as
@@ -274,12 +249,7 @@ are identified in the context of recommendations,
 Adomavicious  \cite{adomavicius2011context} proposes two important
 aspects that highligh when different kinds of context are defined:
 \textit{what a recommender system may know about these contextual
-<<<<<<< HEAD
 factors} and, \textit{how contextual factors change over time}.\\
-=======
-factors} and, \textit{how contextual factors change over time}.\\ \\
-
->>>>>>> origin/master
 A recommender system can have different types of knowledge 
 about the contextual factors, which may
 include the exact list of all the relevant factors, their structure,
@@ -478,14 +448,10 @@ defined by Equation \ref{eq:cosine}:
 {\overrightarrow{a} \cdot \overrightarrow{b} \over
 |\overrightarrow{a}| \cdot |\overrightarrow{b}| }
 \end{equation}
-<<<<<<< HEAD
+
 Where the dot symbol ($\cdot$) is the dot product of vectors and $|a|$ 
 is the Euclidian length of the vector, which is defined as the 
 square root of the dot product of the vector with itself.\\
-=======
-Where the $\cdot$  symbol is the dot product of vectors and $|a|$ is the Euclidian length of the vector, which is defined as the square root of the dot
-product of the vector with itself.\\
->>>>>>> origin/master
 \textbf{c) Model-based approach}, in this technique the raw data is
 first processed off-line, as described for \textit{item-based}
 filtering or also using some dimensionality reduction technique. At run time,
@@ -564,7 +530,6 @@ user preferences  \cite{jannach2010recommender}.
 
 \subsubsection{Vector space model}  
 
-<<<<<<< HEAD
 Content-based systems have historically been developed to filter and
 recommend text-based items such as e-mail messages or news.  The
 standard approach in content-based recommendation is, therefore,  not
@@ -578,31 +543,13 @@ document content itself or from a free-text description thereof
 
 Learning-based methods quickly tend to propose more of the same, that
 is, such recommenders can propose only items that are somehow similar
-to the ones the current user has already (positively) rated. \\This can
-=======
-CB systems have historically
-been developed to filter and recommend text-based items such as e-mail
-messages or news. The standard approach in CB recommendation is,
-therefore, not to maintain a list of \textit{meta-data
-features}, but to use a list of relevant keywords that appear within
-the document. The main idea, of course, is that such a list can be
-generated automatically from the document content itself or from a
-free-text description thereof \cite{jannach2010recommender}.
-
-\subsubsection{Overspecialization and cold-start problem}
-\label{overspecialization}
-
-Learning-based methods quickly tend to propose more of the same, that
-is, such recommenders can propose only items that are somehow similar
-to the ones the current user has already (positively) rated. This can
->>>>>>> origin/master
+to the ones the current user has already (positively) rated. \\ This can
 lead to the undesirable effect that obvious recommendations are made
 and the system, for instance, recommends items that are too similar to
 those the user already knows.\\ A typical example is a news filtering
 recommender that proposes a newspaper article that covers the same
 story that the user has already seen \textit{in another context}. The
-<<<<<<< HEAD
-system in  \cite{billsus1999personal}  defines a threshold to filter
+system in \cite{billsus1999personal} defines a threshold to filter
 out not only items that are \textit{too different} from the profile
 but also those that are \textit{too similar}. \\A general goal is to
 avoid the \textit{overspecialization}, therefore increasing the
@@ -623,28 +570,6 @@ willing (or is not feasible) to rate that many items before the
 recommender  service can be used. \\In the initial phase, it could be an
 option to ask  the user to provide a list of keywords, either by
 selecting from a  list of topics or by entering a free-text input.
-=======
-system in \cite{billsus1999personal}  defines a threshold to filter
-out not only items that are \textit{too different} from the profile
-but also those that are \textit{too similar}. A general goal is to
-avoid the \textit{overspecialization}, therefore increasing the
-serendipity of the recommendation lists that now includes “unexpected”
-items in which the user might be interested, because sometimes
-expected items are of little value for the user.\\
-The \textit{cold-start problem}, which we discussed for collaborative
-systems, also exists in a slightly different form for content-based
-recommendation methods. Although CB techniques do not
-require a large user community, they require at least an initial set
-of ratings from the user. \\In all described filtering techniques,
-recommendation accuracy improves along with the number of ratings;
-significant performance increases for the learning algorithms were
-reported in \cite{pazzani1997learning}  when the number of ratings was
-between twenty and fifty. \\ However, in many domains, users might not be
-willing (or is not feasible) to rate that many items before the recommender 
-service can be used. In the initial phase, it could be an option to ask 
-the user to provide a list of keywords, either by selecting from a 
-list of topics or by entering a free-text input.
->>>>>>> origin/master
 
 \subsection{Hybrid recommender systems} 
 
@@ -654,12 +579,12 @@ or considerable efforts for knowledge acquisition and engineering. \\
 User models and contextual information, community and product data,
 and knowledge models constitute the potential types of recommendation
 input. However, none of the basic approaches are able to fully exploit
-all of these. \\Consequently, building hybrid systems that combine the
+all of these. \\ Consequently, building hybrid systems that combine the
 strengths of different algorithms and models to overcome some of the
 afore mentioned shortcomings and problems has become the target of
-recent research. \\Hybrid recommender systems are technical approaches
+recent research. \\ Hybrid recommender systems are technical approaches
 that combine several algorithms or recommendation 
-components  \cite{jannach2010recommender}.
+components \cite{jannach2010recommender}.
 
 \subsection{Context-aware recommender systems}
 
@@ -676,7 +601,6 @@ tries to incorporate or utilize additional evidence (beyond
 information about users and items) to estimate user preferences on
 unseen items. When such contextual evidence can be incorporated as
 part of the input to the recommender systems, the rating function can
-<<<<<<< HEAD
 be viewed as \textit{multidimensional}:  $R$ : $Users * Items *
 Contexts$ $ \rightarrow Ratings$, where \textit{Contexts} represent a
 \textit{set of factors} that further delineate the conditions under which the
@@ -691,22 +615,6 @@ used to depict the context dimensions,
 in Figure \ref{fig:multidimension}  the time dimension belongs 
 to the \textit{set of contextual factors} and, is described as a 
  \textit{set of attributes}, for instance it may consist of
-=======
-be viewed as \textit{multidimensional}: $R$ : $Users * Items *
-Contexts$ $ \rightarrow Ratings$, where \textbf{Contexts} represents a
-\textbf{set of factors} that further delineate the conditions under which the
-\textit{user-item} pair is assigned a particular rating. \\ The
-underlying assumption of this extended model is that user preferences
-for items are not only a function of items themselves, but also a
-function of the context in which items are being
-considered\cite{lim2009assessing}. \\
-A multidimensional model as those found in data warehousing 
-systems\cite{kimball2011data} is
-used to depict the context dimensions, in figure
-\ref{fig:multidimension} the time dimension belongs to the \textbf{set of 
-contextual factors} and, is described as a \textbf{set of
-attributes}, for instance it may consist of
->>>>>>> origin/master
 attributes such as \textit{morning}, \textit{evening},  \textit{nigth},
 etc., as it was mentioned in section  \ref{contextofuse}. 
 \begin{figure*}
@@ -721,7 +629,6 @@ etc., as it was mentioned in section  \ref{contextofuse}.
 \subsection{Paradigms for using of contextual information}
 
 When recommender system uses contextual information, it starts
-<<<<<<< HEAD
 with the data having the form \textit{Users * Items * Contexts * Ratings}, 
 where  \textit{Contexts} represent an additional contextual dimension 
 and end up  with a list of contextual recommendations:  
@@ -730,37 +637,19 @@ However, when  the recommendation process does not  take into
 account  contextual information, is posible to apply the information 
 about the current (or desired) context \textit{c} in various stages 
 of the recommendation process.
-=======
-with the data having the form \textit{U * I * C * R}, where \textit{C}
-is additional contextual dimension and end up with a list of
-contextual recommendations $i_{1}$,$i_{2}$,$i_{3}$...$i_{n}$ for each
-user. However, when the recommendation process does not take into
-account  contextual information, is posible to apply the
-information about the current (or desired) context \textit{c} in
-various stages of the recommendation process.
->>>>>>> origin/master
 \begin{figure*}
 \captionsetup{font=footnotesize}
 \centering
 \fbox{\includegraphics[width=0.80\textwidth]{img/paradigms.png}}
 \small
 \caption{Paradigms for incorporating context in recommender 
-<<<<<<< HEAD
 systems \cite{adomavicius2011context}.}
 \label{fig:paradigms}   
 \end{figure*}
-\\Adomavicious  \cite{adomavicius2011context} defines three paradigms for
+\\ Adomavicious \cite{adomavicius2011context} defines three paradigms for
 the context-aware recommendation process that is based on contextual
 user preference, the Figure  \ref{fig:paradigms} is a graphic representation 
 of paradigms and Adomavicious describes them as follows:
-=======
-systems\cite{adomavicius2011context}.}
-\label{fig:paradigms}   
-\end{figure*}
-Adomavicious\cite{adomavicius2011context} defines three paradigms for
-the context-aware recommendation process that is based on contextual
-user preference, the figure \ref{fig:paradigms} is a graphic representation of paradigms and Adomavicious describes them as follows:
->>>>>>> origin/master
 \begin{itemize}
 \item \textbf{Contextual pre-filtering (or contextualization of
 recommendation input).} The approach uses contextual information to
@@ -768,17 +657,10 @@ select the most relevant 2D data \textit{(Users} x \textit{Items)} for generatin
 recommendations. The major advantage of this approach is that it
 allows deployment of any of the numerous traditional recommendation
 techniques previously proposed in the 
-<<<<<<< HEAD
 literature  \cite{adomavicius2005toward}.
 In particular, when using this approach, context \textit{c} essentially 
 serves as a query (or a filter) for selecting relevant rating data. 
 An example of a contextual data filter for a
-=======
-literature\cite{adomavicius2005toward}.
-In particular, when using this approach, context
-\textit{c} essentially serves as a query (or a filter) for selecting
-relevant rating data. An example of a contextual data filter for a
->>>>>>> origin/master
 movie recommender system would be: if a person wants to see a movie on
 Saturday, only the Saturday rating data is used to recommend movies.
 Note that this example represents a crisp pre-filter because the data
@@ -806,14 +688,3 @@ predictive models (such as decision trees, regression, and so on) or
 heuristic approaches that incorporate contextual information in
 addition to the user and item data (Figure  \ref{fig:paradigms}.c).
 \end{itemize}
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
->>>>>>> origin/master
-
