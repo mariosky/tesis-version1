@@ -1,45 +1,4 @@
-\documentclass[oneside,numbers,english]{./ezthesis}
-%% # Opciones disponibles para el documento #
-%%
-%% Las opciones con un (*) son las opciones predeterminadas.
-%%
-%% Modo de compilar:
-%%   draft            - borrador con marcas de fecha y sin im'agenes
-%%   draftmarks       - borrador con marcas de fecha y con im'agenes
-%%   final (*)        - version final de la tesis
-%%
-%% Tama'no de papel:
-%%   letterpaper (*)  - tama'no carta (Am'erica)
-%%   a4paper          - tama'no A4    (Europa)
-%%
-%% Formato de impresi'on:
-%%   oneside          - hojas impresas por un solo lado
-%%   twoside (*)      - hijas impresas por ambos lados
-%%
-%% Tama'no de letra:
-%%   10pt, 11pt, o 12pt (*)
-%%
-%% Espaciado entre renglones:
-%%   singlespace      - espacio sencillo
-%%   onehalfspace (*) - espacio de 1.5
-%%   doublespace      - a doble espacio
-%%
-%% Formato de las referencias bibliogr'aficas:
-%%   numbers          - numeradas, p.e. [1]
-%%   authoryear (*)   - por autor y a'no, p.e. (Newton, 1997)
-%%
-%% Opciones adicionales:
-%%   spanish         - tesis escrita en espa'nol
-%%
-%% Desactivar opciones especiales:
-%%   nobibtoc   - no incluir la bibiolgraf'ia en el 'Indice general
-%%   nofancyhdr - no incluir "fancyhdr" para producir los encabezados
-%%   nocolors   - no incluir "xcolor" para producir ligas con colores
-%%   nographicx - no incluir "graphicx" para insertar gr'aficos
-%%   nonatbib   - no incluir "natbib" para administrar la bibliograf'ia
-
-%% Paquetes adicionales requeridos se pueden agregar tambi'en aqu'i.
-%% Por ejemplo:
+\documentclass[oneside,numbers,english, nocolors ]{./ezthesis}
 %\usepackage{subfig}
 %\usepackage{multirow}
 \usepackage{graphicx,rotating,booktabs}
@@ -89,27 +48,7 @@
 %\usepackage[ngerman]{babel}
 \usepackage{blindtext}
 
-
-%\author{Xochilt Ramirez Garcia}
-%\title{ Sistema de Recomendaci\'on Sensible al Contexto y su Aplicaci\'on al Secuenciado de Objetos }
-%\degree{Doctor en Ciencias en Computaci\'on}
-%\supervisor{Nombre de mi Asesor}
-%\institution{Instituto Tecnol\'ogico de Tijuana}
-%\faculty{Divisi\'on de Estudios de Postgrado e Investigaci\'on }
-%\department{Departamento de Sistemas Computacionales}
-
-%% # M'argenes del documento #
-%% 
-%% Quitar el comentario en la siguiente linea para austar los m'argenes del
-%% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
-
-%\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
-
-%% El siguiente comando agrega ligas activas en el documento para las
-%% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
-%% instrucci'on antes de \begin{document}.
-
-\hyperlinking
+\hyperlinking  %links urls
 \begin{document}
 
 \pagenumbering{Roman}
@@ -117,9 +56,6 @@
 \include{knowledgements}
 \include{abstract}
 
-%% # 'Indices y listas de contenido #
-%% Quitar los comentarios en las lineas siguientes para obtener listas de
-%% figuras y cuadros/tablas.
 %\begin{singlespace}
 \tableofcontents
 \listoffigures
@@ -129,13 +65,12 @@
 %\listoffigures
 %\listoftables
 %% # Cap'itulos #
-%% Por cada cap'itulo hay que crear un nuevo archivo e incluirlo en esta seccion.
 \pagenumbering{arabic}
 \include{introduction}
 \include{stateart}
 \include{background}
 \include{method}
-\include{results}
+\include{caseofstudy}
 \include{evaluation}
 \include{conclusions}
 \include{publications}
@@ -143,12 +78,10 @@
 \include{appendixa}
 \include{appendixb}
 \include{apendixc}
-\include{appendixd}
+%\include{appendixd}
 %% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
 %% de la tesis.
-
-%% Incluir la bibliograf'ia. Mirar el archivo "biblio.bib" para m'as detales
-%% y un ejemplo.
+%% bibliography
 \bibliography{biblio}
 
 \end{document}

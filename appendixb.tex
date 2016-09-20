@@ -1,56 +1,261 @@
-\chapter{USE Questionnaire}\label{appendixb}
-\begin{singlespace}
-\small
-\textbf{Usefulness}
-\begin{itemize}
-\item It helps me be more effective.
-\item It helps me be more productive.
-\item It is useful.
-\item It gives me more control over the activities in my life.
-\item It makes the things I want to accomplish easier to get done.
-\item It saves me time when I use it.
-\item It meets my needs.
-\item It does everything I would expect it to do.
-\end{itemize}
-\small
-\textbf{Ease of Use}
-\begin{itemize}
-\item It is easy to use.
-\item It is simple to use.
-\item It is user friendly.
-\item It requires the fewest steps possible to accomplish what I want to do with it.
-\item It is flexible.
-\item Using it is effortless.
-\item I can use it without written instructions.
-\item I don't notice any inconsistencies as I use it.
-\item Both occasional and regular users would like it.
-\item I can recover from mistakes quickly and easily.
-\item I can use it successfully every time.
-\end{itemize}
-\small
-\textbf{Ease of Learning}
-\begin{itemize}
-\item I learned to use it quickly.
-\item I easily remember how to use it. • It is easy to learn to use it.
-\item I quickly became skillful with it.
-\end{itemize}
-\small
-\textbf{Satisfaction}
-\begin{itemize}
-\item I am satisfied with it.
-\item I would recommend it to a friend. 
-\item It is fun to use.
-\item It works the way I want it to work.
-\item It is wonderful.
-\item I feel I need to have it.
-\item It is pleasant to use.
-\end{itemize}
-\small
-\end{singlespace}
+\chapter{Pseudocode}\label{appendixb}
 
-\textit{Source: From the work of Lund (2001).} Users rate agreement
-with these statements on a 5-point Likert scale, ranging from strongly
-disagree to strongly agree. Statements in italics were found to weight
-less heavily than the others.\\  The on-line questionnaire is in the
-next link: \url{http://goo.gl/forms/LXQAerSKi4r0mTa33}.
+\begin{algorithm}
+\caption{Get Cosine similarity values}
+\begin{algorithmic} 
+\REQUIRE The list of itemProfilesUser and  itemProfilesAll in binary format.
+\ENSURE The list of cosine similairty value for each item of 
+the itemProfilesUser  
+with each element of itemProfilesAll. 
+\STATE $allProfiles \leftarrow $[ ]
+\FOR {$itemu$ to size of $itemProfilesUser$}
+\FOR {$itema$ to size of $itemProfilesAll$}
+\IF {$itemu$ = $itema$}
+\STATE jump next item
+\ELSE
+\STATE $cosineSimilarityValue \leftarrow $ among $itemu$ and $itema$
+\STATE $itemProfiles \leftarrow itemu, itema, cosineSimilarityValue$
+\ENDIF
+\ENDFOR
+\ENDFOR
+\RETURN $allProfiles$
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\caption{Collaborative filtering algorithm}
+\begin{algorithmic} 
+\REQUIRE The userId.
+\ENSURE The Top-N list of recommendations for the current user. 
+%\COMMENT {Este es un comentario...}
+\STATE $ratingMatrix \leftarrow {allRatings}$
+\STATE Call $Recommendations \leftarrow getRecommendations()$ module
+\RETURN $Recommendations$
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\small
+\caption{Content-Based Algorithm}
+\begin{algorithmic} 
+\REQUIRE The user id.
+\ENSURE The Top-N list of recommendations.
+\STATE $RV \leftarrow$ All items that user rated with 5
+\FOR {$item$ to size of $RV$}
+\IF {$item$ is not in $RV$}
+\STATE $UV \leftarrow itemid$
+\ENDIF
+\ENDFOR
+\STATE $allItems \leftarrow$ [ ]
+\STATE $getItemsProfilesUser \leftarrow$ Binary vectors of RV
+\STATE $allRatings \leftarrow$ Rating matrix
+\FOR {$item$ to size of $allRatings$}
+\IF {$itemid$ is not in $allItems$}
+\STATE $allItems \leftarrow item$
+\ENDIF
+\ENDFOR
+\STATE $getAllItemsProfiles \leftarrow$ Binary vectors of allItems
+\STATE $getCosineSim \leftarrow$ {{getItemsProfilesUser},{getAllItemsProfiles}}
+\FOR {$item$ to size of $highCosineSim$}
+\IF {$itemsimilarity \geq  0.8$}
+\STATE $highCosineSim \leftarrow item$
+\ENDIF
+\ENDFOR
+\STATE Sort $highCosineSim$ list
+\RETURN $itemProfiles$
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\small
+\caption{Get item profiles}
+\begin{algorithmic} 
+\REQUIRE The UV vector, allItems vector and boolean value of userProfile.
+\ENSURE The list of ítemProfiles in binary vectors. 
+\IF {$userProfile$ \TRUE }
+\STATE $getItemsProfilesUser \leftarrow UV$
+\FOR {$itemp$ to size of $UV$}
+\STATE get binary vector of itemp
+\STATE $itemProfiles \leftarrow itemp$
+\ENDFOR
+\ELSE
+\STATE $allItemProfiles \leftarrow allItems$
+\FOR {$itemp$ to size of $allItems$}
+\STATE get binary vector of itemp
+\STATE $itemProfiles \leftarrow itemp$
+\ENDFOR
+\ENDIF
+\RETURN $itemProfiles$
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\small
+\caption{Calculate Cosine similarity}
+\begin{algorithmic} 
+\REQUIRE The itemProfileUser and itemProfileAll, both vectors in binary format.
+\ENSURE The cosine similarity value.
+\STATE $sum \leftarrow 0$
+\STATE $normaItemUser \leftarrow 0$
+\STATE $normaItemAll \leftarrow 0$
+\FOR {$position$ to size of $itemProfileUser$}
+\STATE $sumProduct \leftarrow sumProduct+(itemProfileUser[position]*itemProfileAll[position])$
+\ENDFOR
+\FOR {$item$ to size of $itemProfileUser$}
+\STATE $normaItemUser \leftarrow normaItemUser + itemProfileUser[item]^2$
+\ENDFOR
+\FOR {$item$ to size of $itemProfileAll$}
+\STATE $normaItemAll \leftarrow normaItemAll+itemProfileAll[item]^2$
+\ENDFOR
+\STATE $squareRootUser \leftarrow squareroot(normaItemUser)$
+\STATE $squareRootAll   \leftarrow squareroot(normaItemAll)$
+\STATE $cosineSimilarity \leftarrow sumProduct/(squareRootUser*squareRootAll)$
+\RETURN $cosineSimilarity$
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\caption{Create a binary vector of item profile}
+\begin{algorithmic} 
+\REQUIRE The ítem profile content in r.
+\ENSURE The ítemProfile of r in a binary vector.
+\STATE $price \leftarrow $ [4]
+\STATE $payment \leftarrow $ [2]
+\STATE $alcohol \leftarrow $ [2]
+\STATE $smokingarea \leftarrow $ [2]
+\STATE $dresscode \leftarrow $ [3]
+\STATE $parking \leftarrow $ [3]
+\STATE $installation \leftarrow $ [4]
+\STATE $atmosphere \leftarrow $ [5]
+\STATE $cuisine \leftarrow $ [30]
+\STATE $price$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $payment$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $alcohol$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $smokingarea$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $dresscode$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $parking$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $installation$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $atmosphere$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $cuisine$[$positionPriceId-1$] $\leftarrow 1$
+\STATE $itemProfile$ $\leftarrow price+payment+alcohol+smookingarea+dresscode+parking+installation+atmosphere+cuisine$
+\RETURN $itemProfile$
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\caption{Get recommendations}
+\begin{algorithmic} 
+\REQUIRE The currentUser and ratingMatrix.
+\ENSURE The Top-N list of recommendations for the current user. 
+\STATE Dictionaries $totals \leftarrow \{ \}, sumSimilarity \leftarrow \{ \}$ 
+\STATE $predictions \leftarrow $[ ]
+\FOR {$otherUser$ to size of $ratingMatrix$}
+\IF {$otherUser$ = $currentUser$}
+\STATE jump next $otherUser$
+\ENDIF
+\STATE $similarityValue \leftarrow $ get pearsonSimilarity
+\IF {$similarityValue \leq 0 $}
+\STATE jump next $otherUser$
+\ENDIF
+\FOR {$item$ to size of $profileOther$}
+\IF {$item$ is not in $profileUser$}
+\IF {$profileUser[item]=0$}
+\STATE Set in $totals \leftarrow item$
+\STATE $totals[item]$ Add $ratingMatrix[otherUser][item]*similarityValue$
+\STATE Set in $sunSimilarity \leftarrow item$
+\STATE $sumSimilarity$ Add $similarityValue$
+\ENDIF
+\ENDIF
+\ENDFOR
+\ENDFOR
+\FOR {each $(item,total)$ in $totals$}
+\STATE $predictions \leftarrow [(total/sumSimilarity[item], item)]$
+\ENDFOR
+\STATE Ranking of $predictions$
+\RETURN $predictions$
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\caption{Get Pearson correlation}
+\begin{algorithmic} 
+\REQUIRE The currentUser, otherUser and preferences.
+\ENSURE The pearsonCorrelation score.
+\STATE Dictionaries $itemsRatedMutually \leftarrow \{ \}$ 
+\FOR {each $item$ in preferences of $currentUser$}
+\IF {$item$ is in preferences of $currentUser$}
+\STATE jump next $itemsRatedMutually[item] \leftarrow 1$
+\ENDIF
+\ENDFOR
+\STATE $numberElements \leftarrow $ size of $itemsRatedMutually$
+\IF {$itemsRatedMutually = 0 $}
+\RETURN $0$
+\ENDIF
+\FOR {$item$ to size of $itemsRatedManually$ to get all preferences}
+\STATE $sumCurrentUser \leftarrow preferences[currentUser][item]$
+\STATE $sumOtherUser \leftarrow preferences[otherUser][item]$
+\ENDFOR
+\FOR {$item$ to size of $itemsRatedManually$ to get squares}
+\STATE $squareCurrentUser \leftarrow square(preferences[currentUser][item])^2$
+\STATE $squareOtherUser \leftarrow square(preferences[otherUser][item])^2$
+\ENDFOR
+\FOR {$item$ to size of $itemsRatedManually$ to get sum of products}
+\STATE $sumProduct \leftarrow preferences[currentUser][item]*preferences[otherUser][item]$
+\ENDFOR
+\STATE $pearsonNumerator \leftarrow sumProduct-((sumCurrentUser*sumOtherUser)/numberElements)$
+\STATE $pearsonDenominator \leftarrow square(squareCurrentUser-((sumCurrentUser)^2/numberElements)*squareOtherUser-((sumOtherUser)^2/numberElements))$
+\STATE $pearsonCorrelation \leftarrow pearsonNumerator/pearsonDenominator$
+\RETURN $pearsonCorrelation$ among two users
+\end{algorithmic}
+\end{algorithm}
+%%----------------------------------------------------------------------------
+%%----------------------------------------------------------------------------
+\begin{algorithm}
+\caption{Matrix factorization}
+\begin{algorithmic}
+\REQUIRE R is a matrix to be factorized, dimension N * M, P an initial
+matrix of dimension N * K, Q an initial matrix of dimension M * K, K
+is the number of latent features, steps for the maximum number of
+steps to perform the optimization,  alpha is the learning rate and
+beta  is the regularization parameter.
+\ENSURE The factorized matrix P and Q.
+\STATE $alpha \leftarrow 0.0001, beta \leftarrow 0.001$ 
+\STATE $QMatrix \leftarrow QMatrix * T $ 
+\FOR {$step$ to $rangeSteps$}
+\FOR {$i$ to size of $RMatrix$}
+\FOR {$j$ to size of $RMatrix[i]$}
+\IF {$RMatrix[i][j] > 0$}
+\STATE $e_{i,j} \leftarrow RMatrix[i][j]-dotProduct(PMatrix[i to end],QMatrix[init to j])$
+\ENDIF
+\FOR {$k$ to range of $KFactors$}
+\STATE $PMatrix[i][k] \leftarrow PMatrix[i][k]+alpha * (2*e_{i,j}*QMatrix[k][j] - beta *PMatrix[i][k])$
+\STATE $QMatrix[k][j] \leftarrow QMatrix[k][j]+alpha * (2*e_{i,j}*PMatrix[i][k] - beta *QMatrix[k][j])$
+\ENDFOR
+\ENDFOR
+\ENDFOR
+\STATE $eR \leftarrow dotProduct (PMatrix * QMatrix)$
+\FOR {$i$ to range of $RMatrix$}
+\FOR {$j$ to size of $RMatrix[i]$}
+\IF {$RMatrix[i][j] > 0$}
+\STATE $e \leftarrow e + (beta/2) * PMatrix[i][k]^2 + QMatrix[i][j]^2$
+\ENDIF
+\ENDFOR
+\ENDFOR
+\IF {$e < 0$}
+\STATE $break$
+\ENDIF
+\ENDFOR
+\RETURN $PMatrix, QMatrix * T$ 
+\end{algorithmic}
+\end{algorithm}
+
+
+
 

@@ -1,258 +1,76 @@
-\chapter{Pseudocode}\label{appendixa}
+\chapter{Technical support of installation}\label{appendixa}
+%\begin{singlespace}
+\textbf{\large{Dependencies of the application}}
+\begin{itemize}
+\item Django framework 1.7.\\ Url: 
+\url{https://www.djangoproject.com/download/}
+\item Django-registration library. \\
+Url: \url{https://pypi.python.org/pypi/django-registration}
+\item Django-countries library. \\
+Url: \url{https://pypi.python.org/pypi/django-countries}
+\item Django-geoposition library. \\
+Url: \url{https://pypi.python.org/pypi/django-geoposition}
+\item Python-dateutil library. \\
+Url: \url{https://pypi.python.org/pypi/python-dateutil/2.4.1}
+\item Pyproj library. \\
+Url: \url{https://pypi.python.org/pypi/pyproj?}
+\item Numpy library. \\
+Url: \url{https://pypi.python.org/pypi/numpy}
+\item PostgreSQL database. 
+\\Url: \url{http://www.postgresql.org/}
+\item Psycopg2 connection to database. \\
+Url: \url{http://initd.org/psycopg/docs/install.html}
+\item System prototype programmed in Python language 
+Url:\url{https://github.com/xochilt/recomet}.
+\end{itemize}
+%\end{singlespace}
+\textbf{\large{Tijuana Restaurants dataset}}
 
-\begin{algorithm}
-\caption{Get Cosine similarity values}
-\begin{algorithmic} 
-\REQUIRE The list of itemProfilesUser and  itemProfilesAll in binary format.
-\ENSURE The list of cosine similairty value for each item of 
-the itemProfilesUser  
-with each element of itemProfilesAll. 
-\STATE $allProfiles \leftarrow $[ ]
-\FOR {$itemu$ to size of $itemProfilesUser$}
-\FOR {$itema$ to size of $itemProfilesAll$}
-\IF {$itemu$ = $itema$}
-\STATE jump next item
-\ELSE
-\STATE $cosineSimilarityValue \leftarrow $ among $itemu$ and $itema$
-\STATE $itemProfiles \leftarrow itemu, itema, cosineSimilarityValue$
-\ENDIF
-\ENDFOR
-\ENDFOR
-\RETURN $allProfiles$
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
-\caption{Collaborative filtering algorithm}
-\begin{algorithmic} 
-\REQUIRE The userId.
-\ENSURE The Top-N list of recommendations for the current user. 
-%\COMMENT {Este es un comentario...}
-\STATE $ratingMatrix \leftarrow {allRatings}$
-\STATE Call $Recommendations \leftarrow getRecommendations()$ module
-\RETURN $Recommendations$
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
+Table \ref{tab:dataset} shows a sample of dataset  where the domain
+of contextual factors  is depicted as numeric values, from column 5 to
+12  are the contextual factors used in the system and each column
+contains the domain values.  The column names are: \textit{payment
+type}, \textit{alcohol type}, \textit{smoking area},
+\textit{atmosphere type}, \textit{dress code}, \textit{installations
+type},\textit{parking type}, and \textit{cuisine type}.
+The complete dataset is available to download in the url: 
+\url{http://www.xochilt.wix.com/ittresearch}.\\ 
+\begin{table}
 \small
-\caption{Content-Based Algorithm}
-\begin{algorithmic} 
-\REQUIRE The user id.
-\ENSURE The Top-N list of recommendations.
-\STATE $RV \leftarrow$ All items that user rated with 5
-\FOR {$item$ to size of $RV$}
-\IF {$item$ is not in $RV$}
-\STATE $UV \leftarrow itemid$
-\ENDIF
-\ENDFOR
-\STATE $allItems \leftarrow$ [ ]
-\STATE $getItemsProfilesUser \leftarrow$ Binary vectors of RV
-\STATE $allRatings \leftarrow$ Rating matrix
-\FOR {$item$ to size of $allRatings$}
-\IF {$itemid$ is not in $allItems$}
-\STATE $allItems \leftarrow item$
-\ENDIF
-\ENDFOR
-\STATE $getAllItemsProfiles \leftarrow$ Binary vectors of allItems
-\STATE $getCosineSim \leftarrow$ {{getItemsProfilesUser},{getAllItemsProfiles}}
-\FOR {$item$ to size of $highCosineSim$}
-\IF {$itemsimilarity \geq  0.8$}
-\STATE $highCosineSim \leftarrow item$
-\ENDIF
-\ENDFOR
-\STATE Sort $highCosineSim$ list
-\RETURN $itemProfiles$
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
-\small
-\caption{Get item profiles}
-\begin{algorithmic} 
-\REQUIRE The UV vector, allItems vector and boolean value of userProfile.
-\ENSURE The list of ítemProfiles in binary vectors. 
-\IF {$userProfile$ \TRUE }
-\STATE $getItemsProfilesUser \leftarrow UV$
-\FOR {$itemp$ to size of $UV$}
-\STATE get binary vector of itemp
-\STATE $itemProfiles \leftarrow itemp$
-\ENDFOR
-\ELSE
-\STATE $allItemProfiles \leftarrow allItems$
-\FOR {$itemp$ to size of $allItems$}
-\STATE get binary vector of itemp
-\STATE $itemProfiles \leftarrow itemp$
-\ENDFOR
-\ENDIF
-\RETURN $itemProfiles$
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
-\small
-\caption{Calculate Cosine similarity}
-\begin{algorithmic} 
-\REQUIRE The itemProfileUser and itemProfileAll, both vectors in binary format.
-\ENSURE The cosine similarity value.
-\STATE $sum \leftarrow 0$
-\STATE $normaItemUser \leftarrow 0$
-\STATE $normaItemAll \leftarrow 0$
-\FOR {$position$ to size of $itemProfileUser$}
-\STATE $sumProduct \leftarrow sumProduct+(itemProfileUser[position]*itemProfileAll[position])$
-\ENDFOR
-\FOR {$item$ to size of $itemProfileUser$}
-\STATE $normaItemUser \leftarrow normaItemUser + itemProfileUser[item]^2$
-\ENDFOR
-\FOR {$item$ to size of $itemProfileAll$}
-\STATE $normaItemAll \leftarrow normaItemAll+itemProfileAll[item]^2$
-\ENDFOR
-\STATE $squareRootUser \leftarrow squareroot(normaItemUser)$
-\STATE $squareRootAll   \leftarrow squareroot(normaItemAll)$
-\STATE $cosineSimilarity \leftarrow sumProduct/(squareRootUser*squareRootAll)$
-\RETURN $cosineSimilarity$
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
-\caption{Create a binary vector of item profile}
-\begin{algorithmic} 
-\REQUIRE The ítem profile content in r.
-\ENSURE The ítemProfile of r in a binary vector.
-\STATE $price \leftarrow $ [4]
-\STATE $payment \leftarrow $ [2]
-\STATE $alcohol \leftarrow $ [2]
-\STATE $smokingarea \leftarrow $ [2]
-\STATE $dresscode \leftarrow $ [3]
-\STATE $parking \leftarrow $ [3]
-\STATE $installation \leftarrow $ [4]
-\STATE $atmosphere \leftarrow $ [5]
-\STATE $cuisine \leftarrow $ [30]
-\STATE $price$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $payment$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $alcohol$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $smokingarea$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $dresscode$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $parking$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $installation$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $atmosphere$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $cuisine$[$positionPriceId-1$] $\leftarrow 1$
-\STATE $itemProfile$ $\leftarrow price+payment+alcohol+smookingarea+dresscode+parking+installation+atmosphere+cuisine$
-\RETURN $itemProfile$
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
-\caption{Get recommendations}
-\begin{algorithmic} 
-\REQUIRE The currentUser and ratingMatrix.
-\ENSURE The Top-N list of recommendations for the current user. 
-\STATE Dictionaries $totals \leftarrow \{ \}, sumSimilarity \leftarrow \{ \}$ 
-\STATE $predictions \leftarrow $[ ]
-\FOR {$otherUser$ to size of $ratingMatrix$}
-\IF {$otherUser$ = $currentUser$}
-\STATE jump next $otherUser$
-\ENDIF
-\STATE $similarityValue \leftarrow $ get pearsonSimilarity
-\IF {$similarityValue \leq 0 $}
-\STATE jump next $otherUser$
-\ENDIF
-\FOR {$item$ to size of $profileOther$}
-\IF {$item$ is not in $profileUser$}
-\IF {$profileUser[item]=0$}
-\STATE Set in $totals \leftarrow item$
-\STATE $totals[item]$ Add $ratingMatrix[otherUser][item]*similarityValue$
-\STATE Set in $sunSimilarity \leftarrow item$
-\STATE $sumSimilarity$ Add $similarityValue$
-\ENDIF
-\ENDIF
-\ENDFOR
-\ENDFOR
-\FOR {each $(item,total)$ in $totals$}
-\STATE $predictions \leftarrow [(total/sumSimilarity[item], item)]$
-\ENDFOR
-\STATE Ranking of $predictions$
-\RETURN $predictions$
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
-\caption{Get Pearson correlation}
-\begin{algorithmic} 
-\REQUIRE The currentUser, otherUser and preferences.
-\ENSURE The pearsonCorrelation score.
-\STATE Dictionaries $itemsRatedMutually \leftarrow \{ \}$ 
-\FOR {each $item$ in preferences of $currentUser$}
-\IF {$item$ is in preferences of $currentUser$}
-\STATE jump next $itemsRatedMutually[item] \leftarrow 1$
-\ENDIF
-\ENDFOR
-\STATE $numberElements \leftarrow $ size of $itemsRatedMutually$
-\IF {$itemsRatedMutually = 0 $}
-\RETURN $0$
-\ENDIF
-\FOR {$item$ to size of $itemsRatedManually$ to get all preferences}
-\STATE $sumCurrentUser \leftarrow preferences[currentUser][item]$
-\STATE $sumOtherUser \leftarrow preferences[otherUser][item]$
-\ENDFOR
-\FOR {$item$ to size of $itemsRatedManually$ to get squares}
-\STATE $squareCurrentUser \leftarrow square(preferences[currentUser][item])^2$
-\STATE $squareOtherUser \leftarrow square(preferences[otherUser][item])^2$
-\ENDFOR
-\FOR {$item$ to size of $itemsRatedManually$ to get sum of products}
-\STATE $sumProduct \leftarrow preferences[currentUser][item]*preferences[otherUser][item]$
-\ENDFOR
-\STATE $pearsonNumerator \leftarrow sumProduct-((sumCurrentUser*sumOtherUser)/numberElements)$
-\STATE $pearsonDenominator \leftarrow square(squareCurrentUser-((sumCurrentUser)^2/numberElements)*squareOtherUser-((sumOtherUser)^2/numberElements))$
-\STATE $pearsonCorrelation \leftarrow pearsonNumerator/pearsonDenominator$
-\RETURN $pearsonCorrelation$ among two users
-\end{algorithmic}
-\end{algorithm}
-%%----------------------------------------------------------------------------
-%%----------------------------------------------------------------------------
-\begin{algorithm}
-\caption{Matrix factorization}
-\begin{algorithmic}
-\REQUIRE R is a matrix to be factorized, dimension N * M, P an initial
-matrix of dimension N * K, Q an initial matrix of dimension M * K, K
-is the number of latent features, steps for the maximum number of
-steps to perform the optimization,  alpha is the learning rate and
-beta  is the regularization parameter.
-\ENSURE The factorized matrix P and Q.
-\STATE $alpha \leftarrow 0.0001, beta \leftarrow 0.001$ 
-\STATE $QMatrix \leftarrow QMatrix * T $ 
-\FOR {$step$ to $rangeSteps$}
-\FOR {$i$ to size of $RMatrix$}
-\FOR {$j$ to size of $RMatrix[i]$}
-\IF {$RMatrix[i][j] > 0$}
-\STATE $e_{i,j} \leftarrow RMatrix[i][j]-dotProduct(PMatrix[i to end],QMatrix[init to j])$
-\ENDIF
-\FOR {$k$ to range of $KFactors$}
-\STATE $PMatrix[i][k] \leftarrow PMatrix[i][k]+alpha * (2*e_{i,j}*QMatrix[k][j] - beta *PMatrix[i][k])$
-\STATE $QMatrix[k][j] \leftarrow QMatrix[k][j]+alpha * (2*e_{i,j}*PMatrix[i][k] - beta *QMatrix[k][j])$
-\ENDFOR
-\ENDFOR
-\ENDFOR
-\STATE $eR \leftarrow dotProduct (PMatrix * QMatrix)$
-\FOR {$i$ to range of $RMatrix$}
-\FOR {$j$ to size of $RMatrix[i]$}
-\IF {$RMatrix[i][j] > 0$}
-\STATE $e \leftarrow e + (beta/2) * PMatrix[i][k]^2 + QMatrix[i][j]^2$
-\ENDIF
-\ENDFOR
-\ENDFOR
-\IF {$e < 0$}
-\STATE $break$
-\ENDIF
-\ENDFOR
-\RETURN $PMatrix, QMatrix * T$ 
-\end{algorithmic}
-\end{algorithm}
+\captionsetup{font=footnotesize}
+\caption{Sample of Tijuana dataset and contextual factors.}
+\label{tab:dataset} 
+%\centering
+\begin{tabular}{lllllllllllll}
+\hline\noalign{\smallskip}
+Id &  Restaurant & Price & Latitude &  Longitude & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12   \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+1   &   Californias &   3   &   32.52837    &   -117.02001  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   20  \\
+2   &   Yogurt Place    &   2   &   32.53404    &   -117.12053  &   1   &   0   &   1   &   2   &   2   &   1   &   1   &   19  \\
+3   &   Los Arcos   &   1   &   32.51582    &   -117.01032  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   24  \\
+4   &   La Casa del Mole &   2   &   32.51995    &   -117.01001  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   20  \\
+5   &   Cafe de la Flor     &   2   &   32.53198    &   -116.94801  &   2   &   0   &   1   &   3   &   2   &   1   &   1   &   16  \\
+6   &   Casa Plascencia &   3   &   32.5137 &   -117.00712  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   22  \\
+7   &   La Lena &   3   &   32.51238    &   -117.00417  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   17  \\
+8   &   La Querencia    &   3   &   32.51678    &   -117.00961  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   22  \\
+9   &   Big Boy &   2   &   32.51957    &   -117.01942  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+10  &   Burger King &   1   &   32.53387    &   -116.95086  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+11  &   Cheripan Otay   &   4   &   32.51987    &   -117.01253  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   4   \\
+12  &   Costco  &   1   &   32.50826    &   -116.96436  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+13  &   Daruma Postal   &   2   &   32.52874    &   -116.98579  &   1   &   0   &   2   &   3   &   1   &   1   &   2   &   1   \\
+14  &   Dominos Pizza   &   1   &   32.53481    &   -116.97108  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   27  \\
+15  &   El Mazateno &   1   &   32.52836    &   -116.99242  &   2   &   0   &   2   &   3   &   1   &   1   &   2   &   24  \\
+16  &   El Porton   &   2   &   32.47732    &   -117.02924  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   20  \\
+17  &   El Rodeo    &   1   &   32.54961    &   -116.90429  &   2   &   0   &   1   &   2   &   2   &   1   &   1   &   17  \\
+18  &   Giuseppis Rio   &   4   &   32.53135    &   -116.94833  &   2   &   0   &   1   &   4   &   2   &   1   &   1   &   3   \\
+19  &   KFC     &   1   &   32.52821    &   -117.02397  &   1   &   0   &   2   &   2   &   2   &   1   &   1   &   26  \\
+20  &   La Torta Plaza  &   1   &   32.53434    &   -117.01821  &   1   &   0   &   2   &   3   &   2   &   1   &   1   &   26  \\
+21  &   Landini Ristorante  &   3  &   32.51483   &   -117.01069  &   2   &   0   &   1   &   4   &   3   &   1   &   1   &   3   \\
+22  &   Carls jr    &   1   &   32.52973    &   -116.9682   &   1   &   1   &   2   &   2   &   2   &   1   &   1   &   26  \\
+23  &   Carnitas Uruapan  &   1   &   32.50907  &   -116.98759  &   2   &   1   &   1   &   3   &   2   &   1   &   1   &   20  \\
+24  &   Fonda Argentina &   3   &   32.51339    &   -117.00743  &   2   &   1   &   1   &   3   &   2   &   1   &   1   &   4   \\
+25  &   La Espadana &   4   &   32.51786    &   -117.00954  &   2   &   1   &   1   &   4   &   3   &   1   &   1   &   20  \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
 

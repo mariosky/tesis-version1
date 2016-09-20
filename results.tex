@@ -1,37 +1,23 @@
-\chapter{Experiments and Results} \label{results}
+\chapter{Experiments and results} \label{results}
 
 \section{Experimental settings} 
 
-This chapter describes the experiments that were used in order
-to compare several recommender techniques. 
-%% No debemos ser didácticos sobre lo que se tiene que hacer, 
-%% en tu tesis usas este conocimiento, pero no lo debes explicar.
-%% Cambialo a algo que no explique, por ejemplo:
-%%
-%In all experimental scenarios, it is important to follow a 
-%few basic guidelines in general experimental 
-%studies\cite{adomavicius2011context}:
 In this particular experimental scenario, the basic guidelines 
 proposed in Adomavicius \cite{adomavicius2011context} are followed,  
 and they are briefly explained next. 
-
-
 \begin{itemize} 
-%%
-%% 
-%%
 \item \textbf{Hypothesis:} before running the experiment we must form
 an \textit{hypothesis}. It is important to be concise and restrictive
 about this hypothesis, and design an experiment that tests the
-hypothesis. For example, an hypothesis can be that algorithm
-\textbf{A} better predicts user ratings than algorithm \textbf{B}. In
-that case, the experiment should test the prediction accuracy, and not
+hypothesis. For example, an hypothesis can be that  \textbf{algorithm
+A} predicts better user ratings than  \textbf{algorithm B}.  In that
+case, the experiment should test the prediction accuracy, and not
 other factors.
 \item \textbf{Controlling variables:} when comparing a few candidate
 algorithms on a certain hypothesis, it is important that all
 \textit{variables} that are not tested will stay fixed. For example,
 suppose that we wish to compare the prediction accuracy of movie
-ratings of algorithm \textbf{A} and algorithm \textbf{B}, that both
+ratings of  \textbf{algorithm A} and \textbf{algorithm B}, that both
 use different collaborative filtering models.
 \item \textbf{Generalization power:} when drawing conclusions from
 experiments, we may desire that our conclusions generalize beyond the
@@ -47,33 +33,47 @@ data used, the more it can generalize the results}.
 
 \subsection{Off-line experiments} 
 
-An off-line experiment is performed by using a pre-collected dataset
-of users choosing or ratings. Using this data set tries to simulate
+An off-line experiment is performed using a pre-collected dataset
+of users choosing or ratings. Using this dataset tries to simulate
 the behavior of users that interact with a recommender system. In
 doing so, it assume that the user behavior when the data was collected
 will be similar enough to the user behavior when the recommender
 system is deployed, so that we can make reliable decisions based on
 the simulation.  Off-line experiments are attractive because they
-require no interaction with real users, and thus it allows to compare
+\textit{require no interaction with real users}, and thus it allows to compare
 a wide range of candidate algorithms at a low cost. \\ The downside is
 that it can answer a very narrow set of questions, typically questions
-about the prediction of an algorithm. The goal of the offline
+about the prediction of an algorithm. The goal of the off-line
 experiments is to filter out inappropriate  approaches, leaving a
 relatively small set of alternatives algorithms for subsequently to be
-tested for the more costly user studies or online 
-experiments\cite{adomavicius2011context}.
-
+tested for the more costly user studies or on-line 
+experiments\cite{adomavicius2011context}.\\ 
+The next section shows a comprehensive description of the 
+experimental setup for experiments, as well as results obtained 
+in the experiments.
+Each method was tested using contextual datasets in the domain. 
+Results are showed in order to  compare the performance of the 
+algorithms in the method. 
 %% Haz un puente, dices que vaz a hacer ciertos experimentos
 %% menciona aquí que lo que sigue es el setup de tus parte experimental.
 %% Menciona brevemente los experimentos o datrasets, Restaurants, MovieLens,
 %% Filmtrust and InCarMusic, TripAdvisor
+<<<<<<< HEAD
 
-%% Datasets?? esto está en la sección pasada
+%% Datasets?? esto ya está en la sección pasada
+%% Ok, menciona que para poder hacer los experimentos los 
+%% siguientes datasets fueron utilizados, pero justifica cada uno.
+
 \section{Datasets} 
 
 \subsection{Tijuana Restaurants} 
+=======
+%\section{Experiments} 
+>>>>>>> origin/master
 %% Esto creo que ya se había dicho,
 %% o debe ir en Method
+\section{Restaurant recommendations} 
+
 The method uses collaborative filtering to find restaurants for the
 user\cite{ramirez2013restaurant}. The ratings of user profiles are
 used to determine the similarity among users using Pearson
@@ -103,25 +103,43 @@ depicted in figure \ref{fig:postfiltering}.
 \end{figure*}
 %% Bien, empieza aquí:
 %Algo como
+<<<<<<< HEAD
+%In order to validate  the proposed approach described in section XXX,
+% Pero es muy general, ¿Qué es lo que vamos a validar?
+% El desempñeo del algoritmo?
+% La usabilidad del sistema?
+% Comparar con contexto vs sin Contexto?
+% Creo que es: Para validar el algoritmo de recomendación contextual
+% en el dominio de los restaurantes
+=======
 %In order to validate the proposed approach described in section XXX, data about restaurant
-In order to validate the proposed approach , data about restaurant
+>>>>>>> origin/master
+In order to validate the proposed approach, data about restaurant
 preferences of users in different contexts was collected. The study
 subjects were students  with a major in engineering,  
 master’s program and professors of the Tijuana Institute of
 Technology. A total of \textit{50 users} answered a questionnaire; the
 questions were about their preferences for nearby restaurants and the
-technology most often used by them. The \textit{questionnaire} consisted of \textit{8
-questions} and also they were asked to rate any number of restaurants from a list of 40 restaurants.
-Each of the restaurants chosen, was rated 6 times one per proposed context, a
-matrix rating with \textit{1,422 ratings} was collected. The
+technology most often used by them. The \textit{questionnaire} consisted 
+of \textit{8 questions} and also they were asked to rate any number of restaurants from a list of 40 restaurants.
+Each of the restaurants chosen, was rated 6 times one per proposed 
+context, a matrix rating with \textit{1,422 ratings} was collected. The
 questions are shown in table \ref{tab:questions}. The reason for allowing
+<<<<<<< HEAD
+users to chose what restaurants to rate was to give them the same liberty
+they would when they visit a web or mobile application, in this case 
+users are asked to rate only their favorite restaurants.
+
+%Justificar el cuestionario
+%Also a questionnaire was applied to participants in order to
+=======
 users to chose what restaurants to rate it to give them the same liberty
 they have when visiting a web or mobile application. 
-
+>>>>>>> origin/master
 \begin{table}
 \small
 \captionsetup{font=footnotesize}
-\caption{Questionnaire applied to collect contextual dataset.}
+\caption{Questionnaire applied to participants.}
 \label{tab:questions} 
 \centering
 \small
@@ -130,26 +148,27 @@ they have when visiting a web or mobile application.
 Question & Answers \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 \small{1.What is your occupation?} & \small{1. Student 2.Employee} \\ \hline  
-\small{2.According your priority, order by importance the features 
-you consider when you choose to visit a restaurant.} & 
-\small{1.Installation/decoration 2.Prices 3.Service 4.Dishes
-5.Atmosphere 6.Location} \\ \hline  
-\small{3.What are the devices that you used
-utilizes?} & \small{1.Smartphone 2.Tablet 3.Laptop 4.PC} \\ \hline   
-\small{4.What Operating System do you used?} & 
+\small{2.According to your priorities, order by importance the features 
+you consider most when choosing a restaurant. } & 
+\small{1.Installation/decoration 2.Prices 3.Service 4.Dishes 
+5.Atmosphere 6.Location}  \\ \hline 
+\small{3.What are the devices that you have?}
+& \small{1.Smartphone 2.Tablet 3.Laptop 4.PC} \\ \hline   
+\small{4.What Operating System do you use?} & 
 \small{1.Android 2.Windows 3.iOS 4.Symbian 5.Blackberry 6.Other}
 \\ \hline  
-\small{5.Did you use an application to search restaurants in Tijuana?} &
+\small{5.If you do, What application to search restaurants in Tijuana do you use?} &
 \small{1.Yes 2.No 3.Which one?} \\ \hline   
 \small{6.Would you like to use an application of
 recommender systems of Tijuana?} & \small{1.Yes 2.No} \\ \hline  
-\small{7.Please, rates your favorites restaurants(without context).} & 
+\small{7.Please, rate your favorites restaurants(without context).} & 
 \small{Restaurant list} \\ \hline
-\small{8.Please, rates your favorites restaurants in contextual situations.} & 
+\small{8.Please, rate your favorites restaurants in each contextual situation.} & 
 \small{Restaurant list} \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+
 The user's answers from question 1 to question 6 are represented in
 the figure \ref{fig:cakeschart}. \textit{Figure \ref{fig:cakeschart}a}
 represents the percentage of surveyed students and teachers;
@@ -168,15 +187,15 @@ using a restaurant recommender system of Tijuana.
 \centering
 \setlength\fboxsep{0pt}
 \includegraphics[width=0.8\textwidth]{img/cakes.png}
-\caption{The chart cakes show the users preferences for questions from 1 to 6.}
+\caption{The chart shows user\'s preferences for questions 1 to 6.}
 \label{fig:cakeschart}     
 \end{figure*}
 For questions 7 and 8 only the top-ten restaurants are shown,
-without/with the contextual situation. In figure \ref{fig:barschart}a,
+without/with the contextual situation. In figure \ref{fig:barschart}a ,
 the favorite restaurant is \textbf{Daruma}(178 votes),  whereas in
 figure \ref{fig:barschart}b, \textbf{Daruma} does not appear in the
 top-ten. When considering the context \textit{midweek}, the favorite
-restaurant was \textbf{Carl\'s Jr.}, which appears in both graphs; this
+restaurant was \textbf{Carl's Jr.}, which appears in both graphs; this
 restaurant was also the most voted in the different contexts.
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
@@ -203,31 +222,49 @@ correspond to combinations of contextual factors shown in table
 \hline\noalign{\smallskip}
 Contextual Factor & Context \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-\small{Day} & \small{1.Midweek(Monday, Thuesday,Wednesday and Thursday) 
+\small{Day} & \small{1.Midweek(Monday, Thuesday,Wednesday and Thursday)
 2.Weekend(Friday,Saturday and Sunday)}  \\ \hline 
 \small{Place} & \small{1.School 2. Home 3.Work} \\ 
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+
+%%Que haces con este dataset?
+%%Alguna conclusion?
+
+
 % este es otro dataset?
 % creo que es el mismo, corrige o borra el párrafo que sigue
 % ya sabemos que fué explícito y fueron 50 usuarios
-The dataset was explicitly collected from \textbf{50 users} whom
-answered questionnaire (see table \ref{tab:questions}). A total of 172
+<<<<<<< HEAD
+The dataset was explicitly collected from \textbf{50 users} who
+answered the questionnaire (see table \ref{tab:questions}). A total of 172
 predictions was made for different users and the mean absolute error
 \textbf{MAE=0.5859} when the context \textbf{midweek} for the current user
 was considered. The observation for this result is that using a small
 dataset the performance of the method proposed is limited. On the other
 hand, having only one contextual factor does not improve the accuracy
 of the recommendations in this domain.
+% Arriba ¿Por qué solo consideras esa predicción la de midweek?
+=======
+%The dataset was explicitly collected from \textbf{50 users} whom
+%answered questionnaire (see table \ref{tab:questions}). 
+A total of 172 predictions was made for different users and the 
+mean absolute error \textbf{MAE=0.5859} when the context 
+for the current user was considered. 
+The observation for this result is that using a small
+dataset the performance of the method proposed is limited. On the other
+hand, having only one contextual factor does not improve the accuracy
+of the recommendations in this domain.
+%CHECAR EL ARTICULO
 % Arriba ¿Por qué solo consideras esa prediccióm la de midweek?
+>>>>>>> origin/master
 % ¿ Por qué no otos casos o una tabla?
 % ¿Cual es la hipotesis, variables etc.?
-
-
 %%Explica que vas a hacer, no empieces por los datos, antes dí que vas a hacer
 %%Que vas a utilizar y ya despué entras en el detalle de Movie Lens. 
 \subsection{MovieLens collection} 
+<<<<<<< HEAD
 GroupLens Research has collected and made available rating data sets
 from the MovieLens web site (\url{http://movielens.org}). \\The data sets
 were collected over various periods of time,  depending on the size of
@@ -243,9 +280,15 @@ tag applications applied to 10,000 movies by 72,000 users.
 Released 1/2009. \\Downloaded from
 \url{http://grouplens.org/datasets/movielens/10m/}. 
 \end{itemize}
+
+%%
+%% Justifica antes que vas a probar, para que, después hablas del data set y los resultados.
+=======
+>>>>>>> origin/master
+
 The proposed method for MovieLens uses post-filtering 
 and time segmentation.
-Time in recommender systems is used  as a contextual factor in the
+Time in recommender systems is used as a contextual factor in the
 research reviewed \cite{baltrunas2009context},
 \cite{baltrunas2009towards}, \cite{koren2010collaborative}, and
 \cite{he2009time}, results vary according the techniques that were
@@ -350,9 +393,23 @@ Context & \# Preditions & MAE &    \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
+GroupLens Research has collected and made available rating data sets
+from the MovieLens Web site (\url{http://movielens.org}). 
 
 \subsection{TripAdvisor collection} 
 
+The proposed method consists of three algorithms to recommend: 
+\textit{fuzzy inference system}, \textit{collaborative filtering} and 
+\textit{content-based}. Each one
+uses the ratings matrix to get recommendations.\\    
+The context-aware recommender system uses the \textit{post-filtering}
+paradigm\cite{adomavicius2011context} for adjust recommendations in
+context. The recommendation by popularity is through the fuzzy
+inference system depicted in figure \ref{fig:fis}, the fuzzy inference
+system contains the variables that are involved in the process to
+recommend in a human interaction, this process is the same that the
+recommender system does. \\The output represents how matter each item
+into the users community, i.e. if it is a popular item between users. \\
 The dataset used to evaluate the algorithm was TripAdvisor in two
 versions downloaded\cite{linkzeng}, this datasets was used in
 \cite{zheng2014context} and \cite{zheng2012differential} to  evaluate the
@@ -360,19 +417,8 @@ performance of context-aware recommender systems. \\The first
 dataset contains 4669 contextual ratings, 1202 users and 1890 hotels;
 the second dataset contains 14175 contextual ratings, 2731 users and
 2269 hotels. Data were collected of reviews online in tripadvisor.com.
-There is only one context: type of trip (family, friends, bussines,
+There is only one context: \textit{type of trip} (family, friends, bussines,
 romantic and relax).\\ 
-The proposed method consists of three algorithms to recommend: Fuzzy
-Inference System, collaborative filtering and content-based. Each one
-uses rating matrix to get recommendations.\\    
-The context-aware recommender system uses the post-filtering
-paradigm\cite{adomavicius2011context} for adjust recommendations in
-context. The recommendation by popularity is through the Fuzzy
-Inference System depicted in figure \ref{fig:fis}, the Fuzzy Inference
-System contains the variables that are involved in the process to
-recommend in a human interaction, this process is the same that the
-recommender system does. \\The output represents how matter each item
-into the users community, i.e. if it was a popular item for users. \\
 The FIS has Gaussians membership functions and are depicted in figure
 \ref{fig:mffis}.
 \begin{figure}[ht!]
@@ -539,15 +585,13 @@ items that are adjusted into the context, indeed, post-filtering and
 implementation of different recommendation techniques the system has
 suitable performance and the datasets help the processes performed.
 
-%\subsection{Matrix factorization}
 \subsection{Filmtrust and InCarMusic} 
-
+%cambiar al nombre representativo del paper.
 FilmTrust is a small dataset crawled from the entire FilmTrust website
 in June, 2011. Filmtrust contains a ratings matrix of 35498 ratings,
 1504  users and 2071 movies. \\ The dataset has a density of 1.14\% and
 was used in \cite{guo2013novel} using the trust level such as
 context. The web page is \url{http://www.librec.net/datasets.html}.\\ 
-%\subsubsection{InCarMusic dataset}
 InCarMusic dataset\cite{baltrunas2011incarmusic} has 8 
 contextual factors and the possible values for contextual conditions 
 are explained in table \ref{tab:incarmusic}.\\ 
