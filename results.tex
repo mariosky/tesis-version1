@@ -67,9 +67,6 @@ algorithms in the method.
 \section{Datasets} 
 
 \subsection{Tijuana Restaurants} 
-=======
-%\section{Experiments} 
->>>>>>> origin/master
 %% Esto creo que ya se había dicho,
 %% o debe ir en Method
 \section{Restaurant recommendations} 
@@ -101,19 +98,7 @@ depicted in figure \ref{fig:postfiltering}.
 \caption{The post-filtering approach for Tijuana restaurants.}
 \label{fig:postfiltering}     
 \end{figure*}
-%% Bien, empieza aquí:
-%Algo como
-<<<<<<< HEAD
-%In order to validate  the proposed approach described in section XXX,
-% Pero es muy general, ¿Qué es lo que vamos a validar?
-% El desempñeo del algoritmo?
-% La usabilidad del sistema?
-% Comparar con contexto vs sin Contexto?
-% Creo que es: Para validar el algoritmo de recomendación contextual
-% en el dominio de los restaurantes
-=======
-%In order to validate the proposed approach described in section XXX, data about restaurant
->>>>>>> origin/master
+
 In order to validate the proposed approach, data about restaurant
 preferences of users in different contexts was collected. The study
 subjects were students  with a major in engineering,  
@@ -125,17 +110,9 @@ of \textit{8 questions} and also they were asked to rate any number of restauran
 Each of the restaurants chosen, was rated 6 times one per proposed 
 context, a matrix rating with \textit{1,422 ratings} was collected. The
 questions are shown in table \ref{tab:questions}. The reason for allowing
-<<<<<<< HEAD
 users to chose what restaurants to rate was to give them the same liberty
 they would when they visit a web or mobile application, in this case 
 users are asked to rate only their favorite restaurants.
-
-%Justificar el cuestionario
-%Also a questionnaire was applied to participants in order to
-=======
-users to chose what restaurants to rate it to give them the same liberty
-they have when visiting a web or mobile application. 
->>>>>>> origin/master
 \begin{table}
 \small
 \captionsetup{font=footnotesize}
@@ -229,14 +206,6 @@ Contextual Factor & Context \\
 \end{tabular}
 \end{table}
 
-%%Que haces con este dataset?
-%%Alguna conclusion?
-
-
-% este es otro dataset?
-% creo que es el mismo, corrige o borra el párrafo que sigue
-% ya sabemos que fué explícito y fueron 50 usuarios
-<<<<<<< HEAD
 The dataset was explicitly collected from \textbf{50 users} who
 answered the questionnaire (see table \ref{tab:questions}). A total of 172
 predictions was made for different users and the mean absolute error
@@ -245,26 +214,9 @@ was considered. The observation for this result is that using a small
 dataset the performance of the method proposed is limited. On the other
 hand, having only one contextual factor does not improve the accuracy
 of the recommendations in this domain.
-% Arriba ¿Por qué solo consideras esa predicción la de midweek?
-=======
-%The dataset was explicitly collected from \textbf{50 users} whom
-%answered questionnaire (see table \ref{tab:questions}). 
-A total of 172 predictions was made for different users and the 
-mean absolute error \textbf{MAE=0.5859} when the context 
-for the current user was considered. 
-The observation for this result is that using a small
-dataset the performance of the method proposed is limited. On the other
-hand, having only one contextual factor does not improve the accuracy
-of the recommendations in this domain.
-%CHECAR EL ARTICULO
-% Arriba ¿Por qué solo consideras esa prediccióm la de midweek?
->>>>>>> origin/master
-% ¿ Por qué no otos casos o una tabla?
-% ¿Cual es la hipotesis, variables etc.?
-%%Explica que vas a hacer, no empieces por los datos, antes dí que vas a hacer
-%%Que vas a utilizar y ya despué entras en el detalle de Movie Lens. 
+
 \subsection{MovieLens collection} 
-<<<<<<< HEAD
+
 GroupLens Research has collected and made available rating data sets
 from the MovieLens web site (\url{http://movielens.org}). \\The data sets
 were collected over various periods of time,  depending on the size of
@@ -280,11 +232,6 @@ tag applications applied to 10,000 movies by 72,000 users.
 Released 1/2009. \\Downloaded from
 \url{http://grouplens.org/datasets/movielens/10m/}. 
 \end{itemize}
-
-%%
-%% Justifica antes que vas a probar, para que, después hablas del data set y los resultados.
-=======
->>>>>>> origin/master
 
 The proposed method for MovieLens uses post-filtering 
 and time segmentation.
@@ -573,7 +520,8 @@ FIS can provides a list of popular items for each dataset,
 recommendations through averages are obtained, and recommendations are
 conditioned to show it when the collaborative filtering and content-
 based are not delivering recommendations because of data scarcity.\\ 
-However, the majority of popular items of dataset were rated in contexts: romantic, family and bussines, that means that the dataset has
+However, the majority of popular items of dataset were rated in contexts: 
+romantic, family and bussines, that means that the dataset has
 biases.\\  In this experiment  the context-aware recommender system
 proposed involves the paradigm of post-filtering for contextual
 recommendations. The structure of the datasets facilitated the
