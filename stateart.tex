@@ -1,34 +1,16 @@
 \chapter{State of the art} \label{stateoftheart}
-<<<<<<< HEAD
 
-=======
-%Propongo una Sección de RS tradicionales y
-%otra de Context Aware
->>>>>>> origin/master
 In this section the state of the art in conventional and
 context-aware recommender systems is presented. 
 As a technology recommender systems have been applied 
 in many domains, and sometimes they represent the  key
-<<<<<<< HEAD
 technology for the success of web and mobile applications.
 
-=======
-technology for the success of web and mobile applications.\\  
-%Debemos presentar el SoA con cierto orden, ya sea como una linea
-%del tiempo, empezando de los primeros trabajos a los más recientes
-%o organizarlo por dominios, tecnologías etc. Voy a 
-%clasificar los diferentes trabajos y después los organizamos
-% 
->>>>>>> origin/master
 \section{Traditional recommender systems} 
 %Tipo de información: Social, Aplicación Social 
 %Tags
 Some works utilize social information to recommend such
-<<<<<<< HEAD
 as Manca et.al. \cite{manca2014mining} where the Friend recommender
-=======
-as Manca et.al.\cite{manca2014mining} where the Friend recommender
->>>>>>> origin/master
 system is applied for social bookmarking, its goal was to
 infer the interest of users from content, selecting the 
 information available of the user behavior, and analyzing the resources and the
@@ -44,20 +26,13 @@ products is derived from attributes of the graph.
 %Semantic
 The relevance
 information is utilized to predict preferences of new users. J.
-<<<<<<< HEAD
 Golbeck et.al. \cite{golbeck2006filmtrust} presents FilmTrust, a
-=======
-Golbeck et.al.\cite{golbeck2006filmtrust} presents FilmTrust, a
->>>>>>> origin/master
 website that integrates semantic web-based social networks, augmented
 with trust, to create prediction of movie recommendations. FilmTrust takes on
 the role of a recommender system, forming the core of an algorithm to
 predict a rating for movie recommendations. This is an example of
 how the Semantic Web, and Semantic Trust networks in particular, can
 be exploited to refine the user experience. \\  
-%Eso de pros y cons me lo han criticado, me pedían algo más específico
-%Este párrafo está bien por que se organiza por problema que atacan las
-%propuestas
 Traditional recommender techniques have benefits and problems, for
 instance, the ability to handle data sparsity and cold-start problems
 or considerable ramp-up efforts for knowledge acquisition and
@@ -65,7 +40,6 @@ engineering. Establish hybrid systems that combine the strengths of
 algorithms and models to overcome some of the shortcomings of
 each algorithm.
 %De los primeros
-<<<<<<< HEAD
 A popular example of an hybrid system is called Fab, which was
 developed by  Balabanovic et.al. \cite{balabanovic1997fab}. Fab is a
 system  for the automatic recognition of emergent issues, relevant to
@@ -87,39 +61,12 @@ content of the page, ratings of users and demographic data about
 users.
 %Restaurantes
 L. Martinez et al. \cite{martinez2009reja} presents REJA, a hybrid
-=======
-A popular example of an hybrid system is called Fab, which was developed by 
-Balabanovic et.al.\cite{balabanovic1997fab}. Fab is a system 
-for the automatic recognition of emergent issues, relevant to various 
-groups of users. It also enables two scaling problems, 
-pertaining to the rising number of users and documents, to be addressed. 
-Claypool et.al.\cite{claypool1999combining} 
-presents the P-Tango system that utilizes content-based and collaborative
-filtering techniques, it makes a prediction through the weighted
-average, that includes content-based prediction and collaborative
-filtering prediction. The weights of predictions are determined on a
-per-user basis, allowing the system to determine the optimum mixture
-of content-based and collaborative recommendation for each user.
-Pazzani M.\cite{pazzani1999framework} presents Entree as a hybrid
-recommender system that it does not use numeric scores, but rather
-treats the output of each recommender (collaborative, content-based
-and demographic) as a set of votes, which are then combined in a
-consensus scheme. The recommender system includes information such as
-the content of the page, ratings of users and demographic data about
-users. 
-%Restaurantes
-L. Martinez et al.\cite{martinez2009reja} presents REJA, a hybrid
->>>>>>> origin/master
 recommender system that involves collaborative filtering and a
 knowledge-based model, that is able to provide recommendations in some
 situation for a user; besides, it provides georeferenced information
 about the recommended restaurants.
 %Turistas
-<<<<<<< HEAD
 L.Castro et.al. \cite{castro2012prototype} proposes  
-=======
-L.Castro et.al.\cite{castro2012prototype} proposes  
->>>>>>> origin/master
 a hybrid recommender system for the province of San Juan, Argentina, 
 to recommend tourist packages  based on preferences and interest 
 of each user, artificial intelligence
@@ -129,13 +76,8 @@ recommend: demographic, collaborative and content-based. The goal is
 to recommend tourist packages that matches the user's profile.
 %Hibridos
 Others works with hybrid recommender systems are ProfBuilder
-<<<<<<< HEAD
   \cite{al1999semantic}, PickAFlick \cite{burke1999integrating}  and
   \cite{tran2000hybrid}, where multiple recommendation
-=======
-\cite{al1999semantic}, PickAFlick\cite{burke1999integrating}  and
-\cite{tran2000hybrid}, where multiple recommendation
->>>>>>> origin/master
 techniques are presented. Usually, a recommendation requires the ranking of
 items or the selection of a single best, at this point some
 technique must be employed to achieve this. \\ 
@@ -157,22 +99,14 @@ context is defined in the domain of the application and the system has
 a context model that provides the information for the recommender
 system. Some  examples of this types of system are explained
 next. \\
-<<<<<<< HEAD
 Abowd et. al. \cite{abowd1997cyberguide} proposed the
-=======
-Abowd et. al.\cite{abowd1997cyberguide} proposed the
->>>>>>> origin/master
 Cyberguide project, which encompass several tour 
 guide prototypes for different handheld platforms. 
 Cyberguide provided tour guide services to mobile users,
 leveraging in the recommendation process both 
 \textit{contextual knowledge} about current users and their 
 \textit{locations} they have benn in the past. 
-<<<<<<< HEAD
 Cena et al. \cite{cena2006integrating} presents a tourist guide for particular 
-=======
-Cena et al.\cite{cena2006integrating} presents a tourist guide for particular 
->>>>>>> origin/master
 contexts in \textit{intelligent content adaptation}. The UbiquiTO system is a
 tourist guide that integrates different forms of context-related
 adaptation for: \textit{media device type}, \textit{user characteristics and
@@ -180,11 +114,7 @@ preferences}, and the \textit{physical context of the interaction}. UbiquiTO use
 a \textit{rule-based modeling approach} to adapt the content of the provided
 recommendation, such as the \textit{amount}, \textit{type of information} and 
 \textit{features associated} with each recommendation. 
-<<<<<<< HEAD
 Bulander et.al \cite{bulander2005comparison} presents the MoMa-system 
-=======
-Bulander et.al\cite{bulander2005comparison} presents the MoMa-system 
->>>>>>> origin/master
 that offers \textit{proactive recommendations} using a \textit{post-filtering} 
 approach for matching order specifications with offers. 
 When creating an order, the client application will automatically fill in both the 
@@ -197,11 +127,7 @@ formulated according to the catalogue. When the system detects a pair
 of context matching order and offer, the end user is notified, in the
 preferred manner (for example, SMS, email). At this point, the user
 must decide whether to contact the advertiser to accept the offer.
-<<<<<<< HEAD
 Schifanella et al. \cite{schifanella2008mobhinter} developed
-=======
-Schifanella et al.\cite{schifanella2008mobhinter} developed
->>>>>>> origin/master
 Mob-Hinter, a \textit{context-dependent} distributed model, where a user 
 device can directly connect to other mobile devices that are in 
 \textit{physical proximity} through ad-hoc connections, hence 
@@ -225,11 +151,7 @@ routes that pass through several attractions, given that
 their specified constraints (e.g. latest arrival time) and travel-related 
 preferences (maximum walking time, maximal number of transport
 transfers, sightseeing preferences, etc) are satisfied. 
-<<<<<<< HEAD
 Yu and Chang present LARS  \cite{yu2009personalized} 
-=======
-Yu and Chang present LARS \cite{yu2009personalized} 
->>>>>>> origin/master
 which supports personalized tour planning using a \textit{rule-based} 
 recommendation process. This system
 packages \textit{``where to stay"} and \textit{``where to eat"} 
@@ -248,11 +170,7 @@ that focuses in the \textit{user experience} considering
 dataset. The information of the \textit{user's social network},
 \textit{transportation} and \textit{phone's sensors} is inferred to provide
 a recommendation of places.
-<<<<<<< HEAD
 Reddy et.al \cite{reddy2006lifetrak} presents the LifeTrack system which 
-=======
-Reddy et.al\cite{reddy2006lifetrak} presents the LifeTrack system which 
->>>>>>> origin/master
 incorporates sensor information for selecting tracks in a music recomender system.
 The songs are represented by tags of terms, that the user assigns in order to link
 songs with the \textit{appropriate contexts} in which they should be played.
@@ -284,11 +202,7 @@ contextual factors, users were requested to evaluate music tracks
 in different contextual situations for each genre. The prediction
 takes in to account this \textit{relevance} to recommend music tracks 
 prefered by the user according the \textit{genre} and contexts mentioned.
-<<<<<<< HEAD
 In the domain of restaurants Chung-Hua et al. \cite{chu2013chinese} proposed a
-=======
-In the domain of restaurants Chung-Hua et al.\cite{chu2013chinese} proposed a
->>>>>>> origin/master
 context-aware recommender system for mobiles using a post-filtering
 paradigm, the architecture involves a  client-server model that works
 with a request of data from the client side to the server.
@@ -297,11 +211,7 @@ appropiate restaurants to recommend. That context-aware recommender
 system uses contextual factors such as \textit{location and season}, and
 also uses \textit{user preferences} to personalize the recommendations
 to a particular context.
-<<<<<<< HEAD
 Baltrunas et.al. \cite{baltrunas2011context} presents ReRex for tourism, 
-=======
-Baltrunas et.al.\cite{baltrunas2011context} presents ReRex for tourism, 
->>>>>>> origin/master
 a context-aware recommender system, based on a 
 \textit{model-based paradigm}, the system recommends and provides 
 explanations about why certain Places of Interest(PoI) were recommended. 
@@ -333,11 +243,7 @@ disadvantage in this system is the \textit{lack of user reviews},
 because the recommendations are based only in the \textit{location
 point} without considering the experience of other diners concerning the
 recommended restaurant.\\ To sum up the contextual recommender 
-<<<<<<< HEAD
 systems mentioned, Table \ref{tab:stateoftheart} describes the main 
-=======
-systems mentioned, table \ref{tab:stateoftheart} describes the main 
->>>>>>> origin/master
 contextual factors, the domain of application, the method used for each 
 application, and type of devices.
 \begin{sidewaystable}[]
