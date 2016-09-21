@@ -286,54 +286,84 @@ results obtained.
 
 \section{Aims}
 
-Traditional recommender systems uses simple models (users-items) to 
-get relevant items for current user, the technique used by them is limited 
-because of the scarse information. Implement new tecnologies to adapt
-the recommender algorithms for the user needs is the new approach in
+Recommender systems has been used to obtain relevant items for current user
+through simple models (user-item), the technique is limited 
+because of ignore information about behaviour of users and others
+factors that are involved in the user environment. 
+To implement new tecnologies to adapt
+the recommender algorithms for the user needs is the novel approach in
 recommender systems. 
-The purpose is to improve the suggestions in order to increase the user
-satisfaction. The improves proposed by researchers [] involve the context
-implementation, through contextual factors defined by the designers of
-recommender system and considering experiences of other authors in the
-literature.
-The goal of this thesis promotes the implementation of a new method that 
-include fuzzy logic
-techniques and pre-filtering paradigm that includes traditional recommender
-techniques improved to make recommendation considering the user context.
-Our main contribution is the novel method that includes a hybrid recommender
-system (content-based and collaborative filtering techniques). 
-The contribution includes to provide a \textit{useful knowledge} 
-to utilize in the hybrid recommender system.
-By other side, our method is easily
-implemented in different domains such as e-learning, movies,
-music, tourism, etc. For the case of study, the restaurants domain
-is used to test the method.\\
-A highlited pointof our method is the use of fuzzy rules to treat
-linguistic terms, this allows the use aproximated information 
-to the real context of the people, this information allows an improved
+The purpose of them is to improve the suggestions in order to increase the user
+satisfaction as well as to facilitate the interaction user-system.
+The improves proposed by researchers in this field involve the context
+implementation, through contextual factors defined according the domain 
+proposed, and considering 
+experiences and recommendations of other authors.
+The goal of this thesis highliths the implementation of context in 
+a method that includes fuzzy logic
+techniques and pre-filtering paradigm that uses traditional recommender
+techniques improved to make recommendations. To achieve this, 
+uses of fuzzy rules to treat linguistic terms that include fuzzy variables, 
+this allows the use of aproximated information 
+to the real context of the user, and it allows an improved
 performace of the recommender system because analyzes the user 
-preferences and get recommendations
-based contextual information. For instance, the system provides a list of
-range of prices, this allows the user to select a specific range of
-price to get recommendations adjusted for the tag selected.\\ 
-In order to support the achievement of contributions, the 
-particular aims of this thesis are the following:
+preferences and obtain recommendations
+based in contextual factors. 
+For instance, the system provides a list of
+range of prices, this allows the users to select a specific range of
+price to get recommendations adjusted for the tag selected, this tag represents
+a common word of their native language.\\
+The contribution of this thesis is the novel method that 
+includes a hybrid recommender
+system (content-based and collaborative filtering techniques). It
+provides a \textit{useful knowledge} 
+to utilize in the hybrid recommender system, provides techniques to 
+maximize the use of context by fuzzy variables that represent a part
+of context. The context complementation is represented by external factors
+such as web services. 
+Plus, the method has features that allow to adapt it to be
+implemented in different domains such as e-learning, movies,
+music, tourism, etc. For a case of study, the restaurants domain
+was used to test the method.\\
+Several particular aims were done in order to support the achievement 
+of contributions:
 \begin{itemize}  
 \item Elaborate an analysis about the state of the art in the field
 of context-aware recommender systems through  the revision of 
-the relevant literature. 
-\item Selection of algorithms that representative of the alternatives for
-this problem domain in order to compare their perfomance.
+the relevant literature. State of the art helps to define the tendency
+of currents recommender systems, the recent improves and helps to understand
+what is the relevance of the proposed method as well as the factibility and 
+how we can make an important contribution to the recommender systems field.
+\item Selection of algorithms that are representative of the alternatives for
+this problem domain in order to compare their perfomance. An analisys of the 
+features and performs of the algorithms was done, it was extracted of papers,
+books, and toolbox results to choose the suitable algorithm
+for the method. There are enough papers to make a consense about 
+what is that we want from each one. 
 \item Design and conduct several experiments with the proposed 
-algorithms.
-\item Based on the previous experiments and results, propose a hybrid
-method and apply it in a case of study.
-\item Define the fuzzy inference system that serves as recommender
-technique in the proposed method, as well as the variables and fuzzy
-rules involved.
+algorithms. The experiments were based in previous results of similar 
+methods, the algoritms were adjusted to improve their performance and 
+testing with datasets for several applications, such as travels, hotels, 
+restaurants and movies. The  metric implemented to measure the experiments 
+results was root mean square error beause of is the most recommended 
+by literature.
+\item Propose a hybrid method and apply it in a case of study. 
+Subsequently the results obtained, the proper algorithms and paradigm was 
+included in the proposed method. As well as the fuzzy inference system and 
+the fuzzy variables to represent the context used by the 
+recommender system.
 \item Develop a prototype of a context-aware recommender system 
-using the proposed method.
-\item Evaluate the proposed method using usability metrics.
+using the proposed method. Using recent technologies to develop a proper 
+interface for restaurant recommender system as case of study, 
+the development was done to apply the proposed method. The 
+context is represented by fuzzy variables and database models 
+related the user model and characteristics
+that describe the restaurant model.
+\item To evaluate the proposed method the usability metrics were proposed. 
+We consider the nature of the recommender system and the results 
+that we can get of usability test. The test was prepared to be realized
+by real users that never have been interacting with recommender systems. 
+Results are explained in a posterior chapter.
 \end{itemize} 
 
 \section{Outline}
@@ -375,9 +405,8 @@ the results of each one.
 summary of its contributions and limitations. Final
 conclusions are drawn and also proposals for future work are presented.
 \end{itemize}  
-
-At the end, this thesis includes several appendices describing
-detailed technical aspects of the context-aware recommender system
- \textit{(appendix \ref{appendixa})}, the pseudocode of algorithms
- \textit{(appendix \ref{appendixb})}, and experiment study materials 
- \textit{(appendix \ref{apendixc})}.
+At the end, this thesis includes appendices that describe
+detailed technical aspects about installation and libraries of python
+that uses the context-aware recommender system  \textit{(appendix \ref{appendixa})}, 
+the pseudocode of algorithms proposed in the method are available in  \textit{(appendix \ref{appendixb})}, 
+and experiment study materials used to obtain the test results are in  \textit{(appendix \ref{apendixc})}.
