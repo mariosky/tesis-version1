@@ -1,15 +1,15 @@
 \chapter{Proposed method}\label{method}
 
 The proposed method is based  in a previous architecture presented in
- \cite{garcia2009hybrid} used in an \textit{e-learning plataform (Protoboard)}
+ \cite{garcia2009hybrid} used in an \textit{e-learning platform (Protoboard)}
 where the context  involves characteristics referring the student
-enviroment as well as their performance in previous learning activities.  \\ 
+environment as well as their performance in previous learning activities.  \\ 
 After that, another recommender system called \textit{Recomet}  
  \cite{ramirez2013restaurant} implements the same method using 
 only traditional recommender systems, i.e., it does not use the context 
 in recommendation process  to suggest items to users.   \\ 
 Chapter  \ref{stateoftheart} describes some the applications of both pre-filtering and 
-post-filtering paradigms, each one is used in the appropiate domain 
+post-filtering paradigms, each one is used in the appropriate domain 
 and taking in account the system goals (see Table  \ref{tab:stateoftheart}).  
 The propose method follows a \textit{post-filtering} approach, 
 to contextualize the recommendations list
@@ -18,15 +18,15 @@ of three recommendation techniques, working simultaneously.
 Once a user defines the current context, the post-filtering approach
 adjusts the  recommendations for user's context, this process is called
 ``contextualization". \\ 
-Each recommendation tecnique uses the collaborative filtering rating-matrix 
+Each recommendation technique uses the collaborative filtering rating-matrix 
 to obtain  predictions of items, considering variables such as
 popularity and similarity among users and items. In this section
 each technique used and components of the method are explained in
 detail.\\  Overall, the 
 post-filtering paradigm tries to cover the  user's needs in a wide range of
 situations and it is based on the user's profile information. The
-chapter describes  each component of the  method, as well as its
-functionality and thier interaction with  another components.\\ 
+chapter describes  each component of the  method, as well as their
+functionality and their interaction with  another components.\\ 
 In order to explain the method, a case of study in a
 restaurant   domain will be used. Then, an brief description of
 recommendation  techniques are also explained: 
@@ -41,20 +41,20 @@ of restaurant}:  \textit{cheap, average and expensive}, and
 these variables represent fuzzy values and are used to infer how
 relevant a restaurant is for the  user. This recommendation is based
 on the popularity of each  item in the user community. For other
-domains, fuzzy variables must be identified by a domian expert and
+domains, fuzzy variables must be identified by a domain expert and
 expressed as a fuzzy inference system.
 \item \textbf{Content-based technique} 
 utilizes the item profiles (descriptions) to compare how
 \textit{similar} is an item with respect to  another, i.e. restaurants
-that are \textit{similar} have equal atributes (same cuisine,  atmosphere, price range,
+that are \textit{similar} have equal attributes (same cuisine,  atmosphere, price range,
 etc.) to others that have been rated high by the user.  The idea is to find items
 with similar features to the items that the  user prefers or it has
 high rating in the user profile. 
 \item \textbf{Collaborative filtering technique} 
 is based in the user's preferences  to find neighbors that
-have similars tastes and preferences. Similarity among users is
+have similar tastes and preferences. Similarity among users is
 calculated using Pearson Correlation, a threshold upon of 0.8 is used
-to determine the size of the neighbour. Then, recommendation process
+to determine the size of the neighbor. Then, recommendation process
 considers the opinions of other users that rated restaurants with a
 similar rating, but only recommends when the item have not been rated
 by the current user. A threshold of 3.5 (in rating scale) determines
@@ -68,7 +68,7 @@ technique works simultaneously to obtain recommendations, the hybrid
 method allows to generate suggestions even without  ratings of user,
 it means that using content-based technique or the fuzzy inference system, 
 the system faces the cold-start and overspecialization
-problems using these thechniques, these problems were previously
+problems using these techniques, these problems were previously
 described in section  \ref{coldstart} and  
 section  \ref{overspecialization}, respectively.\\ 
 For the case of study, the proposed method was tested in the 
@@ -112,11 +112,11 @@ restaurant has been considered as rational behavior where a number of
 attributes contribute to the overall usefulness of a restaurant. For
 example: food type, service quality, atmosphere of the restaurant, and
 availability of information about a restaurant, plays an important
-role at different stages in consumer's desition
+role at different stages in consumer's decision
 making  \cite{auty1992consumer}. \\ 
 While food quality and food type have
 been perceived as the most important variables for consumers'
-restaurant selection, situational and contextual factors have been
+restaurant selection, contextual factors have been
 found to be important also. Due to this
 Kivela  \cite{jack1997restaurant} identifies four types of restaurants:
 1) \textit{fine dining/gourmet}, 2) \textit{theme/atmosphere}, 3)
@@ -124,7 +124,7 @@ Kivela  \cite{jack1997restaurant} identifies four types of restaurants:
 other hand Auty  \cite{auty1992consumer} identifies four types of dining
 out occasions: 1) \textit{celebration}, 2) \textit{social occasion},
 3) \textit{convenience/quick meal}, and 4) \textit{business meal}.\\
-Taking in account the context, the model proposed was definded with 55
+Taking in account the context, the model proposed was defined with 55
 attributes about restaurants. \\ An exploration about contents of models
 of others works were compared to define the suitable information into
 the model. Therefore, the restaurant model is a binary vector with the
@@ -181,7 +181,7 @@ are defined as follows:
 \item \textbf{Smoking area:} \textit{yes, no.}
 \item \textbf{Dresscode:} \textit{casual, informal, formal.}
 \item \textbf{Installations:} \textit{garden, terrace, indoor, outdoor.}
-\item \textbf{Atmosphere:} \textit{relax, familiar, friends, bussines, romantic.}
+\item \textbf{Atmosphere:} \textit{relax, familiar, friends, business, romantic.}
 \item \textbf{Parking:} \textit{no parking, free parking, valet parking.}
 \item \textbf{Cuisine:} \textit{japanese, chinese, italian, argentinean,
 cantonese, mandarin, mongolian, arabic, greek, spanish, brasilian,
@@ -202,7 +202,7 @@ These are the fuzzy contextual factors proposed in this case study.
 The user's profile is derived from the ratings matrix. Let
 $U=[u_1,u_2,...u_n]$ the set of all users and $ I=[i_1,i_2,$...$i_n] $
 the set of all items, if $R$ represent the ratings matrix,  an element
-$R_{u,i}$ represents a user’s rating $u \in U$  in a item $i \in I$.
+$R_{u,i}$ represents a user's rating $u \in U$  in a item $i \in I$.
 The unknown ratings are denoted as $\neq $. \\ The matrix $R$ can be
 decomposed into rows vectors, the row vector is denoted as $
 \overrightarrow{r_u} $=$[R_{u,1}$...$R_{u,|I|}]$ for every $u \in U$.
@@ -230,7 +230,7 @@ Figure  \ref{fig:datausermodel}, the model involves the entities:
 \textit{User, UserProfile, and Friends.} \textit{UserProfile entity}
 provides the contextual information of user, \textit{User entity} is
 the default model defined in the system and is related to userProfile
-for suplies valuable information. \\
+for supplies valuable information. \\
 In the application, user profile has contextual
 information such as: 1) price range, 2) current location, 3) cuisine
 types, 4) attributes or characteristics of restaurants that the user want, 
@@ -298,7 +298,6 @@ the system can takes a user position as \textit{latitude:32.529865}
 and \textit{longitude: -116.986605}, this information is stored to
 calculate distances from this point. \\ The geographical position is
 changed frequently, in this manner, it allows the adaptation for each
-<<<<<<< HEAD
 particular user situation. \\ \textit{Distance PoI entity} stores the
 distances (kilometers) between the user and restaurants, this
 information is used to calculate a \textit{"nearby recommendation"},
@@ -307,7 +306,7 @@ then in this case, the system considers only nearby items, into two kilometers
 around the user position.\\
 Finally, \textit{Rating entity} represents the user's preferences  
 in a vector of ratings that could be increased in time and  
-the user's preferences patterns thatcould be changed in time also.
+the user's preferences patterns that could be changed in time also.
 \begin{landscape} 
 \begin{figure}[!h] 
 \captionsetup{font=footnotesize}
@@ -327,7 +326,7 @@ logic is a computational intelligence technique that allows to use
 information with a high degree of inaccuracy; this is the difference
 with the conventional logic that only uses concrete and accurately
 information  \cite{zedeh1989knowledge}.\\  In this work, fuzzy logic is
-used to model fuzzy variables that highligh in the popularity of a
+used to model fuzzy variables that highlight in the popularity of a
 restaurant.\\   
 The Expert module (fuzzy inference system) generates 
 recommendations  when the other
@@ -588,7 +587,7 @@ the list of nearby restaurants is displayed for the user.\\
 If the context-aware recommender system
 considers other attributes, as type of price or the type of cuisine
 preferred by the user, the system gets restaurants matched in the
-context especified by the user at this time. 
+context specified by the user at this time. 
 \begin{figure*}
 \captionsetup{font=footnotesize}
 \centering
@@ -597,11 +596,11 @@ context especified by the user at this time.
 \label{fig:recom}    
 \end{figure*}
 In the attributes box, the user can choose any preference about what
-things are importants to select a restaurant. The features are
+things are important to select a restaurant. The features are
 collected from the dataset of Tijuana restaurants. \\In the cuisine box,
-the user choosen his/her favorite cuisine, it can be one or more
+the user choose his/her favorite cuisine, it can be one or more
 cuisines such as in attributes  also.
-The context changes constantly, indeed, the users migh change 
+The context changes constantly, indeed, the users might change 
 it many times such as them wish.\\ 
 After the post-filtering, the system displays the  recommended
 restaurants according the information provides by the user. The
@@ -620,7 +619,7 @@ obtained through the Google Maps API.
 
 The general scheme of the proposed method is depicted in the 
 Figure  \ref{fig:archit}. In the first part, the three techniques of
-recommendations are suplied by the rating matrix: \\ 
+recommendations are supplied by the rating matrix: \\ 
 1) \textbf{Fuzzy inference system of the expert}  obtains the input 
 values  through rating matrix taking users ratings, so it can infer 
 the output value.

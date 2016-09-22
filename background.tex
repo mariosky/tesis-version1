@@ -32,7 +32,7 @@ far. These facts are tested by the antecedent conditions of the rules
 and the consequent part can change them. 
 \item \textbf{Inference Engine (IE)}. 
 This interpreter matches the conditions in the
-production rules with the data/instantiations found in the WM,
+production rules with the data found in the WM,
 deriving new consequences.
 \end{enumerate}
 The basic operation of these systems is described as a cycle of 
@@ -247,7 +247,7 @@ Assuming the existence of certain contextual factors such as
 \textit{time}, \textit{location} and \textit{purchasing purpose} that
 are identified in the context of recommendations,
 Adomavicious  \cite{adomavicius2011context} proposes two important
-aspects that highligh when different kinds of context are defined:
+aspects that highlight when different kinds of context are defined:
 \textit{what a recommender system may know about these contextual
 factors} and, \textit{how contextual factors change over time}.\\
 A recommender system can have different types of knowledge 
@@ -381,11 +381,11 @@ are inferred by interpreting user actions \cite{adomavicius2011context}.
 \subsection{Collaborative Filtering}
 
 The idea behind collaborative recommendation approaches is to exploit
-information about past behavior or opinions of an exisiting user
+information about past behavior or opinions of an existing user
 community for predicting which items certain user of the system will
 most probably like or be interested in \cite{jannach2010recommender}. 
 Recommender systems are useful in several types of  applications,
-however, their biggest impact has been mainly in ecommerce web sites
+however, their biggest impact has been mainly in e-commerce web sites
 in order to personalize the information for a particular user as the
 system can help to promote several items of his or her interest, thus
 increasing the sales of the on-line store. In traditional
@@ -402,11 +402,11 @@ recommendation and c) Model-based recommendation.\\
 \textbf{a) User-based nearest neighbor} is an approach that only 
 uses the rating matrix to obtain recommendations. 
 The neighborhood selection consists in taking
-the \textit{k} nearest (similar) neighbors into account usind the 
+the \textit{k} nearest (similar) neighbors into account using the 
 \textit{k} threshold to define the size of the neighborhood. A small 
-neigborhood can not make accurate predictions, and on the 
+ can not make accurate predictions, and on the 
 other hand if the neighborhood
-is too large the information about certain nighbours could not be
+is too large the information about certain neighbors could not be
 significant.\\ To obtain the similarity value between a user and his
 neighbors, the Pearson correlation is commonly used, taking
 the values from $+1$ (strong positive correlation) to $-1$ (strong
@@ -467,7 +467,7 @@ in account the \textit{latent factors}.
 \subsubsection{Data sparsity and cold-start problem}\label{coldstart}
 
 In real-world applications, the ratings matrix tend to be \textit{very
-sparse}(sparcity problem), as customers typically provide  ratings
+sparse}(scarcity problem), as customers typically provide  ratings
 for (or have bought) only a small fraction of the catalog items. In
 general, the challenge in that context is thus to compute good
 predictions when there are relatively few ratings available.\\ One
@@ -478,7 +478,7 @@ classify the user. The set of similar users (neighbors) is thus based
 not only on the analysis of the explicit and implicit ratings, but
 also on information external to the ratings matrix. These hybrid
 systems  \cite{pazzani2007content}, however, are no longer
-\textit{“purely”} collaborative, and also bring new questions on 
+\textit{"purely"} collaborative, and also bring new questions on 
 how to acquire the additional information and how to combine 
 the different classifiers. Still, to reach the critical mass of users needed
 in a collaborative approach, such techniques might be helpful in the
@@ -500,7 +500,7 @@ algorithm presented in  \cite{goldberg2001eigentaste}.
 \subsection{Content-based algorithm}
 
 In a content-based recommendation, the task consists of
-determining those items that best match the active user’s preferences.
+determining those items that best match the active user's preferences.
 Although such an approach must rely on additional information about
 items and user preferences, it does not require the existence of a
 large user community or a rating history, i.e., recommendation lists
@@ -520,10 +520,10 @@ subjective impression of the item’s exterior design
 
 The simplest way to describe catalog items is to maintain an explicit
 list of features for each item (also often called attributes,
-characteristics, or item profiles). \\For a book recommender, one could,
-for instance, use the genre, the author’s name, the publisher, or
+characteristics, or item profiles). \\ For a book recommender, one could,
+for instance, use the genre, the author's name, the publisher, or
 anything else that describes the item and store his information in a
-relational database system. When the user’s preferences are described
+relational database system. When the user's preferences are described
 in terms of his or her interests using exactly this set of features,
 the recommendation task consists of matching item characteristics and
 user preferences  \cite{jannach2010recommender}.
@@ -553,7 +553,7 @@ system in \cite{billsus1999personal} defines a threshold to filter
 out not only items that are \textit{too different} from the profile
 but also those that are \textit{too similar}. \\A general goal is to
 avoid the \textit{overspecialization}, therefore increasing the
-serendipity of the recommendation lists that now includes “unexpected”
+serendipity of the recommendation lists that now includes "unexpected"
 items in which the user might be interested, because sometimes
 expected items are of little value for the user.\\ 
 The  \textit{cold-start problem}, 
@@ -581,7 +581,7 @@ and knowledge models constitute the potential types of recommendation
 input. However, none of the basic approaches are able to fully exploit
 all of these. \\ Consequently, building hybrid systems that combine the
 strengths of different algorithms and models to overcome some of the
-afore mentioned shortcomings and problems has become the target of
+mentioned shortcomings and problems has become the target of
 recent research. \\ Hybrid recommender systems are technical approaches
 that combine several algorithms or recommendation 
 components \cite{jannach2010recommender}.
@@ -634,7 +634,7 @@ where  \textit{Contexts} represent an additional contextual dimension
 and end up  with a list of contextual recommendations:  
 $item_{1}$,$item_{2}$,$item_{3}$...$item_{n}$  for each user. \\
 However, when  the recommendation process does not  take into 
-account  contextual information, is posible to apply the information 
+account  contextual information, is possible to apply the information 
 about the current (or desired) context \textit{c} in various stages 
 of the recommendation process.
 \begin{figure*}
@@ -663,7 +663,7 @@ serves as a query (or a filter) for selecting relevant rating data.
 An example of a contextual data filter for a
 movie recommender system would be: if a person wants to see a movie on
 Saturday, only the Saturday rating data is used to recommend movies.
-Note that this example represents a crisp pre-filter because the data
+Note that this example represents a crisp pre-filtering because the data
 was filtered using exactly the specified context (Figure \ref{fig:paradigms}.a).
 \item \textbf{Contextual post-filtering (or contextualization of
 recommendation output).} In this approach context information
@@ -677,7 +677,7 @@ recommendations that are irrelevant in a given context, or (2)
 adjusting the ranking of recommendations in the list. For example, in
 a movie recommendation application, if a person wants to see a movie
 on a weekend, and if on weekends he or she only watches comedies, the
-system can filter out all noncomedies from the recommended list
+system can filter out all non comedies from the recommended list
 (Figure  \ref{fig:paradigms}.b).
 \item \textbf{Contextual modeling (or contextualization of
 recommendation function).} This approach uses contextual information

@@ -1,71 +1,94 @@
 \chapter{Introduction} \label{introduction} 
 
-The purpose of this research is to make a contribution in the
-application of contextual information in recommender systems by
-proposing a methodology for the development of context aware
-recommender systems. The method follows an hybrid  approach by
-integrating several recommendation techniques through a fuzzy
-inference system. The proposed method was validated by the
-execution of several experiments, and the implemantion of a case
-study. The results presented are favorable, indicating the
-strenghts of the hybrid method.
+Context-aware recommender systems arise as the improves of 
+the recommender systems. Researchers make efforts to propose 
+new techniques to solve the issues that face the users when using 
+search engines. The context integrated in recommender techniques 
+helps to improve the automatic process into the intelligent systems, 
+in this way decreases the issues that users have.
+Every day arise more necessities of users to get information of  
+Internet and every day  is uploaded and updated a lot of 
+information available for thousands of users.
+Recommender systems make easy the process of select information, but
+the context delimits quickly the range of search, this implies
+to select the more important information for the user that it is 
+in a specific circumstance. Every contextual factor reduces the
+amount of items and the possibility of dislike of user, 
+contextual factors work as a filter to finish with only 
+the relevant items adjusted to the real situation of the user.
+Nowadays, several techniques for context-aware recommender
+systems are proposed, hybrid and single methods are used to
+reach to minimal accuracy error. 
+The purpose of this research is to propose a method for the
+context-aware recommender systems. The method involves an 
+hybrid recommender system and a fuzzy inference system. 
+The method was validated by the execution of experiments, 
+and the implementation of a case study to observe the 
+performance as well as the strengths and weakness.
 
 \section{Motivation}
 
-From it is arising Internet the human life suffer great changes
-that improves the quality of life style. A lot of apps come to 
-to stablish a different way to realize the daily tasks of people.
+From it is arising Internet the humans suffer great changes
+that improves the quality of their life style. A lot of apps come to 
+to establish a different way to realize the daily tasks of people.
 But Internet is not perfect, with it also comes big amount of problems, 
-since details as
-a training for persons to use correctly of the network, until the
+since a training for persons to use correctly of the network, until the
 advanced learning to develop sophisticated apps. In a middle level
-it is the information available to manage systems. 
-From a poin of view of bussines, all bussines of services want 
-to provide information of their services for all users, 
+it is the information available to manage into the systems. 
+From a point of view of business, all business of services want 
+to provide information of their services in a massive way to reach
+to millions of users, 
 in the on-line stores is necessary to provide information about 
 items to promote the sales among the customers 
-and new customers, and so, a lot of bussines and users are uploading 
-information with not know that they are contributing to 
+and new customers, and a tourism agency needs to propagate
+information about their travels and touristic packages for all
+the world (a big scale propagation), and so, a lot of 
+business are uploading 
+information without know that they are contributing to 
 the overload information problem, 
 the reason is that the capability of Internet has not limits.
-In our daily social interaction we need to take decisions, 
+All this information it is available for us, information that 
+we could use in our daily interaction with Internet.
+In our social interaction we need to take decisions, 
 for instance, to take a bus, to choose a restaurant for dinner,
-to select a movie in the cinema, etc. This desitions reach us to 
-do anything,  despite our unexperience or ignorance respect to
+to select a movie in the cinema, etc. This decisions reach us to 
+do anything,  despite our inexperience or ignorance respect to
 discern among the possible alternatives.
 This lack of experience, time and resources 
-highlight the need of automatic methods 
+highlight the need of automatic methods (as recommender engines) 
 to filter relevant information.
 To obtain recommendations usually the people seek help 
 asking to social friends or persons with a certain 
 level of affinity to any recommendation.\\
 Currently, information filters are
-an integrated component of the Web, where for instance
+an integrated component of the Web to cover the need, 
+where for instance
 automatic search engines help users to find or make 
 decisions through personalized recommendations
 of products and services. \\ 
-On the other hand, nowadays mobile computing has drasticaly 
+On the other hand, nowadays mobile computing has drastically 
 incremented because of the impact of their use, if an application 
-is available in a smartphone it can be used all most anywhere, 
+is available in a smart phone it can be used all most anywhere, 
 and thanks to sensors and GPS technology location aware 
 applications are common actually.\\ 
 Recent technologies also consider information about the user's 
 current situation in mobile applications, as intelligent systems 
 can take advantage of the benefits that this technology provides, 
 to manage the constantly changing context. \\ 
-The development in mobile and ubiquitous computing \cite{noguera2012mobile} 
-\cite{chiou2010adaptive}, are proposing a wide variety of applications
-that will benefit from recommendation engines using context to meet their
-purpose. But still there is a need to model the information available in
-the system in order to provide context awareness.\\  Information regarding 
-context can also be described in natural language in a fuzzy manner. For
-instance when describing the current situation an user could say:
-\textit{``Is early in
-the morning and I am currently near my work and I need to find a coffee
-shop that is not to expensive, is open and not very far"}.
-This sentence uses many words to describe the situation that are not 
-crisp, but instead, the description uses fuzzy variables to 
-describe the situation.  
+The development in mobile and ubiquitous 
+computing \cite{noguera2012mobile} \cite{chiou2010adaptive}, are 
+proposing a wide variety of applications that will benefit 
+from recommendation engines using context to meet their
+purpose. But still there is a need to model the information 
+available in the system in order to provide context awareness.\\  
+Information regarding context can also be described in natural 
+language in a fuzzy manner. For instance when describing 
+the current situation an user could say: \textit{``Is early in
+the morning and I am currently near my work and I need to 
+find a coffee shop that is not to expensive, is open 
+and not very far"}. This sentence uses many words to describe 
+the situation that are not crisp, but instead, the description 
+uses fuzzy variables to describe the situation.  
 
 \section{Context of use}\label{contextofuse}
 
@@ -76,7 +99,8 @@ object is produced or designed the way it is. When a product
 (or system) is developed, it
 will be used within a particular context. It will be used by a user
 population with certain characteristics. The user will have certain
-goals and has the intension to perform certain tasks. The product will also be used
+goals and has the intention to perform certain tasks. The product 
+will also be used
 within a certain range of technical, physical and social or
 organizational environments \cite{maguire2001context} that may affect
 its use.\\   
@@ -118,7 +142,7 @@ representative users.\\
 In the study of Sato \cite{sato2004context} that brings \textit{context
 issues} into design practice, addressed the concept of
 \textit{context} as a critical component of the design information in
-order to enhance the \textit{human-centred design practice}. After a
+order to enhance the \textit{human-centered design practice}. After a
 literature's revision for  definitions of \textit{context} in diverse
 fields, Sato explains that there are external and internal conditions
 into the definitions and suggest that it has four characteristics:
@@ -126,7 +150,7 @@ into the definitions and suggest that it has four characteristics:
 \item Aspects of context are based on the nature of actions and 
 conditions.
 \item Descriptions depends on the focus of the viewpoints.
-\item Contextual changes are triggered from differents elements 
+\item Contextual changes are triggered from different elements 
 of the domain. 
 \item Context evolves over the time, some aspects change fast
 and others change slow. 
@@ -148,7 +172,7 @@ The goal is to facilitate the use and implementation of fuzzy context
 in recommender systems for different domains.\\
 In the Figure \ref{fig:logicalmodel}, the first box shows different
 real life situations of the user (contexts), the user can change from situation
-to situation in a little time or in a long time, this situational or
+to situation in a little time or in a long time, this 
 contextual information in the real world provides the abstract knowledge that
 the system will use to determine the \textit{``contextual information"} that will 
 be used. 
@@ -184,7 +208,7 @@ focused on the
 The idea behind \textit{context-aware computing} is to provide
 information or services for the user based in the user's situation
  \cite{dey2001understanding}. In order to do that, the application 
-needs to obtain situational data, process it, and make use of it 
+needs to obtain contextual data, process it, and make use of it 
 in a manner that benefits the user. \\ 
 \textit{Context} is a concept that is not easy to define, as it is related with
 several disciplines that propose different definitions. For example,
@@ -212,7 +236,7 @@ specific application. For instance, in a tourist guide application, the
 entities can be companion(friends, family, couple), place of interest,
 season and weather, these could be considered as relevant contextual
 factors that help the recommender system to provide items adjusted the
-situational data of the user.\\
+contextual user's data.\\
 \textit{Context-aware recommender systems} are gaining even more
 attention because of their performance and implementation for
 different domains, the  way to improve personalized recommendations
@@ -237,7 +261,7 @@ Plus, context can be used to improve the user satisfaction  in
 recommender systems, thus the quality and accuracy of predictions  
 is improved too. \\
 The method proposed in this thesis uses three recommendations techniques,
-applied as a case study in a restarant domian:
+applied as a case study in a restaurant domain:
 \begin{enumerate} 
 \item \textit{Expert's Fuzzy Inference System}, this is a rule based 
 recommender defined by an expert in the domain, in the case of 
@@ -269,20 +293,20 @@ In the method, each technique works simultaneously to obtain
 recommendations, the hybrid method allows to generate suggestions even
 without user information, i.e., using content-based technique or the
 fuzzy inference system, so the system faces the cold-start or the
-overspecialization problem using these thechniques, these problems are
+overspecialization problem using these techniques, these problems are
 described in section \ref{coldstart} and 
  \ref{overspecialization}, respectively.\\
 To evaluate the performance of the proposed recommender several experiments
-were maded, the algorithms were tested using contextual datasets and
+were made, the algorithms were tested using contextual datasets and
 the number of contextual factors used varied according to the information
-provided by the dataset. The goal of the experiments were to observe
+contained in dataset. The goal of the experiments were to observe
 the role of contextual data  in the performance of the algorithms and to 
 have a better understanding of what contextual
 factors are more important for users in a specific situation, how recommendations
 are improved using context and, the accuracy in recommendations.
 Chapter 5 shows the results while discussion about results are
 explained in each section.\\
-As a user-cenetered system another important aspect 
+As a user-centered system another important aspect 
 to consider and measure is the \textit{user satisfaction}, for this two
 metrics were used: \textit{task-success} and \textit
 {time-on-task}. These usability metrics allow designers to measure 
@@ -304,9 +328,9 @@ performance and issues presented in the user interaction.
 
 Recommender systems has been used to obtain relevant items for current user
 through simple models (user-item), the technique is limited 
-because of ignore information about behaviour of users and others
+because of ignore information about behavior of users and others
 factors that are involved in the user environment. 
-To implement new tecnologies to adapt
+To implement new technologies to adapt
 the recommender algorithms for the user needs is the novel approach in
 recommender systems. 
 The purpose of them is to improve the suggestions in order to increase the user
@@ -315,14 +339,14 @@ The improves proposed by researchers in this field involve the context
 implementation, through contextual factors defined according the domain 
 proposed, and considering 
 experiences and recommendations of other authors.
-The goal of this thesis highliths the implementation of context in 
+The goal of this thesis highlights the implementation of context in 
 a method that includes fuzzy logic
 techniques and pre-filtering paradigm that uses traditional recommender
 techniques improved to make recommendations. To achieve this, 
 uses of fuzzy rules to treat linguistic terms that include fuzzy variables, 
-this allows the use of aproximated information 
+this allows the use of approximated information 
 to the real context of the user, and it allows an improved
-performace of the recommender system because analyzes the user 
+performance of the recommender system because analyzes the user 
 preferences and obtain recommendations
 based in contextual factors. 
 For instance, the system provides a list of
@@ -335,7 +359,7 @@ system (content-based and collaborative filtering techniques). It
 provides a \textit{useful knowledge} 
 to utilize in the hybrid recommender system, provides techniques to 
 maximize the use of context by fuzzy variables that represent a part
-of context. The context complementation is represented by external factors
+of context. The context complementary is represented by external factors
 such as web services. 
 Plus, the method has features that allow to adapt it to be
 implemented in different domains such as e-learning, movies,
@@ -348,20 +372,20 @@ of contributions:
 of context-aware recommender systems through  the revision of 
 the relevant literature. State of the art helps to define the tendency
 of currents recommender systems, the recent improves and helps to understand
-what is the relevance of the proposed method as well as the factibility and 
+what is the relevance of the proposed method as well as the feasibility and 
 how we can make an important contribution to the recommender systems field.
 \item Selection of algorithms that are representative of the alternatives for
-this problem domain in order to compare their perfomance. An analisys of the 
+this problem domain in order to compare their performance. An analysis of the 
 features and performs of the algorithms was done, it was extracted of papers,
 books, and toolbox results to choose the suitable algorithm
-for the method. There are enough papers to make a consense about 
+for the method. There are enough papers to make a consensus about 
 what is that we want from each one. 
 \item Design and conduct several experiments with the proposed 
 algorithms. The experiments were based in previous results of similar 
-methods, the algoritms were adjusted to improve their performance and 
+methods, the algorithms were adjusted to improve their performance and 
 testing with datasets for several applications, such as travels, hotels, 
 restaurants and movies. The  metric implemented to measure the experiments 
-results was root mean square error beause of is the most recommended 
+results was root mean square error because of is the most recommended 
 by literature.
 \item Propose a hybrid method and apply it in a case of study. 
 Subsequently the results obtained, the proper algorithms and paradigm was 
@@ -390,11 +414,11 @@ The rest of this thesis is organized as follows:
 and background of current and related work, presenting a general
 overview of recommender systems and their evolution in recent years.
 This study includes traditional recommender systems, their methods
-and techniques to improve recommendations, aswall as the challenges 
+and techniques to improve recommendations, as well as the challenges 
 of these systems. Subsequently, hybrid methods used in different
-applications, their limitations and advantages for each hibridation and
+applications, their limitations and advantages for each hybridization and
 the domains of application. Finally, context-aware recommender systems
-are disscussed, in the same way,  with an analysis of the advantages and
+are discussed, in the same way,  with an analysis of the advantages and
 disadvantages of the use of context in recommender systems.
 \item \textbf{Chapter 3} describes the fundamental
 concepts that form the basis of the proposed method.
