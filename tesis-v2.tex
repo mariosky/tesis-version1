@@ -1,0 +1,87 @@
+\documentclass[oneside,numbers,english, nocolors ]{./ezthesis}
+%\usepackage{subfig}
+%\usepackage{multirow}
+\usepackage{graphicx,rotating,booktabs}
+\usepackage{lscape}
+%\usepackage[spanish]{babel}
+\usepackage[spanish,USenglish]{babel} % espanol, ingles
+%\usepackage[utf8]{inputenc} % acentos sin codigo
+%\renewcommand{\chaptername}{chapter} 
+%\renewcommand{\tablename}{Table}
+%\renewcommand{\figurename}{Figure}
+\usepackage{multirow, array} %para mover el ancho de las tablas.
+\renewcommand{\baselinestretch}{2}
+%% # Datos del documento #
+%% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
+%% La letra n con tilde es: \~n.
+%0.15
+\usepackage{vmargin}
+\setpapersize{USletter}
+\setmargins{3.2cm}       % margen izquierdo
+{2.5cm}                        % margen superior
+{15cm}                      % anchura del texto
+{20cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{10pt}                             % altura del pie de página
+{1cm}                           % espacio entre el texto y el pie de página
+
+
+\usepackage{caption}
+\usepackage{subfig}
+
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\usepackage{upgreek} % para poner letras griegas sin cursiva
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+
+%\usepackage{algpseudocode} %Para el apendice.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+%\usepackage{pifont}
+
+\usepackage[verbose]{placeins}
+%\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+
+\hyperlinking  %links urls
+\begin{document}
+
+\pagenumbering{Roman}
+%\include{front-thesis}
+\include{knowledgements}
+\include{abstract}
+
+%\begin{singlespace}
+\tableofcontents
+\listoffigures
+\listoftables
+%\end{singlespace}
+\clearpage
+%\listoffigures
+%\listoftables
+%% # Cap'itulos #
+\pagenumbering{arabic}
+\include{introduction}
+\include{stateart}
+\include{background}
+\include{method}
+\include{caseofstudy}
+\include{evaluation}
+\include{conclusions}
+\include{publications}
+\appendix
+\include{appendixa}
+\include{appendixb}
+\include{apendixc}
+%\include{appendixd}
+%% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
+%% de la tesis.
+%% bibliography
+\bibliography{biblio}
+
+\end{document}
