@@ -207,26 +207,28 @@ cold-start  problem affects the accuracy because of the data scarcity.
 
 \section{Hotels recommendations} \label{hotels}
 
-A second experiment using TripAdvisor's dataset was conducted.  For
-this case, the proposed method consisted of three algorithms  to
-recommend:  \textit{fuzzy inference system}, \textit{collaborative
-filtering} and \textit{content-based}. Each one uses the ratings
-matrix to get recommendations.\\     The contextual recommender system
-uses  \textit{post-filtering} approach  \cite{adomavicius2011context}
-for adjust recommendations in context such as restaurants. 
-The recommendation by popularity is  through the fuzzy inference system
-depicted in Figure  \ref{fig:fis},  the fuzzy inference system
-contains the variables that are involved in the process to recommend
-in a human interaction, this process is the same that the recommender
-system does. \\The output represents how matter each item into the
-users community, i.e. if it is a popular item between users. \\ The
-dataset used to evaluate the algorithm was TripAdvisor in two versions
-downloaded  \cite{linkzeng}, this datasets was used in
+The dataset used to evaluate the algorithm was TripAdvisor in two versions
+downloaded from  \cite{linkzeng}, this datasets was used in
 \cite{zheng2014context} and  \cite{zheng2012differential} to  evaluate
 the performance of context-aware recommender systems. \\The first
 dataset contains 4669 contextual ratings, 1202 users and 1890 hotels;
-the second dataset contains 14175 contextual ratings, 2731 users and
-2269 hotels. 
+the second one contains 14175 contextual ratings, 2731 users and
+2269 hotels.  Data were collected of reviews on-line in tripadvisor.com.
+There is only one context: \textit{type of trip} (family, friends,
+bussines, romantic and relax).\\ 
+For this experiment, the method involves  three techniques 
+for recommendations:  \textit{fuzzy inference system}, 
+\textit{collaborative filtering} and \textit{content-based}. Each one 
+uses the ratings matrix  in a different way to get recommendations.\\     
+In general, contextual recommender system
+uses  \textit{post-filtering} approach  \cite{adomavicius2011context}
+for adjust recommendations in a specific context.
+Popularity is calculated through the fuzzy inference system
+depicted in Figure  \ref{fig:fis},  the fuzzy inference system
+contains the variables that are involved in the process to recommend
+in a human interaction, this process is the same that the recommender
+system does. \\The output represents how popular is each item in the
+users community, i.e. if it is a relevant item between users. \\ 
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm,font=footnotesize}
 \centering
@@ -236,10 +238,20 @@ the second dataset contains 14175 contextual ratings, 2731 users and
 \caption{Fuzzy inference system.}
 \label{fig:fis}   
 \end{figure*}
-Data were collected of reviews online in tripadvisor.com.
-There is only one context: \textit{type of trip} (family, friends,
-bussines, romantic and relax).\\  The FIS has Gaussians membership
-functions and are depicted in  Figure  \ref{fig:mffis}.
+Fuzzy  inference system is Mamdani type and 
+uses Gaussians membership
+functions that are depicted in  Figure  \ref{fig:mffis}.\\ 
+The rating average input is calculated through  the mean
+of ratings of all users for a particular hotel, the input value is 
+in a range from 1 to 5  considering the five stars' scale, it uses two
+membership functions with  \textit{low} and  \textit{high} tags.
+The user's participations input counts the user's ratings 
+in a range from 1 to 10, this input represents if the user has 
+a \textit{insufficient} or \textit{sufficient} participations. Through  the inputs
+a recommendation value is obtained, the fuzzy inference system infers
+ if the hotel is \textit{low} or \textit{high} recommended using a range
+ from 0 to 1, that represents the weight of the recommendation. 
+
 \begin{figure}[ht!]
    \captionsetup{font=footnotesize}
    \centering
@@ -256,13 +268,12 @@ functions and are depicted in  Figure  \ref{fig:mffis}.
     \subfloat[]{
         \label{fig:1c} 
         \includegraphics[width=0.42\textwidth]{img/recommendation.png}}
-   \caption{Gaussian Membership functions in the input are: a) RatingAverage, 
-   b) UserParticipation, and an output: c) Recommendation.}
+   \caption{Gaussian Membership functions in the input are: a) rating average, 
+   b) user participation, and an output: c) recommendation.}
    \label{fig:mffis} 
 \end{figure}
-The fuzzy inference system uses fuzzy rules to infer the inputs and 
-output(a crisp value) that represents the weight of the recommendation. 
-The rules are following: 
+The fuzzy inference system uses fuzzy rules to infer 
+the crisp value. The rules are following: 
 \begin{enumerate}
 \item \textit{If \textbf{RatingAverage} is low and 
 \textbf{UserParticipation} is insufficient then \textbf{recommendation} is low.}
@@ -273,20 +284,25 @@ The rules are following:
 \item \textit{If \textbf{RatingAverage} is high and 
 \textbf{UserParticipation} is sufficient then \textbf{recommendation} is high.}
 \end{enumerate}
+Collaborative filtering uses the K-NN neighbors to get the 
+neighborhood of the user, through Pearson correlation it 
+calculates similarity between  users to obtain the Top-N list.  \\   
 Content-based uses cosine similarity to compare the binary
-vectors representing the profile of each item, thereby obtaining a
-numerical value that determines similarity, based on a threshold. \\   
+vectors representing the profile of each item, so it obtains a
+numerical value that determines the cosine similarity among items
+and after selecting items  based in a threshold. 
 In other words, it makes a comparison of profiles of each item to
-determine the most similar to items the user has rated with highest
-score, context-aware recommender system proposed has a scale 
+determine the most similar to items that the user has rated with highest
+score, context-aware recommender system has a rating scale 
 from 1 to 5. \\
 Next, the outputs of every recommender technique is represented by a
-list of recommended items. Subsequently applies the context filter and
+list of recommended items.\\
+Subsequently, the method applies the context filter and
 context-aware recommender system gets the final contextual
 recommendations.\\  Context-aware recommender system identifies
 contextual data of the user profile such as in Table  \ref{tab:2}, and
 compares recommended items to filter those items that are adjusted to
-the user context.  
+the user context. 
 \begin{table}[htb]
 \small
 \centering
@@ -304,11 +320,9 @@ Daruma           & 5.0 & Midweek \\
 Carl's Jr.       & 3.0 & Weekend \\ \hline
 \end{tabular}
 \end{table}
-
 The context filtering is the last step before to
 get the recommended items. \\The schema of architecture for context-
 aware recommender system is depicted in Figure  \ref{fig:architecture}.
-
 \begin{figure*}
 \captionsetup{font=footnotesize}
 %\captionsetup{justification=centering,margin=2cm}
@@ -340,7 +354,6 @@ TripAdvisor v2 & 2731 & 2269 & 14175 & 99.77 \\
 By other side, in Table  \ref{tab:4} the comparison
 shows that the algorithm has a acceptable performance, i.e., the error
 falls into the range of results obtained with others algorithms. 
-
 \begin{table}
 \centering
 \small
